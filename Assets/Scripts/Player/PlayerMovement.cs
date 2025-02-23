@@ -7,19 +7,18 @@ public class PlayerMovement : MonoBehaviour
     [Header("Config")]
     [SerializeField] private float speed;
 
-    private readonly int moveX = Animator.StringToHash("MoveX");
-    private readonly int moveY = Animator.StringToHash("MoveY");
-
+    private PlayerAnimations playerAnimations;
+    private Player player;
     private PlayerActions actions;
     private Rigidbody2D rigidBody2D;
-    private Animator animator;
     private Vector2 moveDirection;
     
     void Awake()
     {
         actions = new PlayerActions();
-        animator = GetComponent<Animator>();
         rigidBody2D = GetComponent<Rigidbody2D>();
+        playerAnimations = GetComponent<PlayerAnimations>();
+        player = GetComponent<Player>();
     }
 
     void Update()
@@ -34,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
+        if (player.Stats.Health <= 0) return;
         rigidBody2D.MovePosition(rigidBody2D.position + moveDirection * (speed * Time.fixedDeltaTime));
     }
 
@@ -42,10 +42,14 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = actions.Movement.Move.ReadValue<Vector2>().normalized;
 
         //do not update the animation when there is no movement on the player, keeping the last animation
-        if (moveDirection == Vector2.zero) return;
+        if (moveDirection == Vector2.zero)
+        {
+            playerAnimations.SetMoveBoolTransition(false);
+            return;
+        }
 
-        animator.SetFloat(moveX, moveDirection.x);
-        animator.SetFloat(moveY, moveDirection.y);
+        playerAnimations.SetMoveBoolTransition(true);
+        playerAnimations.SetMoveAnimation(moveDirection);
     }
 
     private void OnEnable()
