@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
 {
     [Header ("Stats")]
     [SerializeField] private PlayerStats stats;
+    [SerializeField] private GameManager gameManager;
 
     [Header("Bars")]
     [SerializeField] private Image healthBar;
@@ -19,6 +20,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI healthTMP;
     [SerializeField] private TextMeshProUGUI staminaTMP;
     [SerializeField] private TextMeshProUGUI xpTMP;
+    [SerializeField] private TextMeshProUGUI dayNumber;
 
     private void Update()
     {
@@ -35,5 +37,6 @@ public class UIManager : MonoBehaviour
         healthTMP.text = $"HP {stats.Health} / {stats.MaxHealth}";
         staminaTMP.text = $"STM {stats.Stamina} / {stats.MaxStamina}";
         xpTMP.text = $"XP {stats.CurrentXP} / {stats.NextLevelXP}";
+        dayNumber.text = $"Day {gameManager.dayNumber}";
     }
 }

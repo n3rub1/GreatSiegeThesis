@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/MainMenu.unity
+    guid: e8d0f68345307cf44a6ec14f0439d8fd
+  - enabled: 1
+    path: Assets/Scenes/StElmoFort.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

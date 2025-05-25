@@ -13,6 +13,7 @@ public class DialogManager : Singleton<DialogManager>
     [SerializeField] private TextMeshProUGUI npcDialogTMP;
 
     public NPCInteraction npcSelected { get; set; }
+    public GameManager gameManager;
 
     private bool dialogStarted;
     private PlayerActions actions;
@@ -26,6 +27,7 @@ public class DialogManager : Singleton<DialogManager>
 
     private void Start()
     {
+        //gameManager = FindObjectOfType<GameManager>();
         actions.Dialog.Interact.performed += ctx => ShowDialog();
         actions.Dialog.Continue.performed += ctx => ContinueDialog();
     }
@@ -39,11 +41,91 @@ public class DialogManager : Singleton<DialogManager>
 
     private void LoadDialogFromNPC()
     {
-        if (npcSelected.DialogToShow.Dialog.Length <= 0) return;
+        int currentDay = gameManager.dayNumber;
+        npcSelected.DialogToShow.dayNumber = currentDay;
 
-        foreach(string sentence in npcSelected.DialogToShow.Dialog)
+        if (npcSelected.DialogToShow.Day1Dialog.Length <= 0 || 
+            npcSelected.DialogToShow.Day2MetBeforeDialog.Length <= 0|| 
+            npcSelected.DialogToShow.Day2FirstTimeDialog.Length <= 0 ||
+            npcSelected.DialogToShow.Day3MetBeforeDialog.Length <= 0 ||
+            npcSelected.DialogToShow.Day3FirstTimeDialog.Length <= 0 ||
+            npcSelected.DialogToShow.Day4MetBeforeDialog.Length <= 0 ||
+            npcSelected.DialogToShow.Day4FirstTimeDialog.Length <= 0 ||
+            npcSelected.DialogToShow.Day5MetBeforeDialog.Length <= 0 ||
+            npcSelected.DialogToShow.Day5FirstTimeDialog.Length <= 0) return;
+
+        //       foreach(string sentence in npcSelected.DialogToShow.Day1Dialog)
+        //       {
+        //           dialogQueue.Enqueue(sentence);
+        //       }
+
+        switch (currentDay)
         {
-            dialogQueue.Enqueue(sentence);
+            case 1:
+                foreach (string sentence in npcSelected.DialogToShow.Day1Dialog)
+                    dialogQueue.Enqueue(sentence);
+                npcSelected.DialogToShow.metOnday1 = true;
+                break;
+
+            case 2:
+                if (npcSelected.DialogToShow.metOnday1)
+                {
+                    foreach (string sentence in npcSelected.DialogToShow.Day2MetBeforeDialog)
+                        dialogQueue.Enqueue(sentence);
+                    npcSelected.DialogToShow.metOnday2 = true;
+                }
+                else
+                {
+                    foreach (string sentence in npcSelected.DialogToShow.Day2FirstTimeDialog)
+                        dialogQueue.Enqueue(sentence);
+                    npcSelected.DialogToShow.metOnday2 = true;
+                }
+                break;
+
+            case 3:
+                if (npcSelected.DialogToShow.metOnday1 || npcSelected.DialogToShow.metOnday2)
+                {
+                    foreach (string sentence in npcSelected.DialogToShow.Day3MetBeforeDialog)
+                        dialogQueue.Enqueue(sentence);
+                    npcSelected.DialogToShow.metOnday3 = true;
+                }
+                else
+                {
+                    foreach (string sentence in npcSelected.DialogToShow.Day3FirstTimeDialog)
+                        dialogQueue.Enqueue(sentence);
+                    npcSelected.DialogToShow.metOnday3 = true;
+                }
+                break;
+
+            case 4:
+                if (npcSelected.DialogToShow.metOnday1 || npcSelected.DialogToShow.metOnday2 || npcSelected.DialogToShow.metOnday3)
+                {
+                    foreach (string sentence in npcSelected.DialogToShow.Day4MetBeforeDialog)
+                        dialogQueue.Enqueue(sentence);
+                    npcSelected.DialogToShow.metOnday3 = true;
+                }
+                else
+                {
+                    foreach (string sentence in npcSelected.DialogToShow.Day4FirstTimeDialog)
+                        dialogQueue.Enqueue(sentence);
+                    npcSelected.DialogToShow.metOnday4 = true;
+                }
+                break;
+
+            case 5:
+                if (npcSelected.DialogToShow.metOnday1 || npcSelected.DialogToShow.metOnday2 || npcSelected.DialogToShow.metOnday3 || npcSelected.DialogToShow.metOnday4)
+                {
+                    foreach (string sentence in npcSelected.DialogToShow.Day5MetBeforeDialog)
+                        dialogQueue.Enqueue(sentence);
+                    npcSelected.DialogToShow.metOnday5 = true;
+                }
+                else
+                {
+                    foreach (string sentence in npcSelected.DialogToShow.Day5FirstTimeDialog)
+                        dialogQueue.Enqueue(sentence);
+                    npcSelected.DialogToShow.metOnday5 = true;
+                }
+                break;
         }
     }
 
