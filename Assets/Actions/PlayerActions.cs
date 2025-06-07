@@ -142,6 +142,34 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Loot"",
+            ""id"": ""60cd5ea6-31e5-4473-a0bd-f86a377f3c97"",
+            ""actions"": [
+                {
+                    ""name"": ""LootInteraction"",
+                    ""type"": ""Button"",
+                    ""id"": ""d79169e5-78ef-428d-a8c9-385799a06986"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""2bd12001-1973-4817-ae48-5052d24045b2"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LootInteraction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -153,6 +181,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         m_Dialog = asset.FindActionMap("Dialog", throwIfNotFound: true);
         m_Dialog_Interact = m_Dialog.FindAction("Interact", throwIfNotFound: true);
         m_Dialog_Continue = m_Dialog.FindAction("Continue", throwIfNotFound: true);
+        // Loot
+        m_Loot = asset.FindActionMap("Loot", throwIfNotFound: true);
+        m_Loot_LootInteraction = m_Loot.FindAction("LootInteraction", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -310,6 +341,52 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         }
     }
     public DialogActions @Dialog => new DialogActions(this);
+
+    // Loot
+    private readonly InputActionMap m_Loot;
+    private List<ILootActions> m_LootActionsCallbackInterfaces = new List<ILootActions>();
+    private readonly InputAction m_Loot_LootInteraction;
+    public struct LootActions
+    {
+        private @PlayerActions m_Wrapper;
+        public LootActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @LootInteraction => m_Wrapper.m_Loot_LootInteraction;
+        public InputActionMap Get() { return m_Wrapper.m_Loot; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(LootActions set) { return set.Get(); }
+        public void AddCallbacks(ILootActions instance)
+        {
+            if (instance == null || m_Wrapper.m_LootActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_LootActionsCallbackInterfaces.Add(instance);
+            @LootInteraction.started += instance.OnLootInteraction;
+            @LootInteraction.performed += instance.OnLootInteraction;
+            @LootInteraction.canceled += instance.OnLootInteraction;
+        }
+
+        private void UnregisterCallbacks(ILootActions instance)
+        {
+            @LootInteraction.started -= instance.OnLootInteraction;
+            @LootInteraction.performed -= instance.OnLootInteraction;
+            @LootInteraction.canceled -= instance.OnLootInteraction;
+        }
+
+        public void RemoveCallbacks(ILootActions instance)
+        {
+            if (m_Wrapper.m_LootActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ILootActions instance)
+        {
+            foreach (var item in m_Wrapper.m_LootActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_LootActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public LootActions @Loot => new LootActions(this);
     public interface IMovementActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -318,5 +395,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     {
         void OnInteract(InputAction.CallbackContext context);
         void OnContinue(InputAction.CallbackContext context);
+    }
+    public interface ILootActions
+    {
+        void OnLootInteraction(InputAction.CallbackContext context);
     }
 }

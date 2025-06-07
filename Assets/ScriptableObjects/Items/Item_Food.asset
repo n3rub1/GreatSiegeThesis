@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: Food
   Name: Food
-  Icon: {fileID: 21300000, guid: f39f80ff89ae10346966bfeb894a15c4, type: 3}
+  Icon: {fileID: -1961294805455634957, guid: b715c40e8aaab634fb1afe2593fa4b40, type: 3}
   Description: Used to prepare food
   ItemType: 3
   IsConsumbale: 1

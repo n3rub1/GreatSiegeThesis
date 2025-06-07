@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: Iron
   Name: Iron Scraps
-  Icon: {fileID: 21300000, guid: f39f80ff89ae10346966bfeb894a15c4, type: 3}
+  Icon: {fileID: 21300084, guid: 7810966f0f690954c87305933cabf2b0, type: 3}
   Description: Iron scraps used to repair weapons
   ItemType: 1
   IsConsumbale: 1

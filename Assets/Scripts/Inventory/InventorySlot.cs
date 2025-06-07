@@ -10,6 +10,7 @@ public class InventorySlot : MonoBehaviour
     [SerializeField] private Image itemIcon;
     [SerializeField] private Image quantityImage;
     [SerializeField] private TextMeshProUGUI itemQuantityTMP;
+    [SerializeField] private Button button;
 
     public int index { get; set; }
 
@@ -23,5 +24,10 @@ public class InventorySlot : MonoBehaviour
     {
         itemIcon.gameObject.SetActive(isThereAnItem);
         quantityImage.gameObject.SetActive(isThereAnItem);
+    }
+
+    public void Init(System.Action<int> onClickCallback)
+    {
+        button.onClick.AddListener(() => onClickCallback(index));
     }
 }

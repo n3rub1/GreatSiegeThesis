@@ -27,14 +27,4 @@ public class InventoryItem : ScriptableObject
         return instance;
     }
 
-    public virtual bool UseItem()
-    {
-        return true;
-    }
-
-    public virtual void RemoveItem()
-    {
-
-    }
-
 }

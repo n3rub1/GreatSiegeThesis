@@ -425,3 +425,4 @@ MonoBehaviour:
   itemIcon: {fileID: 9105701752384883178}
   quantityImage: {fileID: 2692164142905648185}
   itemQuantityTMP: {fileID: 6707185145355587240}
+  button: {fileID: 3704066116033647080}

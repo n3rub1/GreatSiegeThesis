@@ -120,6 +120,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Loot",
+            "id": "60cd5ea6-31e5-4473-a0bd-f86a377f3c97",
+            "actions": [
+                {
+                    "name": "LootInteraction",
+                    "type": "Button",
+                    "id": "d79169e5-78ef-428d-a8c9-385799a06986",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2bd12001-1973-4817-ae48-5052d24045b2",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LootInteraction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

@@ -8,28 +8,17 @@ public class Inventory : Singleton<Inventory>
     [SerializeField] private int inventorySize; // 9 max slots
     [SerializeField] private InventoryItem[] inventoryItems;
 
-    [Header("TEST")]
-    public InventoryItem testItem;
-
     public int InventorySize => inventorySize;
+    public InventoryItem[] InventoryItems => inventoryItems;
 
     private void Start()
     {
         inventoryItems = new InventoryItem[inventorySize];
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            AddItem(testItem, 3);
-        }
-    }
-
     public void AddItem(InventoryItem item, int quantity)
     {
         if (item == null || quantity <= 0) return;
-        Debug.Log(item.ID);
         List<int> itemIndexes = CheckItemStock(item.ID);
 
         if(item.IsStackable && itemIndexes.Count > 0)
@@ -67,7 +56,6 @@ public class Inventory : Singleton<Inventory>
 
     }
 
-
     private void AddItemFreeSlot(InventoryItem item, int quantity)
     {
         for(int i = 0; i < inventorySize; i++)
@@ -83,9 +71,6 @@ public class Inventory : Singleton<Inventory>
     private List<int> CheckItemStock(string itemId)
     {
         List<int> itemIndexes = new List<int>();
-
-        Debug.Log(inventoryItems.Length);
-
         for(int i = 0; i < inventoryItems.Length; i++)
         {
             if (inventoryItems[i] == null) continue;
