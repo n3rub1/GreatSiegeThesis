@@ -12,12 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eccd780577f23948ab0f7fae8d74b0a, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  Level: 1
-  Health: 10
-  MaxHealth: 10
-  Stamina: 10
-  MaxStamina: 10
-  CurrentXP: 0
-  NextLevelXP: 100
-  IntialNextLevelXP: 100
-  XPMultiplier: 50
+  Level: 3
+  CurrentXPSupplies: 4
+  NextLevelXPSupplies: 17
+  IntialNextLevelXPSupplies: 10
+  XPMultiplierSupplies: 30
+  CurrentXPMedicine: 0
+  NextLevelXPMedicine: 10
+  IntialNextLevelXPMedicine: 10
+  XPMultiplierMedicine: 30
+  CurrentXPArmour: 0
+  NextLevelXPArmour: 10
+  IntialNextLevelXPArmour: 10
+  XPMultiplierArmour: 30

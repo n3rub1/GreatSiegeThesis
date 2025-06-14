@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        if (player.Stats.Health <= 0) return;
+//        if (player.Stats.Health <= 0) return;
         rigidBody2D.MovePosition(rigidBody2D.position + moveDirection * (speed * Time.fixedDeltaTime));
     }
 

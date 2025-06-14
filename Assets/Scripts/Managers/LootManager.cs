@@ -7,12 +7,15 @@ public class LootManager : Singleton<LootManager>
     [Header("Config")]
     [SerializeField] private Inventory inventory;
     [SerializeField] private InventoryItem[] inventoryItems;
+    [SerializeField] private PlayerXP playerXP;
+    [SerializeField] private int lootXPNumber = 3;
 
     public LootInteraction lootSelected { get; set; }
 
     private int RNGInventoryLoot;
     private int RNGInventoryLootAmount;
     private bool isPlayerInRangeOfLoot = false;
+    private int suppliesArrayValue = 0;
 
     private PlayerActions actions;
 
@@ -20,6 +23,7 @@ public class LootManager : Singleton<LootManager>
     {
         base.Awake();
         actions = new PlayerActions();
+        playerXP = FindObjectOfType<PlayerXP>();
     }
 
     private void Start()
@@ -31,12 +35,15 @@ public class LootManager : Singleton<LootManager>
     {
         if (!isPlayerInRangeOfLoot || lootSelected == null) return;
 
+        playerXP.AddXPSupplies(lootXPNumber);
+        int[] levels = playerXP.GetLevels();
+
         RNGInventoryLoot = Random.Range(0, inventoryItems.Length);
-        RNGInventoryLootAmount = Random.Range(0, 3);
+        RNGInventoryLootAmount = Random.Range(1, 1 + levels[suppliesArrayValue]);
 
         inventory.AddItem(inventoryItems[RNGInventoryLoot], RNGInventoryLootAmount);
 
-        lootSelected.DestroyObject();
+        lootSelected.ShowLootGained(inventoryItems[RNGInventoryLoot], RNGInventoryLootAmount);
 
     }
 
