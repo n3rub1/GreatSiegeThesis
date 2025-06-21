@@ -170,6 +170,34 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Armoury"",
+            ""id"": ""459a047b-d752-4a1f-bfdf-8b49c8c412ab"",
+            ""actions"": [
+                {
+                    ""name"": ""AnvilInteraction"",
+                    ""type"": ""Button"",
+                    ""id"": ""6087ba91-803e-46c1-a8a5-a562868f3ab2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""8763a04d-0d93-443c-8c16-ca6f47901d0a"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AnvilInteraction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -184,6 +212,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         // Loot
         m_Loot = asset.FindActionMap("Loot", throwIfNotFound: true);
         m_Loot_LootInteraction = m_Loot.FindAction("LootInteraction", throwIfNotFound: true);
+        // Armoury
+        m_Armoury = asset.FindActionMap("Armoury", throwIfNotFound: true);
+        m_Armoury_AnvilInteraction = m_Armoury.FindAction("AnvilInteraction", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -387,6 +418,52 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         }
     }
     public LootActions @Loot => new LootActions(this);
+
+    // Armoury
+    private readonly InputActionMap m_Armoury;
+    private List<IArmouryActions> m_ArmouryActionsCallbackInterfaces = new List<IArmouryActions>();
+    private readonly InputAction m_Armoury_AnvilInteraction;
+    public struct ArmouryActions
+    {
+        private @PlayerActions m_Wrapper;
+        public ArmouryActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @AnvilInteraction => m_Wrapper.m_Armoury_AnvilInteraction;
+        public InputActionMap Get() { return m_Wrapper.m_Armoury; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(ArmouryActions set) { return set.Get(); }
+        public void AddCallbacks(IArmouryActions instance)
+        {
+            if (instance == null || m_Wrapper.m_ArmouryActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_ArmouryActionsCallbackInterfaces.Add(instance);
+            @AnvilInteraction.started += instance.OnAnvilInteraction;
+            @AnvilInteraction.performed += instance.OnAnvilInteraction;
+            @AnvilInteraction.canceled += instance.OnAnvilInteraction;
+        }
+
+        private void UnregisterCallbacks(IArmouryActions instance)
+        {
+            @AnvilInteraction.started -= instance.OnAnvilInteraction;
+            @AnvilInteraction.performed -= instance.OnAnvilInteraction;
+            @AnvilInteraction.canceled -= instance.OnAnvilInteraction;
+        }
+
+        public void RemoveCallbacks(IArmouryActions instance)
+        {
+            if (m_Wrapper.m_ArmouryActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IArmouryActions instance)
+        {
+            foreach (var item in m_Wrapper.m_ArmouryActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_ArmouryActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public ArmouryActions @Armoury => new ArmouryActions(this);
     public interface IMovementActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -399,5 +476,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     public interface ILootActions
     {
         void OnLootInteraction(InputAction.CallbackContext context);
+    }
+    public interface IArmouryActions
+    {
+        void OnAnvilInteraction(InputAction.CallbackContext context);
     }
 }

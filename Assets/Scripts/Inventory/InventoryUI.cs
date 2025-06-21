@@ -20,6 +20,8 @@ public class InventoryUI : Singleton<InventoryUI>
     [Header("Inventory Panel")]
     [SerializeField] private GameObject inventoryPanel;
 
+    public InventorySlot CurrentSlot { get; set; }
+
     private List<InventorySlot> slotList = new List<InventorySlot>();
 
     private void Start()
@@ -35,7 +37,10 @@ public class InventoryUI : Singleton<InventoryUI>
             slot.index = i;
             slot.Init(ShowItemDescription);
             slotList.Add(slot);
+            DrawItem(null, i);
         }
+
+
     }
 
     public void ShowItemDescription(int index)
@@ -52,6 +57,11 @@ public class InventoryUI : Singleton<InventoryUI>
     public void DrawItem(InventoryItem item, int index)
     {
         InventorySlot slot = slotList[index];
+        if(item == null)
+        {
+            slot.ShowSlotInformation(false);
+            return;
+        }
         slot.ShowSlotInformation(true);
         slot.UpdateSlot(item);
     }
@@ -66,4 +76,18 @@ public class InventoryUI : Singleton<InventoryUI>
         inventoryPanel.SetActive(true);
     }
 
+    private void SlotSelectedCallback(int slotIndex)
+    {
+        CurrentSlot = slotList[slotIndex];
+    }
+
+    private void OnEnable()
+    {
+        InventorySlot.OnSlotSelectedEvent += SlotSelectedCallback;
+    }
+
+    private void OnDisable()
+    {
+        InventorySlot.OnSlotSelectedEvent -= SlotSelectedCallback;
+    }
 }

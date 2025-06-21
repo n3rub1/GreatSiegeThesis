@@ -5199,8 +5199,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Start
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 451feee637a113e43bf94bdcc6264bc2, type: 2}
-  m_sharedMaterial: {fileID: -105419525553219049, guid: 451feee637a113e43bf94bdcc6264bc2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
+  m_sharedMaterial: {fileID: 730005745575528961, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -17754,8 +17754,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Exit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 451feee637a113e43bf94bdcc6264bc2, type: 2}
-  m_sharedMaterial: {fileID: -105419525553219049, guid: 451feee637a113e43bf94bdcc6264bc2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
+  m_sharedMaterial: {fileID: 730005745575528961, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -18312,8 +18312,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Credits
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 451feee637a113e43bf94bdcc6264bc2, type: 2}
-  m_sharedMaterial: {fileID: -105419525553219049, guid: 451feee637a113e43bf94bdcc6264bc2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
+  m_sharedMaterial: {fileID: 730005745575528961, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -18677,8 +18677,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Help
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 451feee637a113e43bf94bdcc6264bc2, type: 2}
-  m_sharedMaterial: {fileID: -105419525553219049, guid: 451feee637a113e43bf94bdcc6264bc2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
+  m_sharedMaterial: {fileID: 730005745575528961, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -18832,6 +18832,14 @@ MonoBehaviour:
 
     Mrthenoronha: https://freesound.org/people/Mrthenoronha/sounds/380020/
 
+    Firefree66:
+    https://freesound.org/people/freefire66/sounds/175946/
+
+    Porphyr: https://freesound.org/people/Porphyr/sounds/188815/
+
+    Yap_Audio_Production:
+    https://freesound.org/people/Yap_Audio_Production/sounds/218522/
+
 
     Art:
 
@@ -18840,7 +18848,7 @@ MonoBehaviour:
 
     NinjaAdventure'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 451feee637a113e43bf94bdcc6264bc2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
   m_sharedMaterial: {fileID: -105419525553219049, guid: 451feee637a113e43bf94bdcc6264bc2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -18904,7 +18912,7 @@ MonoBehaviour:
   m_margin: {x: -74.50975, y: 0, z: -667.54846, w: -949.00977}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1447614676
@@ -19006,8 +19014,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: The Great Siege of Malta
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 451feee637a113e43bf94bdcc6264bc2, type: 2}
-  m_sharedMaterial: {fileID: -105419525553219049, guid: 451feee637a113e43bf94bdcc6264bc2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
+  m_sharedMaterial: {fileID: 730005745575528961, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -19031,8 +19039,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 75
+  m_fontSizeBase: 75
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -26161,8 +26169,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Interactive Digital Narrative
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 451feee637a113e43bf94bdcc6264bc2, type: 2}
-  m_sharedMaterial: {fileID: -105419525553219049, guid: 451feee637a113e43bf94bdcc6264bc2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
+  m_sharedMaterial: {fileID: 730005745575528961, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -26186,8 +26194,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -26289,7 +26297,7 @@ MonoBehaviour:
     helps no one. Least of all you. But thanks for visiting, I guess. You\u2019re
     really making the most of your time on Earth."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 451feee637a113e43bf94bdcc6264bc2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
   m_sharedMaterial: {fileID: -105419525553219049, guid: 451feee637a113e43bf94bdcc6264bc2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -26353,7 +26361,7 @@ MonoBehaviour:
   m_margin: {x: -77.43175, y: 0, z: -667.54846, w: -949.00977}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1965848424

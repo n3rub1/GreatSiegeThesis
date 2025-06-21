@@ -76,22 +76,27 @@ public class DayNightCycleManager : MonoBehaviour
 
     private void TriggerTimer()
     {
-        timeOfDay++;
-        timeOfDay = timeOfDay >= 24 ? 0 : timeOfDay;
-        timeOfDayTMP.text = $"Time: {timeOfDay}:00";
+        if(timeOfDay >= 22)
+        {
+            timeOfDay = 22;
+            timeOfDayTMP.color = new Color(255, 0, 0);
+            timeOfDayTMP.text = "It's late.  Get some sleep";
+        }
+        else
+        {
+            timeOfDay++;
+            timeOfDayTMP.color = new Color(0, 0, 0);
+            timeOfDayTMP.text = $"Time: {timeOfDay}:00";
+            TriggerDayNightGlobalLight();
+        }
 
-        TriggerDayNightGlobalLight();
-        UpdateDay(timeOfDay);
+
 
     }
 
-    private void UpdateDay(int hour)
+    private void UpdateDay()
     {
-        if(hour == 0)
-        {
-            dayNumberStart++;
-        }
-
+        dayNumberStart++;
         dayNumber.text = $"Day: {dayNumberStart}";
 
     }

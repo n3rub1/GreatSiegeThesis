@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 709d797270267d14d93ab9ed06c61b6b, type: 3}
+  m_Name: Normal
+  m_EditorClassIdentifier: 
+  ID: Sword
+  Name: Sword
+  Icon: {fileID: -7502302234203853145, guid: 41472c987a1935e499a2719fe4f07224, type: 3}
+  Description: 'A straight, double-edged longsword crafted for two-handed combat.
+    Ranging from 85cm to 110cm in length, it delivers forceful slashes and precise
+    thrusts.
+
+
+    Crafting Requirement: 3 Iron'
+  CraftingType: 1
+  slotNumber: 1
+  requiredResource: Iron
+  requiredAmount: 3

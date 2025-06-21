@@ -38,6 +38,8 @@ public class LootManager : Singleton<LootManager>
         playerXP.AddXPSupplies(lootXPNumber);
         int[] levels = playerXP.GetLevels();
 
+        // int RNGInventoryLoot = 2;  TEST TO LOOT IRON ONLY
+
         RNGInventoryLoot = Random.Range(0, inventoryItems.Length);
         RNGInventoryLootAmount = Random.Range(1, 1 + levels[suppliesArrayValue]);
 

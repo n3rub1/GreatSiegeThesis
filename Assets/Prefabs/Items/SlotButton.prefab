@@ -69,8 +69,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 451feee637a113e43bf94bdcc6264bc2, type: 2}
-  m_sharedMaterial: {fileID: -105419525553219049, guid: 451feee637a113e43bf94bdcc6264bc2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
+  m_sharedMaterial: {fileID: 730005745575528961, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -409,7 +409,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7550248860870712347}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4095001342210642627}
+        m_TargetAssemblyTypeName: InventorySlot, Assembly-CSharp
+        m_MethodName: ClickSlot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4095001342210642627
 MonoBehaviour:
   m_ObjectHideFlags: 0
