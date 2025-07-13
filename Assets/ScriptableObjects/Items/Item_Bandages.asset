@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7387e2e96acadb04c958b632105a1251, type: 3}
   m_Name: Item_Bandages
   m_EditorClassIdentifier: 
-  ID: ItemBandage
+  ID: Bandage
   Name: Bandage
   Icon: {fileID: 21300000, guid: f39f80ff89ae10346966bfeb894a15c4, type: 3}
   Description: Item used to heal wounded soldiers

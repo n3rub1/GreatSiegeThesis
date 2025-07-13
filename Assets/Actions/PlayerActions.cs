@@ -198,6 +198,34 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Infirmary"",
+            ""id"": ""b0342f0d-627c-4227-81e4-4e42d918aaab"",
+            ""actions"": [
+                {
+                    ""name"": ""FirePotInteraction"",
+                    ""type"": ""Button"",
+                    ""id"": ""2e56ada7-01b6-4851-8b28-1d1215bd2767"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""0506d286-97cb-4739-bacb-3d1d8421c093"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FirePotInteraction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -215,6 +243,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         // Armoury
         m_Armoury = asset.FindActionMap("Armoury", throwIfNotFound: true);
         m_Armoury_AnvilInteraction = m_Armoury.FindAction("AnvilInteraction", throwIfNotFound: true);
+        // Infirmary
+        m_Infirmary = asset.FindActionMap("Infirmary", throwIfNotFound: true);
+        m_Infirmary_FirePotInteraction = m_Infirmary.FindAction("FirePotInteraction", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -464,6 +495,52 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         }
     }
     public ArmouryActions @Armoury => new ArmouryActions(this);
+
+    // Infirmary
+    private readonly InputActionMap m_Infirmary;
+    private List<IInfirmaryActions> m_InfirmaryActionsCallbackInterfaces = new List<IInfirmaryActions>();
+    private readonly InputAction m_Infirmary_FirePotInteraction;
+    public struct InfirmaryActions
+    {
+        private @PlayerActions m_Wrapper;
+        public InfirmaryActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @FirePotInteraction => m_Wrapper.m_Infirmary_FirePotInteraction;
+        public InputActionMap Get() { return m_Wrapper.m_Infirmary; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(InfirmaryActions set) { return set.Get(); }
+        public void AddCallbacks(IInfirmaryActions instance)
+        {
+            if (instance == null || m_Wrapper.m_InfirmaryActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_InfirmaryActionsCallbackInterfaces.Add(instance);
+            @FirePotInteraction.started += instance.OnFirePotInteraction;
+            @FirePotInteraction.performed += instance.OnFirePotInteraction;
+            @FirePotInteraction.canceled += instance.OnFirePotInteraction;
+        }
+
+        private void UnregisterCallbacks(IInfirmaryActions instance)
+        {
+            @FirePotInteraction.started -= instance.OnFirePotInteraction;
+            @FirePotInteraction.performed -= instance.OnFirePotInteraction;
+            @FirePotInteraction.canceled -= instance.OnFirePotInteraction;
+        }
+
+        public void RemoveCallbacks(IInfirmaryActions instance)
+        {
+            if (m_Wrapper.m_InfirmaryActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IInfirmaryActions instance)
+        {
+            foreach (var item in m_Wrapper.m_InfirmaryActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_InfirmaryActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public InfirmaryActions @Infirmary => new InfirmaryActions(this);
     public interface IMovementActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -480,5 +557,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     public interface IArmouryActions
     {
         void OnAnvilInteraction(InputAction.CallbackContext context);
+    }
+    public interface IInfirmaryActions
+    {
+        void OnFirePotInteraction(InputAction.CallbackContext context);
     }
 }

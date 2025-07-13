@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8884055e91295f4898eff348e8125dc, type: 3}
+  m_Name: Simple 1
+  m_EditorClassIdentifier: 
+  ID: MalteseSoldier2
+  Name: Maltese Soldier
+  Icon: {fileID: 5730816490496075484, guid: 67e11902f9a599344b5dc2f4b5a33db5, type: 3}
+  Description: Maltese Soldier 2
+  slotNumber: 0
+  requiredResource: Bandage
+  requiredAmount: 2

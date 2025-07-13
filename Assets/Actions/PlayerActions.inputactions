@@ -176,6 +176,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Infirmary",
+            "id": "b0342f0d-627c-4227-81e4-4e42d918aaab",
+            "actions": [
+                {
+                    "name": "FirePotInteraction",
+                    "type": "Button",
+                    "id": "2e56ada7-01b6-4851-8b28-1d1215bd2767",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "0506d286-97cb-4739-bacb-3d1d8421c093",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FirePotInteraction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
