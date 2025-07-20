@@ -232,6 +232,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Cat",
+            "id": "e627dfdf-612a-46de-8cc9-73052868e95b",
+            "actions": [
+                {
+                    "name": "CollectClue",
+                    "type": "Button",
+                    "id": "799b4f11-3bd7-481e-b594-339e49987e33",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d139f033-4691-4170-ae83-638d7568fcc6",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CollectClue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

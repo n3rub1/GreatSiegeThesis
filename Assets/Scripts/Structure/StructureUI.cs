@@ -9,8 +9,7 @@ public class StructureUI : Singleton<StructureUI>
     [SerializeField] private PlayerXP playerXP;
 
     private PlayerActions actions;
-    private bool isPlayerInRangeOfRepair = false;
-    private int structureArrayValue = 2;
+    //private int structureArrayValue = 2;
     public StructureInteraction structureInteraction { get; set; }
 
     protected override void Awake()

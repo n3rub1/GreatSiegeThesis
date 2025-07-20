@@ -254,6 +254,34 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Cat"",
+            ""id"": ""e627dfdf-612a-46de-8cc9-73052868e95b"",
+            ""actions"": [
+                {
+                    ""name"": ""CollectClue"",
+                    ""type"": ""Button"",
+                    ""id"": ""799b4f11-3bd7-481e-b594-339e49987e33"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""d139f033-4691-4170-ae83-638d7568fcc6"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CollectClue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -277,6 +305,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         // Structure
         m_Structure = asset.FindActionMap("Structure", throwIfNotFound: true);
         m_Structure_Repair = m_Structure.FindAction("Repair", throwIfNotFound: true);
+        // Cat
+        m_Cat = asset.FindActionMap("Cat", throwIfNotFound: true);
+        m_Cat_CollectClue = m_Cat.FindAction("CollectClue", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -618,6 +649,52 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         }
     }
     public StructureActions @Structure => new StructureActions(this);
+
+    // Cat
+    private readonly InputActionMap m_Cat;
+    private List<ICatActions> m_CatActionsCallbackInterfaces = new List<ICatActions>();
+    private readonly InputAction m_Cat_CollectClue;
+    public struct CatActions
+    {
+        private @PlayerActions m_Wrapper;
+        public CatActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @CollectClue => m_Wrapper.m_Cat_CollectClue;
+        public InputActionMap Get() { return m_Wrapper.m_Cat; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CatActions set) { return set.Get(); }
+        public void AddCallbacks(ICatActions instance)
+        {
+            if (instance == null || m_Wrapper.m_CatActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_CatActionsCallbackInterfaces.Add(instance);
+            @CollectClue.started += instance.OnCollectClue;
+            @CollectClue.performed += instance.OnCollectClue;
+            @CollectClue.canceled += instance.OnCollectClue;
+        }
+
+        private void UnregisterCallbacks(ICatActions instance)
+        {
+            @CollectClue.started -= instance.OnCollectClue;
+            @CollectClue.performed -= instance.OnCollectClue;
+            @CollectClue.canceled -= instance.OnCollectClue;
+        }
+
+        public void RemoveCallbacks(ICatActions instance)
+        {
+            if (m_Wrapper.m_CatActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ICatActions instance)
+        {
+            foreach (var item in m_Wrapper.m_CatActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_CatActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public CatActions @Cat => new CatActions(this);
     public interface IMovementActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -642,5 +719,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     public interface IStructureActions
     {
         void OnRepair(InputAction.CallbackContext context);
+    }
+    public interface ICatActions
+    {
+        void OnCollectClue(InputAction.CallbackContext context);
     }
 }
