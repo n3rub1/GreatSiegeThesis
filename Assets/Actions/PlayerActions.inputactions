@@ -139,7 +139,7 @@
                 {
                     "name": "",
                     "id": "2bd12001-1973-4817-ae48-5052d24045b2",
-                    "path": "<Keyboard>/e",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -167,7 +167,7 @@
                 {
                     "name": "",
                     "id": "8763a04d-0d93-443c-8c16-ca6f47901d0a",
-                    "path": "<Keyboard>/e",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -200,6 +200,34 @@
                     "processors": "",
                     "groups": "",
                     "action": "FirePotInteraction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Structure",
+            "id": "f42d7c7e-ecbc-439e-a87c-54a5a1f5b973",
+            "actions": [
+                {
+                    "name": "Repair",
+                    "type": "Button",
+                    "id": "48d4d316-80a2-4fbe-a31c-f68ef9caa70b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "33e14a96-3e59-489b-b8f3-3bbefa16a396",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Repair",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

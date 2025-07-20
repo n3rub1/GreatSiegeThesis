@@ -211,7 +211,7 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
         healingDescription.text = "Select Soldier to Heal";
         SetResourcesInformation();
 
-        int currentDay = 1;
+        int currentDay = 1;  //to replace when i have the days scripts
         SetupInfirmarySlotsForDay(currentDay);
 
         infirmaryInjuredPanel.SetActive(true);

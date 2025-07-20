@@ -28,4 +28,5 @@ public class InfirmaryInteraction : MonoBehaviour
             InfirmaryUI.Instance.CloseInfirmaryPanel();
         }
     }
+
 }

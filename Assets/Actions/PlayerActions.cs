@@ -161,7 +161,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""2bd12001-1973-4817-ae48-5052d24045b2"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -189,7 +189,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""8763a04d-0d93-443c-8c16-ca6f47901d0a"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -226,6 +226,34 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Structure"",
+            ""id"": ""f42d7c7e-ecbc-439e-a87c-54a5a1f5b973"",
+            ""actions"": [
+                {
+                    ""name"": ""Repair"",
+                    ""type"": ""Button"",
+                    ""id"": ""48d4d316-80a2-4fbe-a31c-f68ef9caa70b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""33e14a96-3e59-489b-b8f3-3bbefa16a396"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Repair"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -246,6 +274,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         // Infirmary
         m_Infirmary = asset.FindActionMap("Infirmary", throwIfNotFound: true);
         m_Infirmary_FirePotInteraction = m_Infirmary.FindAction("FirePotInteraction", throwIfNotFound: true);
+        // Structure
+        m_Structure = asset.FindActionMap("Structure", throwIfNotFound: true);
+        m_Structure_Repair = m_Structure.FindAction("Repair", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -541,6 +572,52 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         }
     }
     public InfirmaryActions @Infirmary => new InfirmaryActions(this);
+
+    // Structure
+    private readonly InputActionMap m_Structure;
+    private List<IStructureActions> m_StructureActionsCallbackInterfaces = new List<IStructureActions>();
+    private readonly InputAction m_Structure_Repair;
+    public struct StructureActions
+    {
+        private @PlayerActions m_Wrapper;
+        public StructureActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Repair => m_Wrapper.m_Structure_Repair;
+        public InputActionMap Get() { return m_Wrapper.m_Structure; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(StructureActions set) { return set.Get(); }
+        public void AddCallbacks(IStructureActions instance)
+        {
+            if (instance == null || m_Wrapper.m_StructureActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_StructureActionsCallbackInterfaces.Add(instance);
+            @Repair.started += instance.OnRepair;
+            @Repair.performed += instance.OnRepair;
+            @Repair.canceled += instance.OnRepair;
+        }
+
+        private void UnregisterCallbacks(IStructureActions instance)
+        {
+            @Repair.started -= instance.OnRepair;
+            @Repair.performed -= instance.OnRepair;
+            @Repair.canceled -= instance.OnRepair;
+        }
+
+        public void RemoveCallbacks(IStructureActions instance)
+        {
+            if (m_Wrapper.m_StructureActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IStructureActions instance)
+        {
+            foreach (var item in m_Wrapper.m_StructureActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_StructureActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public StructureActions @Structure => new StructureActions(this);
     public interface IMovementActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -561,5 +638,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     public interface IInfirmaryActions
     {
         void OnFirePotInteraction(InputAction.CallbackContext context);
+    }
+    public interface IStructureActions
+    {
+        void OnRepair(InputAction.CallbackContext context);
     }
 }
