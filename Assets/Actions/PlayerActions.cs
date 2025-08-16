@@ -282,6 +282,34 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Quest"",
+            ""id"": ""db2e08db-eebc-4d02-8978-9e540f491f28"",
+            ""actions"": [
+                {
+                    ""name"": ""TakeQuest"",
+                    ""type"": ""Button"",
+                    ""id"": ""23d2fb28-001d-41e4-9120-7f28e7527ea9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""5f053f00-5db0-46e0-9ba3-0774c80a83d0"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TakeQuest"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -308,6 +336,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         // Cat
         m_Cat = asset.FindActionMap("Cat", throwIfNotFound: true);
         m_Cat_CollectClue = m_Cat.FindAction("CollectClue", throwIfNotFound: true);
+        // Quest
+        m_Quest = asset.FindActionMap("Quest", throwIfNotFound: true);
+        m_Quest_TakeQuest = m_Quest.FindAction("TakeQuest", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -695,6 +726,52 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         }
     }
     public CatActions @Cat => new CatActions(this);
+
+    // Quest
+    private readonly InputActionMap m_Quest;
+    private List<IQuestActions> m_QuestActionsCallbackInterfaces = new List<IQuestActions>();
+    private readonly InputAction m_Quest_TakeQuest;
+    public struct QuestActions
+    {
+        private @PlayerActions m_Wrapper;
+        public QuestActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @TakeQuest => m_Wrapper.m_Quest_TakeQuest;
+        public InputActionMap Get() { return m_Wrapper.m_Quest; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(QuestActions set) { return set.Get(); }
+        public void AddCallbacks(IQuestActions instance)
+        {
+            if (instance == null || m_Wrapper.m_QuestActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_QuestActionsCallbackInterfaces.Add(instance);
+            @TakeQuest.started += instance.OnTakeQuest;
+            @TakeQuest.performed += instance.OnTakeQuest;
+            @TakeQuest.canceled += instance.OnTakeQuest;
+        }
+
+        private void UnregisterCallbacks(IQuestActions instance)
+        {
+            @TakeQuest.started -= instance.OnTakeQuest;
+            @TakeQuest.performed -= instance.OnTakeQuest;
+            @TakeQuest.canceled -= instance.OnTakeQuest;
+        }
+
+        public void RemoveCallbacks(IQuestActions instance)
+        {
+            if (m_Wrapper.m_QuestActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IQuestActions instance)
+        {
+            foreach (var item in m_Wrapper.m_QuestActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_QuestActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public QuestActions @Quest => new QuestActions(this);
     public interface IMovementActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -723,5 +800,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     public interface ICatActions
     {
         void OnCollectClue(InputAction.CallbackContext context);
+    }
+    public interface IQuestActions
+    {
+        void OnTakeQuest(InputAction.CallbackContext context);
     }
 }

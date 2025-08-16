@@ -90,15 +90,6 @@ public class DayNightCycleManager : MonoBehaviour
             TriggerDayNightGlobalLight();
         }
 
-
-
-    }
-
-    private void UpdateDay()
-    {
-        dayNumberStart++;
-        dayNumber.text = $"Day: {dayNumberStart}";
-
     }
 
     private void TriggerDayNightGlobalLight()

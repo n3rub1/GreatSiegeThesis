@@ -8,11 +8,14 @@ public class CatInteraction : MonoBehaviour
     [Header("Config")]
     [SerializeField] private GameObject boxOnTopOfCatPrints;
     [SerializeField] private GameObject catCluePanel;
-    [SerializeField] private TextMeshProUGUI clueNumber;
-    [SerializeField] private TextMeshProUGUI clueDescription;
+    [SerializeField] private TextMeshProUGUI clueNumberTMP;
+    [SerializeField] private int clueNumber;
+    [SerializeField] private List<string> allCatCluesDescriptionTMP;
+    [SerializeField] private TextMeshProUGUI catClueDescription;
+    [SerializeField] private CatClueManager catClueManager;
 
     private CatUI catUI;
-
+    private bool interactionHappening = false;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -30,13 +33,26 @@ public class CatInteraction : MonoBehaviour
             CatUI.Instance.catInteraction = null;
             boxOnTopOfCatPrints.SetActive(false);
             catCluePanel.SetActive(false);
+
+            if (interactionHappening)
+            {
+                Destroy(gameObject);
+            }
+
         }
     }
 
     public void OpenCatPanel()
     {
-        catCluePanel.SetActive(true);
-        clueNumber.text = "Clue #1";
-        clueDescription.text = "This is a description of the clue you have just found";
+        if (!interactionHappening)
+        {
+            clueNumber = catClueManager.getCatClueNumber();
+            catCluePanel.SetActive(true);
+            clueNumberTMP.text = $"Clue #{clueNumber + 1}";
+            catClueDescription.text = allCatCluesDescriptionTMP[clueNumber];
+            catClueManager.setCatClueNumber();
+            interactionHappening = true;
+        }
+
     }
 }

@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889faa658c7b2c94ea4fff939bf8022e, type: 3}
+  m_Name: DialogNPCFort
+  m_EditorClassIdentifier: 
+  Name: Patrick
+  Icon: {fileID: 21300000, guid: 476dcbb4e8e921a45ad3f22ee23e4f0c, type: 3}
+  HasInteraction: 0
+  interactionType: 0
+  Greeting: Patrick looks worried...
+  Day1Dialog:
+  - This is day 1, and will be divided in to two sections
+  - This is the second section of day 1
+  Day2FirstTimeDialog:
+  - "This is day 2 and we have never met before\t"
+  - but its still divided into two sections
+  Day2MetBeforeDialog:
+  - This is day 2 and we have already met before
+  - This is the second section of the dialog of day 2
+  Day3FirstTimeDialog:
+  - Day 3 Talking for the first time  Armourer
+  Day3MetBeforeDialog:
+  - Day 3 Already Met Before  Armourer
+  Day4FirstTimeDialog:
+  - Day 4Talking for the first time  Armourer
+  Day4MetBeforeDialog:
+  - Day 4 Already Met Before  Armourer
+  Day5FirstTimeDialog:
+  - Day 5 Talking for the first time  Armourer
+  Day5MetBeforeDialog:
+  - Day 5 Already Met Before  Armourer
+  dayNumber: 1
+  metOnday1: 0
+  metOnday2: 0
+  metOnday3: 0
+  metOnday4: 0
+  metOnday5: 0

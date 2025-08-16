@@ -251,8 +251,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxOnTopOfCatPrints: {fileID: 518793958095061844}
   catCluePanel: {fileID: 0}
-  clueNumber: {fileID: 0}
-  clueDescription: {fileID: 0}
+  clueNumberTMP: {fileID: 0}
+  clueNumber: 0
+  allCatCluesDescriptionTMP:
+  - This is the first clue
+  - This is the second clue
+  - This is the third clue
+  - This is the fourth clue
+  - This is the fifth clue
+  catClueDescription: {fileID: 0}
+  catClueManager: {fileID: 0}
 --- !u!1 &7271944816224095282
 GameObject:
   m_ObjectHideFlags: 0

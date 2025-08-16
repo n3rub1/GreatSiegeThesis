@@ -260,6 +260,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Quest",
+            "id": "db2e08db-eebc-4d02-8978-9e540f491f28",
+            "actions": [
+                {
+                    "name": "TakeQuest",
+                    "type": "Button",
+                    "id": "23d2fb28-001d-41e4-9120-7f28e7527ea9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5f053f00-5db0-46e0-9ba3-0774c80a83d0",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TakeQuest",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
