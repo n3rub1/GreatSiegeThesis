@@ -35,8 +35,10 @@ public class RandomQuestSelector : MonoBehaviour
 
         foreach (int index in whichSpawn)
         {
+            Debug.Log(index);
             if (index >= 0 && index < catClues.Count)
             {
+                Debug.Log("Setting active");
                 catClues[index].SetActive(true);
             }
         }
@@ -48,6 +50,7 @@ public class RandomQuestSelector : MonoBehaviour
 
         foreach (int index in whichSpawn)
         {
+
             if (index >= 0 && index < debris.Count)
             {
                 debris[index].SetActive(true);
@@ -65,7 +68,12 @@ public class RandomQuestSelector : MonoBehaviour
 
             if (random < 50)
             {
-                generation.Add(random);
+                generation.Add(i);
+                Debug.Log("ok");
+            }
+            else
+            {
+                Debug.Log("less");
             }
         }
 

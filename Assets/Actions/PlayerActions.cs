@@ -122,7 +122,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""284a4cef-c752-4ba0-9d0b-57ca6f8068b0"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -133,7 +133,7 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""9e8372ef-b5a2-48de-ac95-b44b13126870"",
-                    ""path"": ""<Keyboard>/enter"",
+                    ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -310,6 +310,34 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Sleep"",
+            ""id"": ""b6147f7d-4212-4bba-9374-cf542a2ea6ad"",
+            ""actions"": [
+                {
+                    ""name"": ""SleepToEndDay"",
+                    ""type"": ""Button"",
+                    ""id"": ""4b98cd7d-275f-4967-b024-33d468050a78"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""4cb157ea-31b6-49a7-9efa-767ca7c0de4d"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SleepToEndDay"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -339,6 +367,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         // Quest
         m_Quest = asset.FindActionMap("Quest", throwIfNotFound: true);
         m_Quest_TakeQuest = m_Quest.FindAction("TakeQuest", throwIfNotFound: true);
+        // Sleep
+        m_Sleep = asset.FindActionMap("Sleep", throwIfNotFound: true);
+        m_Sleep_SleepToEndDay = m_Sleep.FindAction("SleepToEndDay", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -772,6 +803,52 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
         }
     }
     public QuestActions @Quest => new QuestActions(this);
+
+    // Sleep
+    private readonly InputActionMap m_Sleep;
+    private List<ISleepActions> m_SleepActionsCallbackInterfaces = new List<ISleepActions>();
+    private readonly InputAction m_Sleep_SleepToEndDay;
+    public struct SleepActions
+    {
+        private @PlayerActions m_Wrapper;
+        public SleepActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @SleepToEndDay => m_Wrapper.m_Sleep_SleepToEndDay;
+        public InputActionMap Get() { return m_Wrapper.m_Sleep; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(SleepActions set) { return set.Get(); }
+        public void AddCallbacks(ISleepActions instance)
+        {
+            if (instance == null || m_Wrapper.m_SleepActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_SleepActionsCallbackInterfaces.Add(instance);
+            @SleepToEndDay.started += instance.OnSleepToEndDay;
+            @SleepToEndDay.performed += instance.OnSleepToEndDay;
+            @SleepToEndDay.canceled += instance.OnSleepToEndDay;
+        }
+
+        private void UnregisterCallbacks(ISleepActions instance)
+        {
+            @SleepToEndDay.started -= instance.OnSleepToEndDay;
+            @SleepToEndDay.performed -= instance.OnSleepToEndDay;
+            @SleepToEndDay.canceled -= instance.OnSleepToEndDay;
+        }
+
+        public void RemoveCallbacks(ISleepActions instance)
+        {
+            if (m_Wrapper.m_SleepActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ISleepActions instance)
+        {
+            foreach (var item in m_Wrapper.m_SleepActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_SleepActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public SleepActions @Sleep => new SleepActions(this);
     public interface IMovementActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -804,5 +881,9 @@ public partial class @PlayerActions: IInputActionCollection2, IDisposable
     public interface IQuestActions
     {
         void OnTakeQuest(InputAction.CallbackContext context);
+    }
+    public interface ISleepActions
+    {
+        void OnSleepToEndDay(InputAction.CallbackContext context);
     }
 }

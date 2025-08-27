@@ -41,7 +41,7 @@ public class DialogManager : Singleton<DialogManager>
 
     private void LoadDialogFromNPC()
     {
-        int currentDay = gameManager.dayNumber;
+        int currentDay = gameManager.getDayNumber();
         npcSelected.DialogToShow.dayNumber = currentDay;
 
         if (npcSelected.DialogToShow.Day1Dialog.Length <= 0 || 

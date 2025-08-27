@@ -100,7 +100,7 @@
                 {
                     "name": "",
                     "id": "284a4cef-c752-4ba0-9d0b-57ca6f8068b0",
-                    "path": "<Keyboard>/e",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -111,7 +111,7 @@
                 {
                     "name": "",
                     "id": "9e8372ef-b5a2-48de-ac95-b44b13126870",
-                    "path": "<Keyboard>/enter",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -284,6 +284,34 @@
                     "processors": "",
                     "groups": "",
                     "action": "TakeQuest",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Sleep",
+            "id": "b6147f7d-4212-4bba-9374-cf542a2ea6ad",
+            "actions": [
+                {
+                    "name": "SleepToEndDay",
+                    "type": "Button",
+                    "id": "4b98cd7d-275f-4967-b024-33d468050a78",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4cb157ea-31b6-49a7-9efa-767ca7c0de4d",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SleepToEndDay",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

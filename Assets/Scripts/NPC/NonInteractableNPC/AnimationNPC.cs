@@ -10,18 +10,24 @@ public class AnimationNPC : MonoBehaviour
 
     private Animator animator;
 
-    void Start()
+    void OnEnable()
+    {
+
+        Initialize();
+    }
+
+    void Initialize()
     {
         animator = GetComponent<Animator>();
         if (faceRight)
         {
             animator.SetBool("FaceRight", faceRight);
-        }else if (faceLeft)
+        }
+        else if (faceLeft)
         {
             animator.SetBool("FaceLeft", faceLeft);
         }
-        
-            animator.Play(animationName);
 
+        animator.Play(animationName);
     }
 }

@@ -10,8 +10,8 @@ public class StructureInteraction : MonoBehaviour
     [SerializeField] private GameObject boxOnTopOfRepairableItemTimer;
     [SerializeField] private TextMeshProUGUI repairableItemTimerTMP;
     [SerializeField] private int timer = 5;
+    [SerializeField] private StructureUI structureUI;
 
-    private StructureUI structureUI;
     private Coroutine repairCoroutine;
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -60,15 +60,25 @@ public class StructureInteraction : MonoBehaviour
 
         while (elapsedTime < timer)
         {
-            Debug.Log(elapsedTime);
             elapsedTime += Time.deltaTime;
             boxOnTopOfRepairableItemTimer.SetActive(true);
             repairableItemTimerTMP.text = Mathf.FloorToInt(elapsedTime).ToString() + $"/{timer}";
             yield return null;
         }
-
+        StructureUI.Instance.structureInteraction = null;
         Destroy(gameObject);
 
+    }
+
+private void OnDestroy()
+{
+        Debug.Log("here");
+
+        if (StructureUI.Instance.structureInteraction == this)
+   {
+            Debug.Log("here");
+        StructureUI.Instance.structureInteraction = null;
+   }
     }
 
 }

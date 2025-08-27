@@ -12,7 +12,7 @@ public class CatInteraction : MonoBehaviour
     [SerializeField] private int clueNumber;
     [SerializeField] private List<string> allCatCluesDescriptionTMP;
     [SerializeField] private TextMeshProUGUI catClueDescription;
-    [SerializeField] private CatClueManager catClueManager;
+    [SerializeField] private CatUI catClueManager;
 
     private CatUI catUI;
     private bool interactionHappening = false;

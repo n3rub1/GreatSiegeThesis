@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public enum QuestType { Armoury, Infirmary, Cat, Structure }
     [SerializeField] GameObject armouryTeleport;
     [SerializeField] GameObject infirmaryTeleport;
+    [SerializeField] RandomQuestSelector randomQuestSelector;
+    [SerializeField] EndOfDayManager endOfDayManager;
 
 
     [Header("Day Game Manager")]
@@ -32,11 +34,14 @@ public class GameManager : MonoBehaviour
     {
         armouryTeleport.SetActive(false);
         infirmaryTeleport.SetActive(false);
+
     }
 
     public void sleepAndUpdateDay()
     {
+        endOfDayManager.ShowPanelAndText(dayNumber);
         dayNumber += 1;
+        UpdateDayText();
     }
 
     public int getDayNumber()
@@ -53,16 +58,22 @@ public class GameManager : MonoBehaviour
             case "Armoury":
                 armouryTeleport.SetActive(true);
                 infirmaryTeleport.SetActive(false);
+                randomQuestSelector.SpawnLootBoxes();
                 break;
             case "Infirmary":
                 infirmaryTeleport.SetActive(true);
                 armouryTeleport.SetActive(false);
+                randomQuestSelector.SpawnLootBoxes();
                 break;
             case "Cat":
                 questAccepted = QuestType.Cat.ToString();
+                randomQuestSelector.SpawnLootBoxes();
+                randomQuestSelector.SpawnCatClues();
                 break;
             case "Structure":
                 questAccepted = QuestType.Structure.ToString();
+                randomQuestSelector.SpawnLootBoxes();
+                randomQuestSelector.SpawnDebris();
                 break;
         }
 
@@ -99,4 +110,5 @@ public class GameManager : MonoBehaviour
     {
         dayNumberTMP.text = $"Day: {getDayNumber()}";
     }
+
 }

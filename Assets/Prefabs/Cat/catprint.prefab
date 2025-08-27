@@ -113,7 +113,6 @@ GameObject:
   - component: {fileID: 5552503992916265481}
   - component: {fileID: 7220272967911395018}
   - component: {fileID: 158044887151682286}
-  - component: {fileID: 6584801455666902944}
   - component: {fileID: 2663477489672085061}
   m_Layer: 0
   m_Name: catprint
@@ -225,18 +224,6 @@ CircleCollider2D:
   m_Offset: {x: -0.066389084, y: 0}
   serializedVersion: 2
   m_Radius: 1.0237389
---- !u!114 &6584801455666902944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5207398499838913156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c80f1b7869689c54d9516c2da0cc4888, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2663477489672085061
 MonoBehaviour:
   m_ObjectHideFlags: 0

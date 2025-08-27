@@ -7,6 +7,7 @@ public class CatUI : Singleton<CatUI>
 
     private PlayerActions actions;
     public CatInteraction catInteraction { get; set; }
+    private int catClueNumber = 0;
 
     protected override void Awake()
     {
@@ -17,6 +18,16 @@ public class CatUI : Singleton<CatUI>
     void Start()
     {
         actions.Cat.CollectClue.performed += ctx => CatClue();
+    }
+
+    public int getCatClueNumber()
+    {
+        return catClueNumber;
+    }
+
+    public void setCatClueNumber()
+    {
+        catClueNumber++;
     }
 
     private void OnEnable()
@@ -34,5 +45,6 @@ public class CatUI : Singleton<CatUI>
         if (catInteraction == null) return;
         catInteraction.OpenCatPanel();
     }
+
 
 }
