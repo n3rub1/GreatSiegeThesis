@@ -11,7 +11,8 @@ public class EndOfDayManager : MonoBehaviour
     [SerializeField] private List<string> endOfDayDescriptionInfirmary;
     [SerializeField] private List<string> endOfDayDescriptionStructure;
     [SerializeField] private List<string> endOfDayDescriptionCat;
-
+    [SerializeField] private float timeForPanelToDisappear;
+    [SerializeField] private SleepManager sleepManager;
 
     [SerializeField] private TextMeshProUGUI endOfDayDescriptionTMP;
     [SerializeField] private TextMeshProUGUI endOfDayNumber;
@@ -21,6 +22,7 @@ public class EndOfDayManager : MonoBehaviour
 
     public void ShowPanelAndText(int dayNumber)
     {
+        sleepManager.isSleeping = true;
         UpdateTextAccordingToPlayerActions(dayNumber);
         endOfDayNumber.text = $"Day {dayNumber}";
         StartCoroutine(ShowAndHidePanel());
@@ -56,9 +58,10 @@ public class EndOfDayManager : MonoBehaviour
     IEnumerator ShowAndHidePanel()
     {
         endOfDayPanel.SetActive(true);
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(timeForPanelToDisappear);
         endOfDayPanel.SetActive(false);
         dayNightCycleManager.ResetTime();
+        sleepManager.isSleeping = false;
     }
 
 }

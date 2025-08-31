@@ -7,6 +7,7 @@ public class SleepManager : Singleton<SleepManager>
 
     private bool isPlayerInRangeOfBed = false;
     public SleepInteraction sleepInteraction { get; set; }
+    public bool isSleeping = false;
 
 
     [Header("Config")]
@@ -27,7 +28,7 @@ public class SleepManager : Singleton<SleepManager>
 
     private void SleepToEndDay()
     {
-        if (isPlayerInRangeOfBed)
+        if (isPlayerInRangeOfBed && !isSleeping)
         {
             gameManager.sleepAndUpdateDay();
             QuestUI.Instance.ResetQuests();

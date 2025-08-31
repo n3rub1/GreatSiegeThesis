@@ -24,7 +24,7 @@ public class SleepInteraction : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            LootManager.Instance.lootSelected = null;
+            SleepManager.Instance.sleepInteraction = null;
             boxOnTopOfBed.SetActive(false);
             sleepManager.SetPlayerInRange(false);
         }
