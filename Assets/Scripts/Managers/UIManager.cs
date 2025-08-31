@@ -6,9 +6,12 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
+
+    [Header("Config")]
+    [SerializeField] private GameManager gameManager;
+
     [Header ("Stats")]
     [SerializeField] private PlayerStats stats;
-    [SerializeField] private GameManager gameManager;
 
     [Header("Bars")]
     //[SerializeField] private Image healthBar;
@@ -25,7 +28,35 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI xpSuppliesTMP;
     [SerializeField] private TextMeshProUGUI xpArmourTMP;
     [SerializeField] private TextMeshProUGUI xpMedicineTMP;
-    [SerializeField] private TextMeshProUGUI dayNumber;
+    [SerializeField] private TextMeshProUGUI timeOfDayTMP;
+
+    [Header("Level Up")]
+    [SerializeField] private TextMeshProUGUI LevelUpTMP;
+    [SerializeField] private GameObject LevelUp;
+
+    private string[] suppliesTexts = new string[]
+{
+        "Your instincts sharpen — you now scavenge with precision, uncovering more vital supplies.",
+        "Your eyes grow keen — hidden caches reveal themselves to your searching hands.",
+        "Your senses awaken — every search yields more essential resources.",
+        "Your resourcefulness flourishes — scavenging now brings forth treasures from the overlooked."
+};
+
+    private string[] armouryTexts = new string[]
+    {
+        "Your craftsmanship ascends — every strike of the hammer wastes less iron, forging and repairing weapons with greater efficiency.",
+        "Your mastery grows — weapons are forged sturdier, faster, and with fewer resources.",
+        "Your hands steady — the armoury now thrives under your skilled touch.",
+        "Your forge sings — iron bends willingly, creating stronger tools of war."
+    };
+
+    private string[] medicineTexts = new string[]
+    {
+        "Your healer’s eye awakens — you discern wounds with clarity, restoring soldiers with greater care.",
+        "Your touch steadies — the injured recover faster under your guidance.",
+        "Your knowledge deepens — wounds that once doomed men now mend beneath your skill.",
+        "Your gift blossoms — each life you tend endures with greater strength."
+    };
 
     private void Start()
     {
@@ -49,5 +80,47 @@ public class UIManager : MonoBehaviour
         xpSuppliesTMP.text = $"XP Supplies {stats.CurrentXPSupplies} / {stats.NextLevelXPSupplies} -- Level {stats.SuppliesLevel}";
         xpArmourTMP.text = $"XP Armoury {stats.CurrentXPArmour} / {stats.NextLevelXPArmour} -- Level {stats.ArmourLevel}";
         xpMedicineTMP.text = $"XP Medicine {stats.CurrentXPMedicine} / {stats.NextLevelXPMedicine} -- Level {stats.MedicineLevel}";
+    }
+
+    public void UpdateTime(int timeOfDay)
+    {
+        if (timeOfDay >= 22)
+        {
+            timeOfDayTMP.color = new Color(255, 0, 0);
+            timeOfDayTMP.text = "It's late.  Get some sleep";
+        }
+        else
+        {
+            timeOfDayTMP.color = new Color(0, 0, 0);
+            timeOfDayTMP.text = $"Time: {timeOfDay}:00";
+        }
+    }
+
+    public void ShowLevelUp(string whichType)
+    {
+
+        string chosenText = "";
+
+        if (whichType == "Supplies")
+        {
+            chosenText = suppliesTexts[Random.Range(0, suppliesTexts.Length)];
+
+        }
+        else if (whichType == "Armoury")
+        {
+            chosenText = armouryTexts[Random.Range(0, armouryTexts.Length)];
+        }
+        else if (whichType == "Medicine")
+        {
+            chosenText = medicineTexts[Random.Range(0, medicineTexts.Length)];
+        }
+
+        LevelUpTMP.text = chosenText;
+        LevelUp.SetActive(true);
+    }
+
+    public void HideLevelUp()
+    {
+        LevelUp.SetActive(false);
     }
 }

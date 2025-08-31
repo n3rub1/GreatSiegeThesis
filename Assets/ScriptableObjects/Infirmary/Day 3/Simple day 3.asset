@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8884055e91295f4898eff348e8125dc, type: 3}
+  m_Name: Simple day 3
+  m_EditorClassIdentifier: 
+  ID: MalteseSoldier2
+  Name: "Andr\xE9"
+  Icon: {fileID: 409668665, guid: 4147f2bc6fccc974f937adc9cd1a5700, type: 3}
+  Description: "Wound: Cannonball crushed his leg above the knee \u2014 dangling
+    flesh and splintered bone remain.\n\nStory: Andr\xE9, a young page barely sixteen,
+    grips your arm with surprising strength despite his pallor. His first battle
+    has left him mutilated before he even learned to shave. He sobs that his mother
+    gave him a wooden cross to keep him safe \u2014 now it lies splintered in the
+    mud beside what remains of his leg.\n\n\nRequired bandages to heal: 2"
+  slotNumber: 2
+  requiredResource: Bandage
+  requiredAmount: 2

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8884055e91295f4898eff348e8125dc, type: 3}
+  m_Name: Complex day 5
+  m_EditorClassIdentifier: 
+  ID: Knight2
+  Name: Tommaso
+  Icon: {fileID: 1208347981, guid: b2407ce4cf73ad348aec15ba9990f7a1, type: 3}
+  Description: "Wound: Arrow through the neck, choking on blood with every rattling
+    breath.\n\nStory: Brother Tommaso, an aged monk who carried water to the thirsty,
+    grips your wrist with surprising strength. His voice is a wet gargle, but you
+    hear him insist that all he wanted was to serve God until peace came. Blood fills
+    his throat before he can finish the prayer \u2014 his lips still moving silently
+    as his grip fades.\n\n\nRequired bandages to heal: 5"
+  slotNumber: 0
+  requiredResource: Bandage
+  requiredAmount: 5

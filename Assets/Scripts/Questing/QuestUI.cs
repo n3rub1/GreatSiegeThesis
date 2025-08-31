@@ -34,6 +34,7 @@ public class QuestUI : Singleton<QuestUI>
     {
         startPosition = questMarker.transform.localPosition;
         originalPosition = questMarker.transform.localPosition;
+        ResetQuests();
         actions.Quest.TakeQuest.performed += ctx => OpenQuestPanel();
     }
 
@@ -68,7 +69,7 @@ public class QuestUI : Singleton<QuestUI>
 
     private void OpenQuestPanel()
     {
-        if (questInteraction == null || gameManager.GetQuestAccepted() != "") return;
+        if (questInteraction == null || gameManager.GetQuestAccepted() != "Reset") return;
         questPanel.SetActive(true);
     }
 
@@ -102,6 +103,12 @@ public class QuestUI : Singleton<QuestUI>
         gameManager.SetQuestAccepted("Structure");
         CloseQuestPanel();
         RemoveQuestMarker();
+    }
+
+    public void ResetQuests()
+    {
+        questMarker.SetActive(true);
+        gameManager.SetQuestAccepted("Reset");
     }
 
 

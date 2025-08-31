@@ -27,7 +27,11 @@ public class SleepManager : Singleton<SleepManager>
 
     private void SleepToEndDay()
     {
-        if (isPlayerInRangeOfBed) gameManager.sleepAndUpdateDay();
+        if (isPlayerInRangeOfBed)
+        {
+            gameManager.sleepAndUpdateDay();
+            QuestUI.Instance.ResetQuests();
+        }
     }
 
     private void OnEnable()

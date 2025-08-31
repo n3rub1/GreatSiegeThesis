@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8884055e91295f4898eff348e8125dc, type: 3}
+  m_Name: Normal day 4
+  m_EditorClassIdentifier: 
+  ID: MenAtArms
+  Name: Mustafa
+  Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
+  Description: "Wound: Deep cut across the stomach from a scimitar, bleeding uncontrollably.\n\nStory:
+    Mustafa, a deserter from the Ottoman lines, presses trembling fingers to his
+    spilling entrails. He prays in Turkish under his breath, not knowing if God listens
+    to a traitor. His eyes search yours in desperation \u2014 if neither side remembers
+    him, was there ever a man called Mustafa at all?\n\n\nRequired bandages to heal:
+    3"
+  slotNumber: 1
+  requiredResource: Bandage
+  requiredAmount: 3

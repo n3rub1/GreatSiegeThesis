@@ -10,6 +10,7 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
     [Header("Config")]
     [SerializeField] private Inventory inventory;
     [SerializeField] private PlayerXP playerXP;
+    [SerializeField] private GameManager gameManager;
 
     [Header("Description Panel")]
     [SerializeField] private GameObject descriptionPanel;
@@ -28,6 +29,9 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
     [SerializeField] private List<InfirmaryItem> day1Injured;
     [SerializeField] private List<InfirmaryItem> day2Injured;
     [SerializeField] private List<InfirmaryItem> day3Injured;
+    [SerializeField] private List<InfirmaryItem> day4Injured;
+    [SerializeField] private List<InfirmaryItem> day5Injured;
+
 
 
     public InfirmaryInteraction infirmaryInteraction { get; set; }
@@ -42,6 +46,7 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
     {
         base.Awake();
         actions = new PlayerActions();
+        SetupInfirmarySlotsForDay(gameManager.getDayNumber());
     }
 
     private void Start()
@@ -51,6 +56,14 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
 
     public void SetupInfirmarySlotsForDay(int day)
     {
+
+        for (int i = 0; i < infirmarySlotsImages.Count; i++)
+        {
+            infirmarySlotsImages[i].GetComponent<Image>().sprite = null;
+            infirmarySlotsImages[i].GetComponent<Button>().interactable = false;
+        }
+
+
         List<InfirmaryItem> currentDayItems = null;
 
         switch (day)
@@ -64,24 +77,59 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
             case 3:
                 currentDayItems = day3Injured;
                 break;
+            case 4:
+                currentDayItems = day4Injured;
+                break;
+            case 5:
+                currentDayItems = day5Injured;
+                break;
             default:
                 Debug.LogWarning("No infirmary items set for this day.");
                 return;
         }
 
-        infirmaryInjured = currentDayItems;
+        infirmaryInjured = new List<InfirmaryItem>(currentDayItems);
 
-        Debug.Log(infirmaryInjured);
-        Debug.Log(infirmaryInjured[0]);
-        Debug.Log(infirmaryInjured[1]);
-        Debug.Log(infirmaryInjured[2]);
-
-        for(int i=0; i<infirmaryInjured.Count; i++)
+        foreach (var injured in infirmaryInjured)
         {
+            if (injured.slotNumber < infirmarySlotsImages.Count)
+            {
+                var slotGO = infirmarySlotsImages[injured.slotNumber];
+                var slotImage = slotGO.GetComponent<Image>();
 
-            infirmarySlotsImages[i].GetComponent<Image>().sprite = infirmaryInjured[i].Icon;
+                // Set the icon
+                slotImage.sprite = injured.Icon;
 
+                // Reset the color in case it was grayed out from previous day
+                slotImage.color = Color.white;
+
+                // Make button interactable
+                slotGO.GetComponent<Button>().interactable = true;
+            }
+            else
+            {
+                Debug.LogWarning($"Slot number {injured.slotNumber} is out of range for infirmary slots.");
+            }
+
+            //if (injured.slotNumber < infirmarySlotsImages.Count)
+            //{
+            //    Image slotImage = infirmarySlotsImages[injured.slotNumber].GetComponent<Image>();
+            //    slotImage.sprite = injured.Icon;
+            //}
+            //else
+            //{
+            //    Debug.LogWarning($"Slot number {injured.slotNumber} is out of range for infirmary slots.");
+            //}
         }
+
+
+        //for(int i=0; i<infirmaryInjured.Count; i++)
+        //{
+
+        //    infirmarySlotsImages[i].GetComponent<Image>().sprite = infirmaryInjured[i].Icon;
+
+        //}
+
 
         //for (int i = 0; i < infirmarySlots.Count; i++)
         //{
@@ -97,7 +145,9 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
 
     public void ShowItemDetails(int slotNumber)
     {
-        InfirmaryItem item = infirmaryInjured[slotNumber];
+        //InfirmaryItem item = infirmaryInjured[slotNumber];
+
+        InfirmaryItem item = infirmaryInjured.Find(i => i.slotNumber == slotNumber);
 
         if (item != null)
         {
@@ -117,7 +167,7 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
     {
         int[] levels = playerXP.GetLevels();
 
-        if (ArmourySlot.CurrentlySelectedSlot == null)
+        if (InfirmarySlot.CurrentlySelectedSlot == null)
         {
             healingDescription.text = "Select Person to Heal";
             return;
@@ -157,7 +207,7 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
         }
 
         SetResourcesInformation();
-        healingDescription.text = $"Healed a {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.ID} using {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.requiredAmount} {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.requiredResource}";
+        healingDescription.text = $"Healed {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.Name} using {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.requiredAmount} {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.requiredResource}";
         GiveInfirmaryXP(InfirmarySlot.CurrentlySelectedSlot.AssignedItem.slotNumber, levels);
     }
 
@@ -181,6 +231,21 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
             case 2:
                 playerXP.AddXPMedicine(10 + levels[infirmaryArrayValue]);
                 break;
+        }
+
+        InfirmaryItem healedItem = InfirmarySlot.CurrentlySelectedSlot.AssignedItem;
+        if (healedItem != null)
+        {
+            infirmaryInjured.Remove(healedItem);
+
+            // Clear the UI slot image
+            infirmarySlotsImages[healedItem.slotNumber].GetComponent<Image>().sprite = null;
+
+            // Optionally disable the button so it can’t be clicked again
+            infirmarySlotsImages[healedItem.slotNumber].GetComponent<Button>().interactable = false;
+
+            // Hide description if it was showing
+            descriptionPanel.SetActive(false);
         }
 
     }
@@ -211,7 +276,7 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
         healingDescription.text = "Select Soldier to Heal";
         SetResourcesInformation();
 
-        int currentDay = 1;  //to replace when i have the days scripts
+        int currentDay = gameManager.getDayNumber();
         SetupInfirmarySlotsForDay(currentDay);
 
         infirmaryInjuredPanel.SetActive(true);

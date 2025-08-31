@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8884055e91295f4898eff348e8125dc, type: 3}
+  m_Name: Complex day 4
+  m_EditorClassIdentifier: 
+  ID: Knight2
+  Name: Antonio
+  Icon: {fileID: 1208347981, guid: b2407ce4cf73ad348aec15ba9990f7a1, type: 3}
+  Description: 'Wound: Left arm severed at the shoulder, blood pouring freely.
+
+
+    Story:
+    Antonio, a Genoese sailor, wails not for himself but for his little sister back
+    home. Their parents died of plague, and he was all she had left. He sobs that
+    she will have no protector now, only hunger and the pity of neighbors who will
+    forget her as easily as they forget him.
+
+
+
+    Required bandages to heal: 5'
+  slotNumber: 0
+  requiredResource: Bandage
+  requiredAmount: 5

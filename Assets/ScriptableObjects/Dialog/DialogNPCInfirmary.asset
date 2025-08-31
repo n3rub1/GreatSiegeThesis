@@ -12,33 +12,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889faa658c7b2c94ea4fff939bf8022e, type: 3}
   m_Name: DialogNPCInfirmary
   m_EditorClassIdentifier: 
-  Name: Stephen
-  Icon: {fileID: 21300000, guid: 06eaeab3d897712428ce8a26b403a4a7, type: 3}
+  Name: Stefano
+  Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
   HasInteraction: 0
   interactionType: 1
   Greeting: Hey...
   Day1Dialog:
-  - This is the dialog of day 1, there is nothing here
+  - Day 1 - Not met 1/2
+  - Day 1 - Not met 2/2
   Day2FirstTimeDialog:
-  - This is the first time we are meeting.
-  - Because on day 1 you have met the armourer
+  - Day 2 - Not met 1/2
+  - Day 2 - Not met 2/2
   Day2MetBeforeDialog:
-  - This there is also nothing because its not something i want to show and record
+  - Day 2 - Met 1/2
+  - Day 2 - Met 2/2
   Day3FirstTimeDialog:
-  - Day 3 Talking for the first time  Infirmary
+  - Day 3 - Not met 1/2
+  - Day 3 - Not met 2/2
   Day3MetBeforeDialog:
-  - Day 3 Already Met Before  Infirmary
+  - Day 3 - Met 1/2
+  - Day 3 - Met 2/2
   Day4FirstTimeDialog:
-  - Day 4Talking for the first time  Infirmary
+  - Day 4 - Not met 1/2
+  - Day 4 - Not met 2/2
   Day4MetBeforeDialog:
-  - Day 4 Already Met Before  Infirmary
+  - Day 4 - met 1/2
+  - Day 4 - met 2/2
   Day5FirstTimeDialog:
-  - Day 5 Talking for the first time  Infirmary
+  - Day 5 - Not met 1/2
+  - Day 5 - Not met 2/2
   Day5MetBeforeDialog:
-  - Day 5 Already Met Before  Infirmary
-  dayNumber: 2
+  - Day 5 - met 1/2
+  - Day 5 - met 2/2
+  dayNumber: 1
   metOnday1: 0
-  metOnday2: 1
+  metOnday2: 0
   metOnday3: 0
   metOnday4: 0
   metOnday5: 0

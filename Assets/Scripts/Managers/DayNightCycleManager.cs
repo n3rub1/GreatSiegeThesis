@@ -14,6 +14,8 @@ public class DayNightCycleManager : MonoBehaviour
     [SerializeField] private int dayNumberStart = 1;
     [SerializeField] private Light2D globalLight;
     [SerializeField] private int hourStartIndexLight = 8;
+    [SerializeField] private UIManager uiManager;
+    [SerializeField] private GameManager gameManager;
 
     private Color[] hourlyColors = new Color[]
     {
@@ -79,17 +81,15 @@ public class DayNightCycleManager : MonoBehaviour
         if(timeOfDay >= 22)
         {
             timeOfDay = 22;
-            timeOfDayTMP.color = new Color(255, 0, 0);
-            timeOfDayTMP.text = "It's late.  Get some sleep";
+            uiManager.UpdateTime(timeOfDay);
+            gameManager.SetQuestAccepted("SleepTime");
         }
         else
         {
+            uiManager.UpdateTime(timeOfDay);
             timeOfDay++;
-            timeOfDayTMP.color = new Color(0, 0, 0);
-            timeOfDayTMP.text = $"Time: {timeOfDay}:00";
             TriggerDayNightGlobalLight();
         }
-
     }
 
     private void TriggerDayNightGlobalLight()
@@ -103,4 +103,13 @@ public class DayNightCycleManager : MonoBehaviour
         hourStartIndexLight++;
     }
 
+    public void ResetTime()
+    {
+        timeOfDay = 7;
+        TriggerTimer();
+        hourStartIndexLight = 8;
+        currentColor = hourlyColors[8];
+        targetColor = hourlyColors[9];
+        gameManager.SetQuestAccepted("Reset");
+    }
 }

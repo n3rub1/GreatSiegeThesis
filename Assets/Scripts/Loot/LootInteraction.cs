@@ -56,6 +56,12 @@ public class LootInteraction : MonoBehaviour
         }
 
         lootInformation.transform.position = endPos;
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        gameObject.SetActive(false);
+
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(false);
+        }
     }
 }

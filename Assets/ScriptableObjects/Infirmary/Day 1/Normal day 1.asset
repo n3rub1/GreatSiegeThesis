@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8884055e91295f4898eff348e8125dc, type: 3}
+  m_Name: Normal day 1
+  m_EditorClassIdentifier: 
+  ID: MenAtArms
+  Name: Anselm
+  Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
+  Description: 'Wound: A jagged gash across the scalp from a falling stone, skull
+    cracked, eyes fluttering.
+
+
+    Story: Brother Anselm, a Hospitaller scribe no
+    older than twenty, never trained for war. His hands, ink-stained and trembling,
+    clutch at nothing as he mutters half-remembered prayers. Blood fills his mouth
+    as he whispers that he only wanted to preserve holy texts, not die with a sword
+    overhead.
+
+
+
+    Required bandages to heal: 3'
+  slotNumber: 1
+  requiredResource: Bandage
+  requiredAmount: 3

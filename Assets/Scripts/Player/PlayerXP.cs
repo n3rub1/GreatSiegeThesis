@@ -6,6 +6,8 @@ public class PlayerXP : MonoBehaviour
 {
     [Header("Config")]
     [SerializeField] private PlayerStats stats;
+    [SerializeField] private UIManager uiManager;
+    [SerializeField] private float timeOfXPPanel = 5f;
 
     private void Update()
     {
@@ -59,33 +61,54 @@ public class PlayerXP : MonoBehaviour
     {
         stats.SuppliesLevel++;
 
+        uiManager.ShowLevelUp("Supplies");
+
         float currentXPRequired = stats.NextLevelXPSupplies;
         float newNextLevelXP = Mathf.Round(currentXPRequired + stats.NextLevelXPSupplies * (stats.XPMultiplierSupplies / 100));
         stats.NextLevelXPSupplies = newNextLevelXP;
+
+        StartCoroutine(HideShowLevelUp());
     }
 
     private void NextLevelArmour()
     {
         stats.ArmourLevel++;
 
+        uiManager.ShowLevelUp("Armoury");
+
         float currentXPRequired = stats.NextLevelXPArmour;
         float newNextLevelXP = Mathf.Round(currentXPRequired + stats.NextLevelXPArmour * (stats.XPMultiplierArmour / 100));
 
         stats.NextLevelXPArmour = newNextLevelXP;
+
+        StartCoroutine(HideShowLevelUp());
     }
 
     private void NextLevelMedicine()
     {
         stats.MedicineLevel++;
 
+        uiManager.ShowLevelUp("Medicine");
+
         float currentXPRequired = stats.NextLevelXPMedicine;
         float newNextLevelXP = Mathf.Round(currentXPRequired + stats.NextLevelXPMedicine * (stats.XPMultiplierMedicine / 100));
 
         stats.NextLevelXPMedicine = newNextLevelXP;
+
+        StartCoroutine(HideShowLevelUp());
     }
 
     public int[] GetLevels()
     {
         return new int[] { stats.SuppliesLevel, stats.MedicineLevel, stats.ArmourLevel };
     }
+
+    private IEnumerator HideShowLevelUp()
+    {
+        yield return new WaitForSeconds(timeOfXPPanel);
+        uiManager.HideLevelUp();
+
+    }
+
+
 }

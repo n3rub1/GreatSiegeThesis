@@ -66,17 +66,21 @@ public class StructureInteraction : MonoBehaviour
             yield return null;
         }
         StructureUI.Instance.structureInteraction = null;
-        Destroy(gameObject);
+
+        gameObject.SetActive(false);
+
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(false);
+        }
 
     }
 
 private void OnDestroy()
 {
-        Debug.Log("here");
 
         if (StructureUI.Instance.structureInteraction == this)
    {
-            Debug.Log("here");
         StructureUI.Instance.structureInteraction = null;
    }
     }

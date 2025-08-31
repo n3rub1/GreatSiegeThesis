@@ -12,34 +12,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889faa658c7b2c94ea4fff939bf8022e, type: 3}
   m_Name: DialogNPCFort
   m_EditorClassIdentifier: 
-  Name: Patrick
-  Icon: {fileID: 21300000, guid: 476dcbb4e8e921a45ad3f22ee23e4f0c, type: 3}
+  Name: Guzeppi
+  Icon: {fileID: -1465489678553493566, guid: bdf9b2df1b7e9ab48b44781ca0257510, type: 3}
   HasInteraction: 0
-  interactionType: 0
-  Greeting: Patrick looks worried...
+  interactionType: 2
+  Greeting: Guzeppi the Smugler
   Day1Dialog:
-  - This is day 1, and will be divided in to two sections
-  - This is the second section of day 1
+  - Day 1 - Not met 1/2
+  - Day 1 - Not met 2/2
   Day2FirstTimeDialog:
-  - "This is day 2 and we have never met before\t"
-  - but its still divided into two sections
+  - Day 2 - Not met 1/2
+  - Day 2 - Not met 2/2
   Day2MetBeforeDialog:
-  - This is day 2 and we have already met before
-  - This is the second section of the dialog of day 2
+  - Day 2 - Met 1/2
+  - Day 2 - Met 2/2
   Day3FirstTimeDialog:
-  - Day 3 Talking for the first time  Armourer
+  - Day 3 - Not met 1/2
+  - Day 3 - Not met 2/2
   Day3MetBeforeDialog:
-  - Day 3 Already Met Before  Armourer
+  - Day 3 - Met 1/2
+  - Day 3 - Met 2/2
   Day4FirstTimeDialog:
-  - Day 4Talking for the first time  Armourer
+  - Day 4 - Not met 1/2
+  - Day 4 - Not met 2/2
   Day4MetBeforeDialog:
-  - Day 4 Already Met Before  Armourer
+  - Day 4 - met 1/2
+  - Day 4 - met 2/2
   Day5FirstTimeDialog:
-  - Day 5 Talking for the first time  Armourer
+  - Day 5 - Not met 1/2
+  - Day 5 - Not met 2/2
   Day5MetBeforeDialog:
-  - Day 5 Already Met Before  Armourer
+  - Day 5 - met 1/2
+  - Day 5 - met 2/2
   dayNumber: 1
-  metOnday1: 0
+  metOnday1: 1
   metOnday2: 0
   metOnday3: 0
   metOnday4: 0

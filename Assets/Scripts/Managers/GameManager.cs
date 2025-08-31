@@ -7,9 +7,11 @@ public class GameManager : MonoBehaviour
 {
     [Header("Quest Game Manager")]
     private string questAccepted = "";
-    public enum QuestType { Armoury, Infirmary, Cat, Structure }
+    public enum QuestType { Armoury, Infirmary, Cat, Structure, Reset, SleepTime }
     [SerializeField] GameObject armouryTeleport;
     [SerializeField] GameObject infirmaryTeleport;
+    [SerializeField] GameObject caveTeleport;
+    [SerializeField] GameObject bedTeleport;
     [SerializeField] RandomQuestSelector randomQuestSelector;
     [SerializeField] EndOfDayManager endOfDayManager;
 
@@ -18,7 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dayNumberTMP;
     public int dayNumber = 1;
 
-
+    private string lastQuest = "";
 
     public NPCDialog[] npcDialog;
 
@@ -34,6 +36,8 @@ public class GameManager : MonoBehaviour
     {
         armouryTeleport.SetActive(false);
         infirmaryTeleport.SetActive(false);
+        caveTeleport.SetActive(false);
+        bedTeleport.SetActive(false);
 
     }
 
@@ -58,22 +62,48 @@ public class GameManager : MonoBehaviour
             case "Armoury":
                 armouryTeleport.SetActive(true);
                 infirmaryTeleport.SetActive(false);
+                caveTeleport.SetActive(false);
+                bedTeleport.SetActive(false);
                 randomQuestSelector.SpawnLootBoxes();
                 break;
             case "Infirmary":
                 infirmaryTeleport.SetActive(true);
                 armouryTeleport.SetActive(false);
+                caveTeleport.SetActive(false);
+                bedTeleport.SetActive(false);
                 randomQuestSelector.SpawnLootBoxes();
                 break;
             case "Cat":
                 questAccepted = QuestType.Cat.ToString();
                 randomQuestSelector.SpawnLootBoxes();
                 randomQuestSelector.SpawnCatClues();
+                infirmaryTeleport.SetActive(false);
+                armouryTeleport.SetActive(false);
+                caveTeleport.SetActive(false);
+                bedTeleport.SetActive(false);
                 break;
             case "Structure":
                 questAccepted = QuestType.Structure.ToString();
                 randomQuestSelector.SpawnLootBoxes();
                 randomQuestSelector.SpawnDebris();
+                infirmaryTeleport.SetActive(false);
+                armouryTeleport.SetActive(false);
+                caveTeleport.SetActive(true);
+                bedTeleport.SetActive(false);
+                break;
+            case "SleepTime":
+                questAccepted = QuestType.SleepTime.ToString();
+                infirmaryTeleport.SetActive(false);
+                armouryTeleport.SetActive(false);
+                caveTeleport.SetActive(false);
+                bedTeleport.SetActive(true);
+                break;
+            case "Reset":
+                questAccepted = QuestType.Reset.ToString();
+                infirmaryTeleport.SetActive(false);
+                armouryTeleport.SetActive(false);
+                caveTeleport.SetActive(false);
+                bedTeleport.SetActive(false);
                 break;
         }
 
@@ -85,20 +115,35 @@ public class GameManager : MonoBehaviour
         {
             case "Armoury":
                 questAccepted = QuestType.Armoury.ToString();
+                lastQuest = QuestType.Armoury.ToString();
                 break;
             case "Infirmary":
                 questAccepted = QuestType.Infirmary.ToString();
+                lastQuest = QuestType.Infirmary.ToString();
                 break;
             case "Cat":
                 questAccepted = QuestType.Cat.ToString();
+                lastQuest = QuestType.Cat.ToString();
                 break;
             case "Structure":
                 questAccepted = QuestType.Structure.ToString();
+                lastQuest = QuestType.Structure.ToString();
+                break;
+            case "Reset":
+                questAccepted = QuestType.Reset.ToString();
+                break;
+            case "SleepTime":
+                questAccepted = QuestType.SleepTime.ToString();
                 break;
         }
 
         BlockOffAreasNotPartOfQuest();
 
+    }
+
+    public string GetLastQuestOfTheDay()
+    {
+        return lastQuest;
     }
 
     public string GetQuestAccepted()

@@ -69,11 +69,6 @@ public class RandomQuestSelector : MonoBehaviour
             if (random < 50)
             {
                 generation.Add(i);
-                Debug.Log("ok");
-            }
-            else
-            {
-                Debug.Log("less");
             }
         }
 

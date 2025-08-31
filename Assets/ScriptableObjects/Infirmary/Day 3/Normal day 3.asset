@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8884055e91295f4898eff348e8125dc, type: 3}
+  m_Name: Normal day 3
+  m_EditorClassIdentifier: 
+  ID: MenAtArms2
+  Name: Giorgio
+  Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
+  Description: "Wound: Arrow wound festering with infection, arm swollen, black veins
+    creeping outward.\n\nStory: Giorgio, a Venetian trader turned soldier, reeks
+    of rot as fever consumes him. He confesses between shivers that he left behind
+    a caravan bound for Rhodes \u2014 and a wife who believed he would return with
+    riches. Instead, he fears she will inherit only debt, disgrace, and the memory
+    of a husband who failed her.\n\n\nRequired bandages to heal: 3"
+  slotNumber: 1
+  requiredResource: Bandage
+  requiredAmount: 3

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8884055e91295f4898eff348e8125dc, type: 3}
+  m_Name: Complex day 3
+  m_EditorClassIdentifier: 
+  ID: Knight2
+  Name: Luis
+  Icon: {fileID: 1208347981, guid: b2407ce4cf73ad348aec15ba9990f7a1, type: 3}
+  Description: 'Wound: Chest pierced clean through by a pike, blood gurgling with
+    each failed breath.
+
+
+    Story: Luis, a grizzled knight of many campaigns, tries
+    to dictate his last will through choking gasps. His sword is to go to his nephew,
+    his armor to his brother, his faith to God. But every word is drowned in blood,
+    and his eyes widen as he realizes he may not finish before silence takes him.
+
+
+
+    Required
+    bandages to heal: 5'
+  slotNumber: 0
+  requiredResource: Bandage
+  requiredAmount: 5

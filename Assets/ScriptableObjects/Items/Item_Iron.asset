@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: Iron
   Name: Iron Scraps
   Icon: {fileID: 21300084, guid: 7810966f0f690954c87305933cabf2b0, type: 3}
-  Description: Iron scraps used to repair weapons
+  Description: This item is used to make and repair weapons in the armoury
   ItemType: 1
   IsConsumbale: 1
   IsStackable: 1
