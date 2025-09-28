@@ -18,32 +18,46 @@ MonoBehaviour:
   interactionType: 0
   Greeting: Patrick The Armourer
   Day1Dialog:
-  - Day 1 - Not met 1/2
-  - Day 1 - Not met 2/2
+  - "You\u2019re new here, boy. The Ottomans have landed with hundreds of ships and
+    tens of thousands of men. Their cannons roar from the hills, and every sword,
+    pike, and cannon I maintain may save a life. \n<Press f to continue>"
+  - We also have hoops of Greek fire ready for emergencies, and matchlock muskets
+    line the walls. Even a small crack could spell death. Go to the anvil, survival
+    here depends on preparation and courage.
   Day2FirstTimeDialog:
-  - Day 2 - Not met 1/2
-  - Day 2 - Not met 2/2
+  - Cannonballs crash against our bastions. Each musket and sword I repair may save
+    a Knight, and our hoops of Greek fire are ready if they reach the walls. Casualties
+    are already mounting; even the best-prepared men fall if weapons fail.  Go to
+    the anvil and start repairs!
   Day2MetBeforeDialog:
-  - Day 2 - Met 1/2
-  - Day 2 - Met 2/2
+  - You return. Yesterday we tended muskets; today, check the new armour lined up
+    for repairs. Each shot fired may hold the enemy at bay, and every weapon repaired
+    prolongs life.  You know what to do, go to the anvil and start working.
   Day3FirstTimeDialog:
-  - Day 3 - Not met 1/2
-  - Day 3 - Not met 2/2
+  - The walls tremble, boy. Ottoman engineers dig trenches, but our cannons roar
+    back. Muskets misfire, swords splinter, pikes break. Dragut commands the artillery
+    now, and men are falling daily. Even Greek fire may not save everyone.  Go to
+    the anvil and start repairing what you can!  There is no time to loose!
   Day3MetBeforeDialog:
-  - Day 3 - Met 1/2
-  - Day 3 - Met 2/2
+  - Yesterday, musket repairs; today, see the cannons ready with their carefully
+    stacked cannonballs. Each shot could stop an assault. Lives hang on weapons and
+    skill.  You know what to do boy!
   Day4FirstTimeDialog:
-  - Day 4 - Not met 1/2
-  - Day 4 - Not met 2/2
+  - We are running low on iron, powder, and lead. Every musket and cannon I repair
+    could stop an assault or fail, letting death through the gates. The enemy has
+    brought engineers and reinforcements. The fort survives by grit and desperation.
   Day4MetBeforeDialog:
-  - Day 4 - met 1/2
-  - Day 4 - met 2/2
+  - You return. Yesterday, muskets; today, cannonballs. We have fire hoops now that
+    works great against the Ottoman's light cloths and is ready for breaches. Every
+    shot may save a life, but the end draws nearer
   Day5FirstTimeDialog:
-  - Day 5 - Not met 1/2
-  - Day 5 - Not met 2/2
+  - Tomorrow may be our last stand. Dragut oversees every shot, and we have only
+    a fraction of the weapons we need. Every cannon, musket, and hoop of Greek fire
+    I repair could be the difference between life and death.
   Day5MetBeforeDialog:
-  - Day 5 - met 1/2
-  - Day 5 - met 2/2
+  - "This is it. You\u2019ve seen repairs, cannon care, muskets sharpened. Around
+    half the defenders are dead. Every weapon might decide who survives when St.
+    Elmo falls. Courage and preparation hang in the balance"
   dayNumber: 1
   metOnday1: 0
   metOnday2: 0

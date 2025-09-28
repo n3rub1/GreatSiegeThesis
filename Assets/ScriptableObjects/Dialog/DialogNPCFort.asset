@@ -18,34 +18,43 @@ MonoBehaviour:
   interactionType: 2
   Greeting: Guzeppi the Smugler
   Day1Dialog:
-  - Day 1 - Not met 1/2
-  - Day 1 - Not met 2/2
+  - I tend the wounded, boy. The first cannonballs have landed; already men are hurt.
+    Some have deep cuts, others shattered bones. Even a small untreated wound can
+    become fatal. At night, the gravely injured are carried to Fort St. Angelo for
+    care. Survival is fragile here.
   Day2FirstTimeDialog:
-  - Day 2 - Not met 1/2
-  - Day 2 - Not met 2/2
+  - "Cannon fire tears men apart. Broken bones, deep cuts, burns \u2014 we treat
+    what we can with bandages, poultices, and splints. Some soldiers must be taken
+    at night to Fort St. Angelo, away from the front, to give them a chance at life"
   Day2MetBeforeDialog:
-  - Day 2 - Met 1/2
-  - Day 2 - Met 2/2
+  - You return. Yesterday, wounds; today, infections worsen. Dysentery and fever
+    strike the wounded as the infirmary fills. Each life saved feels like a miracle,
+    yet many die despite our care.
   Day3FirstTimeDialog:
-  - Day 3 - Not met 1/2
-  - Day 3 - Not met 2/2
+  - "The enemy is closer. Cannon fire is constant. Every new arrival has fresh wounds:
+    cuts, musket shots, splintered bones. Night carries the gravely injured to Fort
+    St. Angelo, but some don\u2019t survive the trip."
   Day3MetBeforeDialog:
-  - Day 3 - Met 1/2
-  - Day 3 - Met 2/2
+  - "Yesterday, we treated musket wounds; today, cannon injuries and infections overwhelm
+    the infirmary. Each poultice and stitch may save a life, yet many will not survive
+    Dragut\u2019s bombardment."
   Day4FirstTimeDialog:
-  - Day 4 - Not met 1/2
-  - Day 4 - Not met 2/2
+  - "Bandages, herbs, wine \u2014 nearly gone. Wounds fester, infections spread.
+    Each life clings by a thread, boy, and every night we risk carrying the gravely
+    wounded to Fort St. Angelo under fire."
   Day4MetBeforeDialog:
-  - Day 4 - met 1/2
-  - Day 4 - met 2/2
+  - Yesterday, I patched what I could; today, disease and wounds ravage the fort.
+    Some of the men we saved last night are gone by morning. St. Elmo holds, but
+    at terrible cost.
   Day5FirstTimeDialog:
-  - Day 5 - Not met 1/2
-  - Day 5 - Not met 2/2
+  - "Tomorrow may see the bloodiest day yet. Many men have already died. Every life
+    here is fragile, and the fort\u2019s defenders cling desperately to hope."
   Day5MetBeforeDialog:
-  - Day 5 - met 1/2
-  - Day 5 - met 2/2
+  - "Final day, boy. Every patient, every wound, every life depends on what we\u2019ve
+    done. Remember the faces here; they are the price of holding St. Elmo against
+    overwhelming odds."
   dayNumber: 1
-  metOnday1: 1
+  metOnday1: 0
   metOnday2: 0
   metOnday3: 0
   metOnday4: 0

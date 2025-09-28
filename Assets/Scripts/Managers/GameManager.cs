@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
         caveTeleport.SetActive(false);
         bedTeleport.SetActive(false);
         playerId = SystemInfo.deviceUniqueIdentifier;
-        logger.LogData(playerId, System.DateTime.Now.ToString(), "", 1);
+        logger.LogData(playerId, System.DateTime.Now.ToString(), "Game Start", 1);
     }
 
     public void sleepAndUpdateDay()

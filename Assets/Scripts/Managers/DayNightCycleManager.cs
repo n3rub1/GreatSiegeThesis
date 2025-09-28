@@ -11,7 +11,6 @@ public class DayNightCycleManager : MonoBehaviour
     [SerializeField] private int speedOfTimeOfDayInSeconds = 1;
     [SerializeField] private TextMeshProUGUI timeOfDayTMP;
     [SerializeField] private TextMeshProUGUI dayNumber;
-    [SerializeField] private int dayNumberStart = 1;
     [SerializeField] private Light2D globalLight;
     [SerializeField] private int hourStartIndexLight = 8;
     [SerializeField] private UIManager uiManager;

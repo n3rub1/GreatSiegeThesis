@@ -18,32 +18,39 @@ MonoBehaviour:
   interactionType: 1
   Greeting: Hey...
   Day1Dialog:
-  - Day 1 - Not met 1/2
-  - Day 1 - Not met 2/2
+  - "Welcome, boy. I keep the fort standing \u2014 walls, gates, supplies. The Ottomans
+    land on the northern shore, but the fort was built on rock, so they cannot tunnel
+    under it. Every plank and barrel could mean life or death."
   Day2FirstTimeDialog:
-  - Day 2 - Not met 1/2
-  - Day 2 - Not met 2/2
+  - Cannonballs tear at the northern walls; the enemy digs trenches, but the rock
+    beneath prevents tunneling. Food and water must be rationed carefully. Every
+    action buys hours, maybe lives.
   Day2MetBeforeDialog:
-  - Day 2 - Met 1/2
-  - Day 2 - Met 2/2
+  - Yesterday you saw repairs; today, gates creak and walls shudder under fire. Even
+    small reinforcements may hold the enemy at bay. Men cling to life as the fort
+    groans under bombardment.
   Day3FirstTimeDialog:
-  - Day 3 - Not met 1/2
-  - Day 3 - Not met 2/2
+  - The enemy trenches cut closer to the northern bastions, but they cannot undermine
+    the foundations. Every barrel of supplies, every reinforced gate is a lifeline.
+    Death is near, courage alone cannot save the fort.
   Day3MetBeforeDialog:
-  - Day 3 - Met 1/2
-  - Day 3 - Met 2/2
+  - Yesterday, basic repairs; today, debris blocks paths, men are exhausted. Every
+    plank hammered delays disaster, but the enemy grows stronger.
   Day4FirstTimeDialog:
-  - Day 4 - Not met 1/2
-  - Day 4 - Not met 2/2
+  - Water runs low, stores dwindle, morale falters. Every nail, ration, plank may
+    save a life. The fort survives on grit and desperation, protected by the rock
+    foundations.
   Day4MetBeforeDialog:
-  - Day 4 - met 1/2
-  - Day 4 - met 2/2
+  - You return. Yesterday, stores; today, walls and gates strain under bombardment.
+    Each repair prolongs life, but many fall outside. Survival is grim and fleeting.
   Day5FirstTimeDialog:
-  - Day 5 - Not met 1/2
-  - Day 5 - Not met 2/2
+  - Tomorrow may be the bloodiest day. Every repair, ration, and plank is survival
+    against overwhelming odds. The fort will be tested like never before, but its
+    foundations hold firm.
   Day5MetBeforeDialog:
-  - Day 5 - met 1/2
-  - Day 5 - met 2/2
+  - "This is it. Every repair, ration, reinforced gate may decide who lives. The
+    fort may hold, but suffering is immense. Courage here comes at a terrible price
+    \u2014 remember that, boy."
   dayNumber: 1
   metOnday1: 0
   metOnday2: 0

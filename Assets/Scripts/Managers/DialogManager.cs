@@ -102,7 +102,7 @@ public class DialogManager : Singleton<DialogManager>
                 {
                     foreach (string sentence in npcSelected.DialogToShow.Day4MetBeforeDialog)
                         dialogQueue.Enqueue(sentence);
-                    npcSelected.DialogToShow.metOnday3 = true;
+                    npcSelected.DialogToShow.metOnday4 = true;
                 }
                 else
                 {
