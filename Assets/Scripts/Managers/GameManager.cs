@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject bedTeleport;
     [SerializeField] RandomQuestSelector randomQuestSelector;
     [SerializeField] EndOfDayManager endOfDayManager;
+    [SerializeField] GoogleSheetLogger logger;
 
 
     [Header("Day Game Manager")]
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
     public int dayNumber = 1;
 
     private string lastQuest = "";
+    private string playerId;
 
     public NPCDialog[] npcDialog;
 
@@ -38,7 +40,8 @@ public class GameManager : MonoBehaviour
         infirmaryTeleport.SetActive(false);
         caveTeleport.SetActive(false);
         bedTeleport.SetActive(false);
-
+        playerId = SystemInfo.deviceUniqueIdentifier;
+        logger.LogData(playerId, System.DateTime.Now.ToString(), "", 1);
     }
 
     public void sleepAndUpdateDay()
@@ -116,18 +119,22 @@ public class GameManager : MonoBehaviour
             case "Armoury":
                 questAccepted = QuestType.Armoury.ToString();
                 lastQuest = QuestType.Armoury.ToString();
+                logger.LogData(playerId, System.DateTime.Now.ToString(), questAccepted, dayNumber);
                 break;
             case "Infirmary":
                 questAccepted = QuestType.Infirmary.ToString();
                 lastQuest = QuestType.Infirmary.ToString();
+                logger.LogData(playerId, System.DateTime.Now.ToString(), questAccepted, dayNumber);
                 break;
             case "Cat":
                 questAccepted = QuestType.Cat.ToString();
                 lastQuest = QuestType.Cat.ToString();
+                logger.LogData(playerId, System.DateTime.Now.ToString(), questAccepted, dayNumber);
                 break;
             case "Structure":
                 questAccepted = QuestType.Structure.ToString();
                 lastQuest = QuestType.Structure.ToString();
+                logger.LogData(playerId, System.DateTime.Now.ToString(), questAccepted, dayNumber);
                 break;
             case "Reset":
                 questAccepted = QuestType.Reset.ToString();
