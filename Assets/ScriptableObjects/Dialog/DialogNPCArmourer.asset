@@ -18,38 +18,41 @@ MonoBehaviour:
   interactionType: 0
   Greeting: Patrick The Armourer
   Day1Dialog:
-  - "You\u2019re new here, boy. The Ottomans have landed with hundreds of ships and
-    tens of thousands of men. Their cannons roar from the hills, and every sword,
-    pike, and cannon I maintain may save a life. \n<Press f to continue>"
-  - We also have hoops of Greek fire ready for emergencies, and matchlock muskets
-    line the walls. Even a small crack could spell death. Go to the anvil, survival
-    here depends on preparation and courage.
+  - "Ah, a new face. Careful where you step, boy \u2014 the forge is hotter than
+    the sun.\nThe Turks thunder on us with their guns, yet we still fire back. Every
+    night, boats slip across from Birgu \u2014 powder, matchlocks, hoops of Greek
+    fire. Without them, my hammers would be useless.\nSee this barrel? Enough gunpowder
+    for one night only."
   Day2FirstTimeDialog:
-  - Cannonballs crash against our bastions. Each musket and sword I repair may save
-    a Knight, and our hoops of Greek fire are ready if they reach the walls. Casualties
-    are already mounting; even the best-prepared men fall if weapons fail.  Go to
-    the anvil and start repairs!
+  - "Look at the ravelin, boy. The Janissaries took it yesterday \u2014 we lost good
+    men holding it.\nI patch armour for those who limped back, mend muskets that
+    fired until barrels glowed.\nWe throw hoops of Greek fire down the walls, but
+    for every Turk we burn, two more climb the ditch."
   Day2MetBeforeDialog:
-  - You return. Yesterday we tended muskets; today, check the new armour lined up
-    for repairs. Each shot fired may hold the enemy at bay, and every weapon repaired
-    prolongs life.  You know what to do, go to the anvil and start working.
+  - "Remember the ravelin I showed you? Taken yesterday. Our men held it as long
+    as they could.\nI\u2019ve been up all night reforging blades and mending muskets.\nEven
+    with iron in my hands, it feels like the fort itself is bleeding."
   Day3FirstTimeDialog:
-  - The walls tremble, boy. Ottoman engineers dig trenches, but our cannons roar
-    back. Muskets misfire, swords splinter, pikes break. Dragut commands the artillery
-    now, and men are falling daily. Even Greek fire may not save everyone.  Go to
-    the anvil and start repairing what you can!  There is no time to loose!
+  - "Hear that roar, boy? Dragut himself arrived with new cannon at Gallows\u2019
+    Point.\nStone falls like rain inside the fort \u2014 we barely patch the walls
+    before they crack again.\nI sharpen swords, mend armour, and still the powder
+    runs low. Every shot we fire brings another Turkish counter."
   Day3MetBeforeDialog:
-  - Yesterday, musket repairs; today, see the cannons ready with their carefully
-    stacked cannonballs. Each shot could stop an assault. Lives hang on weapons and
-    skill.  You know what to do boy!
+  - "I told you yesterday the walls were cracking \u2014 now see Dragut\u2019s guns
+    pounding us from Gallows\u2019 Point.\nEven my hammer shakes with the blasts.\nAnd
+    yet, La Valette sends more men across the water at night. Volunteers to stand
+    and die beside us.\nI mend their armour\u2026 and hope they survive long enough
+    to use it."
   Day4FirstTimeDialog:
-  - We are running low on iron, powder, and lead. Every musket and cannon I repair
-    could stop an assault or fail, letting death through the gates. The enemy has
-    brought engineers and reinforcements. The fort survives by grit and desperation.
+  - "The assaults continue, boy. Wave after wave hurled at our walls \u2014 yet still
+    we hold.\nBodies fill the ditch, stones tumble, and my forge works nonstop.\nEach
+    repaired sword or helm might save a man\u2019s life\u2026 or not.\nBut we fight,
+    because the Grand Master demands St. Elmo stand."
   Day4MetBeforeDialog:
-  - You return. Yesterday, muskets; today, cannonballs. We have fire hoops now that
-    works great against the Ottoman's light cloths and is ready for breaches. Every
-    shot may save a life, but the end draws nearer
+  - "Yesterday, we barely held. Today, again, the Turks crash against our walls.\nI
+    mend every sword, every dented helm, every cracked musket.\nThe fort is bleeding
+    stone and blood, yet still it breathes.\nWe hammer and forge, and pray it\u2019s
+    enough for another day."
   Day5FirstTimeDialog:
   - Tomorrow may be our last stand. Dragut oversees every shot, and we have only
     a fraction of the weapons we need. Every cannon, musket, and hoop of Greek fire

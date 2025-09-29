@@ -15,6 +15,7 @@ public class DayNightCycleManager : MonoBehaviour
     [SerializeField] private int hourStartIndexLight = 8;
     [SerializeField] private UIManager uiManager;
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private Light2D fakeSun;
 
     private Color[] hourlyColors = new Color[]
     {
@@ -48,6 +49,8 @@ public class DayNightCycleManager : MonoBehaviour
     private Color targetColor;
     private float transitionProgress = 0f;
     private float transitionDuration;
+    private Vector3 fakeSunCurrentPosition;
+    private Vector3 fakeSunTargetPosition;
 
     private void Start()
     {
@@ -55,6 +58,9 @@ public class DayNightCycleManager : MonoBehaviour
         currentColor = hourlyColors[8];
         targetColor = hourlyColors[9];
         transitionDuration = speedOfTimeOfDayInSeconds;
+        fakeSunCurrentPosition = fakeSun.transform.position;
+        fakeSunTargetPosition = fakeSunCurrentPosition + new Vector3(1, 0, 0);
+
     }
 
     private void Update()
@@ -63,6 +69,8 @@ public class DayNightCycleManager : MonoBehaviour
         {
             transitionProgress += Time.deltaTime / transitionDuration;
             globalLight.color = Color.Lerp(currentColor, targetColor, transitionProgress);
+            fakeSun.color = Color.Lerp(currentColor, targetColor, transitionProgress);
+            fakeSun.transform.position = Vector3.Lerp(fakeSunCurrentPosition, fakeSunTargetPosition, transitionProgress);
         }
     }
 
@@ -97,6 +105,14 @@ public class DayNightCycleManager : MonoBehaviour
 
         currentColor = globalLight.color;
         targetColor = hourlyColors[hourStartIndexLight];
+
+        float normalizedTime = Mathf.InverseLerp(8, 21, timeOfDay);
+        float targetX = Mathf.Lerp(-50f, 50f, normalizedTime);
+
+        fakeSunCurrentPosition = fakeSun.transform.position;
+        fakeSunTargetPosition = new Vector3(targetX, fakeSunCurrentPosition.y, fakeSunCurrentPosition.z);
+
+
         transitionProgress = 0f;
 
         hourStartIndexLight++;
@@ -110,5 +126,6 @@ public class DayNightCycleManager : MonoBehaviour
         currentColor = hourlyColors[8];
         targetColor = hourlyColors[9];
         gameManager.SetQuestAccepted("Reset");
+        fakeSun.transform.position = new Vector3(-50, 0, 0);
     }
 }

@@ -18,34 +18,43 @@ MonoBehaviour:
   interactionType: 2
   Greeting: Guzeppi the Smugler
   Day1Dialog:
-  - I tend the wounded, boy. The first cannonballs have landed; already men are hurt.
-    Some have deep cuts, others shattered bones. Even a small untreated wound can
-    become fatal. At night, the gravely injured are carried to Fort St. Angelo for
-    care. Survival is fragile here.
+  - "Welcome to the ramparts, boy. See the walls? They were built strong \u2014 Spanish
+    engineer Pietro Pardo designed them to resist the sea, but the Turks hammer from
+    land.\nWe patch breaches, rebuild sections with stone, and reinforce the points.\nThey
+    cannot tunnel here \u2014 the rock is too hard. But each shell weakens our walls."
   Day2FirstTimeDialog:
-  - "Cannon fire tears men apart. Broken bones, deep cuts, burns \u2014 we treat
-    what we can with bandages, poultices, and splints. Some soldiers must be taken
-    at night to Fort St. Angelo, away from the front, to give them a chance at life"
+  - 'The ravelin fell yesterday, boy. Outer works smashed.
+
+    We shored up the
+    demi-bastions, tightened the parapets.
+
+    Every breach we fix, the enemy hammers
+    again. Still, the fort must stand.'
   Day2MetBeforeDialog:
-  - You return. Yesterday, wounds; today, infections worsen. Dysentery and fever
-    strike the wounded as the infirmary fills. Each life saved feels like a miracle,
-    yet many die despite our care.
+  - "Yesterday we rebuilt the ravelin walls \u2014 today, fresh stones are shattered
+    again.\nI work with masons and volunteers, reinforcing the weak points.\nThe
+    Turks swarm, yet our walls hold\u2026 just barely."
   Day3FirstTimeDialog:
-  - "The enemy is closer. Cannon fire is constant. Every new arrival has fresh wounds:
-    cuts, musket shots, splintered bones. Night carries the gravely injured to Fort
-    St. Angelo, but some don\u2019t survive the trip."
+  - "Dragut has arrived, boy. His guns pound from Gallows\u2019 Point and the land
+    front.\nWe rebuild faster than they can break, stacking rubble and stone, sealing
+    holes with earth.\nEach night, reinforcements from Vittoriosa bring more help
+    \u2014 without them, the fort would fall."
   Day3MetBeforeDialog:
-  - "Yesterday, we treated musket wounds; today, cannon injuries and infections overwhelm
-    the infirmary. Each poultice and stitch may save a life, yet many will not survive
-    Dragut\u2019s bombardment."
+  - "Yesterday I patched the demi-bastion; today, it is shattered again.\nDragut\u2019s
+    orders doubled the fire. Each shell cracks stone and morale alike.\nStill, we
+    strengthen the bastions, fill ditches, and prepare for the next assault."
   Day4FirstTimeDialog:
-  - "Bandages, herbs, wine \u2014 nearly gone. Wounds fester, infections spread.
-    Each life clings by a thread, boy, and every night we risk carrying the gravely
-    wounded to Fort St. Angelo under fire."
+  - 'Another assault failed. The walls bleed stone and mortar, but stand.
+
+    We
+    reinforce every night, work in darkness, while others fire from the ramparts.
+
+    If
+    we fall, all Malta falls. Every stone matters.'
   Day4MetBeforeDialog:
-  - Yesterday, I patched what I could; today, disease and wounds ravage the fort.
-    Some of the men we saved last night are gone by morning. St. Elmo holds, but
-    at terrible cost.
+  - "The Turks charge again, boy. Breaches appear, but we fill them, build scaffolds,
+    hammer and shove stone into place.\nI pray each wall holds, each bastion survives
+    another volley.\nThis is more than engineering \u2014 it is survival."
   Day5FirstTimeDialog:
   - "Tomorrow may see the bloodiest day yet. Many men have already died. Every life
     here is fragile, and the fort\u2019s defenders cling desperately to hope."
