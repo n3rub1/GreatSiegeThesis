@@ -15,10 +15,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] RandomQuestSelector randomQuestSelector;
     [SerializeField] EndOfDayManager endOfDayManager;
     [SerializeField] GoogleSheetLogger logger;
+    [SerializeField] UIManager uiManager;
+    [SerializeField] private PercentageManager percentageManager;
 
+    [Header("QuestsObjects")]
+    [SerializeField] ArmouryUI armouryUI;
+    [SerializeField] InfirmaryUI infirmaryUI;
+    [SerializeField] StructureUI structureUI;
+    [SerializeField] CatUI catUI;
 
     [Header("Day Game Manager")]
-    [SerializeField] private TextMeshProUGUI dayNumberTMP;
     public int dayNumber = 1;
 
     private string lastQuest = "";
@@ -48,7 +54,15 @@ public class GameManager : MonoBehaviour
     {
         endOfDayManager.ShowPanelAndText(dayNumber);
         dayNumber += 1;
-        UpdateDayText();
+        int armourPercentageToIncrease = armouryUI.GetArmourPercentageToIncrease();
+        int moralePercentageToIncrease = infirmaryUI.GetMoralePercentageToIncrease();
+        int structurePercentageToIncrease = structureUI.GetStructurePercentageToIncrease();
+        int catPercentageToIncrease = catUI.GetCatPercentageToIncrease();
+        percentageManager.UpdatePercentages(moralePercentageToIncrease, armourPercentageToIncrease, structurePercentageToIncrease, catPercentageToIncrease);
+        uiManager.UpdateDayText(getDayNumber());
+        armouryUI.ResetArmourPercentageToIncrease();
+        infirmaryUI.ResetMoralePercentageToIncrease();
+        structureUI.ResetStructurePercentageToIncrease();
     }
 
     public int getDayNumber()
@@ -156,11 +170,6 @@ public class GameManager : MonoBehaviour
     public string GetQuestAccepted()
     {
         return questAccepted;
-    }
-
-    private void UpdateDayText()
-    {
-        dayNumberTMP.text = $"Day: {getDayNumber()}";
     }
 
 }

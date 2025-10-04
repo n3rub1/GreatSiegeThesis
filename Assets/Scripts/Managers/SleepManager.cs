@@ -31,6 +31,7 @@ public class SleepManager : Singleton<SleepManager>
         if (isPlayerInRangeOfBed && !isSleeping)
         {
             gameManager.sleepAndUpdateDay();
+            string lastQuest = gameManager.GetLastQuestOfTheDay();
             QuestUI.Instance.ResetQuests();
         }
     }

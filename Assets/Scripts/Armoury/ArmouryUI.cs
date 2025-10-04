@@ -10,6 +10,7 @@ public class ArmouryUI : Singleton<ArmouryUI>
     [Header("Config")]
     [SerializeField] private Inventory inventory;
     [SerializeField] private PlayerXP playerXP;
+    [SerializeField] private int armourPercentageToIncrease = 0;
 
     [Header("Description Panel")]
     [SerializeField] private GameObject descriptionPanel;
@@ -122,15 +123,28 @@ public class ArmouryUI : Singleton<ArmouryUI>
         {
             case 0:
                 playerXP.AddXPArmour(2 + levels[armouryArrayValue]);
+                armourPercentageToIncrease = armourPercentageToIncrease + 5;
                 break;
             case 1:
                 playerXP.AddXPArmour(5 + levels[armouryArrayValue]);
+                armourPercentageToIncrease = armourPercentageToIncrease + 10;
                 break;
             case 2:
                 playerXP.AddXPArmour(10 + levels[armouryArrayValue]);
+                armourPercentageToIncrease = armourPercentageToIncrease + 15;
                 break;
         }
 
+    }
+
+    public void ResetArmourPercentageToIncrease()
+    {
+        armourPercentageToIncrease = 0;
+    }
+
+    public int GetArmourPercentageToIncrease()
+    {
+        return armourPercentageToIncrease;
     }
 
     public void SetPlayerInRange(bool value)

@@ -11,6 +11,7 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
     [SerializeField] private Inventory inventory;
     [SerializeField] private PlayerXP playerXP;
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private int moralePercentageToIncrease = 0;
 
     [Header("Description Panel")]
     [SerializeField] private GameObject descriptionPanel;
@@ -104,42 +105,14 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
                 slotImage.color = Color.white;
 
                 // Make button interactable
-                slotGO.GetComponent<Button>().interactable = true;
+                slotGO.GetComponent<Button>().interactable = !injured.isHealed;
             }
             else
             {
                 Debug.LogWarning($"Slot number {injured.slotNumber} is out of range for infirmary slots.");
             }
 
-            //if (injured.slotNumber < infirmarySlotsImages.Count)
-            //{
-            //    Image slotImage = infirmarySlotsImages[injured.slotNumber].GetComponent<Image>();
-            //    slotImage.sprite = injured.Icon;
-            //}
-            //else
-            //{
-            //    Debug.LogWarning($"Slot number {injured.slotNumber} is out of range for infirmary slots.");
-            //}
         }
-
-
-        //for(int i=0; i<infirmaryInjured.Count; i++)
-        //{
-
-        //    infirmarySlotsImages[i].GetComponent<Image>().sprite = infirmaryInjured[i].Icon;
-
-        //}
-
-
-        //for (int i = 0; i < infirmarySlots.Count; i++)
-        //{
-        //    //InfirmarySlot slot = infirmaryInjuredPanel.transform.GetChild(i).GetComponent<InfirmarySlot>();
-        //    //Debug.Log(slot);
-        //    //slot.ClickSlot(currentDayItems[i]);
-        //    Debug.Log(infirmarySlots[i]);
-        //    infirmarySlots[i].ClickSlot(currentDayItems[i]);
-        //}
-
     }
 
 
@@ -224,30 +197,38 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
         {
             case 0:
                 playerXP.AddXPMedicine(2 + levels[infirmaryArrayValue]);
+                moralePercentageToIncrease = moralePercentageToIncrease + 5;
                 break;
             case 1:
                 playerXP.AddXPMedicine(5 + levels[infirmaryArrayValue]);
+                moralePercentageToIncrease = moralePercentageToIncrease + 15;
                 break;
             case 2:
                 playerXP.AddXPMedicine(10 + levels[infirmaryArrayValue]);
+                moralePercentageToIncrease = moralePercentageToIncrease + 25;
                 break;
         }
 
         InfirmaryItem healedItem = InfirmarySlot.CurrentlySelectedSlot.AssignedItem;
         if (healedItem != null)
         {
+            healedItem.isHealed = true;
             infirmaryInjured.Remove(healedItem);
 
-            // Clear the UI slot image
-            infirmarySlotsImages[healedItem.slotNumber].GetComponent<Image>().sprite = null;
-
-            // Optionally disable the button so it can’t be clicked again
             infirmarySlotsImages[healedItem.slotNumber].GetComponent<Button>().interactable = false;
-
-            // Hide description if it was showing
             descriptionPanel.SetActive(false);
         }
 
+    }
+
+    public void ResetMoralePercentageToIncrease()
+    {
+        moralePercentageToIncrease = 0;
+    }
+
+    public int GetMoralePercentageToIncrease()
+    {
+        return moralePercentageToIncrease;
     }
 
     public void SetPlayerInRange(bool value)

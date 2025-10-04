@@ -7,6 +7,7 @@ public class StructureUI : Singleton<StructureUI>
 
     [Header("Config")]
     [SerializeField] private PlayerXP playerXP;
+    [SerializeField] private int structurePercentageToIncrease = 0;
 
     private PlayerActions actions;
     //private int structureArrayValue = 2;
@@ -24,14 +25,15 @@ public class StructureUI : Singleton<StructureUI>
         actions.Structure.Repair.canceled += ctx => StopRepairStructure();
     }
 
-    private void OnEnable()
+
+    public void ResetStructurePercentageToIncrease()
     {
-        actions.Enable();
+        structurePercentageToIncrease = 0;
     }
 
-    private void OnDisable()
+    public int GetStructurePercentageToIncrease()
     {
-        actions.Disable();
+        return structurePercentageToIncrease;
     }
 
     public void RepairStructure()
@@ -45,5 +47,21 @@ public class StructureUI : Singleton<StructureUI>
         if (structureInteraction == null) return;
         structureInteraction.CancelRepair();
     }
+
+    public void StructureRepairedAndIncreasePercentage()
+    {
+        structurePercentageToIncrease = structurePercentageToIncrease + 10;
+    }
+
+    private void OnEnable()
+    {
+        actions.Enable();
+    }
+
+    private void OnDisable()
+    {
+        actions.Disable();
+    }
+
 
 }

@@ -8,6 +8,7 @@ public class CatUI : Singleton<CatUI>
     private PlayerActions actions;
     public CatInteraction catInteraction { get; set; }
     private int catClueNumber = 0;
+    private int catPercentageToIncrease = 0;
 
     protected override void Awake()
     {
@@ -30,6 +31,23 @@ public class CatUI : Singleton<CatUI>
         catClueNumber++;
     }
 
+    private void CatClue()
+    {
+        if (catInteraction == null) return;
+        catInteraction.OpenCatPanel();
+        catPercentageToIncrease = catPercentageToIncrease + 10;
+    }
+
+    public void ResetCatPercentageToIncrease()
+    {
+        catPercentageToIncrease = 0;
+    }
+
+    public int GetCatPercentageToIncrease()
+    {
+        return catPercentageToIncrease;
+    }
+
     private void OnEnable()
     {
         actions.Enable();
@@ -38,12 +56,6 @@ public class CatUI : Singleton<CatUI>
     private void OnDisable()
     {
         actions.Disable();
-    }
-
-    private void CatClue()
-    {
-        if (catInteraction == null) return;
-        catInteraction.OpenCatPanel();
     }
 
 

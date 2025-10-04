@@ -29,10 +29,25 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI xpArmourTMP;
     [SerializeField] private TextMeshProUGUI xpMedicineTMP;
     [SerializeField] private TextMeshProUGUI timeOfDayTMP;
+    [SerializeField] private TextMeshProUGUI dayNumberTMP;
 
     [Header("Level Up")]
     [SerializeField] private TextMeshProUGUI LevelUpTMP;
     [SerializeField] private GameObject LevelUp;
+
+    [Header("Percentages")]
+    [SerializeField] private TextMeshProUGUI moralPercentageTMP;
+    [SerializeField] private TextMeshProUGUI weaponsPercentageTMP;
+    [SerializeField] private TextMeshProUGUI structurePercentageTMP;
+    [SerializeField] private TextMeshProUGUI catPercentageTMP;
+    [SerializeField] private int moralPercentage = 100;
+    [SerializeField] private int weaponsPercentage = 100;
+    [SerializeField] private int structurePercentage = 100;
+    [SerializeField] private int catPercentage = 0;
+    [SerializeField] private string moraleText = "Morale: ";
+    [SerializeField] private string weaponsText = "Weapons: ";
+    [SerializeField] private string structureText = "Structure: ";
+    [SerializeField] private string catText = "Cat: ";
 
     private string[] suppliesTexts = new string[]
 {
@@ -61,6 +76,11 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         stats.ResetPlayer();
+
+        moralPercentageTMP.text = moraleText + moralPercentage.ToString() + "%";
+        weaponsPercentageTMP.text = weaponsText + weaponsPercentage.ToString() + "%";
+        structurePercentageTMP.text = structureText + structurePercentage.ToString() + "%";
+        catPercentageTMP.text = catText + catPercentage.ToString() + "%";
     }
 
     private void Update()
@@ -70,6 +90,7 @@ public class UIManager : MonoBehaviour
 
     private void UpdatePlayerUI()
     {
+        //old code
         //healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, stats.Health / stats.MaxHealth, 10f*Time.deltaTime);
         //staminaBar.fillAmount = Mathf.Lerp(staminaBar.fillAmount, stats.Stamina / stats.MaxStamina, 10f * Time.deltaTime);
         //xpBar.fillAmount = Mathf.Lerp(xpBar.fillAmount, stats.CurrentXPArmour / stats.NextLevelXPArmour, 10f * Time.deltaTime);
@@ -95,6 +116,20 @@ public class UIManager : MonoBehaviour
             timeOfDayTMP.text = $"Time: {timeOfDay}:00";
         }
     }
+
+    public void UpdateDayText(int dayNumber)
+    {
+        dayNumberTMP.text = $"Day: {dayNumber}";
+    }
+
+    public void UpdatePercentages(int moralPercentage, int weaponsPercentage, int structurePercentage, int catPercentage)
+    {
+        moralPercentageTMP.text = moraleText + moralPercentage.ToString() + "%";
+        weaponsPercentageTMP.text = weaponsText + weaponsPercentage.ToString() + "%";
+        structurePercentageTMP.text = structureText + structurePercentage.ToString() + "%";
+        catPercentageTMP.text = catText + catPercentage.ToString() + "%";
+    }
+
 
     public void ShowLevelUp(string whichType)
     {

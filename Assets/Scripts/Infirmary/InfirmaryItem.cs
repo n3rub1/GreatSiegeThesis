@@ -14,6 +14,7 @@ public class InfirmaryItem : ScriptableObject
 
     [Header("Info")]
     public int slotNumber;
+    public bool isHealed;
 
     [Header("Crafting Requirements")]
     public string requiredResource;

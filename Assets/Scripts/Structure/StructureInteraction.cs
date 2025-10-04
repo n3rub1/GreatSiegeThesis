@@ -68,6 +68,7 @@ public class StructureInteraction : MonoBehaviour
         StructureUI.Instance.structureInteraction = null;
 
         gameObject.SetActive(false);
+        structureUI.StructureRepairedAndIncreasePercentage();
 
         foreach (Transform child in transform)
         {
