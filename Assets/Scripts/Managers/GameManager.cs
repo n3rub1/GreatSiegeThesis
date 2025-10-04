@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("Quest Game Manager")]
     private string questAccepted = "";
-    public enum QuestType { Armoury, Infirmary, Cat, Structure, Reset, SleepTime }
+    public enum QuestType { Armoury, Infirmary, Cat, Structure, Reset, SleepTime, Dead }
     [SerializeField] GameObject armouryTeleport;
     [SerializeField] GameObject infirmaryTeleport;
     [SerializeField] GameObject caveTeleport;
@@ -115,6 +115,13 @@ public class GameManager : MonoBehaviour
                 caveTeleport.SetActive(false);
                 bedTeleport.SetActive(true);
                 break;
+            case "Dead":
+                questAccepted = QuestType.Dead.ToString();
+                infirmaryTeleport.SetActive(false);
+                armouryTeleport.SetActive(false);
+                caveTeleport.SetActive(false);
+                bedTeleport.SetActive(true);
+                break;
             case "Reset":
                 questAccepted = QuestType.Reset.ToString();
                 infirmaryTeleport.SetActive(false);
@@ -155,6 +162,9 @@ public class GameManager : MonoBehaviour
                 break;
             case "SleepTime":
                 questAccepted = QuestType.SleepTime.ToString();
+                break;
+            case "Dead":
+                questAccepted = QuestType.Dead.ToString();
                 break;
         }
 
