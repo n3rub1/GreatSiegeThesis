@@ -7,16 +7,27 @@ public class DangerZone : MonoBehaviour
 
     [Header("Config")]
     [SerializeField] GameManager gameManager;
+    [SerializeField] DangerSpawn dangerSpawn;
 
+    private bool canDie;
+    private bool inDangerZone = false;
 
+    private void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+        dangerSpawn = FindObjectOfType<DangerSpawn>();
+    }
+
+    private void Update()
+    {
+        CheckToDie();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Check if the object entering is tagged "Player"
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("Player entered a danger zone!");
-
+            inDangerZone = true;
         }
     }
 
@@ -24,7 +35,17 @@ public class DangerZone : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("Player left the danger zone.");
+            inDangerZone = false;
+        }
+    }
+
+    private void CheckToDie()
+    {
+        canDie = dangerSpawn.GetCanDie();
+        if (inDangerZone && canDie)
+        {
+            gameManager.SetQuestAccepted("Dead");
+            dangerSpawn.StartDeadPanelSequence();
         }
     }
 }

@@ -7,11 +7,12 @@ public class GameManager : MonoBehaviour
 {
     [Header("Quest Game Manager")]
     private string questAccepted = "";
-    public enum QuestType { Armoury, Infirmary, Cat, Structure, Reset, SleepTime, Dead }
+    public enum QuestType { Armoury, Infirmary, Cat, Structure, Reset, SleepTime, Dead, Nothing }
     [SerializeField] GameObject armouryTeleport;
     [SerializeField] GameObject infirmaryTeleport;
     [SerializeField] GameObject caveTeleport;
     [SerializeField] GameObject bedTeleport;
+    [SerializeField] GameObject bedTeleportInside;
     [SerializeField] RandomQuestSelector randomQuestSelector;
     [SerializeField] EndOfDayManager endOfDayManager;
     [SerializeField] GoogleSheetLogger logger;
@@ -27,7 +28,7 @@ public class GameManager : MonoBehaviour
     [Header("Day Game Manager")]
     public int dayNumber = 1;
 
-    private string lastQuest = "";
+    private string lastQuest;
     private string playerId;
 
     public NPCDialog[] npcDialog;
@@ -42,12 +43,14 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        dayNumber = 1;
         armouryTeleport.SetActive(false);
         infirmaryTeleport.SetActive(false);
         caveTeleport.SetActive(false);
         bedTeleport.SetActive(false);
+        SetQuestAccepted("Nothing");
         playerId = SystemInfo.deviceUniqueIdentifier;
-        logger.LogData(playerId, System.DateTime.Now.ToString(), "Game Start", 1);
+        logger.LogData(GetPlayerIDForLogging(), GetCurrentTime(), GetDayNumber(), "Game Started (Game Manager)", "Game Started, Game Manager Loaded");
     }
 
     public void sleepAndUpdateDay()
@@ -58,19 +61,39 @@ public class GameManager : MonoBehaviour
         int moralePercentageToIncrease = infirmaryUI.GetMoralePercentageToIncrease();
         int structurePercentageToIncrease = structureUI.GetStructurePercentageToIncrease();
         int catPercentageToIncrease = catUI.GetCatPercentageToIncrease();
-        percentageManager.UpdatePercentages(moralePercentageToIncrease, armourPercentageToIncrease, structurePercentageToIncrease, catPercentageToIncrease);
-        uiManager.UpdateDayText(getDayNumber());
+
+        if(GetLastQuestOfTheDay() == "SleepTime" || GetLastQuestOfTheDay() == "Dead")
+        {
+            percentageManager.UpdatePercentages(-20,-20,-20,-20);
+        }
+        else
+        {
+            percentageManager.UpdatePercentages(moralePercentageToIncrease, armourPercentageToIncrease, structurePercentageToIncrease, catPercentageToIncrease);
+        }
+
+        uiManager.UpdateDayText(GetDayNumber());
         armouryUI.ResetArmourPercentageToIncrease();
         infirmaryUI.ResetMoralePercentageToIncrease();
         structureUI.ResetStructurePercentageToIncrease();
+
     }
 
-    public int getDayNumber()
+    public string GetPlayerIDForLogging()
+    {
+        return playerId;
+    }
+
+    public string GetCurrentTime()
+    {
+        return System.DateTime.Now.ToString();
+    }
+
+    public int GetDayNumber()
     {
         return dayNumber;
     }
 
-    public void BlockOffAreasNotPartOfQuest()
+    private void BlockOffAreasNotPartOfQuest()
     {
         string currentQuest = GetQuestAccepted();
 
@@ -82,6 +105,7 @@ public class GameManager : MonoBehaviour
                 caveTeleport.SetActive(false);
                 bedTeleport.SetActive(false);
                 randomQuestSelector.SpawnLootBoxes();
+                bedTeleportInside.SetActive(true);
                 break;
             case "Infirmary":
                 infirmaryTeleport.SetActive(true);
@@ -89,6 +113,7 @@ public class GameManager : MonoBehaviour
                 caveTeleport.SetActive(false);
                 bedTeleport.SetActive(false);
                 randomQuestSelector.SpawnLootBoxes();
+                bedTeleportInside.SetActive(true);
                 break;
             case "Cat":
                 questAccepted = QuestType.Cat.ToString();
@@ -98,6 +123,7 @@ public class GameManager : MonoBehaviour
                 armouryTeleport.SetActive(false);
                 caveTeleport.SetActive(false);
                 bedTeleport.SetActive(false);
+                bedTeleportInside.SetActive(true);
                 break;
             case "Structure":
                 questAccepted = QuestType.Structure.ToString();
@@ -107,6 +133,7 @@ public class GameManager : MonoBehaviour
                 armouryTeleport.SetActive(false);
                 caveTeleport.SetActive(true);
                 bedTeleport.SetActive(false);
+                bedTeleportInside.SetActive(true);
                 break;
             case "SleepTime":
                 questAccepted = QuestType.SleepTime.ToString();
@@ -114,6 +141,7 @@ public class GameManager : MonoBehaviour
                 armouryTeleport.SetActive(false);
                 caveTeleport.SetActive(false);
                 bedTeleport.SetActive(true);
+                bedTeleportInside.SetActive(true);
                 break;
             case "Dead":
                 questAccepted = QuestType.Dead.ToString();
@@ -121,6 +149,7 @@ public class GameManager : MonoBehaviour
                 armouryTeleport.SetActive(false);
                 caveTeleport.SetActive(false);
                 bedTeleport.SetActive(true);
+                bedTeleportInside.SetActive(false);
                 break;
             case "Reset":
                 questAccepted = QuestType.Reset.ToString();
@@ -128,6 +157,7 @@ public class GameManager : MonoBehaviour
                 armouryTeleport.SetActive(false);
                 caveTeleport.SetActive(false);
                 bedTeleport.SetActive(false);
+                bedTeleportInside.SetActive(true);
                 break;
         }
 
@@ -140,37 +170,47 @@ public class GameManager : MonoBehaviour
             case "Armoury":
                 questAccepted = QuestType.Armoury.ToString();
                 lastQuest = QuestType.Armoury.ToString();
-                logger.LogData(playerId, System.DateTime.Now.ToString(), questAccepted, dayNumber);
                 break;
             case "Infirmary":
                 questAccepted = QuestType.Infirmary.ToString();
                 lastQuest = QuestType.Infirmary.ToString();
-                logger.LogData(playerId, System.DateTime.Now.ToString(), questAccepted, dayNumber);
                 break;
             case "Cat":
                 questAccepted = QuestType.Cat.ToString();
                 lastQuest = QuestType.Cat.ToString();
-                logger.LogData(playerId, System.DateTime.Now.ToString(), questAccepted, dayNumber);
                 break;
             case "Structure":
                 questAccepted = QuestType.Structure.ToString();
                 lastQuest = QuestType.Structure.ToString();
-                logger.LogData(playerId, System.DateTime.Now.ToString(), questAccepted, dayNumber);
                 break;
             case "Reset":
                 questAccepted = QuestType.Reset.ToString();
+                lastQuest = QuestType.Reset.ToString();
                 break;
             case "SleepTime":
                 questAccepted = QuestType.SleepTime.ToString();
                 break;
             case "Dead":
                 questAccepted = QuestType.Dead.ToString();
+                lastQuest = QuestType.Dead.ToString();
+
+                break;
+            case "Nothing":
+                questAccepted = QuestType.Nothing.ToString();
+                lastQuest = QuestType.Nothing.ToString();
                 break;
         }
 
+        logger.LogData(GetPlayerIDForLogging(), GetCurrentTime(), dayNumber, "Quest Accepted (Game Manager)", questAccepted.ToString());
         BlockOffAreasNotPartOfQuest();
 
     }
+
+    public void GameOver()
+    {
+
+    }
+
 
     public string GetLastQuestOfTheDay()
     {

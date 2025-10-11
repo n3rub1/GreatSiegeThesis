@@ -11,9 +11,11 @@ public class DialogManager : Singleton<DialogManager>
     [SerializeField] private Image npcIcon;
     [SerializeField] private TextMeshProUGUI npcNameTMP;
     [SerializeField] private TextMeshProUGUI npcDialogTMP;
+    [SerializeField] private GameManager gameManager;
+    [SerializeField] private GoogleSheetLogger logger;
+
 
     public NPCInteraction npcSelected { get; set; }
-    public GameManager gameManager;
 
     private bool dialogStarted;
     private PlayerActions actions;
@@ -41,7 +43,7 @@ public class DialogManager : Singleton<DialogManager>
 
     private void LoadDialogFromNPC()
     {
-        int currentDay = gameManager.getDayNumber();
+        int currentDay = gameManager.GetDayNumber();
         npcSelected.DialogToShow.dayNumber = currentDay;
 
         if (npcSelected.DialogToShow.Day1Dialog.Length <= 0 || 
@@ -133,6 +135,10 @@ public class DialogManager : Singleton<DialogManager>
     {
         if (npcSelected == null) return;
         if (dialogStarted) return;
+
+        logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Dialog Start (Dialog Manager)", $"Started dialog with {npcSelected.DialogToShow.Name}");
+        logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Flags (Dialog Manager)", $"day1: {npcSelected.DialogToShow.metOnday1}, day2: {npcSelected.DialogToShow.metOnday2}, day3: {npcSelected.DialogToShow.metOnday3}, day4: {npcSelected.DialogToShow.metOnday4}, day5: {npcSelected.DialogToShow.metOnday5}");
+
         dialogPanel.SetActive(true);
         LoadDialogFromNPC();
         npcIcon.sprite = npcSelected.DialogToShow.Icon;

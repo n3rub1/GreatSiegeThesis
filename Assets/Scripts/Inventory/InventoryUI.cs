@@ -39,8 +39,6 @@ public class InventoryUI : Singleton<InventoryUI>
             slotList.Add(slot);
             DrawItem(null, i);
         }
-
-
     }
 
     public void ShowItemDescription(int index)

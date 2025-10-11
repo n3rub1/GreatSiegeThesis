@@ -7,19 +7,19 @@ public class GoogleSheetLogger : MonoBehaviour
     private string googleSheetURL = "https://script.google.com/macros/s/AKfycby7Y8cbdM4PoKl9ol84w6xZ1htcoyBDEqyhq4tMvP1puK7oVAvdaRheF3cvIMZFdQfW/exec";
 
     // Send whatever data you want (missing fields = blank in sheet)
-    public void LogData(string playerName, string time, string questSelected, int dayNumber)
+    public void LogData(string playerName, string time, int dayNumber, string additionalDetailsTitle, string additonalDetails)
     {
-        StartCoroutine(SendData(playerName, time, questSelected, dayNumber));
+        StartCoroutine(SendData(playerName, time, dayNumber, additionalDetailsTitle, additonalDetails));
     }
 
-    IEnumerator SendData(string playerName, string time, string questSelected, int dayNumber)
+    IEnumerator SendData(string playerName, string time, int dayNumber, string additionalDetailsTitle, string additonalDetails)
     {
         WWWForm form = new WWWForm();
         form.AddField("playerName", playerName);
         form.AddField("time", time.ToString());
-        form.AddField("questSelected", questSelected.ToString());
         form.AddField("dayNumber", dayNumber.ToString());
-        form.AddField("testingSequence", 0.ToString());
+        form.AddField("additionalDetailsTitle", additionalDetailsTitle);
+        form.AddField("additionalDetails", additonalDetails);
 
         using (UnityWebRequest www = UnityWebRequest.Post(googleSheetURL, form))
         {

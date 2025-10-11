@@ -8,36 +8,55 @@ public class OpeningManager : MonoBehaviour
 {
     [Header("Config")]
     [SerializeField] private TextMeshProUGUI textComponent;
-    [TextArea] public string fullHistoricalText;
+    [TextArea(5, 10)] public string[] storyScreens;
+    [SerializeField] public string[] storyContinueButtons;
     [SerializeField] private float delay = 0.05f;
     [SerializeField] private Button continueButton;
+    [SerializeField] private TextMeshProUGUI continueButtonTMP;
     [SerializeField] private int fortStElmoScene = 2;
+
+    private int currentScreen = 0;
+    private bool isTyping = false;
 
     private void Start()
     {
-        StartCoroutine(WriteText());
+        continueButton.onClick.AddListener(NextScreen);
         continueButton.gameObject.SetActive(false);
+        StartCoroutine(WriteText(storyScreens[currentScreen]));
     }
 
-    IEnumerator WriteText()
+    IEnumerator WriteText(string textToWrite)
     {
+        isTyping = true;
         textComponent.text = "";
-        foreach (char c in fullHistoricalText)
+
+        foreach (char c in textToWrite)
         {
             textComponent.text += c;
             yield return new WaitForSeconds(delay);
         }
 
+        isTyping = false;
+        continueButtonTMP.text = storyContinueButtons[currentScreen];
         continueButton.gameObject.SetActive(true);
     }
 
-
-    public void LoadNextScene()
+    public void NextScreen()
     {
-        SceneManager.LoadScene(fortStElmoScene);
+        if (isTyping) return;
+
+        continueButton.gameObject.SetActive(false);
+
+        if (currentScreen < storyScreens.Length - 1)
+        {
+            currentScreen++;
+            StartCoroutine(WriteText(storyScreens[currentScreen]));
+        }
+        else
+        {
+            // Last screen -> Load the next scene
+            Debug.Log("Loading Fort St. Elmo Scene...");
+            SceneManager.LoadScene(fortStElmoScene);
+        }
     }
 }
-
-
-
-

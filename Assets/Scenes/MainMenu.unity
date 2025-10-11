@@ -26293,20 +26293,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Welcome to the Help Screen. This is the part where I\u2019m supposed to
-    tell you how to play the game. The problem is\u2014the game isn\u2019t ready.
-    Not even close. Maybe you wandered in here looking for tips, maybe you clicked
-    the wrong button. Either way, here you are, reading this.\n\nThere are no controls
-    to explain, no objectives to complete, and no tutorial cleverly disguised as
-    a dramatic opening cutscene. The dev probably thought, \u201CYeah, I\u2019ll
-    add the actual gameplay later,\u201D and then wandered off to rewatch a show
-    they\u2019ve already seen eight times.\n\nJump? Who knows if that\u2019s even
-    a feature yet. Combat? Unlikely. Inventory system? Maybe one day. For now, enjoy
-    this text box and the void it sits in.\n\nYou could press buttons\u2014go ahead,
-    mash your keyboard or spin your analog sticks around like you're summoning something.
-    Nothing will happen, but hey, you\u2019ll feel productive.\n\nThis help screen
-    helps no one. Least of all you. But thanks for visiting, I guess. You\u2019re
-    really making the most of your time on Earth."
+  m_text: "W / A / S / D \u2192 Move\n\nF \u2192 Interact with objects or talk to
+    characters\n\n! \u2192 Show points of interest (POIs) on the map\n\nAvoid the
+    Red cicles\n\nDo not let the percentages reach 0%"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
   m_sharedMaterial: {fileID: -105419525553219049, guid: 451feee637a113e43bf94bdcc6264bc2, type: 2}

@@ -69,7 +69,7 @@ public class QuestUI : Singleton<QuestUI>
 
     private void OpenQuestPanel()
     {
-        if (questInteraction == null || gameManager.GetQuestAccepted() != "Reset") return;
+        if (questInteraction == null) return;  //|| gameManager.GetQuestAccepted() != "Reset"
         questPanel.SetActive(true);
     }
 

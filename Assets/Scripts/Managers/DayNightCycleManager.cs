@@ -16,6 +16,7 @@ public class DayNightCycleManager : MonoBehaviour
     [SerializeField] private UIManager uiManager;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private Light2D fakeSun;
+    [SerializeField] private GoogleSheetLogger logger;
 
     private Color[] hourlyColors = new Color[]
     {
@@ -89,12 +90,14 @@ public class DayNightCycleManager : MonoBehaviour
         {
             timeOfDay = 22;
             uiManager.UpdateTime(timeOfDay);
+            logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Time to sleep (Day/Night Manager)", $"Time to sleep");
             gameManager.SetQuestAccepted("SleepTime");
         }
         else
         {
             uiManager.UpdateTime(timeOfDay);
             timeOfDay++;
+            logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Hour Increase (Day/Night Manager)", $"Current Hour: {timeOfDay}");
             TriggerDayNightGlobalLight();
         }
     }

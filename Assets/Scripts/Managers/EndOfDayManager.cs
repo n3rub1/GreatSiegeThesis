@@ -19,6 +19,8 @@ public class EndOfDayManager : MonoBehaviour
     [SerializeField] private GameObject endOfDayPanel;
     [SerializeField] private DayNightCycleManager dayNightCycleManager;
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private GoogleSheetLogger logger;
+
 
     public void ShowPanelAndText(int dayNumber)
     {
@@ -31,6 +33,7 @@ public class EndOfDayManager : MonoBehaviour
     private void UpdateTextAccordingToPlayerActions(int dayNumber)
     {
         string lastQuest = gameManager.GetLastQuestOfTheDay();
+        logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Player Sleep (EndOfDay Manager)", $"Day {dayNumber} ended and player went to sleep");
 
         if (lastQuest == "Armoury")
         {
@@ -48,9 +51,17 @@ public class EndOfDayManager : MonoBehaviour
         {
             endOfDayDescriptionTMP.text = endOfDayDescriptionCat[dayNumber - 1];
         }
-        else if (gameManager.GetQuestAccepted() == "Reset" || gameManager.GetQuestAccepted() == "")
+        else if (gameManager.GetQuestAccepted() == "Reset")
         {
             endOfDayDescriptionTMP.text = "Your hands stayed still as rubble piled higher and soldiers bled into the dirt. Maybe the weight of despair froze you, maybe the absence of your cat hollowed you. Tomorrow, perhaps, you will act.";
+        }
+        else if (gameManager.GetQuestAccepted() == "SleepTime")
+        {
+            endOfDayDescriptionTMP.text = "Your hands stayed still as rubble piled higher and soldiers bled into the dirt. Maybe the weight of despair froze you, maybe the absence of your cat hollowed you. Tomorrow, perhaps, you will act.";
+        }
+        else if (gameManager.GetQuestAccepted() == "Dead")
+        {
+            endOfDayDescriptionTMP.text = "You fell unconscious, someone helped you towards the bed chambers — the fort’s fate continued without your help.";
         }
     }
 

@@ -9,6 +9,8 @@ public class LootManager : Singleton<LootManager>
     [SerializeField] private InventoryItem[] inventoryItems;
     [SerializeField] private PlayerXP playerXP;
     [SerializeField] private int lootXPNumber = 3;
+    [SerializeField] private GoogleSheetLogger logger;
+    [SerializeField] private GameManager gameManager;
 
     public LootInteraction lootSelected { get; set; }
 
@@ -46,6 +48,7 @@ public class LootManager : Singleton<LootManager>
         inventory.AddItem(inventoryItems[RNGInventoryLoot], RNGInventoryLootAmount);
 
         lootSelected.ShowLootGained(inventoryItems[RNGInventoryLoot], RNGInventoryLootAmount);
+        logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Loot Taken (Loot Manager)", $"Player looted {(RNGInventoryLoot == 0? "bandage" : "iron")} qty: {RNGInventoryLootAmount}");
 
     }
 
