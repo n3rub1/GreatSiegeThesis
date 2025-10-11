@@ -2,9 +2,17 @@ using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
 
-public class GoogleSheetLogger : MonoBehaviour
+public class GoogleSheetLogger : Singleton<GoogleSheetLogger>
 {
+    public static GoogleSheetLogger Instance { get; private set; }
     private string googleSheetURL = "https://script.google.com/macros/s/AKfycby7Y8cbdM4PoKl9ol84w6xZ1htcoyBDEqyhq4tMvP1puK7oVAvdaRheF3cvIMZFdQfW/exec";
+
+
+    private void Awake()
+    {
+        base.Awake();
+        Instance = this;
+    }
 
     // Send whatever data you want (missing fields = blank in sheet)
     public void LogData(string playerName, string time, int dayNumber, string additionalDetailsTitle, string additonalDetails)

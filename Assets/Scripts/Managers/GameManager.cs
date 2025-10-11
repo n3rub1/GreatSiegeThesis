@@ -43,14 +43,14 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        playerId = SystemInfo.deviceUniqueIdentifier;
         dayNumber = 1;
         armouryTeleport.SetActive(false);
         infirmaryTeleport.SetActive(false);
         caveTeleport.SetActive(false);
         bedTeleport.SetActive(false);
+        GoogleSheetLogger.Instance.LogData(GetPlayerIDForLogging(), GetCurrentTime(), GetDayNumber(), "Game Started (Game Manager)", "Game Started, Game Manager Loaded");
         SetQuestAccepted("Nothing");
-        playerId = SystemInfo.deviceUniqueIdentifier;
-        logger.LogData(GetPlayerIDForLogging(), GetCurrentTime(), GetDayNumber(), "Game Started (Game Manager)", "Game Started, Game Manager Loaded");
     }
 
     public void sleepAndUpdateDay()
@@ -201,7 +201,7 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
-        logger.LogData(GetPlayerIDForLogging(), GetCurrentTime(), dayNumber, "Quest Accepted (Game Manager)", questAccepted.ToString());
+        GoogleSheetLogger.Instance.LogData(GetPlayerIDForLogging(), GetCurrentTime(), dayNumber, "Quest Accepted (Game Manager)", questAccepted.ToString() == null ? "": questAccepted.ToString());
         BlockOffAreasNotPartOfQuest();
 
     }

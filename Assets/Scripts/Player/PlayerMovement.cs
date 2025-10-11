@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Config")]
     [SerializeField] private float speed;
+    [SerializeField] private AudioSource footstepsAudio;
 
     private PlayerAnimations playerAnimations;
     private Player player;
@@ -24,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         ReadMovement();
+        HandleFootsteps();
     }
 
     private void FixedUpdate()
@@ -50,6 +52,20 @@ public class PlayerMovement : MonoBehaviour
 
         playerAnimations.SetMoveBoolTransition(true);
         playerAnimations.SetMoveAnimation(moveDirection);
+    }
+
+    private void HandleFootsteps()
+    {
+        bool isMoving = moveDirection != Vector2.zero;
+
+        if (isMoving && !footstepsAudio.isPlaying)
+        {
+            footstepsAudio.Play();
+        }
+        else if (!isMoving && footstepsAudio.isPlaying)
+        {
+            footstepsAudio.Stop();
+        }
     }
 
     private void OnEnable()
