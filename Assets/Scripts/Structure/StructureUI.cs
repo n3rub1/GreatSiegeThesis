@@ -48,13 +48,15 @@ public class StructureUI : Singleton<StructureUI>
     public void StopRepairStructure()
     {
         if (structureInteraction == null) return;
-        logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Repair (Debris Manager)", $"Cancelled repair");
+        //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Repair (Debris Manager)", $"Cancelled repair");
+        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Repair (Debris Manager)", $"Cancelled repair");
         structureInteraction.CancelRepair();
     }
 
     public void StructureRepairedAndIncreasePercentage()
     {
-        logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Repair (Debris Manager)", $"Completed repair");
+        //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Repair (Debris Manager)", $"Completed repair");
+        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Repair (Debris Manager)", $"Completed repair");
         structurePercentageToIncrease = structurePercentageToIncrease + 10;
     }
 

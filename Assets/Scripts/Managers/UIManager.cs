@@ -131,13 +131,20 @@ public class UIManager : MonoBehaviour
         weaponsPercentageTMP.text = weaponsText + weaponsPercentage.ToString() + "%";
         structurePercentageTMP.text = structureText + structurePercentage.ToString() + "%";
         catPercentageTMP.text = catText + catPercentage.ToString() + "%";
-        logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "XP Supplies (UI Manager)", $"{stats.CurrentXPSupplies} / {stats.NextLevelXPSupplies} -- Level {stats.SuppliesLevel}");
-        logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "XP Armoury (UI Manager)", $"{stats.CurrentXPArmour} / {stats.NextLevelXPArmour} -- Level {stats.ArmourLevel}");
-        logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "XP Infirmary (UI Manager)", $"{stats.CurrentXPMedicine} / {stats.NextLevelXPMedicine}");
-        logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Percentages (UI Manager)", $"Morale: {moraleText + moralPercentage.ToString() + "%"}");
-        logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Percentages (UI Manager)", $"Weapons: {weaponsText + weaponsPercentage.ToString() + "%"}");
-        logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Percentages (UI Manager)", $"Structure: {structureText + structurePercentage.ToString() + "%"}");
-        logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Percentages (UI Manager)", $"Cat: {catText + catPercentage.ToString() + "%"}");
+        //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "XP Supplies (UI Manager)", $"{stats.CurrentXPSupplies} / {stats.NextLevelXPSupplies} -- Level {stats.SuppliesLevel}");
+        //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "XP Armoury (UI Manager)", $"{stats.CurrentXPArmour} / {stats.NextLevelXPArmour} -- Level {stats.ArmourLevel}");
+        //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "XP Infirmary (UI Manager)", $"{stats.CurrentXPMedicine} / {stats.NextLevelXPMedicine}");
+        //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Percentages (UI Manager)", $"Morale: {moraleText + moralPercentage.ToString() + "%"}");
+        //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Percentages (UI Manager)", $"Weapons: {weaponsText + weaponsPercentage.ToString() + "%"}");
+        //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Percentages (UI Manager)", $"Structure: {structureText + structurePercentage.ToString() + "%"}");
+        //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Percentages (UI Manager)", $"Cat: {catText + catPercentage.ToString() + "%"}");
+        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "XP Supplies (UI Manager)", $"{stats.CurrentXPSupplies} / {stats.NextLevelXPSupplies} -- Level {stats.SuppliesLevel}");
+        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "XP Armoury (UI Manager)", $"{stats.CurrentXPArmour} / {stats.NextLevelXPArmour} -- Level {stats.ArmourLevel}");
+        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "XP Infirmary (UI Manager)", $"{stats.CurrentXPMedicine} / {stats.NextLevelXPMedicine}");
+        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Percentages (UI Manager)", $"Morale: {moraleText + moralPercentage.ToString() + "%"}");
+        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Percentages (UI Manager)", $"Weapons: {weaponsText + weaponsPercentage.ToString() + "%"}");
+        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Percentages (UI Manager)", $"Structure: {structureText + structurePercentage.ToString() + "%"}");
+        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Percentages (UI Manager)", $"Cat: {catText + catPercentage.ToString() + "%"}");
     }
 
 
@@ -149,16 +156,19 @@ public class UIManager : MonoBehaviour
         if (whichType == "Supplies")
         {
             chosenText = suppliesTexts[Random.Range(0, suppliesTexts.Length)];
-            logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Level Up (UI Manager)", $"Leveled up supplies");
+            //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Level Up (UI Manager)", $"Leveled up supplies");
+            GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Level Up (UI Manager)", $"Leveled up supplies");
         }
         else if (whichType == "Armoury")
         {
-            logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Level Up (UI Manager)", $"Leveled up Armoury");
+            //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Level Up (UI Manager)", $"Leveled up Armoury");
+            GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Level Up (UI Manager)", $"Leveled up Armoury");
             chosenText = armouryTexts[Random.Range(0, armouryTexts.Length)];
         }
         else if (whichType == "Medicine")
         {
-            logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Level Up (UI Manager)", $"Leveled up Medicine (infirmary)");
+            //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Level Up (UI Manager)", $"Leveled up Medicine (infirmary)");
+            GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Level Up (UI Manager)", $"Leveled up Medicine (infirmary)");
             chosenText = medicineTexts[Random.Range(0, medicineTexts.Length)];
         }
 

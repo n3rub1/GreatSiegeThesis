@@ -53,7 +53,8 @@ public class DangerSpawn : MonoBehaviour
 
     public void StartDeadPanelSequence()
     {
-        logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Player Died (DangerArea Manager)", "Player Enetered a danger zone and did not move in time");
+        //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Player Died (DangerArea Manager)", "Player Enetered a danger zone and did not move in time");
+        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Player Died (DangerArea Manager)", "Player Entered a danger zone and did not move in time - they died");
         StartCoroutine(IsDead());
     }
 

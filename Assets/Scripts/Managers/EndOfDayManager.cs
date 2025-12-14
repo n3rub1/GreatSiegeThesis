@@ -33,7 +33,10 @@ public class EndOfDayManager : MonoBehaviour
     private void UpdateTextAccordingToPlayerActions(int dayNumber)
     {
         string lastQuest = gameManager.GetLastQuestOfTheDay();
-        logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Player Sleep (EndOfDay Manager)", $"Day {dayNumber} ended and player went to sleep");
+        //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Player Sleep (EndOfDay Manager)", $"Day {dayNumber} ended and player went to sleep");
+        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Player Sleep (EndOfDay Manager)", $"Day {dayNumber} ended and player went to sleep");
+        GoogleSheetLogger.I.FlushDay();
+        GoogleSheetLogger.I.StartDay(gameManager.GetDayNumber() + 1);
 
         if (lastQuest == "Armoury")
         {

@@ -5199,8 +5199,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Start
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
-  m_sharedMaterial: {fileID: 730005745575528961, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 14b3bd805039e6746b4a09444a908cc7, type: 2}
+  m_sharedMaterial: {fileID: 935212599931276003, guid: 14b3bd805039e6746b4a09444a908cc7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -17754,8 +17754,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Exit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
-  m_sharedMaterial: {fileID: 730005745575528961, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 14b3bd805039e6746b4a09444a908cc7, type: 2}
+  m_sharedMaterial: {fileID: 935212599931276003, guid: 14b3bd805039e6746b4a09444a908cc7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -18312,8 +18312,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Credits
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
-  m_sharedMaterial: {fileID: 730005745575528961, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 14b3bd805039e6746b4a09444a908cc7, type: 2}
+  m_sharedMaterial: {fileID: 935212599931276003, guid: 14b3bd805039e6746b4a09444a908cc7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -18677,8 +18677,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Help
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
-  m_sharedMaterial: {fileID: 730005745575528961, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 14b3bd805039e6746b4a09444a908cc7, type: 2}
+  m_sharedMaterial: {fileID: 935212599931276003, guid: 14b3bd805039e6746b4a09444a908cc7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -18877,7 +18877,7 @@ MonoBehaviour:
 
     NinjaAdventure'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 14b3bd805039e6746b4a09444a908cc7, type: 2}
   m_sharedMaterial: {fileID: -105419525553219049, guid: 451feee637a113e43bf94bdcc6264bc2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -19043,8 +19043,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: The Great Siege of Malta
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
-  m_sharedMaterial: {fileID: 730005745575528961, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 14b3bd805039e6746b4a09444a908cc7, type: 2}
+  m_sharedMaterial: {fileID: 935212599931276003, guid: 14b3bd805039e6746b4a09444a908cc7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -26198,8 +26198,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Interactive Digital Narrative
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
-  m_sharedMaterial: {fileID: 730005745575528961, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 14b3bd805039e6746b4a09444a908cc7, type: 2}
+  m_sharedMaterial: {fileID: 935212599931276003, guid: 14b3bd805039e6746b4a09444a908cc7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -26315,7 +26315,7 @@ MonoBehaviour:
     characters\n\n! \u2192 Show points of interest (POIs) on the map\n\nAvoid the
     Red cicles\n\nDo not let the percentages reach 0%"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 832486c555b409a4d993f19a195cdb58, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 14b3bd805039e6746b4a09444a908cc7, type: 2}
   m_sharedMaterial: {fileID: -105419525553219049, guid: 451feee637a113e43bf94bdcc6264bc2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

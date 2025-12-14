@@ -90,14 +90,16 @@ public class DayNightCycleManager : MonoBehaviour
         {
             timeOfDay = 22;
             uiManager.UpdateTime(timeOfDay);
-            logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Time to sleep (Day/Night Manager)", $"Time to sleep");
+            //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Time to sleep (Day/Night Manager)", $"Time to sleep");
+            GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Time to sleep (Day/Night Manager)", $"Time to sleep");
             gameManager.SetQuestAccepted("SleepTime");
         }
         else
         {
             uiManager.UpdateTime(timeOfDay);
             timeOfDay++;
-            logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Hour Increase (Day/Night Manager)", $"Current Hour: {timeOfDay}");
+            //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Hour Increase (Day/Night Manager)", $"Current Hour: {timeOfDay}");
+            GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Hour Increase (Day/Night Manager)", $"Current Hour: {timeOfDay}");
             TriggerDayNightGlobalLight();
         }
     }

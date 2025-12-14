@@ -56,7 +56,12 @@ public class OpeningManager : MonoBehaviour
         {
             // Last screen -> Load the next scene
             Debug.Log("Loading Fort St. Elmo Scene...");
-            SceneManager.LoadScene(fortStElmoScene);
+            LoadNextScene();
         }
+    }
+
+    public void LoadNextScene()
+    {
+        SceneManager.LoadScene(fortStElmoScene);
     }
 }

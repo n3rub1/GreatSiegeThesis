@@ -48,8 +48,8 @@ public class LootManager : Singleton<LootManager>
         inventory.AddItem(inventoryItems[RNGInventoryLoot], RNGInventoryLootAmount);
 
         lootSelected.ShowLootGained(inventoryItems[RNGInventoryLoot], RNGInventoryLootAmount);
-        logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Loot Taken (Loot Manager)", $"Player looted {(RNGInventoryLoot == 0? "bandage" : "iron")} qty: {RNGInventoryLootAmount}");
-
+        //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Loot Taken (Loot Manager)", $"Player looted {(RNGInventoryLoot == 0? "bandage" : "iron")} qty: {RNGInventoryLootAmount}");
+        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Loot Taken (Loot Manager)", $"Player looted {(RNGInventoryLoot == 0 ? "bandage" : "iron")} qty: {RNGInventoryLootAmount}");
     }
 
     public void SetPlayerInRange(bool value)

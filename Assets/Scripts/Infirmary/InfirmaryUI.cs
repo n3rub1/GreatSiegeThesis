@@ -152,7 +152,8 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
 
         if (!Inventory.Instance.HasItem(requiredItemID, requiredAmount))
         {
-            logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Tried Infirmary (Infirmary UI)", $"Player did not have enough bandages to heal: {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.ID}");
+            //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Tried Infirmary (Infirmary UI)", $"Player did not have enough bandages to heal: {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.ID}");
+            GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Tried Infirmary (Infirmary UI)", $"Player did not have enough bandages to heal: {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.ID}");
             healingDescription.text = $"Not enough {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.requiredResource}";
             return;
         }
@@ -183,7 +184,8 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
 
         SetResourcesInformation();
         healingDescription.text = $"Healed {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.Name} using {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.requiredAmount} {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.requiredResource}";
-        logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Healed Person (Infirmary UI)", $"Player healed: {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.ID}");
+        //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Healed Person (Infirmary UI)", $"Player healed: {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.ID}");
+        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Healed Person (Infirmary UI)", $"Player healed: {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.ID}");
         GiveInfirmaryXP(InfirmarySlot.CurrentlySelectedSlot.AssignedItem.slotNumber, levels);
     }
 
@@ -199,17 +201,20 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
         switch (index)
         {
             case 0:
-                logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Healed person in Infirmary (Infirmary UI)", $"Healed a simple wound and got {2 + levels[infirmaryArrayValue]}XP");
+                //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Healed person in Infirmary (Infirmary UI)", $"Healed a simple wound and got {2 + levels[infirmaryArrayValue]}XP");
+                GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Healed person in Infirmary (Infirmary UI)", $"Healed a simple wound and got {2 + levels[infirmaryArrayValue]}XP");
                 playerXP.AddXPMedicine(2 + levels[infirmaryArrayValue]);
                 moralePercentageToIncrease = moralePercentageToIncrease + 5;
                 break;
             case 1:
-                logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Healed person in Infirmary (Infirmary UI)", $"Healed a medium wound and got {5 + levels[infirmaryArrayValue]}XP");
+                //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Healed person in Infirmary (Infirmary UI)", $"Healed a medium wound and got {5 + levels[infirmaryArrayValue]}XP");
+                GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Healed person in Infirmary (Infirmary UI)", $"Healed a medium wound and got {5 + levels[infirmaryArrayValue]}XP");
                 playerXP.AddXPMedicine(5 + levels[infirmaryArrayValue]);
                 moralePercentageToIncrease = moralePercentageToIncrease + 15;
                 break;
             case 2:
-                logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Healed person in Infirmary (Infirmary UI)", $"Healed a hard wound and got {10 + levels[infirmaryArrayValue]}XP");
+                //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Healed person in Infirmary (Infirmary UI)", $"Healed a hard wound and got {10 + levels[infirmaryArrayValue]}XP");
+                GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Healed person in Infirmary (Infirmary UI)", $"Healed a hard wound and got {10 + levels[infirmaryArrayValue]}XP");
                 playerXP.AddXPMedicine(10 + levels[infirmaryArrayValue]);
                 moralePercentageToIncrease = moralePercentageToIncrease + 25;
                 break;
@@ -254,14 +259,16 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
 
     public void CloseInfirmaryPanel()
     {
-        logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Infirmary Closed (Infirmary UI)", "Player closed the infirmary panel");
+       // logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Infirmary Closed (Infirmary UI)", "Player closed the infirmary panel");
+        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Infirmary Closed (Infirmary UI)", "Player closed the infirmary panel");
         infirmaryInjuredPanel.SetActive(false);
     }
 
     public void OpenInfirmaryPanel()
     {
         if (infirmaryInteraction == null) return;
-        logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Infirmary Opened (Infirmary UI)", "Player opened the infirmary panel");
+        //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Infirmary Opened (Infirmary UI)", "Player opened the infirmary panel");
+        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Infirmary Opened (Infirmary UI)", "Player opened the infirmary panel");
 
         healingDescription.text = "Select Soldier to Heal";
         SetResourcesInformation();

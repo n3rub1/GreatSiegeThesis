@@ -49,7 +49,9 @@ public class GameManager : MonoBehaviour
         infirmaryTeleport.SetActive(false);
         caveTeleport.SetActive(false);
         bedTeleport.SetActive(false);
-        GoogleSheetLogger.Instance.LogData(GetPlayerIDForLogging(), GetCurrentTime(), GetDayNumber(), "Game Started (Game Manager)", "Game Started, Game Manager Loaded");
+        //GoogleSheetLogger.Instance.LogData(GetPlayerIDForLogging(), GetCurrentTime(), GetDayNumber(), "Game Started (Game Manager)", "Game Started, Game Manager Loaded");
+        GoogleSheetLogger.I.StartNewPlaythrough();
+
         SetQuestAccepted("Nothing");
     }
 
@@ -201,10 +203,11 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
-        if(lastQuest == QuestType.Nothing.ToString())
-        {
-            GoogleSheetLogger.Instance.LogData(GetPlayerIDForLogging(), GetCurrentTime(), dayNumber, "Quest Accepted (Game Manager)", questAccepted.ToString() == null ? "" : questAccepted.ToString());
-        }
+       // if(lastQuest == QuestType.Nothing.ToString())
+        //{
+            //GoogleSheetLogger.Instance.LogData(GetPlayerIDForLogging(), GetCurrentTime(), dayNumber, "Quest Accepted (Game Manager)", questAccepted.ToString() == null ? "" : questAccepted.ToString());
+            GoogleSheetLogger.I.Log(dayNumber, "Quest Accepted (Game Manager)", questAccepted.ToString() == null ? "Null" : questAccepted.ToString());
+        //}
             BlockOffAreasNotPartOfQuest();
 
 
