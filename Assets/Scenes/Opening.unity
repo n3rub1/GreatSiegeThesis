@@ -893,37 +893,49 @@ MonoBehaviour:
     By
     continuing, you confirm that you understand the nature of this project and consent
     to participate.'
-  - 'In May 1565, the calm Maltese sea darkened with hundreds of sails. The Ottoman
-    armada, sent by Sultan Suleiman the Magnificent, carried thousands of Janissaries,
-    cavalry, and siege weapons, all bound for Malta. Their drums rolled like thunder,
-    echoing across the coast.
+  - 'In May 1565, the calm Maltese sea filled with sails. An Ottoman armada, sent
+    by Sultan Suleiman the Magnificent, approached the island carrying soldiers,
+    horses, and siege weapons. Drums and war cries echoed across the water as the
+    fleet anchored along the coast.
 
+    
 
-    Grand Master Jean de Valette called every man,
-    woman, and child to prepare. Slaves and free men alike fortified the walls of
-    Birgu and Senglea, farmers abandoned their fields to take refuge behind stone
-    battlements. Crops gathered early and wells poisioned.  Nothing was left for
-    the enemy.  The island braced for the storm to come.'
-  - "\u017Bejtun, your home, was among the first to burn. The Ottomans landed in
-    Marsaxlokk, sweeping through fields and homes with fire and steel. You tried
-    to flee with your family, but the soldiers came too fast. Screams filled the
-    air as the village turned to smoke and ruin.\n\nHidden among the bushes, you
-    waited until the sounds of battle faded. By dawn, everything you knew was gone."
-  - 'You followed the fleeing crowds north until you reached Birgu, where Grand Master
-    de Valette and the Knights of St. John prepared to defend the island. The walls
-    shook with cannon fire from the sea, and the sky glowed red above Fort St. Elmo,
-    where men fought and fell each day.
+    Across Malta, preparations began.
+    Grand Master Jean de Valette ordered the fortification of Birgu and Senglea.
+    Walls were strengthened, supplies gathered, and wells poisoned for the enemy.
+    Farmers left their fields, families sought shelter, and the island braced itself
+    for a siege that would test everyone who lived on it.
 
+    
 
-    Too young to fight, you offered to
-    help however you could. The defenders put you on a boat and you headed towards
-    the Fort under siege, Fort St. Elmo.'
-  - "At night, as you were resting in your chambers, you swore you heard faint meows
-    among the ruins. Some said it was the wind; others spoke of a small cat with
-    a torn ear darting between the broken walls. \n\nWhether it was real or a trick
-    of memory, you couldn\u2019t tell. But even in the midst of siege and death,
-    that hope was enough to keep you moving.  This is your story, will you help in
-    the fort, or will you loiok for your cat?"
+    You did not
+    understand empires or strategy. You only knew that something vast and unstoppable
+    had arrived.'
+  - "\u017Bejtun, your home, lay in the path of the advancing army. As soldiers moved
+    inland from the southern coast, villages emptied and homes were abandoned in
+    the confusion.\r\n\r\nWhen the shouting began, your cat bolted. You remember
+    its black with white striped tail vanishing between stone walls as people ran
+    past, carrying what they could. You tried to follow and grab hold of your cat,
+    but the crowd pushed you away.\r\n\r\nSmoke rose behind you. By nightfall, the
+    village was gone \u2014 and your cat was nowhere to be found."
+  - "You followed the flow of displaced people north toward the fortified harbours.
+    Along the road, abandoned carts and broken crates lined the path.\r\n\r\nNear
+    Birgu, you saw something that made your heart race: small paw prints in the dust
+    beside a torn piece of cloth, the same colour your cat used to sleep on.\r\n\r\nInside
+    the town, sailors spoke of animals slipping onto boats at night, hiding among
+    barrels and nets. Supplies moved constantly toward Fort St. Elmo \u2014 and you
+    began to hope your cat had followed the same path.\r\n\r\nWhen a boat was prepared
+    to cross the harbour under cover of darkness, you climbed aboard."
+  - "That night, resting in a cramped chamber inside the fort, you could not sleep. 
+    The bombardment was constant but somewhere, somehow, beyond the stone, you thought
+    you heard a faint sound \u2014 a soft, familiar meow.\r\n\r\nSome said cats had
+    taken refuge in the fort. Others claimed to have seen a small dark cat slipping
+    between the broken walls, one ear torn.\r\n\r\nYou didn\u2019t know what was
+    true. But in a world ruled by orders, cannon fire, and fear, one thing remained
+    yours alone: the need to find your cat.\r\n\r\nEven as the siege closed in, that
+    bond mattered more than armies or flags.\r\n\r\nThis is your story.\r\nWill you
+    help the defenders endure another day \u2014 or will you search for the cat you
+    love?"
   storyContinueButtons:
   - Start the Story
   - "You watched from afar, wondering if the ships would reach your village\u2026"
@@ -931,10 +943,19 @@ MonoBehaviour:
   - "You found shelter among the knights, but your heart stayed restless\u2026"
   - "You began your search once more \u2014 for the cat, and for what remained of
     home."
-  delay: 0.05
+  delay: 0.073
   continueButton: {fileID: 1949886302}
   continueButtonTMP: {fileID: 48706972}
   fortStElmoScene: 2
+  ttsSource: {fileID: 332482775}
+  ttsClips:
+  - {fileID: 8300000, guid: fa89061948f8c0b4bb07df43354afd00, type: 3}
+  - {fileID: 8300000, guid: 1a28c51b812c47840981de1bf64a1978, type: 3}
+  - {fileID: 8300000, guid: d744b838de683cf4c8e8713db2fa28d9, type: 3}
+  - {fileID: 8300000, guid: 7509a1cfd52483c408ea527fc684e99b, type: 3}
+  - {fileID: 8300000, guid: ffd0b2a012199ed44804dfd6de699ab5, type: 3}
+  playAudioOnScreenStart: 1
+  stopAudioWhenChangingScreen: 1
 --- !u!4 &181457934
 Transform:
   m_ObjectHideFlags: 0
@@ -1184,6 +1205,134 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &332482774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 332482776}
+  - component: {fileID: 332482775}
+  m_Layer: 0
+  m_Name: Speech
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &332482775
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332482774}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 51f52c42675fcf949a1a4874c984f4a3, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &332482776
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332482774}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.03246969, y: -0.1329847, z: 26.468756}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &346814129
 GameObject:
   m_ObjectHideFlags: 0
@@ -24812,8 +24961,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b43e962bd3d6bbd46a43d69b86325958, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 0.8
+  m_Volume: 0.1
+  m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -30498,6 +30647,7 @@ SceneRoots:
   - {fileID: 181457934}
   - {fileID: 108894258}
   - {fileID: 1859902695}
+  - {fileID: 332482776}
   - {fileID: 1570154082}
   - {fileID: 1147129683}
   - {fileID: 907040937}

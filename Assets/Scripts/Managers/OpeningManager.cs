@@ -15,6 +15,12 @@ public class OpeningManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI continueButtonTMP;
     [SerializeField] private int fortStElmoScene = 2;
 
+    [Header("Audio (TTS per screen)")]
+    [SerializeField] private AudioSource ttsSource;
+    [SerializeField] private AudioClip[] ttsClips; // Must match storyScreens length
+    [SerializeField] private bool playAudioOnScreenStart = true;
+    [SerializeField] private bool stopAudioWhenChangingScreen = true;
+
     private int currentScreen = 0;
     private bool isTyping = false;
 
@@ -27,6 +33,11 @@ public class OpeningManager : MonoBehaviour
 
     IEnumerator WriteText(string textToWrite)
     {
+
+            ttsSource.clip = ttsClips[currentScreen];
+            ttsSource.Play();
+
+
         isTyping = true;
         textComponent.text = "";
 
