@@ -201,8 +201,12 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
-        GoogleSheetLogger.Instance.LogData(GetPlayerIDForLogging(), GetCurrentTime(), dayNumber, "Quest Accepted (Game Manager)", questAccepted.ToString() == null ? "": questAccepted.ToString());
-        BlockOffAreasNotPartOfQuest();
+        if(lastQuest == QuestType.Nothing.ToString())
+        {
+            GoogleSheetLogger.Instance.LogData(GetPlayerIDForLogging(), GetCurrentTime(), dayNumber, "Quest Accepted (Game Manager)", questAccepted.ToString() == null ? "" : questAccepted.ToString());
+        }
+            BlockOffAreasNotPartOfQuest();
+
 
     }
 

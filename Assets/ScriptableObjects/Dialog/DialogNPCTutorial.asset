@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889faa658c7b2c94ea4fff939bf8022e, type: 3}
+  m_Name: DialogNPCTutorial
+  m_EditorClassIdentifier: 
+  Name: Rocco
+  Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
+  HasInteraction: 0
+  interactionType: 3
+  Greeting: Hey...
+  Day1Dialog:
+  - "Hey\u2026 now that you\u2019re awake, be careful wandering around. This place
+    isn\u2019t safe anymore.\n\nPRESS F FOR MORE \u2192"
+  - "If you\u2019re looking for something to do, seek out the French knight Pierre
+    de Massues-Vercoiran, known as Colonel Mas. He\u2019s asking for extra hands.\n\nThere
+    are other soldiers around the fort who might have some insight of what is happening. 
+    Try to talk to everyone you can!"
+  Day2FirstTimeDialog:
+  - "You\u2019re still here. Most people try to disappear after the first night.\n\nYou
+    must have something in you to stay with us. Jean Parisot de Valette doesn\u2019t
+    want us to abandon this fort. He wants us to hold it until the end.\n\nPRESS
+    F FOR MORE \u2192"
+  - "I might never see my family again. Try to help around the fort \u2014 it matters
+    more than you think.\n\nIf you\u2019re looking for something to do, head down
+    to the infirmary. They need help with the wounded soldiers.\n\nSome of them might
+    live another day\u2026 and return to their families."
+  Day2MetBeforeDialog:
+  - "You\u2019re still here. Most people try to disappear after the first night. 
+    You must have something in you to keep you here with us.  Jean Pierre De La Vallette
+    does not want us to leave this fort.  He wants us to hold it till the end. \n\nPRESS
+    F FOR MORE -->"
+  - "I might not see my family again.  Try to help around the fort.  That matters
+    more than you think.\nIf you\u2019re looking for something to do, why don't you
+    head down to the infirmary.  They could use your help with the wounded soldiers. 
+    They get to live another day, go back to their families!"
+  Day3FirstTimeDialog:
+  - "I had a family outside these walls once.\n\nI hope they\u2019re safe in Birgu.
+    I know I won\u2019t be \u2014 not here.\n\nIf you\u2019re still searching for
+    someone, don\u2019t stop. Hope is the only thing that lasts longer than these
+    stones."
+  Day3MetBeforeDialog:
+  - "I had a family outside these walls once.\n\nI hope they\u2019re safe in Birgu.
+    I know I won\u2019t be \u2014 not here.\n\nIf you\u2019re still searching for
+    someone, don\u2019t stop. Hope is the only thing that lasts longer than these
+    stones."
+  Day4FirstTimeDialog:
+  - "Be careful, boy. Turgut Reis \u2014 we call him Dragut \u2014 has joined the
+    fight.\n\nThe bombardment has intensified. He\u2019s not just a corsair \u2014
+    he\u2019s a military genius.\n\nHe\u2019s set cannons on both sides of the fort
+    now."
+  Day4MetBeforeDialog:
+  - "Be careful, boy. Turgut Reis \u2014 we call him Dragut \u2014 has joined the
+    fight.\n\nThe bombardment has intensified. He\u2019s not just a corsair \u2014
+    he\u2019s a military genius.\n\nHe\u2019s set cannons on both sides of the fort
+    now."
+  Day5FirstTimeDialog:
+  - "Whatever happens today\u2026 you did what you could.\n\nThat counts \u2014 even
+    if no one remembers our names.\n\nOnly nobles are written down. Not us. The common
+    people.\n\nPRESS F FOR MORE \u2192"
+  - "We fight, we bleed, we die\u2026 and no one remembers.\n\nNo one will remember
+    me."
+  Day5MetBeforeDialog:
+  - "Whatever happens today\u2026 you did what you could.\n\nThat counts \u2014 even
+    if no one remembers our names.\n\nOnly nobles are written down. Not us. The common
+    people.\n\nPRESS F FOR MORE \u2192"
+  - "We fight, we bleed, we die\u2026 and no one remembers.\n\nNo one will remember
+    me."
+  dayNumber: 1
+  metOnday1: 0
+  metOnday2: 0
+  metOnday3: 0
+  metOnday4: 0
+  metOnday5: 0

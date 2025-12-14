@@ -1,0 +1,159 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7117496758988717937
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1611907413623802000, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_InstanceId
+      value: -155092
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611907413623802000, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_ShapePathHash
+      value: 1436043997
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611907413623802000, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_ShapePath.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611907413623802000, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_LocalBounds.m_Center.x
+      value: -0.00096797943
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611907413623802000, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_LocalBounds.m_Center.y
+      value: -0.011306763
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611907413623802000, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.x
+      value: 0.25693798
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611907413623802000, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.y
+      value: 0.4800148
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611907413623802000, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_ShapePath.Array.data[0].x
+      value: -0.14418602
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611907413623802000, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_ShapePath.Array.data[0].y
+      value: -0.49132156
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611907413623802000, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_ShapePath.Array.data[1].x
+      value: -0.25790596
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611907413623802000, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_ShapePath.Array.data[1].y
+      value: 0.053611755
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611907413623802000, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_ShapePath.Array.data[2].x
+      value: 0.016563416
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611907413623802000, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_ShapePath.Array.data[2].y
+      value: 0.46870804
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611907413623802000, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_ShapePath.Array.data[3].x
+      value: 0.25597
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611907413623802000, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_ShapePath.Array.data[3].y
+      value: 0.14241791
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611907413623802000, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_ShapePath.Array.data[4].x
+      value: 0.24832916
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611907413623802000, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_ShapePath.Array.data[4].y
+      value: -0.3824768
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611907413623802000, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_ShapePath.Array.data[5].x
+      value: 0.16172981
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611907413623802000, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_ShapePath.Array.data[5].y
+      value: -0.47869873
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685002966512252892, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: animationName
+      value: Idle_Left_Ottoman_Musket_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471287461029325446, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a21946b2af237d54c9c075e661aaaaa4, type: 2}
+    - target: {fileID: 5109685823649625800, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5109685823649625800, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5109685823649625800, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5109685823649625800, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -24.558014
+      objectReference: {fileID: 0}
+    - target: {fileID: 5109685823649625800, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -52.134007
+      objectReference: {fileID: 0}
+    - target: {fileID: 5109685823649625800, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5109685823649625800, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5109685823649625800, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5109685823649625800, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5109685823649625800, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5109685823649625800, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5109685823649625800, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5109685823649625800, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7696374753102667129, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 56668723, guid: 5fde7217974c70442be62433a1902ed2, type: 3}
+    - target: {fileID: 8300535971979606366, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}
+      propertyPath: m_Name
+      value: IDLE_NPC_OTTOMAN_MUSKET_1_LEFT
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8ef9596114c28734a9d164c7afc29225, type: 3}

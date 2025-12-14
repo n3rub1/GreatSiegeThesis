@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889faa658c7b2c94ea4fff939bf8022e, type: 3}
+  m_Name: DialogNPCCavallier
+  m_EditorClassIdentifier: 
+  Name: Toni
+  Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
+  HasInteraction: 0
+  interactionType: 3
+  Greeting: Hey...
+  Day1Dialog:
+  - 'I was up here when they came. The sea was already full of them. Galleys, as
+    far as I could see.
+
+    I thought the world was ending that morning.'
+  Day2FirstTimeDialog:
+  - "The drums of war\u2026 the war cries from their decks\u2026 the flags. I was
+    scared. I still am.\nThey kept arriving \u2014 wave after wave. We stood here
+    and watched them land at Marsaxlokk.\nNo one spoke. We all know the end is coming
+    for us."
+  Day2MetBeforeDialog:
+  - "The drums of war\u2026 the war cries from their decks\u2026 the flags. I was
+    scared. I still am.\nThey kept arriving \u2014 wave after wave. We stood here
+    and watched them land at Marsaxlokk.\nNo one spoke. We all know the end is coming
+    for us."
+  Day3FirstTimeDialog:
+  - "We started firing immediately on their ships. From that moment on, the cannons
+    never stopped.\nBut they fired back. They set up their cannons on Mount Sciberras.
+    It looks down on the fort \u2014 that\u2019s why the cannonballs reach us.\nYou
+    should speak to the Italian knight Paolo Avogadro. He knows the fort\u2026 and
+    how both sides are fighting."
+  Day3MetBeforeDialog:
+  - "We started firing immediately on their ships. From that moment on, the cannons
+    never stopped.\nBut they fired back. They set up their cannons on Mount Sciberras.
+    It looks down on the fort \u2014 that\u2019s why the cannonballs reach us.\nYou
+    should speak to the Italian knight Paolo Avogadro. He knows the fort\u2026 and
+    how both sides are fighting."
+  Day4FirstTimeDialog:
+  - "They killed my best friend. Shrapnel from one of the cannons - can't tell you
+    if it was from ours or their.  There is choas all around. He didn\u2019t make
+    it. The infirmary never rests, but some wounds are too severe.\nSome are left
+    to die.\nI still see him when I close my eyes. That\u2019s when I realised I
+    was too young to be here\u2026 and too late to leave."
+  Day4MetBeforeDialog:
+  - "They killed my best friend. Shrapnel from one of the cannons - can't tell you
+    if it was from ours or their.  There is choas all around. He didn\u2019t make
+    it. The infirmary never rests, but some wounds are too severe.\nSome are left
+    to die.\nI still see him when I close my eyes. That\u2019s when I realised I
+    was too young to be here\u2026 and too late to leave."
+  Day5FirstTimeDialog:
+  - "I don\u2019t think any of us were meant to survive this. \nI was here when it
+    began. I\u2019ll be here when it ends.\nAt least I\u2019ll be remembered as a
+    brave man."
+  Day5MetBeforeDialog:
+  - "I don\u2019t think any of us were meant to survive this. \nI was here when it
+    began. I\u2019ll be here when it ends.\nAt least I\u2019ll be remembered as a
+    brave man."
+  dayNumber: 1
+  metOnday1: 0
+  metOnday2: 0
+  metOnday3: 0
+  metOnday4: 0
+  metOnday5: 0

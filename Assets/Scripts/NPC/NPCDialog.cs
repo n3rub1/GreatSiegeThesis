@@ -5,7 +5,7 @@ using UnityEngine;
 
 public enum InteractionType
 {
-    Armourer, Infirmary, Supplies
+    Armourer, Infirmary, Supplies, Tutorial
 }
 
 [CreateAssetMenu(menuName = "NPC Dialog")]

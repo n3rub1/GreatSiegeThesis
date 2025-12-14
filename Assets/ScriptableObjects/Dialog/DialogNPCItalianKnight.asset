@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889faa658c7b2c94ea4fff939bf8022e, type: 3}
+  m_Name: DialogNPCItalianKnight
+  m_EditorClassIdentifier: 
+  Name: Paolo Avogadro
+  Icon: {fileID: -834485563, guid: 78d5bbe799641fe43ac5aca0d6572293, type: 3}
+  HasInteraction: 0
+  interactionType: 3
+  Greeting: Hey...
+  Day1Dialog:
+  - "Fort St. Elmo was never meant to stand alone. It exists to defend the entrance
+    to the two harbours. It was built to delay \u2014 and thankfully, the Ottomans
+    have taken the bait. This buys time for Birgu and Senglea. The longer we hold,
+    the greater the chance that the reinforcements promised from Sicily will arrive,
+    as the Grand Master was assured."
+  Day2FirstTimeDialog:
+  - "The fort is built low, which allows them to fire down on us from Mount Sciberras.
+    Their volleys never stop \u2014 they fire constantly. The advantage we have is
+    that they cannot dig beneath the fortifications due to its position. This fight
+    will be decided above the walls, so we must hold them for as long as we can."
+  Day2MetBeforeDialog:
+  - "The fort is built low, which allows them to fire down on us from Mount Sciberras.
+    Their volleys never stop \u2014 they fire constantly. The advantage we have is
+    that they cannot dig beneath the fortifications due to its position. This fight
+    will be decided above the walls, so we must hold them for as long as we can."
+  Day3FirstTimeDialog:
+  - "We sent a letter to Grand Master Jean Parisot de Valette. Some asked permission
+    to withdraw. His reply was clear: we could return, but fresh troops would take
+    our place. No one wished to be remembered as a coward, so we stayed. I know I
+    will die here \u2014 but I will die with a sword in my hand."
+  Day3MetBeforeDialog:
+  - "We sent a letter to Grand Master Jean Parisot de Valette. Some asked permission
+    to withdraw. His reply was clear: we could return, but fresh troops would take
+    our place. No one wished to be remembered as a coward, so we stayed. I know I
+    will die here \u2014 but I will die with a sword in my hand."
+  Day4FirstTimeDialog:
+  - "The stench is unbearable \u2014 the dead beneath the walls, burning under the
+    sun. Be careful out there, boy. Dragut has arrived, and he is a great leader
+    among the Ottoman forces. It is his command that has intensified the bombardment.
+    They have set up camp on both sides of the fort: Gallows\u2019 Point to the east,
+    and Tign\xE9 Point to the west."
+  Day4MetBeforeDialog:
+  - "The stench is unbearable \u2014 the dead beneath the walls, burning under the
+    sun. Be careful out there, boy. Dragut has arrived, and he is a great leader
+    among the Ottoman forces. It is his command that has intensified the bombardment.
+    They have set up camp on both sides of the fort: Gallows\u2019 Point to the east,
+    and Tign\xE9 Point to the west."
+  Day5FirstTimeDialog:
+  - "We will not abandon this fort. We will fight until the walls fall, or we do.
+    St. Elmo must bleed them dry, no matter the cost. If this fort holds, Malta lives.
+    If it falls, it will fall with honour. When the walls are breached, I will be
+    among the last still standing, sword in hand \u2014 and I will not lower it while
+    I still draw breath."
+  Day5MetBeforeDialog:
+  - "We will not abandon this fort. We will fight until the walls fall, or we do.
+    St. Elmo must bleed them dry, no matter the cost. If this fort holds, Malta lives.
+    If it falls, it will fall with honour. When the walls are breached, I will be
+    among the last still standing, sword in hand \u2014 and I will not lower it while
+    I still draw breath."
+  dayNumber: 6
+  metOnday1: 1
+  metOnday2: 1
+  metOnday3: 1
+  metOnday4: 1
+  metOnday5: 1
