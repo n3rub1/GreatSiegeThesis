@@ -11,7 +11,7 @@ public class MainMenuManager : MonoBehaviour
     [Header("Config")]
     [SerializeField] private GameObject[] fires;
     [SerializeField] private float loopInterval = 2.0f;
-    [SerializeField] private int fortStElmoScene = 1;
+    [SerializeField] private int storyScreen = 3; //was 1
 
     [Header("Movement")]
     [SerializeField] private GameObject props;
@@ -45,7 +45,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void LoadNextScene()
     {
-        SceneManager.LoadScene(fortStElmoScene);
+        SceneManager.LoadScene(storyScreen);
     }
 
     public void QuitGame()

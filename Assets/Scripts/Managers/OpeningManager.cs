@@ -13,7 +13,7 @@ public class OpeningManager : MonoBehaviour
     [SerializeField] private float delay = 0.05f;
     [SerializeField] private Button continueButton;
     [SerializeField] private TextMeshProUGUI continueButtonTMP;
-    [SerializeField] private int fortStElmoScene = 2;
+    [SerializeField] private int preSurveyQuestions = 3;
 
     [Header("Audio (TTS per screen)")]
     [SerializeField] private AudioSource ttsSource;
@@ -73,6 +73,6 @@ public class OpeningManager : MonoBehaviour
 
     public void LoadNextScene()
     {
-        SceneManager.LoadScene(fortStElmoScene);
+        SceneManager.LoadScene(preSurveyQuestions);
     }
 }
