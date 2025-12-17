@@ -10,6 +10,8 @@ public class DangerSpawn : MonoBehaviour
     [SerializeField] private GoogleSheetLogger logger;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private int additionalDifficulty;
+    [SerializeField] private float deadScreenTimer = 5f;
+    [SerializeField] private DayNightCycleManager dayNightCycleManager;
 
     private bool canDie = false;
 
@@ -31,18 +33,6 @@ public class DangerSpawn : MonoBehaviour
 
     void SpawnCircleOfDeath()
     {
-        //for (int i = 0; i <= gameManager.GetDayNumber() + additionalDifficulty; i++){
-
-        //    float randomX = Random.Range(-35f, 15f);
-        //    float randomY = Random.Range(-17f, 32f);
-        //    Vector2 randomPosition = new Vector2(randomX, randomY);
-
-        //    // Spawn the red circle immediately
-        //    GameObject circleInstance = Instantiate(circlePrefab, randomPosition, Quaternion.identity);
-
-        //    // Start coroutine to spawn particle after 3 seconds
-        //    StartCoroutine(SpawnParticleAndDestroy(circleInstance, randomPosition));
-        //}
         StartCoroutine(SpawnCirclesOnDeathWithDelay());
     }
 
@@ -53,7 +43,6 @@ public class DangerSpawn : MonoBehaviour
 
     public void StartDeadPanelSequence()
     {
-        //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Player Died (DangerArea Manager)", "Player Enetered a danger zone and did not move in time");
         GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Player Died (DangerArea Manager)", "Player Entered a danger zone and did not move in time - they died");
         StartCoroutine(IsDead());
     }
@@ -76,8 +65,9 @@ public class DangerSpawn : MonoBehaviour
     IEnumerator IsDead()
     {
         deadScreenPanel.SetActive(true);
+        dayNightCycleManager.SetTimerManually(22);
         player.transform.position = new Vector3(-236, -29, 0);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(deadScreenTimer);
         deadScreenPanel.SetActive(false);
     }
 

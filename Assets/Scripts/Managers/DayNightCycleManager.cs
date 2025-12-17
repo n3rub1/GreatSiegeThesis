@@ -61,7 +61,6 @@ public class DayNightCycleManager : MonoBehaviour
         transitionDuration = speedOfTimeOfDayInSeconds;
         fakeSunCurrentPosition = fakeSun.transform.position;
         fakeSunTargetPosition = fakeSunCurrentPosition + new Vector3(1, 0, 0);
-
     }
 
     private void Update()
@@ -75,6 +74,13 @@ public class DayNightCycleManager : MonoBehaviour
         }
     }
 
+    public void SetTimerManually(int time)
+    {
+        timeOfDay = time;
+        hourStartIndexLight = time;
+        TriggerDayNightGlobalLight();
+    }
+
     IEnumerator StartTimer()
     {
         while (true)
@@ -82,6 +88,11 @@ public class DayNightCycleManager : MonoBehaviour
             yield return new WaitForSeconds(speedOfTimeOfDayInSeconds);
             TriggerTimer();
         }
+    }
+
+    public int GetCurrentTime()
+    {
+        return timeOfDay;
     }
 
     private void TriggerTimer()

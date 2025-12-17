@@ -16,11 +16,14 @@ public class QuestUI : Singleton<QuestUI>
     [SerializeField] float bounceSpeed;
     [SerializeField] GameObject questMarker;
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private DayNightCycleManager dayNightCycleManager;
 
 
     private Vector3 startPosition;
     private Vector3 originalPosition;
     private PlayerActions actions;
+    private bool anyQuestAccepted;
+
     public QuestInteraction questInteraction { get; set; }
 
 
@@ -32,6 +35,7 @@ public class QuestUI : Singleton<QuestUI>
 
     private void Start()
     {
+        anyQuestAccepted = false;
         startPosition = questMarker.transform.localPosition;
         originalPosition = questMarker.transform.localPosition;
         ResetQuests();
@@ -48,6 +52,15 @@ public class QuestUI : Singleton<QuestUI>
         else
         {
             startPosition = originalPosition;
+        }
+
+        if (dayNightCycleManager.GetCurrentTime() >= 22)
+        {
+            RemoveQuestMarker();
+        }
+        else if (dayNightCycleManager.GetCurrentTime() < 22 && anyQuestAccepted == false)
+        {
+            ActivateQuestMarker();
         }
     }
 
@@ -67,9 +80,14 @@ public class QuestUI : Singleton<QuestUI>
         questMarker.SetActive(false);
     }
 
+    private void ActivateQuestMarker()
+    {
+        questMarker.SetActive(true);
+    }
+
     private void OpenQuestPanel()
     {
-        if (questInteraction == null) return;  //|| gameManager.GetQuestAccepted() != "Reset"
+        if (questInteraction == null || dayNightCycleManager.GetCurrentTime() >= 22 || anyQuestAccepted) return;  //|| gameManager.GetQuestAccepted() != "Reset"
         questPanel.SetActive(true);
     }
 
@@ -79,6 +97,7 @@ public class QuestUI : Singleton<QuestUI>
         gameManager.SetQuestAccepted("Armoury");
         CloseQuestPanel();
         RemoveQuestMarker();
+        anyQuestAccepted = true;
     }
 
     public void InfirmaryQuestAccepted()
@@ -87,6 +106,7 @@ public class QuestUI : Singleton<QuestUI>
         gameManager.SetQuestAccepted("Infirmary");
         CloseQuestPanel();
         RemoveQuestMarker();
+        anyQuestAccepted = true;
     }
 
     public void CatQuestAccepted()
@@ -95,6 +115,7 @@ public class QuestUI : Singleton<QuestUI>
         gameManager.SetQuestAccepted("Cat");
         CloseQuestPanel();
         RemoveQuestMarker();
+        anyQuestAccepted = true;
     }
 
     public void StructureQuestAccepted()
@@ -103,12 +124,14 @@ public class QuestUI : Singleton<QuestUI>
         gameManager.SetQuestAccepted("Structure");
         CloseQuestPanel();
         RemoveQuestMarker();
+        anyQuestAccepted = true;
     }
 
     public void ResetQuests()
     {
-        questMarker.SetActive(true);
+        ActivateQuestMarker();
         gameManager.SetQuestAccepted("Reset");
+        anyQuestAccepted = false;
     }
 
 

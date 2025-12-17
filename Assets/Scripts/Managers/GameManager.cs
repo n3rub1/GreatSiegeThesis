@@ -151,7 +151,7 @@ public class GameManager : MonoBehaviour
                 armouryTeleport.SetActive(false);
                 caveTeleport.SetActive(false);
                 bedTeleport.SetActive(true);
-                bedTeleportInside.SetActive(false);
+                bedTeleportInside.SetActive(true);
                 break;
             case "Reset":
                 questAccepted = QuestType.Reset.ToString();
