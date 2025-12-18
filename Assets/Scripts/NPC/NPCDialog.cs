@@ -31,6 +31,17 @@ public class NPCDialog : ScriptableObject
     [TextArea] public string[] Day5FirstTimeDialog;
     [TextArea] public string[] Day5MetBeforeDialog;
 
+    [Header("Audio")]
+    public AudioClip Day1Audio;
+    public AudioClip Day2FirstTimeAudio;
+    public AudioClip Day2MetBeforeAudio;
+    public AudioClip Day3FirstTimeAudio;
+    public AudioClip Day3MetBeforeAudio;
+    public AudioClip Day4FirstTimeAudio;
+    public AudioClip Day4MetBeforeAudio;
+    public AudioClip Day5FirstTimeAudio;
+    public AudioClip Day5MetBeforeAudio;
+
     [Header("Days")]
     public int dayNumber;
 

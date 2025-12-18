@@ -13,7 +13,7 @@ public class DialogManager : Singleton<DialogManager>
     [SerializeField] private TextMeshProUGUI npcDialogTMP;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private GoogleSheetLogger logger;
-
+    [SerializeField] private AudioSource voiceSource;
 
     public NPCInteraction npcSelected { get; set; }
 
@@ -67,6 +67,7 @@ public class DialogManager : Singleton<DialogManager>
                 foreach (string sentence in npcSelected.DialogToShow.Day1Dialog)
                     dialogQueue.Enqueue(sentence);
                 npcSelected.DialogToShow.metOnday1 = true;
+                PlayClip(npcSelected.DialogToShow.Day1Audio);
                 break;
 
             case 2:
@@ -75,12 +76,14 @@ public class DialogManager : Singleton<DialogManager>
                     foreach (string sentence in npcSelected.DialogToShow.Day2MetBeforeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday2 = true;
+                    PlayClip(npcSelected.DialogToShow.Day2MetBeforeAudio);
                 }
                 else
                 {
                     foreach (string sentence in npcSelected.DialogToShow.Day2FirstTimeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday2 = true;
+                    PlayClip(npcSelected.DialogToShow.Day2FirstTimeAudio);
                 }
                 break;
 
@@ -90,12 +93,14 @@ public class DialogManager : Singleton<DialogManager>
                     foreach (string sentence in npcSelected.DialogToShow.Day3MetBeforeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday3 = true;
+                    PlayClip(npcSelected.DialogToShow.Day3MetBeforeAudio);
                 }
                 else
                 {
                     foreach (string sentence in npcSelected.DialogToShow.Day3FirstTimeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday3 = true;
+                    PlayClip(npcSelected.DialogToShow.Day3FirstTimeAudio);
                 }
                 break;
 
@@ -105,12 +110,14 @@ public class DialogManager : Singleton<DialogManager>
                     foreach (string sentence in npcSelected.DialogToShow.Day4MetBeforeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday4 = true;
+                    PlayClip(npcSelected.DialogToShow.Day4MetBeforeAudio);
                 }
                 else
                 {
                     foreach (string sentence in npcSelected.DialogToShow.Day4FirstTimeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday4 = true;
+                    PlayClip(npcSelected.DialogToShow.Day4FirstTimeAudio);
                 }
                 break;
 
@@ -120,12 +127,14 @@ public class DialogManager : Singleton<DialogManager>
                     foreach (string sentence in npcSelected.DialogToShow.Day5MetBeforeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday5 = true;
+                    PlayClip(npcSelected.DialogToShow.Day5MetBeforeAudio);
                 }
                 else
                 {
                     foreach (string sentence in npcSelected.DialogToShow.Day5FirstTimeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday5 = true;
+                    PlayClip(npcSelected.DialogToShow.Day5FirstTimeAudio);
                 }
                 break;
         }
@@ -165,6 +174,20 @@ public class DialogManager : Singleton<DialogManager>
         }
 
         npcDialogTMP.text = dialogQueue.Dequeue();
+    }
+
+    private void PlayClip(AudioClip clip)
+    {
+        if (clip == null || voiceSource == null) return;
+
+        voiceSource.Stop();
+        voiceSource.clip = clip;
+        voiceSource.Play();
+    }
+
+    public void StopPlayClip()
+    {   
+        voiceSource.Stop();
     }
 
     private void OnEnable()

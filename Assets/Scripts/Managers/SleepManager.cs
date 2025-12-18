@@ -33,6 +33,7 @@ public class SleepManager : Singleton<SleepManager>
             gameManager.sleepAndUpdateDay();
             string lastQuest = gameManager.GetLastQuestOfTheDay();
             QuestUI.Instance.ResetQuests();
+            gameManager.DestructionPerDay();
         }
     }
 

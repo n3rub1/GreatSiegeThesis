@@ -16,47 +16,107 @@ MonoBehaviour:
   Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
   HasInteraction: 0
   interactionType: 1
-  Greeting: Hey...
+  Greeting: Will 11Labs
   Day1Dialog:
-  - "You\u2019ve come to the infirmary? Good, boy. Look at this \u2014 men burned
-    by cannon fire, cut by swords.\nWe dress the wounds, stop the bleeding, and pray
-    the powder doesn\u2019t ignite the bandages.\nEach night, some are ferried to
-    Fort St. Angelo for safety. Those who stay\u2026 we do what we can."
+  - 'I was sent from the hospital in Birgu because they believed I could help here.
+
+    I
+    believed it too. Back there, wounds arrived in order, with space for names, for
+    records, for prayer.
+
+    Here, everything comes at once. I still tell myself
+    this is just another ward, only closer to the walls.
+
+    By tomorrow, I suspect
+    that illusion will not survive.'
   Day2FirstTimeDialog:
-  - "Yesterday, the ravelin fell. The wounded came flooding in \u2014 musket burns,
-    arrows, splintered bones.\nSome get infections we cannot stop, even with the
-    best care.\nAt night, rowers take the worst to St. Angelo \u2014 a few survive,
-    some never reach the shore."
+  - 'Cannon wounds do not behave like wounds in the books.
+
+    You learn very quickly
+    which voices will not be heard again by morning.
+
+    By tomorrow, I fear I will
+    recognise that look the moment someone is carried in.'
   Day2MetBeforeDialog:
-  - "Yesterday was hell, boy. The ravelin taken, men mangled, bleeding.\nI patched
-    eyes, arms, and backsides alike, praying they\u2019d live long enough to fight
-    another day."
+  - 'Yesterday I still believed I was learning how to save them.
+
+    Today, I caught
+    myself looking at a man and knowing he would not see another sunrise before anyone
+    said a word.
+
+    I spoke gently to him anyway, but the words felt like a ritual
+    I was performing for myself.
+
+    By tomorrow, that kind of knowing will come
+    without any effort at all.'
   Day3FirstTimeDialog:
-  - "Now hear the cannon fire? Dragut has come, new guns on Gallows\u2019 Point.\nWe
-    treat burns and shattered limbs, and yet the docks bring more volunteers each
-    night.\nSome swim across the harbour, exhausted and cut, only to be thrown on
-    our tables."
+  - 'There are moments now when mercy and cruelty feel dangerously close.
+
+    When
+    a man begs you to stop touching his wounds, to stop moving him, to stop trying,
+    you realise how small the space is between helping and hurting.
+
+    The training
+    in Birgu never prepared me for choosing whether to continue.
+
+    By tomorrow,
+    I fear I will stop asking myself if I have done the right thing and only ask
+    whether the ordeal has ended.'
   Day3MetBeforeDialog:
-  - "The hammering of Dragut\u2019s guns shakes the walls \u2014 and our infirmary.\nLast
-    night we ferried a dozen more from Birgu. All with deep wounds, some infected
-    already.\nWe work as fast as we can, but there are too many."
+  - 'Last night, I prayed for someone to die.
+
+    Not because I wished them harm,
+    but because I could not bear to watch their suffering stretch into another hour.
+
+    The
+    words felt wrong as I spoke them, but the relief I felt when they passed was
+    unmistakable.
+
+    By tomorrow, I am not sure I will still recognise that as
+    something I should confess.'
   Day4FirstTimeDialog:
-  - "The walls hold, but our men suffer. Arrows, musket burns, cannon shrapnel \u2014
-    the list grows.\nWe fight infections with herbs, clean dressings, and prayers.\nSome
-    are carried nightly to St. Angelo. Some never make it.\nThe fort\u2019s survival
-    depends on every living Knight, but the cost is terrible."
+  - 'Since this morning, the wounded have not stopped coming.
+
+    The pattern of
+    their injuries tells me someone very skilled now commands the guns: more shattered
+    bone, fewer lucky escapes.
+
+    By tomorrow, I will see only the damage and the
+    little time left to act, nothing more.'
   Day4MetBeforeDialog:
-  - "Another day of terror, boy. I\u2019ve patched what I could. Some men live, some
-    die on my table.\nEvery night the strong are ferried across \u2014 the weak\u2026
-    left here.\nI work faster than the deaths arrive, but it\u2019s never enough."
+  - "Today, I treated a man from the other side.\nFor a moment, I waited to feel
+    something different\u2014anger, satisfaction, anything\u2014but he screamed the
+    same way as the others, and then he went quiet the same way too.\nIt unsettles
+    me how little difference there was.\nBy tomorrow, I suspect the uniforms will
+    blur, and all that will remain is the sound they make when they realise they
+    are not going home."
   Day5FirstTimeDialog:
-  - Tomorrow may be the bloodiest day. Every repair, ration, and plank is survival
-    against overwhelming odds. The fort will be tested like never before, but its
-    foundations hold firm.
+  - 'You find me on a day when my hands no longer shake.
+
+    Once, I would have
+    taken pride in that. Now, it feels like a sign that something essential is being
+    worn away.
+
+    I move from body to body, and the faces fade faster than the
+    wounds.
+
+    If this continues tomorrow, I fear I will remember only weight,
+    heat, and the point at which the breathing stops.'
   Day5MetBeforeDialog:
-  - "This is it. Every repair, ration, reinforced gate may decide who lives. The
-    fort may hold, but suffering is immense. Courage here comes at a terrible price
-    \u2014 remember that, boy."
+  - "I no longer pray for guidance.\nI pray that whatever waits beyond these walls
+    will not follow me when this is over.\nIf I survive, I do not know how I will
+    stand in a quiet room again without hearing these voices.\nBy tomorrow, if there
+    is a tomorrow for me, I may not fear anything at all\u2014and that possibility
+    frightens me more than the blood on the floor."
+  Day1Audio: {fileID: 8300000, guid: c51301f98158dc248bb7d645dcc66285, type: 3}
+  Day2FirstTimeAudio: {fileID: 8300000, guid: a76002f5d605e9349ad2ce643f8ded58, type: 3}
+  Day2MetBeforeAudio: {fileID: 8300000, guid: acb6f72284608a048bec9dc11450e13e, type: 3}
+  Day3FirstTimeAudio: {fileID: 8300000, guid: 4ffb06f6609220e4abe2eadeab480a84, type: 3}
+  Day3MetBeforeAudio: {fileID: 8300000, guid: 6792b2aec3e3e124f958109a31e18870, type: 3}
+  Day4FirstTimeAudio: {fileID: 8300000, guid: 79a0dc74d6f127146828d7796bb2904c, type: 3}
+  Day4MetBeforeAudio: {fileID: 8300000, guid: e05f7c4883c1bb343a97a4396aaf30ae, type: 3}
+  Day5FirstTimeAudio: {fileID: 8300000, guid: d61eef25c7e70e6439aec5b4854b316f, type: 3}
+  Day5MetBeforeAudio: {fileID: 8300000, guid: e08bd037a8d1e2d4c9b9e4bd5b5c09b7, type: 3}
   dayNumber: 1
   metOnday1: 0
   metOnday2: 0

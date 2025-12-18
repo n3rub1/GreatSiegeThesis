@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889faa658c7b2c94ea4fff939bf8022e, type: 3}
   m_Name: DialogNPCItalianKnight
   m_EditorClassIdentifier: 
-  Name: Paolo Avogadro
+  Name: 'Paolo Avogadro '
   Icon: {fileID: -834485563, guid: 78d5bbe799641fe43ac5aca0d6572293, type: 3}
   HasInteraction: 0
   interactionType: 3
-  Greeting: Hey...
+  Greeting: (Bill 11Labs) Full Speed
   Day1Dialog:
   - "Fort St. Elmo was never meant to stand alone. It exists to defend the entrance
     to the two harbours. It was built to delay \u2014 and thankfully, the Ottomans
@@ -67,7 +67,16 @@ MonoBehaviour:
     If it falls, it will fall with honour. When the walls are breached, I will be
     among the last still standing, sword in hand \u2014 and I will not lower it while
     I still draw breath."
-  dayNumber: 6
+  Day1Audio: {fileID: 8300000, guid: 366c230df2cb81d4591fc6fe7cc377ae, type: 3}
+  Day2FirstTimeAudio: {fileID: 8300000, guid: eb866cde6367d864da4d1062799dbcee, type: 3}
+  Day2MetBeforeAudio: {fileID: 8300000, guid: eb866cde6367d864da4d1062799dbcee, type: 3}
+  Day3FirstTimeAudio: {fileID: 8300000, guid: c2a59bd435bb36942a64791802858cc5, type: 3}
+  Day3MetBeforeAudio: {fileID: 8300000, guid: c2a59bd435bb36942a64791802858cc5, type: 3}
+  Day4FirstTimeAudio: {fileID: 8300000, guid: 3b07acc229b01414b81574da56b7e1f8, type: 3}
+  Day4MetBeforeAudio: {fileID: 8300000, guid: 3b07acc229b01414b81574da56b7e1f8, type: 3}
+  Day5FirstTimeAudio: {fileID: 8300000, guid: c2fa2bf74d4bb0e42bc7cc337b66573a, type: 3}
+  Day5MetBeforeAudio: {fileID: 8300000, guid: c2fa2bf74d4bb0e42bc7cc337b66573a, type: 3}
+  dayNumber: 1
   metOnday1: 1
   metOnday2: 1
   metOnday3: 1

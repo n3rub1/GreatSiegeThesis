@@ -25,6 +25,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] StructureUI structureUI;
     [SerializeField] CatUI catUI;
 
+    [Header("Destruction Per Day")]
+    [SerializeField] GameObject afterDayOne;
+    [SerializeField] GameObject afterDayTwo;
+    [SerializeField] GameObject afterDayThree;
+    [SerializeField] GameObject afterDayFour;
+
+
     [Header("Day Game Manager")]
     public int dayNumber = 1;
 
@@ -213,9 +220,23 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void GameOver()
+    public void DestructionPerDay()
     {
-
+        if (dayNumber == 2)
+        {
+            afterDayOne.SetActive(true);
+        }else if (dayNumber == 3)
+        {
+            afterDayTwo.SetActive(true);
+        }
+        else if (dayNumber == 4)
+        {
+            afterDayThree.SetActive(true);
+        }
+        else if (dayNumber == 5)
+        {
+            afterDayFour.SetActive(true);
+        }
     }
 
 

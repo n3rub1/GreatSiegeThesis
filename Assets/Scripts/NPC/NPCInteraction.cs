@@ -26,6 +26,8 @@ public class NPCInteraction : MonoBehaviour
         {
             DialogManager.Instance.npcSelected = null;
             DialogManager.Instance.CloseDialogPanel();
+            DialogManager.Instance.StopPlayClip();
+
 
             boxOnTopOfNPC.SetActive(false);
         }

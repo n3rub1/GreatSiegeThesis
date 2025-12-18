@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889faa658c7b2c94ea4fff939bf8022e, type: 3}
   m_Name: DialogNPCTutorial
   m_EditorClassIdentifier: 
-  Name: Rocco
+  Name: Rocco (Roger 11Labs)
   Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
   HasInteraction: 0
   interactionType: 3
@@ -74,8 +74,17 @@ MonoBehaviour:
     people.\n\nPRESS F FOR MORE \u2192"
   - "We fight, we bleed, we die\u2026 and no one remembers.\n\nNo one will remember
     me."
+  Day1Audio: {fileID: 8300000, guid: 67f7f182d9462d441a1368e2d68ae883, type: 3}
+  Day2FirstTimeAudio: {fileID: 8300000, guid: 35b512ecf0786dc41a877c12d9eb8f45, type: 3}
+  Day2MetBeforeAudio: {fileID: 8300000, guid: 35b512ecf0786dc41a877c12d9eb8f45, type: 3}
+  Day3FirstTimeAudio: {fileID: 8300000, guid: 9775800e2ee60814692bfb75ffb787a3, type: 3}
+  Day3MetBeforeAudio: {fileID: 8300000, guid: 9775800e2ee60814692bfb75ffb787a3, type: 3}
+  Day4FirstTimeAudio: {fileID: 8300000, guid: 1f2310940df856d45a4db6b53aec7833, type: 3}
+  Day4MetBeforeAudio: {fileID: 8300000, guid: 1f2310940df856d45a4db6b53aec7833, type: 3}
+  Day5FirstTimeAudio: {fileID: 8300000, guid: 19e5e8b4dd1e3de4888095b1af4df698, type: 3}
+  Day5MetBeforeAudio: {fileID: 8300000, guid: 19e5e8b4dd1e3de4888095b1af4df698, type: 3}
   dayNumber: 1
-  metOnday1: 0
+  metOnday1: 1
   metOnday2: 0
   metOnday3: 0
   metOnday4: 0

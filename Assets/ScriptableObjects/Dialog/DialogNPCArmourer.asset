@@ -16,54 +16,67 @@ MonoBehaviour:
   Icon: {fileID: 7416670922274956215, guid: 67e11902f9a599344b5dc2f4b5a33db5, type: 3}
   HasInteraction: 0
   interactionType: 0
-  Greeting: Patrick The Armourer
+  Greeting: Patrick The Armourer (Brian 11labs)
   Day1Dialog:
-  - "Ah, a new face. Careful where you step, boy \u2014 the forge is hotter than
-    the sun.\nThe Turks thunder on us with their guns, yet we still fire back. Every
-    night, boats slip across from Birgu \u2014 powder, matchlocks, hoops of Greek
-    fire. Without them, my hammers would be useless.\nSee this barrel? Enough gunpowder
-    for one night only."
+  - "My father and I spent our lives shaping iron.  Hinges for doors, nails for scaffolds,
+    blades for lords. That kind of work gives people a sense of safety.\nHere, I
+    make pieces that send men back into fire. I tell myself it protects them, but
+    I know it only delays something worse.\nThis is just the beginning. The guns
+    haven\u2019t found their range yet. By tomorrow, more guns will find their range
+    into our fort."
   Day2FirstTimeDialog:
-  - "Look at the ravelin, boy. The Janissaries took it yesterday \u2014 we lost good
-    men holding it.\nI patch armour for those who limped back, mend muskets that
-    fired until barrels glowed.\nWe throw hoops of Greek fire down the walls, but
-    for every Turk we burn, two more climb the ditch."
+  - "When armour comes back to me, I can read how a man met his end. A crushed rim
+    means stone fragments. A torn plate means a shot caught him turning. You learn
+    to see death in shapes.\nBy tomorrow, I\u2019ll start recognising my own work
+    among the broken. I\u2019m not sure a man should know that."
   Day2MetBeforeDialog:
-  - "Remember the ravelin I showed you? Taken yesterday. Our men held it as long
-    as they could.\nI\u2019ve been up all night reforging blades and mending muskets.\nEven
-    with iron in my hands, it feels like the fort itself is bleeding."
+  - "Yesterday I mentioned that more guns will find their range, be careful out there
+    boy!\r\nA helmet came in\u2014a piece I made years ago. Musket hole right through
+    the brow. The poor lad must\u2019ve lifted his head an inch too high.\r\nBy tomorrow,
+    recognising old pieces won\u2019t disturb me. That frightens me more than the
+    hole."
   Day3FirstTimeDialog:
-  - "Hear that roar, boy? Dragut himself arrived with new cannon at Gallows\u2019
-    Point.\nStone falls like rain inside the fort \u2014 we barely patch the walls
-    before they crack again.\nI sharpen swords, mend armour, and still the powder
-    runs low. Every shot we fire brings another Turkish counter."
+  - "I worked at the forge in Birgu before this. My father still does.  He is old
+    and slower now. He taught me that an armourer\u2019s duty is to keep people safe.\r\nOut
+    here, safety is a story we tell each other so we don\u2019t falter. We are patching
+    steel still warm with someone's blood."
   Day3MetBeforeDialog:
-  - "I told you yesterday the walls were cracking \u2014 now see Dragut\u2019s guns
-    pounding us from Gallows\u2019 Point.\nEven my hammer shakes with the blasts.\nAnd
-    yet, La Valette sends more men across the water at night. Volunteers to stand
-    and die beside us.\nI mend their armour\u2026 and hope they survive long enough
-    to use it."
+  - "Do you remember that helmet I told you about? Today more arrived\u2014some with
+    cloth, some with skin and pieces of brain still trapped in the seams.\r\nI can
+    wash oil off metal. Blood is another matter. My hands look clean, but I still
+    see red in the creases.\r\nTomorrow, I doubt I\u2019ll notice."
   Day4FirstTimeDialog:
-  - "The assaults continue, boy. Wave after wave hurled at our walls \u2014 yet still
-    we hold.\nBodies fill the ditch, stones tumble, and my forge works nonstop.\nEach
-    repaired sword or helm might save a man\u2019s life\u2026 or not.\nBut we fight,
-    because the Grand Master demands St. Elmo stand."
+  - "The guns are measured today. That means someone experienced is directing them\u2014someone
+    who understands patience.\r\nWhen fire becomes accurate, my repairs stop being
+    reassurance and start being prolongation. I\u2019m no coward, but I know that
+    I am only delaying the inevitable."
   Day4MetBeforeDialog:
-  - "Yesterday, we barely held. Today, again, the Turks crash against our walls.\nI
-    mend every sword, every dented helm, every cracked musket.\nThe fort is bleeding
-    stone and blood, yet still it breathes.\nWe hammer and forge, and pray it\u2019s
-    enough for another day."
+  - "It\u2019s a comfort seeing a familiar face still walking. Not many can claim
+    that after last few days.\r\nThe walls shook, and men shook with them. Someone
+    new must be among the Ottoman ranks\u2014someone who has done this before.\r\nI
+    don't think this fort will hold for much longer."
   Day5FirstTimeDialog:
-  - Tomorrow may be our last stand. Dragut oversees every shot, and we have only
-    a fraction of the weapons we need. Every cannon, musket, and hoop of Greek fire
-    I repair could be the difference between life and death.
+  - "You\u2019ve come when there\u2019s nearly nothing left to mend. That\u2019s
+    not a sign of strength\u2014it\u2019s a sign there aren\u2019t enough bodies
+    left to wear what I make.\r\nBy tomorrow, this forge will be abandoned or silent.
+    I doubt I\u2019ll see Birgu again. The crossings are watched, and names don\u2019t
+    matter anymore.\r\nI have to accept my faith.  I will die here."
   Day5MetBeforeDialog:
-  - "This is it. You\u2019ve seen repairs, cannon care, muskets sharpened. Around
-    half the defenders are dead. Every weapon might decide who survives when St.
-    Elmo falls. Courage and preparation hang in the balance"
-  dayNumber: 1
-  metOnday1: 0
-  metOnday2: 0
+  - "So you\u2019re still breathing, I am glad. Half the defenders aren\u2019t. I
+    used to think my work kept men alive. Now I think it keeps them present long
+    enough to suffer."
+  Day1Audio: {fileID: 8300000, guid: 575c11d032cf97741be85e7f4176f0a5, type: 3}
+  Day2FirstTimeAudio: {fileID: 8300000, guid: 2609d2d26a176cf44b562ecec9107460, type: 3}
+  Day2MetBeforeAudio: {fileID: 8300000, guid: d9d0d9c4f5441ef488d36e986806b241, type: 3}
+  Day3FirstTimeAudio: {fileID: 8300000, guid: c10e5ba4742f7674799609500fd663ad, type: 3}
+  Day3MetBeforeAudio: {fileID: 8300000, guid: 8748770b3c6927e488344c1c56345e15, type: 3}
+  Day4FirstTimeAudio: {fileID: 8300000, guid: 09e3f9d5980182340bf4c3265eb43f22, type: 3}
+  Day4MetBeforeAudio: {fileID: 8300000, guid: e86ef18914f223747a99f62d969eccae, type: 3}
+  Day5FirstTimeAudio: {fileID: 8300000, guid: c254d549f8597be48993fa5619ea6dfe, type: 3}
+  Day5MetBeforeAudio: {fileID: 8300000, guid: ead0ae7355faaf24382101f86ac37bd5, type: 3}
+  dayNumber: 2
+  metOnday1: 1
+  metOnday2: 1
   metOnday3: 0
   metOnday4: 0
   metOnday5: 0

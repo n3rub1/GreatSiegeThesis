@@ -16,52 +16,74 @@ MonoBehaviour:
   Icon: {fileID: -1465489678553493566, guid: bdf9b2df1b7e9ab48b44781ca0257510, type: 3}
   HasInteraction: 0
   interactionType: 2
-  Greeting: Guzeppi the Smugler
+  Greeting: Guzeppi (George 11Labs)
   Day1Dialog:
-  - "Welcome to the ramparts, boy. See the walls? They were built strong \u2014 Spanish
-    engineer Pietro Pardo designed them to resist the sea, but the Turks hammer from
-    land.\nWe patch breaches, rebuild sections with stone, and reinforce the points.\nThey
-    cannot tunnel here \u2014 the rock is too hard. But each shell weakens our walls."
+  - "I have seen a fortress fall before. It never happens in one dramatic moment.\nWe
+    move supplies across the harbour at night\u2014small boats, weapons, a few Maltese
+    men risking everything to keep this place breathing.\nI just worry about when
+    the Ottomans notice the pattern.\nAll we can do now is wait for tomorrow and
+    see whether secrecy survives a little longer."
   Day2FirstTimeDialog:
-  - 'The ravelin fell yesterday, boy. Outer works smashed.
+  - 'Fort St Elmo was never designed to triumph. Its purpose is delay, nothing more.
 
-    We shored up the
-    demi-bastions, tightened the parapets.
+    Every
+    hour spent holding this ground is an hour bought for Birgu and Senglea to prepare
+    their walls.
 
-    Every breach we fix, the enemy hammers
-    again. Still, the fort must stand.'
+    Men here speak of victory. They misunderstand their assignment.
+
+    By
+    tomorrow, more of them will recognise the cost hidden inside that bargain.'
   Day2MetBeforeDialog:
-  - "Yesterday we rebuilt the ravelin walls \u2014 today, fresh stones are shattered
-    again.\nI work with masons and volunteers, reinforcing the weak points.\nThe
-    Turks swarm, yet our walls hold\u2026 just barely."
+  - "Yesterday, we moved men and supplies across the harbour and prayed the Ottomans
+    wouldn\u2019t notice.\nToday, the boats carried wounded instead \u2014 and two
+    of them died before the trip.\nWe lost time, and that small delay turned living
+    men into cargo.\nBy tomorrow, I\u2019m afraid we\u2019ll be shipping more bodies."
   Day3FirstTimeDialog:
-  - "Dragut has arrived, boy. His guns pound from Gallows\u2019 Point and the land
-    front.\nWe rebuild faster than they can break, stacking rubble and stone, sealing
-    holes with earth.\nEach night, reinforcements from Vittoriosa bring more help
-    \u2014 without them, the fort would fall."
+  - "The Ottomans finally noticed our crossings. They struck at the boats during
+    the night \u2014 steel in the water, men thrashing in the dark.\nSome tried swimming
+    with daggers between their teeth, and from here the sea looked more like a grave
+    than a route.\nMany drowned before anyone reached them.\nFrom this distance,
+    the screams on both sides sounded identical."
   Day3MetBeforeDialog:
-  - "Yesterday I patched the demi-bastion; today, it is shattered again.\nDragut\u2019s
-    orders doubled the fire. Each shell cracks stone and morale alike.\nStill, we
-    strengthen the bastions, fill ditches, and prepare for the next assault."
+  - "Yesterday we worried about the pattern being exposed. Last night it was.\nThe
+    small boats were hit mid-passage \u2014 close-quarters chaos, men swimming with
+    blades in their mouths, trying to reach rowing hands before they slipped under.\nSome
+    Ottomans died, yes \u2014 but more of ours drowned with no one watching.\nFrom
+    up here, the screams carried across the water the same way, regardless of who
+    was dying."
   Day4FirstTimeDialog:
-  - 'Another assault failed. The walls bleed stone and mortar, but stand.
-
-    We
-    reinforce every night, work in darkness, while others fire from the ramparts.
-
-    If
-    we fall, all Malta falls. Every stone matters.'
+  - "The bombardment fell into a rhythm today \u2014 we are being bombarded from
+    every side.\nThat tells me command has shifted. Someone patient is directing
+    the guns now.\nOur crossings are almost gone. The sea might as well be a wall
+    now.\nBy tomorrow, anything we failed to reinforce will be punished, one angle
+    at a time."
   Day4MetBeforeDialog:
-  - "The Turks charge again, boy. Breaches appear, but we fill them, build scaffolds,
-    hammer and shove stone into place.\nI pray each wall holds, each bastion survives
-    another volley.\nThis is more than engineering \u2014 it is survival."
+  - 'Last night, we scraped out a small victory at sea and still pushed a few trips
+    across the water.
+
+    Not today. There are watch-guards and cannon on both
+    sides of the harbour now.  Some say a new commander joined the Ottoman''s ranks. 
+    At this point, our crossings are fantasy.'
   Day5FirstTimeDialog:
-  - "Tomorrow may see the bloodiest day yet. Many men have already died. Every life
-    here is fragile, and the fort\u2019s defenders cling desperately to hope."
+  - "You\u2019re here on a day when the walls aren\u2019t defending anything anymore
+    \u2014 they\u2019re just marking where men used to stand.\nSome of the lads are
+    praying that God will get them out of here alive.\nThe Grand Master wants this
+    fort to hold until the last possible moment, and that means none of us will leave."
   Day5MetBeforeDialog:
-  - "Final day, boy. Every patient, every wound, every life depends on what we\u2019ve
-    done. Remember the faces here; they are the price of holding St. Elmo against
-    overwhelming odds."
+  - "You stayed longer than most, but that doesn\u2019t change what\u2019s coming.\nI
+    stopped doing numbers last night \u2014 there\u2019s nothing left to adjust.\nTomorrow
+    isn\u2019t about tactics anymore. It\u2019s about whoever can walk away from
+    what\u2019s left."
+  Day1Audio: {fileID: 8300000, guid: b1c41876c48335840b5745d3ed8a572c, type: 3}
+  Day2FirstTimeAudio: {fileID: 8300000, guid: 9c73be37ac61208459dbf99ced8a5bbd, type: 3}
+  Day2MetBeforeAudio: {fileID: 8300000, guid: 0c7ae8072c6e24c4394d1e03c8b057c5, type: 3}
+  Day3FirstTimeAudio: {fileID: 8300000, guid: 9811eaac87edfc14d8e2ca92af4b32d8, type: 3}
+  Day3MetBeforeAudio: {fileID: 8300000, guid: 5cc689b6241132241920781cab874a63, type: 3}
+  Day4FirstTimeAudio: {fileID: 8300000, guid: b42b3ea38606cd545b8167381c919487, type: 3}
+  Day4MetBeforeAudio: {fileID: 8300000, guid: b8bfcbb408e598e47b0ffcb2d1ba363f, type: 3}
+  Day5FirstTimeAudio: {fileID: 8300000, guid: bbbc593c2ae14124eb65e189e3eda50a, type: 3}
+  Day5MetBeforeAudio: {fileID: 8300000, guid: 4e4ff6af67dab274188852fbf837ce8a, type: 3}
   dayNumber: 1
   metOnday1: 0
   metOnday2: 0
