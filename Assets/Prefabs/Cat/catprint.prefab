@@ -176,7 +176,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2143153171
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ee25e258b1981dd4993e251022b4eef8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -241,11 +241,23 @@ MonoBehaviour:
   clueNumberTMP: {fileID: 0}
   clueNumber: 0
   allCatCluesDescriptionTMP:
-  - This is the first clue
-  - This is the second clue
-  - This is the third clue
-  - This is the fourth clue
-  - This is the fifth clue
+  - "A tiny paw pressed into dust beneath a bucket \u2014 sharp edges, made by something
+    light on its feet, not long ago."
+  - "Under a bucket, a single paw mark beside a little pile of small bones \u2014
+    a quiet, private meal someone interrupted."
+  - "A dusty imprint next to a coiled rope \u2014 as if something curled up against
+    it for warmth."
+  - "A paw print jsut under the bucket \u2014 no trail leading in, no trail leading
+    out, just a moment when something paused."
+  - "A print beside a loose feather \u2014 something must have caught this bird mid-flight."
+  - "Under a old bucket, a neat paw impression atop dried flour \u2014 like a small
+    creature testing the texture."
+  - A cat paw print in the fallen dust from limestone.
+  - "A paw print beside a splintered bucket and a small blooded rag \u2014 could
+    be anything."
+  - "A print under folded cloth \u2014 shallow, relaxed, as if something rested there."
+  - "A paw pressed into warm ashes near an old splintered bucket \u2014 close enough
+    for warmth, far enough to stay unseen."
   catClueDescription: {fileID: 0}
   catClueManager: {fileID: 0}
 --- !u!1 &7271944816224095282

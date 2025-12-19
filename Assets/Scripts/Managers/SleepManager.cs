@@ -28,12 +28,19 @@ public class SleepManager : Singleton<SleepManager>
 
     private void SleepToEndDay()
     {
-        if (isPlayerInRangeOfBed && !isSleeping)
+        if (isPlayerInRangeOfBed && !isSleeping && gameManager.GetDayNumber() < 5)
         {
             gameManager.sleepAndUpdateDay();
             string lastQuest = gameManager.GetLastQuestOfTheDay();
             QuestUI.Instance.ResetQuests();
             gameManager.DestructionPerDay();
+            gameManager.ResetAllSpawns();
+        }else if(isPlayerInRangeOfBed && !isSleeping && gameManager.GetDayNumber() == 5)
+        {
+            gameManager.sleepAndUpdateDay();
+            gameManager.GetCaptured();
+            QuestUI.Instance.ResetQuests();
+            gameManager.ResetAllSpawns();
         }
     }
 

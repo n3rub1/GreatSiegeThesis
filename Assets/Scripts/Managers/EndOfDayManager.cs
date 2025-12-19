@@ -38,33 +38,44 @@ public class EndOfDayManager : MonoBehaviour
         GoogleSheetLogger.I.FlushDay();
         GoogleSheetLogger.I.StartDay(gameManager.GetDayNumber() + 1);
 
-        if (lastQuest == "Armoury")
+        Debug.Log("dayNumber:" + dayNumber);
+
+        if(dayNumber < 5)
         {
-            endOfDayDescriptionTMP.text = endOfDayDescriptionArmoury[dayNumber - 1];
-        }
-        else if (lastQuest == "Infirmary")
+            if (lastQuest == "Armoury")
+            {
+                endOfDayDescriptionTMP.text = endOfDayDescriptionArmoury[dayNumber - 1];
+            }
+            else if (lastQuest == "Infirmary")
+            {
+                endOfDayDescriptionTMP.text = endOfDayDescriptionInfirmary[dayNumber - 1];
+            }
+            else if (lastQuest == "Structure")
+            {
+                endOfDayDescriptionTMP.text = endOfDayDescriptionStructure[dayNumber - 1];
+            }
+            else if (lastQuest == "Cat")
+            {
+                endOfDayDescriptionTMP.text = endOfDayDescriptionCat[dayNumber - 1];
+            }
+            else if (gameManager.GetQuestAccepted() == "Reset" || gameManager.GetQuestAccepted() == "Nothing")
+            {
+                endOfDayDescriptionTMP.text = "You stood still today. While you waited, men bled without hands to hold them, weapons stayed dull on the racks, and rubble buried someone no one reached in time. The fort paid for your silence. The cat survived by moving, hiding, choosing. You didn’t. Tomorrow, the cost of doing nothing will be harder to ignore.";
+            }
+            else if (gameManager.GetQuestAccepted() == "SleepTime")
+            {
+                endOfDayDescriptionTMP.text = "You stood still today. While you waited, men bled without hands to hold them, weapons stayed dull on the racks, and rubble buried someone no one reached in time. The fort paid for your silence. The cat survived by moving, hiding, choosing. You didn’t. Tomorrow, the cost of doing nothing will be harder to ignore.";
+            }
+            else if (gameManager.GetQuestAccepted() == "Dead")
+            {
+                endOfDayDescriptionTMP.text = "You took a blow you couldn’t walk off, and they dragged you to a bunk until you stopped spinning. While you lay there, others swung hammers, moved bodies, and tried to keep the walls standing. You didn’t help anyone today, and the cat searched for safety without you. Tomorrow you’ll wake up owing more than effort.";
+            }
+        }else if(dayNumber == 5)
         {
-            endOfDayDescriptionTMP.text = endOfDayDescriptionInfirmary[dayNumber - 1];
-        }
-        else if (lastQuest == "Structure")
+            endOfDayDescriptionTMP.text = "You lay down because you couldn’t stand anymore. At some point in the night, the fighting broke through and men came into the room. They didn’t bother killing you—they just dragged you out like you were cargo. Maybe they need workers, maybe they didn’t see you as worth the blade. You didn’t help anyone today, and you never got close to the cat. Now you’re somewhere else, alive, confused, and not in control of anything that happens next.";
+        }else if (dayNumber > 5)
         {
-            endOfDayDescriptionTMP.text = endOfDayDescriptionStructure[dayNumber - 1];
-        }
-        else if (lastQuest == "Cat")
-        {
-            endOfDayDescriptionTMP.text = endOfDayDescriptionCat[dayNumber - 1];
-        }
-        else if (gameManager.GetQuestAccepted() == "Reset")
-        {
-            endOfDayDescriptionTMP.text = "Your hands stayed still as rubble piled higher and soldiers bled into the dirt. Maybe the weight of despair froze you, maybe the absence of your cat hollowed you. Tomorrow, perhaps, you will act.";
-        }
-        else if (gameManager.GetQuestAccepted() == "SleepTime")
-        {
-            endOfDayDescriptionTMP.text = "Your hands stayed still as rubble piled higher and soldiers bled into the dirt. Maybe the weight of despair froze you, maybe the absence of your cat hollowed you. Tomorrow, perhaps, you will act.";
-        }
-        else if (gameManager.GetQuestAccepted() == "Dead")
-        {
-            endOfDayDescriptionTMP.text = "You fell unconscious, someone helped you towards the bed chambers — the fort’s fate continued without your help.";
+
         }
     }
 

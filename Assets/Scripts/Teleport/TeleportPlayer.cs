@@ -23,4 +23,9 @@ public class TeleportPlayer : MonoBehaviour
         }
     }
 
+    public void TeleportPlayerManually(Vector3 newTeleportLocation)
+    {
+        player.transform.position = newTeleportLocation;
+    }
+
 }

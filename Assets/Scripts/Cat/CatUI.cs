@@ -29,6 +29,10 @@ public class CatUI : Singleton<CatUI>
     public void setCatClueNumber()
     {
         catClueNumber++;
+        if(catClueNumber == 10)
+        {
+            catClueNumber = 0;
+        }
     }
 
     private void CatClue()

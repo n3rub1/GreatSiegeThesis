@@ -88,7 +88,7 @@ public class DialogManager : Singleton<DialogManager>
                 break;
 
             case 3:
-                if (npcSelected.DialogToShow.metOnday1 || npcSelected.DialogToShow.metOnday2)
+                if (npcSelected.DialogToShow.metOnday2)
                 {
                     foreach (string sentence in npcSelected.DialogToShow.Day3MetBeforeDialog)
                         dialogQueue.Enqueue(sentence);
@@ -105,7 +105,7 @@ public class DialogManager : Singleton<DialogManager>
                 break;
 
             case 4:
-                if (npcSelected.DialogToShow.metOnday1 || npcSelected.DialogToShow.metOnday2 || npcSelected.DialogToShow.metOnday3)
+                if (npcSelected.DialogToShow.metOnday3)
                 {
                     foreach (string sentence in npcSelected.DialogToShow.Day4MetBeforeDialog)
                         dialogQueue.Enqueue(sentence);
@@ -122,7 +122,7 @@ public class DialogManager : Singleton<DialogManager>
                 break;
 
             case 5:
-                if (npcSelected.DialogToShow.metOnday1 || npcSelected.DialogToShow.metOnday2 || npcSelected.DialogToShow.metOnday3 || npcSelected.DialogToShow.metOnday4)
+                if (npcSelected.DialogToShow.metOnday4)
                 {
                     foreach (string sentence in npcSelected.DialogToShow.Day5MetBeforeDialog)
                         dialogQueue.Enqueue(sentence);

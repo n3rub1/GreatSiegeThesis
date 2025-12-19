@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] InfirmaryUI infirmaryUI;
     [SerializeField] StructureUI structureUI;
     [SerializeField] CatUI catUI;
+    [SerializeField] TeleportPlayer teleportPlayer;
 
     [Header("Destruction Per Day")]
     [SerializeField] GameObject afterDayOne;
@@ -71,7 +72,7 @@ public class GameManager : MonoBehaviour
         int structurePercentageToIncrease = structureUI.GetStructurePercentageToIncrease();
         int catPercentageToIncrease = catUI.GetCatPercentageToIncrease();
 
-        if(GetLastQuestOfTheDay() == "SleepTime" || GetLastQuestOfTheDay() == "Dead")
+        if(GetLastQuestOfTheDay() == "SleepTime" || GetLastQuestOfTheDay() == "Dead" || GetLastQuestOfTheDay() == "Nothing")
         {
             percentageManager.UpdatePercentages(-20,-20,-20,-20);
         }
@@ -209,15 +210,8 @@ public class GameManager : MonoBehaviour
                 lastQuest = QuestType.Nothing.ToString();
                 break;
         }
-
-       // if(lastQuest == QuestType.Nothing.ToString())
-        //{
-            //GoogleSheetLogger.Instance.LogData(GetPlayerIDForLogging(), GetCurrentTime(), dayNumber, "Quest Accepted (Game Manager)", questAccepted.ToString() == null ? "" : questAccepted.ToString());
             GoogleSheetLogger.I.Log(dayNumber, "Quest Accepted (Game Manager)", questAccepted.ToString() == null ? "Null" : questAccepted.ToString());
-        //}
             BlockOffAreasNotPartOfQuest();
-
-
     }
 
     public void DestructionPerDay()
@@ -239,6 +233,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ResetAllSpawns()
+    {
+        randomQuestSelector.DespawnCatClues();
+        randomQuestSelector.DespawnLootBoxes();
+        randomQuestSelector.DespawnSpawnDebris();
+    }
+
+    public void GetCaptured()
+    {
+        teleportPlayer.TeleportPlayerManually(new Vector3 (-73, -109, 0));
+    }
 
     public string GetLastQuestOfTheDay()
     {
