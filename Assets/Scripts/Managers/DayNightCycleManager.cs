@@ -52,6 +52,7 @@ public class DayNightCycleManager : MonoBehaviour
     private float transitionDuration;
     private Vector3 fakeSunCurrentPosition;
     private Vector3 fakeSunTargetPosition;
+    private bool stopTimer = false;
 
     private void Start()
     {
@@ -81,6 +82,11 @@ public class DayNightCycleManager : MonoBehaviour
         TriggerDayNightGlobalLight();
     }
 
+    public void StartStopTimer(bool startTimerState)
+    {
+        stopTimer = startTimerState;
+    }
+
     IEnumerator StartTimer()
     {
         while (true)
@@ -105,7 +111,7 @@ public class DayNightCycleManager : MonoBehaviour
             GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Time to sleep (Day/Night Manager)", $"Time to sleep");
             gameManager.SetQuestAccepted("SleepTime");
         }
-        else
+        else if(timeOfDay < 22 && !stopTimer)
         {
             uiManager.UpdateTime(timeOfDay);
             timeOfDay++;

@@ -16,7 +16,7 @@ MonoBehaviour:
   Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
   HasInteraction: 0
   interactionType: 3
-  Greeting: Chris 11 Labs
+  Greeting: MARTO 11 LABS
   Day1Dialog:
   - 'I was up here when they came. The sea was already full of them. Galleys, as
     far as I could see.
@@ -64,15 +64,15 @@ MonoBehaviour:
   - "I don\u2019t think any of us were meant to survive this. \nI was here when it
     began. I\u2019ll be here when it ends.\nAt least I\u2019ll be remembered as a
     brave man."
-  Day1Audio: {fileID: 8300000, guid: 19733a23d72ff234fbfcaa987c4649ea, type: 3}
-  Day2FirstTimeAudio: {fileID: 8300000, guid: 1d47b1d487ae69a4580449543683bf18, type: 3}
-  Day2MetBeforeAudio: {fileID: 8300000, guid: 1d47b1d487ae69a4580449543683bf18, type: 3}
-  Day3FirstTimeAudio: {fileID: 8300000, guid: e9af6784ad34f93418503280423d8d41, type: 3}
-  Day3MetBeforeAudio: {fileID: 8300000, guid: e9af6784ad34f93418503280423d8d41, type: 3}
-  Day4FirstTimeAudio: {fileID: 8300000, guid: c51c9c338a606774bb79326fc65dfdbb, type: 3}
-  Day4MetBeforeAudio: {fileID: 8300000, guid: c51c9c338a606774bb79326fc65dfdbb, type: 3}
-  Day5FirstTimeAudio: {fileID: 8300000, guid: 4d4ea84aa80a5e04aaadd25afb4f48d4, type: 3}
-  Day5MetBeforeAudio: {fileID: 8300000, guid: 4d4ea84aa80a5e04aaadd25afb4f48d4, type: 3}
+  Day1Audio: {fileID: 8300000, guid: 604c859a518bf524595abd37753a9fbf, type: 3}
+  Day2FirstTimeAudio: {fileID: 8300000, guid: f54771d80dd682b47a5b2c23f01f91f9, type: 3}
+  Day2MetBeforeAudio: {fileID: 8300000, guid: f54771d80dd682b47a5b2c23f01f91f9, type: 3}
+  Day3FirstTimeAudio: {fileID: 8300000, guid: beea0681710a04e469a96ae1c5c2cb23, type: 3}
+  Day3MetBeforeAudio: {fileID: 8300000, guid: beea0681710a04e469a96ae1c5c2cb23, type: 3}
+  Day4FirstTimeAudio: {fileID: 8300000, guid: 11b5c88c55dde6145b9115644d060a90, type: 3}
+  Day4MetBeforeAudio: {fileID: 8300000, guid: 11b5c88c55dde6145b9115644d060a90, type: 3}
+  Day5FirstTimeAudio: {fileID: 8300000, guid: 7a776347c28f4444b8689a2cf6f5677f, type: 3}
+  Day5MetBeforeAudio: {fileID: 8300000, guid: 7a776347c28f4444b8689a2cf6f5677f, type: 3}
   dayNumber: 1
   metOnday1: 0
   metOnday2: 0

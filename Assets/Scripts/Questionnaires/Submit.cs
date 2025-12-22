@@ -106,6 +106,8 @@ public class Submit : MonoBehaviour
             PersistantSurveyQuestions.Instance.postQuestion23 = postQuestion23.text;
 
             Debug.Log("Post- values submitted.");
+
+            SceneManager.LoadScene(mainGame);  // to be removed or go to a credits scene.  its here for testing.
         }
     }
 }

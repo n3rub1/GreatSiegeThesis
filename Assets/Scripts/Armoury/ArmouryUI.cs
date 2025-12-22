@@ -17,6 +17,7 @@ public class ArmouryUI : Singleton<ArmouryUI>
     [Header("Description Panel")]
     [SerializeField] private GameObject descriptionPanel;
     [SerializeField] private Image itemIcon;
+    [SerializeField] private Image itemImage;
     [SerializeField] private TextMeshProUGUI itemName;
     [SerializeField] private TextMeshProUGUI itemDescription;
     [SerializeField] private TextMeshProUGUI craftingDescription;
@@ -26,9 +27,22 @@ public class ArmouryUI : Singleton<ArmouryUI>
     [SerializeField] private GameObject armouryCraftingPanel;
 
     [Header("Data")]
-    [SerializeField] private List<ArmouryItem> armouryItems;
+    [SerializeField] private List<GameObject> armourySlotsImages;
+
+    //ALL NEW
+    [SerializeField] private List<ArmouryItem> day1armour;
+    [SerializeField] private List<ArmouryItem> day2armour;
+    [SerializeField] private List<ArmouryItem> day3armour;
+    [SerializeField] private List<ArmouryItem> day4armour;
+    [SerializeField] private List<ArmouryItem> day5armour;
+
+
+    //[Header("Data")]
+    // [SerializeField] private List<ArmouryItem> armouryItems;  THIS COMMENTED
 
     public ArmouryInteraction armouryInteraction { get; set; }
+
+    private List<ArmouryItem> armouryWeaponsAndArmour;  //NEW 
 
     private PlayerActions actions;
     private bool isPlayerInRangeOfLoot = false;
@@ -38,6 +52,7 @@ public class ArmouryUI : Singleton<ArmouryUI>
     {
         base.Awake();
         actions = new PlayerActions();
+        SetupArmourySlotsForDay(gameManager.GetDayNumber());
     }
 
     private void Start()
@@ -45,15 +60,79 @@ public class ArmouryUI : Singleton<ArmouryUI>
         actions.Armoury.AnvilInteraction.performed += ctx => OpenArmouryPanel();
     }
 
+
+    //NEW LIST
+    public void SetupArmourySlotsForDay(int day)
+    {
+
+        //for (int i = 0; i < armourySlotsImages.Count; i++)
+        //{
+        //    armourySlotsImages[i].GetComponent<Image>().sprite = null;
+        //    armourySlotsImages[i].GetComponent<Button>().interactable = false;
+        //}
+
+
+        List<ArmouryItem> currentDayItems = null;
+
+        switch (day)
+        {
+            case 1:
+                currentDayItems = day1armour;
+                break;
+            case 2:
+                currentDayItems = day2armour;
+                break;
+            case 3:
+                currentDayItems = day3armour;
+                break;
+            case 4:
+                currentDayItems = day4armour;
+                break;
+            case 5:
+                currentDayItems = day5armour;
+                break;
+            default:
+                Debug.LogWarning("No armoury items set for this day.");
+                return;
+        }
+
+        armouryWeaponsAndArmour = new List<ArmouryItem>(currentDayItems);
+
+        foreach (var weapon in armouryWeaponsAndArmour)
+        {
+            if (weapon.slotNumber < armourySlotsImages.Count)
+            {
+                var slotGO = armourySlotsImages[weapon.slotNumber];
+                var slotImage = slotGO.GetComponent<Image>();
+
+                // Set the icon
+                slotImage.sprite = weapon.Icon;
+
+                //// Reset the color in case it was grayed out from previous day
+                //slotImage.color = Color.white;
+
+                //// Make button interactable
+                //slotGO.GetComponent<Button>().interactable = !weapon.isHealed;
+            }
+            else
+            {
+                Debug.LogWarning($"Slot number {weapon.slotNumber} is out of range for infirmary slots.");
+            }
+
+        }
+    }
+
     public void ShowItemDetails(int slotNumber)
     {
-        ArmouryItem item = armouryItems[slotNumber];
+        //ArmouryItem item = armouryItems[slotNumber];
+        ArmouryItem item = armouryWeaponsAndArmour.Find(i => i.slotNumber == slotNumber);
 
         if (item != null)
         {
             itemIcon.sprite = item.Icon;
             itemName.text = item.Name;
             itemDescription.text = item.Description;
+            itemImage.sprite = item.weaponImage;
 
             descriptionPanel.SetActive(true);
         }
@@ -137,13 +216,13 @@ public class ArmouryUI : Singleton<ArmouryUI>
                 break;
             case 1:
                 //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Crafted item in Armoury (Armoury UI)", $"Crafted a simple item and got {5 + levels[armouryArrayValue]}XP");
-                GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Crafted item in Armoury (Armoury UI)", $"Crafted a simple item and got {5 + levels[armouryArrayValue]}XP");
+                GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Crafted item in Armoury (Armoury UI)", $"Crafted a normal item and got {5 + levels[armouryArrayValue]}XP");
                 playerXP.AddXPArmour(5 + levels[armouryArrayValue]);
                 armourPercentageToIncrease = armourPercentageToIncrease + 10;
                 break;
             case 2:
                 //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Crafted item in Armoury (Armoury UI)", $"Crafted a simple item and got {10 + levels[armouryArrayValue]}XP");
-                GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Crafted item in Armoury (Armoury UI)", $"Crafted a simple item and got {10 + levels[armouryArrayValue]}XP");
+                GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Crafted item in Armoury (Armoury UI)", $"Crafted a complex item and got {10 + levels[armouryArrayValue]}XP");
                 playerXP.AddXPArmour(10 + levels[armouryArrayValue]);
                 armourPercentageToIncrease = armourPercentageToIncrease + 15;
                 break;
@@ -190,6 +269,10 @@ public class ArmouryUI : Singleton<ArmouryUI>
         GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Anvil Opened (Armoury UI)", "Player opened the armoury panel");
         craftingDescription.text = "Select Item to Craft";
         SetResourcesInformation();
+
+        int currentDay = gameManager.GetDayNumber();
+        SetupArmourySlotsForDay(currentDay);
+
         armouryCraftingPanel.SetActive(true);
     }
 

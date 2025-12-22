@@ -67,15 +67,15 @@ MonoBehaviour:
     If it falls, it will fall with honour. When the walls are breached, I will be
     among the last still standing, sword in hand \u2014 and I will not lower it while
     I still draw breath."
-  Day1Audio: {fileID: 8300000, guid: 366c230df2cb81d4591fc6fe7cc377ae, type: 3}
-  Day2FirstTimeAudio: {fileID: 8300000, guid: eb866cde6367d864da4d1062799dbcee, type: 3}
-  Day2MetBeforeAudio: {fileID: 8300000, guid: eb866cde6367d864da4d1062799dbcee, type: 3}
-  Day3FirstTimeAudio: {fileID: 8300000, guid: c2a59bd435bb36942a64791802858cc5, type: 3}
-  Day3MetBeforeAudio: {fileID: 8300000, guid: c2a59bd435bb36942a64791802858cc5, type: 3}
-  Day4FirstTimeAudio: {fileID: 8300000, guid: 3b07acc229b01414b81574da56b7e1f8, type: 3}
-  Day4MetBeforeAudio: {fileID: 8300000, guid: 3b07acc229b01414b81574da56b7e1f8, type: 3}
-  Day5FirstTimeAudio: {fileID: 8300000, guid: c2fa2bf74d4bb0e42bc7cc337b66573a, type: 3}
-  Day5MetBeforeAudio: {fileID: 8300000, guid: c2fa2bf74d4bb0e42bc7cc337b66573a, type: 3}
+  Day1Audio: {fileID: 8300000, guid: a9d79777181f7fd4a988dd4e32c9940d, type: 3}
+  Day2FirstTimeAudio: {fileID: 8300000, guid: 9e9231e19a3b43b498eadea33ca8b831, type: 3}
+  Day2MetBeforeAudio: {fileID: 8300000, guid: 9e9231e19a3b43b498eadea33ca8b831, type: 3}
+  Day3FirstTimeAudio: {fileID: 8300000, guid: 3798cd38dbda88140a098ae37ddf2593, type: 3}
+  Day3MetBeforeAudio: {fileID: 8300000, guid: 3798cd38dbda88140a098ae37ddf2593, type: 3}
+  Day4FirstTimeAudio: {fileID: 8300000, guid: 112e8f37877d1f44bbcb3c958ffb7121, type: 3}
+  Day4MetBeforeAudio: {fileID: 8300000, guid: 112e8f37877d1f44bbcb3c958ffb7121, type: 3}
+  Day5FirstTimeAudio: {fileID: 8300000, guid: 2fef327c6db2c3242b2ed6c3238156c5, type: 3}
+  Day5MetBeforeAudio: {fileID: 8300000, guid: 2fef327c6db2c3242b2ed6c3238156c5, type: 3}
   dayNumber: 1
   metOnday1: 1
   metOnday2: 1

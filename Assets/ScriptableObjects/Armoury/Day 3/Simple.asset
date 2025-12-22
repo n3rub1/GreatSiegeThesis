@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 709d797270267d14d93ab9ed06c61b6b, type: 3}
+  m_Name: Simple
+  m_EditorClassIdentifier: 
+  ID: Greaves
+  Name: Greaves
+  Icon: {fileID: 1916756671, guid: 69642541aa33298459b258f1ae1bb1c0, type: 3}
+  Description: 'Leg protection designed to resemble fashionable shoes while offering
+    protection from blows to the legs.
+
+
+    Crafting Requirement: 1 Iron'
+  CraftingType: 0
+  slotNumber: 0
+  requiredResource: Iron
+  requiredAmount: 1
+  weaponImage: {fileID: 21300000, guid: 5e3e8814a4564cc47aea140ab72ab589, type: 3}

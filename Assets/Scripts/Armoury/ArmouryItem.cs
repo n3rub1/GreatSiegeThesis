@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum ArmourCraftingType{ Simple, Normal, Complex }
 
@@ -22,4 +23,6 @@ public class ArmouryItem : ScriptableObject
     public string requiredResource;
     public int requiredAmount;
 
+    [Header("Image")]
+    public Sprite weaponImage;
 }

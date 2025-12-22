@@ -16,7 +16,7 @@ MonoBehaviour:
   Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
   HasInteraction: 0
   interactionType: 1
-  Greeting: Will 11Labs
+  Greeting: Mr. Laurent Lab11
   Day1Dialog:
   - 'I was sent from the hospital in Birgu because they believed I could help here.
 
@@ -108,15 +108,15 @@ MonoBehaviour:
     stand in a quiet room again without hearing these voices.\nBy tomorrow, if there
     is a tomorrow for me, I may not fear anything at all\u2014and that possibility
     frightens me more than the blood on the floor."
-  Day1Audio: {fileID: 8300000, guid: c51301f98158dc248bb7d645dcc66285, type: 3}
-  Day2FirstTimeAudio: {fileID: 8300000, guid: a76002f5d605e9349ad2ce643f8ded58, type: 3}
-  Day2MetBeforeAudio: {fileID: 8300000, guid: acb6f72284608a048bec9dc11450e13e, type: 3}
-  Day3FirstTimeAudio: {fileID: 8300000, guid: 4ffb06f6609220e4abe2eadeab480a84, type: 3}
-  Day3MetBeforeAudio: {fileID: 8300000, guid: 6792b2aec3e3e124f958109a31e18870, type: 3}
-  Day4FirstTimeAudio: {fileID: 8300000, guid: 79a0dc74d6f127146828d7796bb2904c, type: 3}
-  Day4MetBeforeAudio: {fileID: 8300000, guid: e05f7c4883c1bb343a97a4396aaf30ae, type: 3}
-  Day5FirstTimeAudio: {fileID: 8300000, guid: d61eef25c7e70e6439aec5b4854b316f, type: 3}
-  Day5MetBeforeAudio: {fileID: 8300000, guid: e08bd037a8d1e2d4c9b9e4bd5b5c09b7, type: 3}
+  Day1Audio: {fileID: 8300000, guid: 89d103ab356538d4f987c73ff9b1bdfd, type: 3}
+  Day2FirstTimeAudio: {fileID: 8300000, guid: 6ca97bc64cb66f74fae449008cdb0e8e, type: 3}
+  Day2MetBeforeAudio: {fileID: 8300000, guid: f58b1ad4ead03d845a07839b140b350b, type: 3}
+  Day3FirstTimeAudio: {fileID: 8300000, guid: 60dd3fa6a4e1b0b4a93b0549dbc2ce6d, type: 3}
+  Day3MetBeforeAudio: {fileID: 8300000, guid: 566baa4d5dc961948a49029a2860f1d9, type: 3}
+  Day4FirstTimeAudio: {fileID: 8300000, guid: 9fcede18234414845ae571ae304aadba, type: 3}
+  Day4MetBeforeAudio: {fileID: 8300000, guid: 66650c8759a527f4c801af757577addd, type: 3}
+  Day5FirstTimeAudio: {fileID: 8300000, guid: 4e2a57eb355b3bc428ab9b0ff67da2f5, type: 3}
+  Day5MetBeforeAudio: {fileID: 8300000, guid: caedfc3c1c0dc1b4d8c12c612b7af4d6, type: 3}
   dayNumber: 1
   metOnday1: 0
   metOnday2: 0

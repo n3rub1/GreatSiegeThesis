@@ -12,77 +12,136 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889faa658c7b2c94ea4fff939bf8022e, type: 3}
   m_Name: DialogNPCTutorial
   m_EditorClassIdentifier: 
-  Name: Rocco (Roger 11Labs)
+  Name: Rocco
   Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
   HasInteraction: 0
   interactionType: 3
-  Greeting: Hey...
+  Greeting: Marshal (11 Labs)
   Day1Dialog:
-  - "Hey\u2026 now that you\u2019re awake, be careful wandering around. This place
-    isn\u2019t safe anymore.\n\nPRESS F FOR MORE \u2192"
-  - "If you\u2019re looking for something to do, seek out the French knight Pierre
-    de Massues-Vercoiran, known as Colonel Mas. He\u2019s asking for extra hands.\n\nThere
-    are other soldiers around the fort who might have some insight of what is happening. 
-    Try to talk to everyone you can!"
+  - "I don\u2019t know what brought you to this bombarded fort, son, but you\u2019re
+    here now, and we\u2019re glad to have another pair of hands. No one comes to
+    St Elmo by accident, not at this time.\n\nListen to me for a moment. We\u2019re
+    under siege from both the sea and from Mount Schiberras. The guns out there are
+    still finding their aim, so today you\u2019ll have a bit more freedom to move
+    around. The walls aren\u2019t breached yet; you can still cross the yard without
+    climbing over half the fort. That won\u2019t last. As the days pass, their bombardment
+    will grow heavier, and getting anywhere will mean stepping around craters and
+    fallen stone.\n\nPress F for more"
+  - "If you want proper orders, go and speak with Colonel Mas. You\u2019ll find him
+    near the building in the middle of the fort. He\u2019ll assign you your work.
+    Just remember this: you only get one task each day. Once you choose where to
+    help, that\u2019s all you\u2019ll have time and strength for, so choose carefully.\n\nIn
+    each place you\u2019re sent\u2014the armoury, the infirmary, the engineers\u2019
+    works\u2014you\u2019ll find the master in charge. Talk to them. You\u2019ll learn
+    more than just how to lift or carry.\nThere are others worth talking to as well.
+    \n\nPress F for more"
+  - "A friend of mine keeps watch up on the cavalier at the back of the fort. And
+    at the front, there\u2019s an Italian knight who has a very good understanding
+    about the fort and our enemies. If you have the courage, go hear them too.\n\nIf
+    you take a hit and go down, we\u2019ll drag you back here and patch you up as
+    best we can. You\u2019ll live, but you\u2019ll lose the day. Around here, a lost
+    day can cost other people more than it costs you.\n\nI still don\u2019t know
+    why you chose to come to St Elmo of all places and at this time, but I\u2019m
+    not going to push you about it. Whatever your reason is, hold on to it. In a
+    place like this, you\u2019ll need something of your own to follow, not just orders
+    shouted over cannon fire."
   Day2FirstTimeDialog:
-  - "You\u2019re still here. Most people try to disappear after the first night.\n\nYou
-    must have something in you to stay with us. Jean Parisot de Valette doesn\u2019t
-    want us to abandon this fort. He wants us to hold it until the end.\n\nPRESS
-    F FOR MORE \u2192"
-  - "I might never see my family again. Try to help around the fort \u2014 it matters
-    more than you think.\n\nIf you\u2019re looking for something to do, head down
-    to the infirmary. They need help with the wounded soldiers.\n\nSome of them might
-    live another day\u2026 and return to their families."
+  - "You\u2019re back on your feet. Good. Most men spend their first night here wondering
+    how to sneak back to Birgu, but you stayed. That tells me something.\nThe Grand
+    Master doesn\u2019t want this fort abandoned, and I suppose he sees something
+    stubborn in all of us. We hold as long as we can \u2014 that\u2019s the job.\nDon\u2019t
+    worry yourself with how long that means. Thinking too far ahead is how a man
+    loses his nerve. Just focus on today. Help where you can. A single pair of hands
+    makes more difference here than you\u2019d expect.\n\nPress F for more"
+  - "If you want somewhere to start, try the infirmary. They always need help \u2014
+    hear out the stories of the fallen and bandage them up. Some of those men might
+    see their homes again because a stranger stood beside them for an hour.\nAs for
+    me\u2026 my family is safe in Birgu. I don\u2019t dwell on the rest \u2014 it
+    won\u2019t help anyone. You do your part, and we\u2019ll keep this place standing
+    a little longer.\nAnd remember: no one here expects you to save the world. Just
+    pick something and see it through for the day. That\u2019s enough."
   Day2MetBeforeDialog:
-  - "You\u2019re still here. Most people try to disappear after the first night. 
-    You must have something in you to keep you here with us.  Jean Pierre De La Vallette
-    does not want us to leave this fort.  He wants us to hold it till the end. \n\nPRESS
-    F FOR MORE -->"
-  - "I might not see my family again.  Try to help around the fort.  That matters
-    more than you think.\nIf you\u2019re looking for something to do, why don't you
-    head down to the infirmary.  They could use your help with the wounded soldiers. 
-    They get to live another day, go back to their families!"
+  - "You\u2019re back on your feet. Good. Most men spend their first night here wondering
+    how to sneak back to Birgu, but you stayed. That tells me something.\nThe Grand
+    Master doesn\u2019t want this fort abandoned, and I suppose he sees something
+    stubborn in all of us. We hold as long as we can \u2014 that\u2019s the job.\nDon\u2019t
+    worry yourself with how long that means. Thinking too far ahead is how a man
+    loses his nerve. Just focus on today. Help where you can. A single pair of hands
+    makes more difference here than you\u2019d expect.\n\nPress F for more"
+  - "If you want somewhere to start, try the infirmary. They always need help \u2014
+    hear out the stories of the fallen and bandage them up. Some of those men might
+    see their homes again because a stranger stood beside them for an hour.\n\nAs
+    for me\u2026 my family is safe in Birgu. I don\u2019t dwell on the rest \u2014
+    it won\u2019t help anyone. You do your part, and we\u2019ll keep this place standing
+    a little longer.\n\nAnd remember: no one here expects you to save the world.
+    Just pick something and see it through for the day. That\u2019s enough."
   Day3FirstTimeDialog:
-  - "I had a family outside these walls once.\n\nI hope they\u2019re safe in Birgu.
-    I know I won\u2019t be \u2014 not here.\n\nIf you\u2019re still searching for
-    someone, don\u2019t stop. Hope is the only thing that lasts longer than these
-    stones."
+  - "I\u2019ve got family in Birgu. I think about them when the guns quiet down,
+    and that\u2019s enough for me. They\u2019re safer there than we are here, and
+    that\u2019s how it should be.\n\nIf you\u2019re looking for someone of your own,
+    keep at it. Don\u2019t let anyone talk you out of hope. Around here, that\u2019s
+    the one thing a man can hold without armour or orders.\n\nJust mind yourself
+    when you move about \u2014 the fort shifts a little every day. You stay steady,
+    keep your purpose close, and you\u2019ll manage fine."
   Day3MetBeforeDialog:
-  - "I had a family outside these walls once.\n\nI hope they\u2019re safe in Birgu.
-    I know I won\u2019t be \u2014 not here.\n\nIf you\u2019re still searching for
-    someone, don\u2019t stop. Hope is the only thing that lasts longer than these
-    stones."
+  - "I\u2019ve got family in Birgu. I think about them when the guns quiet down,
+    and that\u2019s enough for me. They\u2019re safer there than we are here, and
+    that\u2019s how it should be.\n\nIf you\u2019re looking for someone of your own,
+    keep at it. Don\u2019t let anyone talk you out of hope. Around here, that\u2019s
+    the one thing a man can hold without armour or orders.\n\nJust mind yourself
+    when you move about \u2014 the fort shifts a little every day. You stay steady,
+    keep your purpose close, and you\u2019ll manage fine."
   Day4FirstTimeDialog:
-  - "Be careful, boy. Turgut Reis \u2014 we call him Dragut \u2014 has joined the
-    fight.\n\nThe bombardment has intensified. He\u2019s not just a corsair \u2014
-    he\u2019s a military genius.\n\nHe\u2019s set cannons on both sides of the fort
-    now."
+  - "Easy now, boy. Word is that Turgut Reis has taken charge of their guns. We call
+    him Dragut. You\u2019ll hear that name more than you\u2019d like.\n\nHe\u2019s
+    not some sea thief chasing prizes \u2014 he knows how to break a position clean.
+    You may notice the difference when you walk the yard. The shots are coming from
+    all sides now, and they\u2019re landing with purpose.\n\nDon\u2019t panic. It
+    just means you move slower and pay attention to the stone under your feet. The
+    fort\u2019s still standing, and so are we. You keep your head down, do your day\u2019s
+    work, and keep whatever reason brought you here close \u2014 that matters more
+    than the noise."
   Day4MetBeforeDialog:
-  - "Be careful, boy. Turgut Reis \u2014 we call him Dragut \u2014 has joined the
-    fight.\n\nThe bombardment has intensified. He\u2019s not just a corsair \u2014
-    he\u2019s a military genius.\n\nHe\u2019s set cannons on both sides of the fort
-    now."
+  - "Easy now, boy. Word is that Turgut Reis has taken charge of their guns. We call
+    him Dragut. You\u2019ll hear that name more than you\u2019d like.\n\nHe\u2019s
+    not some sea thief chasing prizes \u2014 he knows how to break a position clean.
+    You may notice the difference when you walk the yard. The shots are coming from
+    all sides now, and they\u2019re landing with purpose.\n\nDon\u2019t panic. It
+    just means you move slower and pay attention to the stone under your feet. The
+    fort\u2019s still standing, and so are we. You keep your head down, do your day\u2019s
+    work, and keep whatever reason brought you here close \u2014 that matters more
+    than the noise."
   Day5FirstTimeDialog:
-  - "Whatever happens today\u2026 you did what you could.\n\nThat counts \u2014 even
-    if no one remembers our names.\n\nOnly nobles are written down. Not us. The common
-    people.\n\nPRESS F FOR MORE \u2192"
-  - "We fight, we bleed, we die\u2026 and no one remembers.\n\nNo one will remember
-    me."
+  - "Did you sleep at all? I keep waking with the feeling that someone\u2019s going
+    to be in the wrong place at the wrong moment today. It\u2019s just a thought,
+    but after enough nights under bombardment, a man learns to trust the feeling
+    in his gut.\n\nDon\u2019t think about legacies or names. The nobles have their
+    scribes. Men like us are lucky if someone remembers we stood on these stones.
+    I\u2019ve made peace with that.\n\nWhat I can\u2019t shake is the sense that
+    you should stay closer to the walls today\u2014closer to people. The dark corners
+    of this fort feel hungrier than usual.\n\nMaybe it\u2019s nothing. Maybe it\u2019s
+    just age talking. But keep near others, boy. No one should be caught alone right
+    now."
   Day5MetBeforeDialog:
-  - "Whatever happens today\u2026 you did what you could.\n\nThat counts \u2014 even
-    if no one remembers our names.\n\nOnly nobles are written down. Not us. The common
-    people.\n\nPRESS F FOR MORE \u2192"
-  - "We fight, we bleed, we die\u2026 and no one remembers.\n\nNo one will remember
-    me."
-  Day1Audio: {fileID: 8300000, guid: 67f7f182d9462d441a1368e2d68ae883, type: 3}
-  Day2FirstTimeAudio: {fileID: 8300000, guid: 35b512ecf0786dc41a877c12d9eb8f45, type: 3}
-  Day2MetBeforeAudio: {fileID: 8300000, guid: 35b512ecf0786dc41a877c12d9eb8f45, type: 3}
-  Day3FirstTimeAudio: {fileID: 8300000, guid: 9775800e2ee60814692bfb75ffb787a3, type: 3}
-  Day3MetBeforeAudio: {fileID: 8300000, guid: 9775800e2ee60814692bfb75ffb787a3, type: 3}
-  Day4FirstTimeAudio: {fileID: 8300000, guid: 1f2310940df856d45a4db6b53aec7833, type: 3}
-  Day4MetBeforeAudio: {fileID: 8300000, guid: 1f2310940df856d45a4db6b53aec7833, type: 3}
-  Day5FirstTimeAudio: {fileID: 8300000, guid: 19e5e8b4dd1e3de4888095b1af4df698, type: 3}
-  Day5MetBeforeAudio: {fileID: 8300000, guid: 19e5e8b4dd1e3de4888095b1af4df698, type: 3}
+  - "Did you sleep at all? I keep waking with the feeling that someone\u2019s going
+    to be in the wrong place at the wrong moment today. It\u2019s just a thought,
+    but after enough nights under bombardment, a man learns to trust the feeling
+    in his gut.\n\nDon\u2019t think about legacies or names. The nobles have their
+    scribes. Men like us are lucky if someone remembers we stood on these stones.
+    I\u2019ve made peace with that.\n\nWhat I can\u2019t shake is the sense that
+    you should stay closer to the walls today\u2014closer to people. The dark corners
+    of this fort feel hungrier than usual.\n\nMaybe it\u2019s nothing. Maybe it\u2019s
+    just age talking. But keep near others, boy. No one should be caught alone right
+    now."
+  Day1Audio: {fileID: 8300000, guid: ce86dd52fc722d543bf694ce8cf68b8d, type: 3}
+  Day2FirstTimeAudio: {fileID: 8300000, guid: 12eef61e1348f4a4693738cf8ff81b74, type: 3}
+  Day2MetBeforeAudio: {fileID: 8300000, guid: 12eef61e1348f4a4693738cf8ff81b74, type: 3}
+  Day3FirstTimeAudio: {fileID: 8300000, guid: 560971aa2ef5e2a41940c0c461606a24, type: 3}
+  Day3MetBeforeAudio: {fileID: 8300000, guid: 560971aa2ef5e2a41940c0c461606a24, type: 3}
+  Day4FirstTimeAudio: {fileID: 8300000, guid: f05f6905bebce1c4f929d3afbd1b49ce, type: 3}
+  Day4MetBeforeAudio: {fileID: 8300000, guid: f05f6905bebce1c4f929d3afbd1b49ce, type: 3}
+  Day5FirstTimeAudio: {fileID: 8300000, guid: 2b29d0e0bafbedb4cb28fee42b3fba66, type: 3}
+  Day5MetBeforeAudio: {fileID: 8300000, guid: 2b29d0e0bafbedb4cb28fee42b3fba66, type: 3}
   dayNumber: 1
   metOnday1: 1
   metOnday2: 0

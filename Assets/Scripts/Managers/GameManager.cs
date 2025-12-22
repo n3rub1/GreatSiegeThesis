@@ -245,6 +245,11 @@ public class GameManager : MonoBehaviour
         teleportPlayer.TeleportPlayerManually(new Vector3 (-73, -109, 0));
     }
 
+    public void GameOver()
+    {
+
+    }
+
     public string GetLastQuestOfTheDay()
     {
         return lastQuest;

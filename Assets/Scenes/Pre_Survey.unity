@@ -6214,7 +6214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.050980393}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.039215688}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7286,9 +7286,29 @@ MonoBehaviour:
   preQuestion6: {fileID: 716253565}
   preQuestion7: {fileID: 1777634058}
   preQuestion8: {fileID: 1886644439}
-  q4: {fileID: 0}
-  q5: {fileID: 0}
-  q6: {fileID: 0}
+  postQuestion1: {fileID: 0}
+  postQuestion2: {fileID: 0}
+  postQuestion3: {fileID: 0}
+  postQuestion4: {fileID: 0}
+  postQuestion5: {fileID: 0}
+  postQuestion6: {fileID: 0}
+  postQuestion7: {fileID: 0}
+  postQuestion8: {fileID: 0}
+  postQuestion9: {fileID: 0}
+  postQuestion10: {fileID: 0}
+  postQuestion11: {fileID: 0}
+  postQuestion12: {fileID: 0}
+  postQuestion13: {fileID: 0}
+  postQuestion14: {fileID: 0}
+  postQuestion15: {fileID: 0}
+  postQuestion16: {fileID: 0}
+  postQuestion17: {fileID: 0}
+  postQuestion18: {fileID: 0}
+  postQuestion19: {fileID: 0}
+  postQuestion20: {fileID: 0}
+  postQuestion21: {fileID: 0}
+  postQuestion22: {fileID: 0}
+  postQuestion23: {fileID: 0}
   mainGame: 4
 --- !u!4 &1338640989
 Transform:
@@ -8143,10 +8163,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'User Feedback Survey
+  m_text: 'Pre User Feedback Survey
 
-    Please do not close the game until the end of
-    the playthrough and submission of the final survey questions - Thank you!'
+    Please do not close the game until the end
+    of the playthrough and submission of the final survey questions - Thank you!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 14b3bd805039e6746b4a09444a908cc7, type: 2}
   m_sharedMaterial: {fileID: 935212599931276003, guid: 14b3bd805039e6746b4a09444a908cc7, type: 2}
@@ -8273,7 +8293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.050980393}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.039215688}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11414,9 +11434,29 @@ MonoBehaviour:
   preQuestion6: 
   preQuestion7: 
   preQuestion8: 
-  likertData1After: 
-  likertData2After: 
-  openEndData3After: 
+  postQuestion1: 
+  postQuestion2: 
+  postQuestion3: 
+  postQuestion4: 
+  postQuestion5: 
+  postQuestion6: 
+  postQuestion7: 
+  postQuestion8: 
+  postQuestion9: 
+  postQuestion10: 
+  postQuestion11: 
+  postQuestion12: 
+  postQuestion13: 
+  postQuestion14: 
+  postQuestion15: 
+  postQuestion16: 
+  postQuestion17: 
+  postQuestion18: 
+  postQuestion19: 
+  postQuestion20: 
+  postQuestion21: 
+  postQuestion22: 
+  postQuestion23: 
 --- !u!4 &1923384396
 Transform:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ MonoBehaviour:
   Icon: {fileID: -1465489678553493566, guid: bdf9b2df1b7e9ab48b44781ca0257510, type: 3}
   HasInteraction: 0
   interactionType: 2
-  Greeting: Guzeppi (George 11Labs)
+  Greeting: Guzeppi (Dennis 11labs)
   Day1Dialog:
   - "I have seen a fortress fall before. It never happens in one dramatic moment.\nWe
     move supplies across the harbour at night\u2014small boats, weapons, a few Maltese
@@ -62,9 +62,9 @@ MonoBehaviour:
   - 'Last night, we scraped out a small victory at sea and still pushed a few trips
     across the water.
 
-    Not today. There are watch-guards and cannon on both
-    sides of the harbour now.  Some say a new commander joined the Ottoman''s ranks. 
-    At this point, our crossings are fantasy.'
+    Not today. There are watch-guards and cannon on both sides
+    of the harbour now.  Some say a new commander joined the Ottoman''s ranks.  At
+    this point, our crossings are fantasy.'
   Day5FirstTimeDialog:
   - "You\u2019re here on a day when the walls aren\u2019t defending anything anymore
     \u2014 they\u2019re just marking where men used to stand.\nSome of the lads are
@@ -72,18 +72,18 @@ MonoBehaviour:
     fort to hold until the last possible moment, and that means none of us will leave."
   Day5MetBeforeDialog:
   - "You stayed longer than most, but that doesn\u2019t change what\u2019s coming.\nI
-    stopped doing numbers last night \u2014 there\u2019s nothing left to adjust.\nTomorrow
-    isn\u2019t about tactics anymore. It\u2019s about whoever can walk away from
-    what\u2019s left."
-  Day1Audio: {fileID: 8300000, guid: b1c41876c48335840b5745d3ed8a572c, type: 3}
-  Day2FirstTimeAudio: {fileID: 8300000, guid: 9c73be37ac61208459dbf99ced8a5bbd, type: 3}
-  Day2MetBeforeAudio: {fileID: 8300000, guid: 0c7ae8072c6e24c4394d1e03c8b057c5, type: 3}
-  Day3FirstTimeAudio: {fileID: 8300000, guid: 9811eaac87edfc14d8e2ca92af4b32d8, type: 3}
-  Day3MetBeforeAudio: {fileID: 8300000, guid: 5cc689b6241132241920781cab874a63, type: 3}
-  Day4FirstTimeAudio: {fileID: 8300000, guid: b42b3ea38606cd545b8167381c919487, type: 3}
-  Day4MetBeforeAudio: {fileID: 8300000, guid: b8bfcbb408e598e47b0ffcb2d1ba363f, type: 3}
-  Day5FirstTimeAudio: {fileID: 8300000, guid: bbbc593c2ae14124eb65e189e3eda50a, type: 3}
-  Day5MetBeforeAudio: {fileID: 8300000, guid: 4e4ff6af67dab274188852fbf837ce8a, type: 3}
+    stopped counting our supplies, the dead and the maimed \u2014 there\u2019s nothing
+    left to adjust.\nTomorrow isn\u2019t about tactics anymore. It\u2019s about whoever
+    can walk away from what\u2019s left."
+  Day1Audio: {fileID: 8300000, guid: 754fd8f889bdd894288011096fc671a4, type: 3}
+  Day2FirstTimeAudio: {fileID: 8300000, guid: 20684a997eb5cfa448ab8679a689caed, type: 3}
+  Day2MetBeforeAudio: {fileID: 8300000, guid: 6f51d55a79f7863498bde22dfc5cde34, type: 3}
+  Day3FirstTimeAudio: {fileID: 8300000, guid: b435a56b17f9df947899d7b3eef05a82, type: 3}
+  Day3MetBeforeAudio: {fileID: 8300000, guid: 57ddfabfcd23c0a48afeecc3ac15443f, type: 3}
+  Day4FirstTimeAudio: {fileID: 8300000, guid: 0a10b0f61cd26fd46a9f46bc1ea77173, type: 3}
+  Day4MetBeforeAudio: {fileID: 8300000, guid: 9987ad7373da1e04b940977500a1c634, type: 3}
+  Day5FirstTimeAudio: {fileID: 8300000, guid: ad6ef0de90f3e654aa8a71c49c2886ba, type: 3}
+  Day5MetBeforeAudio: {fileID: 8300000, guid: a8b41f54e8a50cd40a8843fffa02f987, type: 3}
   dayNumber: 1
   metOnday1: 0
   metOnday2: 0

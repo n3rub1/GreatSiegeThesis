@@ -14,6 +14,7 @@ public class DialogManager : Singleton<DialogManager>
     [SerializeField] private GameManager gameManager;
     [SerializeField] private GoogleSheetLogger logger;
     [SerializeField] private AudioSource voiceSource;
+    [SerializeField] private DayNightCycleManager dayNightCycleManager;
 
     public NPCInteraction npcSelected { get; set; }
 
@@ -39,6 +40,10 @@ public class DialogManager : Singleton<DialogManager>
         dialogPanel.SetActive(false);
         dialogStarted = false;
         dialogQueue.Clear();
+
+        dayNightCycleManager.StartStopTimer(false);
+
+        Debug.Log("START TIMER");
     }
 
     private void LoadDialogFromNPC()
@@ -156,6 +161,9 @@ public class DialogManager : Singleton<DialogManager>
         npcNameTMP.text = npcSelected.DialogToShow.Name;
         npcDialogTMP.text = npcSelected.DialogToShow.Greeting;
         dialogStarted = true;
+
+        dayNightCycleManager.StartStopTimer(true);
+        Debug.Log("STOP TIMER");
     }
 
     private void ContinueDialog()

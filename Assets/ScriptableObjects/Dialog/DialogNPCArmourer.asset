@@ -16,67 +16,68 @@ MonoBehaviour:
   Icon: {fileID: 7416670922274956215, guid: 67e11902f9a599344b5dc2f4b5a33db5, type: 3}
   HasInteraction: 0
   interactionType: 0
-  Greeting: Patrick The Armourer (Brian 11labs)
+  Greeting: Patrick The Armourer (MARCELLO 11LABS)
   Day1Dialog:
-  - "My father and I spent our lives shaping iron.  Hinges for doors, nails for scaffolds,
-    blades for lords. That kind of work gives people a sense of safety.\nHere, I
-    make pieces that send men back into fire. I tell myself it protects them, but
-    I know it only delays something worse.\nThis is just the beginning. The guns
-    haven\u2019t found their range yet. By tomorrow, more guns will find their range
-    into our fort."
+  - "You ever hold iron straight from the forge? My father put my hands to it when
+    I was younger than you are now. Hinges, nails, blades for men who thought a good
+    sword made them safe.\nHere, I make things that send men straight back into fire.
+    I tell myself it helps \u2014 I have to \u2014 but we both know it just buys
+    a little time.\nLook at the guns. They\u2019re wild now. Give them a day, they\u2019ll
+    start finding our walls. Then we see what holds."
   Day2FirstTimeDialog:
-  - "When armour comes back to me, I can read how a man met his end. A crushed rim
-    means stone fragments. A torn plate means a shot caught him turning. You learn
-    to see death in shapes.\nBy tomorrow, I\u2019ll start recognising my own work
-    among the broken. I\u2019m not sure a man should know that."
+  - "Pick up a dented breastplate, you can tell how someone met the ground. This
+    was has a hole right through the heart and out the back \u2014 musket ball. You
+    start reading deaths without names.\nBy tomorrow I\u2019ll be able to recognise
+    which pieces I made. I don\u2019t think anyone wants that kind of memory."
   Day2MetBeforeDialog:
-  - "Yesterday I mentioned that more guns will find their range, be careful out there
-    boy!\r\nA helmet came in\u2014a piece I made years ago. Musket hole right through
-    the brow. The poor lad must\u2019ve lifted his head an inch too high.\r\nBy tomorrow,
-    recognising old pieces won\u2019t disturb me. That frightens me more than the
-    hole."
+  - "Yesterday I told you the guns would settle. They have \u2014 you heard it.\nA
+    helmet I made came back. Hole right through the brow. He probably lifted his
+    head just to breathe. You don\u2019t get second chances with that.\nTomorrow,
+    I\u2019ll know my own work before I turn it over. That\u2019s when it gets inside
+    your head."
   Day3FirstTimeDialog:
-  - "I worked at the forge in Birgu before this. My father still does.  He is old
-    and slower now. He taught me that an armourer\u2019s duty is to keep people safe.\r\nOut
-    here, safety is a story we tell each other so we don\u2019t falter. We are patching
-    steel still warm with someone's blood."
+  - "I used to work in Birgu. My father still does, even though his hands shake.
+    He always said an armourer keeps people safe.\nOut here? We fix armour and sharpen
+    swords while they\u2019re still warm from someone else\u2019s blood, us or theirs.
+    If that\u2019s safety, it\u2019s not the kind he meant."
   Day3MetBeforeDialog:
-  - "Do you remember that helmet I told you about? Today more arrived\u2014some with
-    cloth, some with skin and pieces of brain still trapped in the seams.\r\nI can
-    wash oil off metal. Blood is another matter. My hands look clean, but I still
-    see red in the creases.\r\nTomorrow, I doubt I\u2019ll notice."
+  - "You remember that helmet story? Today I scraped skin out of a gorget seam. Little
+    strands of hair stuck in the hinge.\nOil washes off easy, but blood seems to
+    stay. I scrub and scrub and when I look at my hands, they still look red and
+    tainted with blood.\nGive it another day \u2014 I won\u2019t feel anything at
+    all."
   Day4FirstTimeDialog:
-  - "The guns are measured today. That means someone experienced is directing them\u2014someone
-    who understands patience.\r\nWhen fire becomes accurate, my repairs stop being
-    reassurance and start being prolongation. I\u2019m no coward, but I know that
-    I am only delaying the inevitable."
+  - "Hear that pattern? Someone out there knows what he\u2019s doing. More shots
+    are finding their way inside the fort.\nMy repairs don\u2019t comfort anyone
+    anymore. All I\u2019m doing is stretching out their fear. I\u2019m not scared
+    to die. I just don\u2019t want to keep a man alive long enough to hurt more."
   Day4MetBeforeDialog:
-  - "It\u2019s a comfort seeing a familiar face still walking. Not many can claim
-    that after last few days.\r\nThe walls shook, and men shook with them. Someone
-    new must be among the Ottoman ranks\u2014someone who has done this before.\r\nI
-    don't think this fort will hold for much longer."
+  - "It\u2019s strange seeing a familiar face. Most change into bodies or parts before
+    you get a second look.\nThose walls shook hard. Men shook harder. Someone experienced
+    joined the other side \u2014 you can feel it in the pacing of the shots.\nI don\u2019t
+    think this place was built to last through someone like that."
   Day5FirstTimeDialog:
-  - "You\u2019ve come when there\u2019s nearly nothing left to mend. That\u2019s
-    not a sign of strength\u2014it\u2019s a sign there aren\u2019t enough bodies
-    left to wear what I make.\r\nBy tomorrow, this forge will be abandoned or silent.
-    I doubt I\u2019ll see Birgu again. The crossings are watched, and names don\u2019t
-    matter anymore.\r\nI have to accept my faith.  I will die here."
+  - "You come on a day where there\u2019s almost nothing to fix. Not because we\u2019re
+    ready \u2014 because we\u2019re running out of people with chests to strap iron
+    onto.\nCrossings are watched. Birgu might as well be a world away. I used to
+    think I\u2019d make it back.\nNow I just want to stop hearing metal scream."
   Day5MetBeforeDialog:
-  - "So you\u2019re still breathing, I am glad. Half the defenders aren\u2019t. I
-    used to think my work kept men alive. Now I think it keeps them present long
-    enough to suffer."
-  Day1Audio: {fileID: 8300000, guid: 575c11d032cf97741be85e7f4176f0a5, type: 3}
-  Day2FirstTimeAudio: {fileID: 8300000, guid: 2609d2d26a176cf44b562ecec9107460, type: 3}
-  Day2MetBeforeAudio: {fileID: 8300000, guid: d9d0d9c4f5441ef488d36e986806b241, type: 3}
-  Day3FirstTimeAudio: {fileID: 8300000, guid: c10e5ba4742f7674799609500fd663ad, type: 3}
-  Day3MetBeforeAudio: {fileID: 8300000, guid: 8748770b3c6927e488344c1c56345e15, type: 3}
-  Day4FirstTimeAudio: {fileID: 8300000, guid: 09e3f9d5980182340bf4c3265eb43f22, type: 3}
-  Day4MetBeforeAudio: {fileID: 8300000, guid: e86ef18914f223747a99f62d969eccae, type: 3}
-  Day5FirstTimeAudio: {fileID: 8300000, guid: c254d549f8597be48993fa5619ea6dfe, type: 3}
-  Day5MetBeforeAudio: {fileID: 8300000, guid: ead0ae7355faaf24382101f86ac37bd5, type: 3}
-  dayNumber: 2
-  metOnday1: 1
-  metOnday2: 1
+  - "You\u2019re still here. Good. I keep turning and expecting no one at all.\nHalf
+    the men are gone. The rest look like they\u2019re waiting their turn. I used
+    to think my work kept them alive \u2014 gave them a chance.\nNow it just keeps
+    them awake long enough to feel the end coming."
+  Day1Audio: {fileID: 8300000, guid: 385a710762871c2408649f7bd2f02ca3, type: 3}
+  Day2FirstTimeAudio: {fileID: 8300000, guid: f64655f348efbff488bf963e559dc4b4, type: 3}
+  Day2MetBeforeAudio: {fileID: 8300000, guid: f553c3a1136315745b18983c4c93618d, type: 3}
+  Day3FirstTimeAudio: {fileID: 8300000, guid: 745eaa59fe43805449cc8c4714630474, type: 3}
+  Day3MetBeforeAudio: {fileID: 8300000, guid: 0d9df0e911e698c47a154d22d9845569, type: 3}
+  Day4FirstTimeAudio: {fileID: 8300000, guid: 3be680c75235ac24c90f3a29f661c770, type: 3}
+  Day4MetBeforeAudio: {fileID: 8300000, guid: 8291bb3b420211246ac7ab060821e7d1, type: 3}
+  Day5FirstTimeAudio: {fileID: 8300000, guid: 01c00c53615c04146b610aa82ff24354, type: 3}
+  Day5MetBeforeAudio: {fileID: 8300000, guid: 18182e6d01b100242939445577fccaf5, type: 3}
+  dayNumber: 1
+  metOnday1: 0
+  metOnday2: 0
   metOnday3: 0
   metOnday4: 0
   metOnday5: 0

@@ -896,21 +896,22 @@ MonoBehaviour:
   - 'In May 1565, the calm Maltese sea filled with sails. An Ottoman armada, sent
     by Sultan Suleiman the Magnificent, approached the island carrying soldiers,
     horses, and siege weapons. Drums and war cries echoed across the water as the
-    fleet anchored along the coast.
+    fleet anchored in the south of the island at Marsaxlokk.
 
-    
 
-    Across Malta, preparations began.
-    Grand Master Jean de Valette ordered the fortification of Birgu and Senglea.
-    Walls were strengthened, supplies gathered, and wells poisoned for the enemy.
-    Farmers left their fields, families sought shelter, and the island braced itself
-    for a siege that would test everyone who lived on it.
 
-    
+    Across Malta,
+    preparations began. Grand Master Jean de Valette ordered everyone to take shelter
+    inside the fortifications of Fort Saint Angelo in Birgu and Fort Saint Michael
+    in Senglea. Walls were strengthened, supplies gathered, and wells poisoned for
+    the enemy. Farmers left their fields, families sought shelter, and the island
+    braced itself for a siege that would test everyone who lived on it.
 
-    You did not
-    understand empires or strategy. You only knew that something vast and unstoppable
-    had arrived.'
+
+
+    You
+    did not understand empires or strategy. You only knew that something vast and
+    unstoppable had arrived.'
   - "\u017Bejtun, your home, lay in the path of the advancing army. As soldiers moved
     inland from the southern coast, villages emptied and homes were abandoned in
     the confusion.\r\n\r\nWhen the shouting began, your cat bolted. You remember
@@ -939,21 +940,20 @@ MonoBehaviour:
   storyContinueButtons:
   - Start the Story
   - "You watched from afar, wondering if the ships would reach your village\u2026"
-  - "You ran in fear of your life, leaving the your slain family behind\u2026"
-  - "You found shelter among the knights, but your heart stayed restless\u2026"
-  - "You began your search once more \u2014 for the cat, and for what remained of
-    home."
-  delay: 0.073
+  - You had no choice but to...
+  - You made your way towards the sleeping chambers...
+  - As soon as you opened your eyes, you notice a familiar face...
+  delay: 0.065
   continueButton: {fileID: 1949886302}
   continueButtonTMP: {fileID: 48706972}
-  fortStElmoScene: 2
+  preSurveyQuestions: 3
   ttsSource: {fileID: 332482775}
   ttsClips:
-  - {fileID: 8300000, guid: fa89061948f8c0b4bb07df43354afd00, type: 3}
-  - {fileID: 8300000, guid: 1a28c51b812c47840981de1bf64a1978, type: 3}
-  - {fileID: 8300000, guid: d744b838de683cf4c8e8713db2fa28d9, type: 3}
-  - {fileID: 8300000, guid: 7509a1cfd52483c408ea527fc684e99b, type: 3}
-  - {fileID: 8300000, guid: ffd0b2a012199ed44804dfd6de699ab5, type: 3}
+  - {fileID: 8300000, guid: 28a12b9b22c8f4347915965e348beedf, type: 3}
+  - {fileID: 8300000, guid: 9764c4ffd3bb8f04c9809aff591d3c92, type: 3}
+  - {fileID: 8300000, guid: 458d4d5f0e7964f408e196b273e714ee, type: 3}
+  - {fileID: 8300000, guid: a59b9255f1b56704bbb96b7c9dbe4b4e, type: 3}
+  - {fileID: 8300000, guid: 5b7e1b3c62fca3d48a349e861f707195, type: 3}
   playAudioOnScreenStart: 1
   stopAudioWhenChangingScreen: 1
 --- !u!4 &181457934
