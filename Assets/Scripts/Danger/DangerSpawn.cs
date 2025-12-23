@@ -71,6 +71,24 @@ public class DangerSpawn : MonoBehaviour
         deadScreenPanel.SetActive(false);
     }
 
+    private Vector2 GetPossibleSpawnLocations()
+    {
+        int maxAttempts = 50;
+        float randomX = 0f;
+        float randomY = 0f;
+
+        for (int attempt = 0; attempt < maxAttempts; attempt++)
+        {
+            randomX = Random.Range(-35f, 15f);
+            if (randomX > -9 && randomX < -3)
+            {
+
+            }
+        }
+
+        return new Vector2 (0, 0);
+    }
+
     IEnumerator SpawnCirclesOnDeathWithDelay()
     {
         {

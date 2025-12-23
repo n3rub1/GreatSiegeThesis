@@ -31,6 +31,16 @@ public class NPCDialog : ScriptableObject
     [TextArea] public string[] Day5FirstTimeDialog;
     [TextArea] public string[] Day5MetBeforeDialog;
 
+    [TextArea] public string[] Day6Dialog;
+    [TextArea] public string[] Day7FirstTimeDialog;
+    [TextArea] public string[] Day7MetBeforeDialog;
+    [TextArea] public string[] Day8FirstTimeDialog;
+    [TextArea] public string[] Day8MetBeforeDialog;
+    [TextArea] public string[] Day9FirstTimeDialog;
+    [TextArea] public string[] Day9MetBeforeDialog;
+    [TextArea] public string[] Day10FirstTimeDialog;
+    [TextArea] public string[] Day10MetBeforeDialog;
+
     [Header("Audio")]
     public AudioClip Day1Audio;
     public AudioClip Day2FirstTimeAudio;
@@ -42,6 +52,16 @@ public class NPCDialog : ScriptableObject
     public AudioClip Day5FirstTimeAudio;
     public AudioClip Day5MetBeforeAudio;
 
+    public AudioClip Day6Audio;
+    public AudioClip Day7FirstTimeAudio;
+    public AudioClip Day7MetBeforeAudio;
+    public AudioClip Day8FirstTimeAudio;
+    public AudioClip Day8MetBeforeAudio;
+    public AudioClip Day9FirstTimeAudio;
+    public AudioClip Day9MetBeforeAudio;
+    public AudioClip Day10FirstTimeAudio;
+    public AudioClip Day10MetBeforeAudio;
+
     [Header("Days")]
     public int dayNumber;
 
@@ -52,6 +72,12 @@ public class NPCDialog : ScriptableObject
     public bool metOnday4;
     public bool metOnday5;
 
+    public bool metOnday6;
+    public bool metOnday7;
+    public bool metOnday8;
+    public bool metOnday9;
+    public bool metOnday10;
+
     public void ResetData()
     {
         dayNumber = 1;
@@ -60,5 +86,10 @@ public class NPCDialog : ScriptableObject
         metOnday3 = false;
         metOnday4 = false;
         metOnday5 = false;
+        metOnday6 = false;
+        metOnday7 = false;
+        metOnday8 = false;
+        metOnday9 = false;
+        metOnday10 = false;
     }
 }

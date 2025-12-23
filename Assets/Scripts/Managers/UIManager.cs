@@ -31,6 +31,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI xpMedicineTMP;
     [SerializeField] private TextMeshProUGUI timeOfDayTMP;
     [SerializeField] private TextMeshProUGUI dayNumberTMP;
+    [SerializeField] private TextMeshProUGUI AIVoiceActingTMP;
 
     [Header("Level Up")]
     [SerializeField] private TextMeshProUGUI LevelUpTMP;
@@ -179,5 +180,17 @@ public class UIManager : MonoBehaviour
     public void HideLevelUp()
     {
         LevelUp.SetActive(false);
+    }
+
+    public void ChangeAIVoiceOverText(bool state)
+    {
+        if (state)
+        {
+            AIVoiceActingTMP.text = "AI Voice Acting - ON";
+        }
+        else
+        {
+            AIVoiceActingTMP.text = "AI Voice Acting - OFF";
+        }
     }
 }

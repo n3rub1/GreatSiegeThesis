@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889faa658c7b2c94ea4fff939bf8022e, type: 3}
+  m_Name: DialogNPCSapper
+  m_EditorClassIdentifier: 
+  Name: Muhmud
+  Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
+  HasInteraction: 0
+  interactionType: 1
+  Greeting: Yahya Lab11
+  Day1Dialog: []
+  Day2FirstTimeDialog: []
+  Day2MetBeforeDialog: []
+  Day3FirstTimeDialog: []
+  Day3MetBeforeDialog: []
+  Day4FirstTimeDialog: []
+  Day4MetBeforeDialog: []
+  Day5FirstTimeDialog: []
+  Day5MetBeforeDialog: []
+  Day6Dialog:
+  - "You keep asking why the trenches bend.\nBecause straight ground is where men
+    die fastest.\nA wall sees farther than you think, and a cannon loves a straight
+    line.\nEvery turn steals its sight.\nThat is not cleverness \u2014 it is habit
+    learned from graves.\nIf you watch long enough, you will see that war is mostly
+    about refusing the enemy clean answers."
+  Day7FirstTimeDialog:
+  - "You wonder why we do not dig under the fort.\nLook at the ground. Stone sits
+    too close, and the sea waits beneath it.\nA tunnel here would speak before it
+    ever worked \u2014 sound carries, water follows.\nThe Knights would hear us long
+    before we reached them.\nSo we stay above, where silence can still be shaped.\nSome
+    places cannot be cheated. They must be endured."
+  Day7MetBeforeDialog:
+  - "You wonder why we do not dig under the fort.\nLook at the ground. Stone sits
+    too close, and the sea waits beneath it.\nA tunnel here would speak before it
+    ever worked \u2014 sound carries, water follows.\nThe Knights would hear us long
+    before we reached them.\nSo we stay above, where silence can still be shaped.\nSome
+    places cannot be cheated. They must be endured."
+  Day8FirstTimeDialog:
+  - "You see the trench creeping forward and think it slow.\nIt is slow on purpose.\nSpeed
+    invites fire. Distance invites patience.\nEach length we gain lets the guns move
+    closer without bleeding men dry.\nThe fort answers less now, not because it is
+    weak, but because it is tired.\nThat is how walls begin to fail \u2014 not all
+    at once, but everywhere."
+  Day8MetBeforeDialog:
+  - "You see the trench creeping forward and think it slow.\nIt is slow on purpose.\nSpeed
+    invites fire. Distance invites patience.\nEach length we gain lets the guns move
+    closer without bleeding men dry.\nThe fort answers less now, not because it is
+    weak, but because it is tired.\nThat is how walls begin to fail \u2014 not all
+    at once, but everywhere."
+  Day9FirstTimeDialog:
+  - 'The turns are tighter today. That tells you we are close enough for stone to
+    fall without warning.
+
+    Men fear this part, because the enemy feels near.
+
+    But
+    closeness is safer than exposure.
+
+    Straight approaches look brave. They end
+    quickly.
+
+    Corners let men live long enough to finish the work.
+
+    Remember
+    that when you hear shouting from the walls.'
+  Day9MetBeforeDialog:
+  - 'The turns are tighter today. That tells you we are close enough for stone to
+    fall without warning.
+
+    Men fear this part, because the enemy feels near.
+
+    But
+    closeness is safer than exposure.
+
+    Straight approaches look brave. They end
+    quickly.
+
+    Corners let men live long enough to finish the work.
+
+    Remember
+    that when you hear shouting from the walls.'
+  Day10FirstTimeDialog:
+  - "Now the trench can go no farther.\nThat does not mean it has failed.\nIt has
+    done what it was meant to do \u2014 carry men where they could not walk openly.\nThe
+    guns will finish what earth began.\nForts do not fall because they are broken.\nThey
+    fall because they are made to answer too many demands at once, until silence
+    becomes easier than resistance."
+  Day10MetBeforeDialog:
+  - "Now the trench can go no farther.\nThat does not mean it has failed.\nIt has
+    done what it was meant to do \u2014 carry men where they could not walk openly.\nThe
+    guns will finish what earth began.\nForts do not fall because they are broken.\nThey
+    fall because they are made to answer too many demands at once, until silence
+    becomes easier than resistance."
+  Day1Audio: {fileID: 0}
+  Day2FirstTimeAudio: {fileID: 0}
+  Day2MetBeforeAudio: {fileID: 0}
+  Day3FirstTimeAudio: {fileID: 0}
+  Day3MetBeforeAudio: {fileID: 0}
+  Day4FirstTimeAudio: {fileID: 0}
+  Day4MetBeforeAudio: {fileID: 0}
+  Day5FirstTimeAudio: {fileID: 0}
+  Day5MetBeforeAudio: {fileID: 0}
+  Day6Audio: {fileID: 8300000, guid: fb9f973e1d1f6f74fab0a10a37f8834d, type: 3}
+  Day7FirstTimeAudio: {fileID: 8300000, guid: def13f642c9ce8d4db3319f4b0ad99c8, type: 3}
+  Day7MetBeforeAudio: {fileID: 8300000, guid: def13f642c9ce8d4db3319f4b0ad99c8, type: 3}
+  Day8FirstTimeAudio: {fileID: 8300000, guid: 5138d814fb0ed83479b0785e8d93f550, type: 3}
+  Day8MetBeforeAudio: {fileID: 8300000, guid: 5138d814fb0ed83479b0785e8d93f550, type: 3}
+  Day9FirstTimeAudio: {fileID: 8300000, guid: 3911585180608934189ac52102b928c6, type: 3}
+  Day9MetBeforeAudio: {fileID: 8300000, guid: 3911585180608934189ac52102b928c6, type: 3}
+  Day10FirstTimeAudio: {fileID: 8300000, guid: 8cff63cb3c9e38f42b740856fb04c9ea, type: 3}
+  Day10MetBeforeAudio: {fileID: 8300000, guid: 8cff63cb3c9e38f42b740856fb04c9ea, type: 3}
+  dayNumber: 1
+  metOnday1: 0
+  metOnday2: 0
+  metOnday3: 0
+  metOnday4: 0
+  metOnday5: 0
+  metOnday6: 1
+  metOnday7: 0
+  metOnday8: 0
+  metOnday9: 0
+  metOnday10: 0

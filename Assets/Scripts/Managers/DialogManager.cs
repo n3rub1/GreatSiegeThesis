@@ -15,6 +15,7 @@ public class DialogManager : Singleton<DialogManager>
     [SerializeField] private GoogleSheetLogger logger;
     [SerializeField] private AudioSource voiceSource;
     [SerializeField] private DayNightCycleManager dayNightCycleManager;
+    [SerializeField] private AIOverrideManager aiOverrideManager;
 
     public NPCInteraction npcSelected { get; set; }
 
@@ -51,7 +52,7 @@ public class DialogManager : Singleton<DialogManager>
         int currentDay = gameManager.GetDayNumber();
         npcSelected.DialogToShow.dayNumber = currentDay;
 
-        if (npcSelected.DialogToShow.Day1Dialog.Length <= 0 || 
+        if (currentDay <= 5 && (npcSelected.DialogToShow.Day1Dialog.Length <= 0 || 
             npcSelected.DialogToShow.Day2MetBeforeDialog.Length <= 0|| 
             npcSelected.DialogToShow.Day2FirstTimeDialog.Length <= 0 ||
             npcSelected.DialogToShow.Day3MetBeforeDialog.Length <= 0 ||
@@ -59,7 +60,17 @@ public class DialogManager : Singleton<DialogManager>
             npcSelected.DialogToShow.Day4MetBeforeDialog.Length <= 0 ||
             npcSelected.DialogToShow.Day4FirstTimeDialog.Length <= 0 ||
             npcSelected.DialogToShow.Day5MetBeforeDialog.Length <= 0 ||
-            npcSelected.DialogToShow.Day5FirstTimeDialog.Length <= 0) return;
+            npcSelected.DialogToShow.Day5FirstTimeDialog.Length <= 0)) return;
+
+        if (currentDay >= 6 && (npcSelected.DialogToShow.Day6Dialog.Length <= 0 ||
+                npcSelected.DialogToShow.Day7MetBeforeDialog.Length <= 0 ||
+                npcSelected.DialogToShow.Day7FirstTimeDialog.Length <= 0 ||
+                npcSelected.DialogToShow.Day8MetBeforeDialog.Length <= 0 ||
+                npcSelected.DialogToShow.Day8FirstTimeDialog.Length <= 0 ||
+                npcSelected.DialogToShow.Day9MetBeforeDialog.Length <= 0 ||
+                npcSelected.DialogToShow.Day9FirstTimeDialog.Length <= 0 ||
+                npcSelected.DialogToShow.Day10MetBeforeDialog.Length <= 0 ||
+                npcSelected.DialogToShow.Day10FirstTimeDialog.Length <= 0)) return;
 
         //       foreach(string sentence in npcSelected.DialogToShow.Day1Dialog)
         //       {
@@ -72,7 +83,7 @@ public class DialogManager : Singleton<DialogManager>
                 foreach (string sentence in npcSelected.DialogToShow.Day1Dialog)
                     dialogQueue.Enqueue(sentence);
                 npcSelected.DialogToShow.metOnday1 = true;
-                PlayClip(npcSelected.DialogToShow.Day1Audio);
+                if(aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day1Audio);
                 break;
 
             case 2:
@@ -81,14 +92,14 @@ public class DialogManager : Singleton<DialogManager>
                     foreach (string sentence in npcSelected.DialogToShow.Day2MetBeforeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday2 = true;
-                    PlayClip(npcSelected.DialogToShow.Day2MetBeforeAudio);
+                    if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day2MetBeforeAudio);
                 }
                 else
                 {
                     foreach (string sentence in npcSelected.DialogToShow.Day2FirstTimeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday2 = true;
-                    PlayClip(npcSelected.DialogToShow.Day2FirstTimeAudio);
+                    if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day2FirstTimeAudio);
                 }
                 break;
 
@@ -98,14 +109,14 @@ public class DialogManager : Singleton<DialogManager>
                     foreach (string sentence in npcSelected.DialogToShow.Day3MetBeforeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday3 = true;
-                    PlayClip(npcSelected.DialogToShow.Day3MetBeforeAudio);
+                    if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day3MetBeforeAudio);
                 }
                 else
                 {
                     foreach (string sentence in npcSelected.DialogToShow.Day3FirstTimeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday3 = true;
-                    PlayClip(npcSelected.DialogToShow.Day3FirstTimeAudio);
+                    if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day3FirstTimeAudio);
                 }
                 break;
 
@@ -115,14 +126,14 @@ public class DialogManager : Singleton<DialogManager>
                     foreach (string sentence in npcSelected.DialogToShow.Day4MetBeforeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday4 = true;
-                    PlayClip(npcSelected.DialogToShow.Day4MetBeforeAudio);
+                    if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day4MetBeforeAudio);
                 }
                 else
                 {
                     foreach (string sentence in npcSelected.DialogToShow.Day4FirstTimeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday4 = true;
-                    PlayClip(npcSelected.DialogToShow.Day4FirstTimeAudio);
+                    if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day4FirstTimeAudio);
                 }
                 break;
 
@@ -132,14 +143,89 @@ public class DialogManager : Singleton<DialogManager>
                     foreach (string sentence in npcSelected.DialogToShow.Day5MetBeforeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday5 = true;
-                    PlayClip(npcSelected.DialogToShow.Day5MetBeforeAudio);
+                    if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day5MetBeforeAudio);
                 }
                 else
                 {
                     foreach (string sentence in npcSelected.DialogToShow.Day5FirstTimeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday5 = true;
-                    PlayClip(npcSelected.DialogToShow.Day5FirstTimeAudio);
+                    if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day5FirstTimeAudio);
+                }
+                break;
+
+            case 6:
+                foreach (string sentence in npcSelected.DialogToShow.Day6Dialog)
+                    dialogQueue.Enqueue(sentence);
+                npcSelected.DialogToShow.metOnday6 = true;
+                if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day6Audio);
+                break;
+
+            case 7:
+                if (npcSelected.DialogToShow.metOnday6)
+                {
+                    foreach (string sentence in npcSelected.DialogToShow.Day7MetBeforeDialog)
+                        dialogQueue.Enqueue(sentence);
+                    npcSelected.DialogToShow.metOnday7 = true;
+                    if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day7MetBeforeAudio);
+                }
+                else
+                {
+                    foreach (string sentence in npcSelected.DialogToShow.Day7FirstTimeDialog)
+                        dialogQueue.Enqueue(sentence);
+                    npcSelected.DialogToShow.metOnday7 = true;
+                    if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day7FirstTimeAudio);
+                }
+                break;
+
+            case 8:
+                if (npcSelected.DialogToShow.metOnday7)
+                {
+                    foreach (string sentence in npcSelected.DialogToShow.Day8MetBeforeDialog)
+                        dialogQueue.Enqueue(sentence);
+                    npcSelected.DialogToShow.metOnday8 = true;
+                    if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day8MetBeforeAudio);
+                }
+                else
+                {
+                    foreach (string sentence in npcSelected.DialogToShow.Day8FirstTimeDialog)
+                        dialogQueue.Enqueue(sentence);
+                    npcSelected.DialogToShow.metOnday8 = true;
+                    if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day8FirstTimeAudio);
+                }
+                break;
+
+            case 9:
+                if (npcSelected.DialogToShow.metOnday8)
+                {
+                    foreach (string sentence in npcSelected.DialogToShow.Day9MetBeforeDialog)
+                        dialogQueue.Enqueue(sentence);
+                    npcSelected.DialogToShow.metOnday9 = true;
+                    if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day9MetBeforeAudio);
+                }
+                else
+                {
+                    foreach (string sentence in npcSelected.DialogToShow.Day9FirstTimeDialog)
+                        dialogQueue.Enqueue(sentence);
+                    npcSelected.DialogToShow.metOnday9 = true;
+                    if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day9FirstTimeAudio);
+                }
+                break;
+
+            case 10:
+                if (npcSelected.DialogToShow.metOnday9)
+                {
+                    foreach (string sentence in npcSelected.DialogToShow.Day10MetBeforeDialog)
+                        dialogQueue.Enqueue(sentence);
+                    npcSelected.DialogToShow.metOnday10 = true;
+                    if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day10MetBeforeAudio);
+                }
+                else
+                {
+                    foreach (string sentence in npcSelected.DialogToShow.Day10FirstTimeDialog)
+                        dialogQueue.Enqueue(sentence);
+                    npcSelected.DialogToShow.metOnday10 = true;
+                    if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day10FirstTimeAudio);
                 }
                 break;
         }

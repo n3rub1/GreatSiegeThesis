@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Simple day 4
   m_EditorClassIdentifier: 
   ID: MalteseSoldier
-  Name: Salvatore
+  Name: Tommaso, Maltese courier
   Icon: {fileID: 409668665, guid: 4147f2bc6fccc974f937adc9cd1a5700, type: 3}
-  Description: "Wound: Crushed under collapsing stone during bombardment, ribs broken,
-    breath shallow.\n\nStory: Salvatore, a stonemason who built parts of Fort St.
-    Elmo, lies pinned beneath the rubble of his own craft. He wheezes that the walls
-    he raised with his bare hands have betrayed him, killing him as surely as the
-    enemy\u2019s cannon. His sons once helped him carry stone \u2014 he fears they
-    will die under it too before this siege is over.\n\n\nRequired bandages to heal:
-    2"
+  Description: "He wanted a boat, not a weapon. His father told him carrying messages
+    would keep him safe. A stone shard carved open his calf \u2014 the flesh is swelling
+    black-green and smells like sweetness and rot.\n\nTreatment: Apply a high tourniquet
+    until the foot numbs. Saw above the infection line in one clean movement. Cauterize
+    or bind \u2014 either way, shock may end him."
   slotNumber: 2
+  isHealed: 0
+  toolUsed: {fileID: 21300000, guid: d8d1b6ef632eaa04697976b39339b234, type: 3}
   requiredResource: Bandage
   requiredAmount: 2

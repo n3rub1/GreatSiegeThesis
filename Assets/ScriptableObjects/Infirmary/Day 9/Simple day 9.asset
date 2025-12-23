@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8884055e91295f4898eff348e8125dc, type: 3}
+  m_Name: Simple day 9
+  m_EditorClassIdentifier: 
+  ID: Ibrahim
+  Name: Ibrahim, powder carrier
+  Icon: {fileID: 409668665, guid: 4147f2bc6fccc974f937adc9cd1a5700, type: 3}
+  Description: 'He was assigned to move kegs, not face blades. A sword cut opened
+    his thigh; blood pours in pulses.
+
+
+    Treatment: Tourniquet high on the leg.
+    Clean and stitch if bleeding slows. If not, cauterize.'
+  slotNumber: 2
+  isHealed: 0
+  toolUsed: {fileID: 21300000, guid: fb5536f3e06c2104c8380185fff48a3a, type: 3}
+  requiredResource: Bandage
+  requiredAmount: 2

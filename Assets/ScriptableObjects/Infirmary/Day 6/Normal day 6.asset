@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8884055e91295f4898eff348e8125dc, type: 3}
+  m_Name: Normal day 6
+  m_EditorClassIdentifier: 
+  ID: Selim
+  Name: Selim, Azab spearman
+  Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
+  Description: 'A farmer pressed into service, promised pay that may never come.
+    A falling stone crushed his foot during an assault on the ditch, grinding bones
+    into fragments.
+
+
+    Treatment: Tourniquet high on the calf. Amputation below
+    the knee if swelling has not already crept upward. Delay means rot.'
+  slotNumber: 1
+  isHealed: 0
+  toolUsed: {fileID: 21300000, guid: d8d1b6ef632eaa04697976b39339b234, type: 3}
+  requiredResource: Bandage
+  requiredAmount: 3

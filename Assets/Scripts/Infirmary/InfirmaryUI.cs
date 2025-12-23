@@ -27,6 +27,7 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
 
     [Header("Data")]
     [SerializeField] private List<GameObject> infirmarySlotsImages;
+    [SerializeField] private Image itemImage;
 
     [SerializeField] private List<InfirmaryItem> day1Injured;
     [SerializeField] private List<InfirmaryItem> day2Injured;
@@ -34,6 +35,11 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
     [SerializeField] private List<InfirmaryItem> day4Injured;
     [SerializeField] private List<InfirmaryItem> day5Injured;
 
+    [SerializeField] private List<InfirmaryItem> day6Injured;
+    [SerializeField] private List<InfirmaryItem> day7Injured;
+    [SerializeField] private List<InfirmaryItem> day8Injured;
+    [SerializeField] private List<InfirmaryItem> day9Injured;
+    [SerializeField] private List<InfirmaryItem> day10Injured;
 
 
     public InfirmaryInteraction infirmaryInteraction { get; set; }
@@ -85,6 +91,21 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
             case 5:
                 currentDayItems = day5Injured;
                 break;
+            case 6:
+                currentDayItems = day6Injured;
+                break;
+            case 7:
+                currentDayItems = day7Injured;
+                break;
+            case 8:
+                currentDayItems = day8Injured;
+                break;
+            case 9:
+                currentDayItems = day9Injured;
+                break;
+            case 10:
+                currentDayItems = day10Injured;
+                break;
             default:
                 Debug.LogWarning("No infirmary items set for this day.");
                 return;
@@ -129,6 +150,7 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
             injuredName.text = item.Name;
             injuredDescription.text = item.Description;
             descriptionPanel.SetActive(true);
+            itemImage.sprite = item.toolUsed;
         }
         else
         {
@@ -261,6 +283,7 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
     {
        // logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Infirmary Closed (Infirmary UI)", "Player closed the infirmary panel");
         GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Infirmary Closed (Infirmary UI)", "Player closed the infirmary panel");
+        descriptionPanel.SetActive(false);
         infirmaryInjuredPanel.SetActive(false);
     }
 

@@ -12,22 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8884055e91295f4898eff348e8125dc, type: 3}
   m_Name: Normal day 1
   m_EditorClassIdentifier: 
-  ID: MenAtArms
+  ID: Fra Giacomo, Hospitaller men-at-arms
   Name: Anselm
   Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
-  Description: 'Wound: A jagged gash across the scalp from a falling stone, skull
-    cracked, eyes fluttering.
-
-
-    Story: Brother Anselm, a Hospitaller scribe no
-    older than twenty, never trained for war. His hands, ink-stained and trembling,
-    clutch at nothing as he mutters half-remembered prayers. Blood fills his mouth
-    as he whispers that he only wanted to preserve holy texts, not die with a sword
-    overhead.
-
-
-
-    Required bandages to heal: 3'
+  Description: "He prides himself on discipline and contempt for pain. The younger
+    recruits fear his temper more than the Ottoman guns. A Turkish arrow smashed
+    into his thigh and splintered the femur \u2014 when he tries to stand, the bone
+    shifts like wet bark.\n\nTreatment: Cut the shaft, expose the entry, and use
+    forceps to remove only what you can see. Any deeper digging risks snapping the
+    artery. You align the leg and splint it tight. He won\u2019t walk without a cane,
+    if he walks again at all."
   slotNumber: 1
+  isHealed: 0
+  toolUsed: {fileID: 21300000, guid: f7f6cc6d9a10013498dfb630f828f13b, type: 3}
   requiredResource: Bandage
   requiredAmount: 3

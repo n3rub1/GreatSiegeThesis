@@ -13,14 +13,15 @@ MonoBehaviour:
   m_Name: Normal day 4
   m_EditorClassIdentifier: 
   ID: MenAtArms
-  Name: Mustafa
+  Name: "La Valette\u2019s guard"
   Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
-  Description: "Wound: Deep cut across the stomach from a scimitar, bleeding uncontrollably.\n\nStory:
-    Mustafa, a deserter from the Ottoman lines, presses trembling fingers to his
-    spilling entrails. He prays in Turkish under his breath, not knowing if God listens
-    to a traitor. His eyes search yours in desperation \u2014 if neither side remembers
-    him, was there ever a man called Mustafa at all?\n\n\nRequired bandages to heal:
-    3"
+  Description: "He survived two campaigns and thought faith insulated guts from fate.
+    A musket ball entered above his navel and tore intestine \u2014 now he leaks
+    his own waste into his abdomen. He asks for water; it only worsens his swelling.\n\nTreatment:
+    No stitching can save intestine in 1565. You pour wine into the wound to slow
+    rot. Pack with poultice. Keep him warm; death is a matter of hours or days."
   slotNumber: 1
+  isHealed: 0
+  toolUsed: {fileID: 21300000, guid: 951ad395968d5684c8198058167dc450, type: 3}
   requiredResource: Bandage
   requiredAmount: 3

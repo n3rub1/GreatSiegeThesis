@@ -13,21 +13,16 @@ MonoBehaviour:
   m_Name: Simple day 2
   m_EditorClassIdentifier: 
   ID: MalteseSoldier2
-  Name: Matteo
+  Name: Matteo, Italian crossbowman
   Icon: {fileID: 409668665, guid: 4147f2bc6fccc974f937adc9cd1a5700, type: 3}
-  Description: 'Wound: Shrapnel from cannon fire embedded in the abdomen, intestines
-    visible, stench rising.
-
-
-    Story: Matteo, once a fisherman of Birgu, writhes
-    in agony as the stench of death already clings to him. He speaks of mornings
-    on the sea, his children laughing as they hauled nets. Now he clutches your sleeve,
-    eyes wide with panic, crying that his children will never eat fish caught by
-    his hands again.
-
-
-
-    Required bandages to heal: 2'
+  Description: "He earns his living as a fletcher in peacetime and tells everyone
+    that wood obeys him. A collapsing merlon slammed his forearm and bent bone like
+    green timber; now he can\u2019t clench a fist.\n\nTreatment: Leather strap becomes
+    a crude tourniquet to control swelling. You probe but find no single extraction
+    point \u2014 just a smashed limb. Splint it to stop wandering bone. Hope circulation
+    survives."
   slotNumber: 2
+  isHealed: 0
+  toolUsed: {fileID: 21300000, guid: af1070247e9f65d40a4fc57f21b20139, type: 3}
   requiredResource: Bandage
   requiredAmount: 2

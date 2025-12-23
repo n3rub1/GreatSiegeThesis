@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889faa658c7b2c94ea4fff939bf8022e, type: 3}
+  m_Name: DialogNPCInfirmary
+  m_EditorClassIdentifier: 
+  Name: Muhmud
+  Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
+  HasInteraction: 0
+  interactionType: 1
+  Greeting: Adam Lab11
+  Day1Dialog: []
+  Day2FirstTimeDialog: []
+  Day2MetBeforeDialog: []
+  Day3FirstTimeDialog: []
+  Day3MetBeforeDialog: []
+  Day4FirstTimeDialog: []
+  Day4MetBeforeDialog: []
+  Day5FirstTimeDialog: []
+  Day5MetBeforeDialog: []
+  Day6Dialog:
+  - "We set our tents near Marsa, where spring water is barely enough for all. They
+    call for surgeons and elders to tend to men struck already in first skirmishes.
+    I believed myself ready\u2014years in the corps, steady hands\u2014but the smoke
+    and screams here are no book lesson. By tomorrow, I suspect I will realise my
+    training was for ease, not for men who may die where they fall."
+  Day7FirstTimeDialog:
+  - Wounded arrive in numbers far beyond what we foresaw. After heavy attacks, thousands
+    lie torn or broken, some left in mud-filled trenches because there are no bearers.
+    The field outside our huts is chaos; cries rise with each sunset. By tomorrow,
+    I fear I will adopt the grim surrender of forgetting names, counting only the
+    bodies I might save.
+  Day7MetBeforeDialog:
+  - "Yesterday, I still believed I could find a rhythm\u2014a method to subtract
+    pain if not death. Today, a young Janissary looked at me with eyes asking if
+    he\u2019d see his home again. Words failed; I offered tea and cooling cloths.
+    Even as his breathing faltered, I explained nothing, whispering prayers not entirely
+    my own. By tomorrow, I suspect such rituals will feel like the only mercy left."
+  Day8FirstTimeDialog:
+  - "Some beg us to stop, not from pain but from the hopelessness of it all. Our
+    tents overflow. Evacuation by galley to Tripoli is too slow\u2014many never leave
+    these fields alive. Disease stalks the camp as surely as enemy bullets. By tomorrow,
+    I fear I will weigh suffering against the number we cannot help and choose merely
+    to stop the worst, a choice I once thought impossible."
+  Day8MetBeforeDialog:
+  - "Last night, I prayed for no more wounded to arrive so we might catch our breath.
+    It was a prayer for myself, not for them. Dawn brought a fresh tide of cries.
+    I saw men weeping not just from pain but from sheer exhaustion and despair. By
+    tomorrow, I suspect I will no longer pray at all\u2014just grind through each
+    breath with stony resolve."
+  Day9FirstTimeDialog:
+  - "The camp feels cursed; water runs scarce, and the wounds fester. The hospital
+    at Marsa was once orderly\u2014now it is full, overflowed into galleys anchored
+    in harbour. The cries echo against wood and canvas. By tomorrow, only the hardest
+    among us will stand, the rest broken by the sights and smells that know no mercy."
+  Day9MetBeforeDialog:
+  - "Today, our camp was struck by cavalry from outside. Wounded men, some barely
+    able to stand, fled in panic. I saw a soldier once mourning his own brother suddenly
+    run, as if life\u2019s terror outweighed death\u2019s certainty. By tomorrow,
+    I suspect uniforms and allegiances will blur\u2014only the human gasp of fear
+    and the ache of loss will remain."
+  Day10FirstTimeDialog:
+  - My hands no longer tremble. Once I worried this meant mastery; now it feels like
+    numbness. Mud, blood, and dirt have become the palette of every dawn. Men die
+    where they lie, some without even a whisper of prayer. By tomorrow, I fear I
+    will accept silence as enough.
+  Day10MetBeforeDialog:
+  - "I no longer reach for texts of wisdom. I reach for water, for clean cloth, for
+    any balm. I fear what I will carry back home\u2014not the honour of arms but
+    the memory of those left dying in trenches, abandoned in dust-filled earth. If
+    there is a tomorrow, will this memory haunt my quiet rooms like a phantom? I
+    suspect it will."
+  Day1Audio: {fileID: 0}
+  Day2FirstTimeAudio: {fileID: 0}
+  Day2MetBeforeAudio: {fileID: 0}
+  Day3FirstTimeAudio: {fileID: 0}
+  Day3MetBeforeAudio: {fileID: 0}
+  Day4FirstTimeAudio: {fileID: 0}
+  Day4MetBeforeAudio: {fileID: 0}
+  Day5FirstTimeAudio: {fileID: 0}
+  Day5MetBeforeAudio: {fileID: 0}
+  Day6Audio: {fileID: 8300000, guid: 274241fe4e80dfc4687c60b12a64a0ba, type: 3}
+  Day7FirstTimeAudio: {fileID: 8300000, guid: 5004ac8c39ac376429753d4d430d7df5, type: 3}
+  Day7MetBeforeAudio: {fileID: 8300000, guid: 588dde2fa0710bd40abcb951a2f096ac, type: 3}
+  Day8FirstTimeAudio: {fileID: 8300000, guid: 45bb9649400c3344db3011a54311e7d4, type: 3}
+  Day8MetBeforeAudio: {fileID: 8300000, guid: 11d469ec7d870cb409ebe51d28ef3807, type: 3}
+  Day9FirstTimeAudio: {fileID: 8300000, guid: 9ec4dc9a05ee10045895aa613c80d37f, type: 3}
+  Day9MetBeforeAudio: {fileID: 8300000, guid: 232593365d3c9cf4a86565c81679e42e, type: 3}
+  Day10FirstTimeAudio: {fileID: 8300000, guid: ddb351589ba745545b133d9389f7ad08, type: 3}
+  Day10MetBeforeAudio: {fileID: 8300000, guid: 78bdd4931c28d2b478359d4770735969, type: 3}
+  dayNumber: 1
+  metOnday1: 0
+  metOnday2: 0
+  metOnday3: 0
+  metOnday4: 0
+  metOnday5: 0
+  metOnday6: 1
+  metOnday7: 0
+  metOnday8: 0
+  metOnday9: 0
+  metOnday10: 0

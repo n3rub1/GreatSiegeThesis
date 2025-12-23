@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Complex day 5
   m_EditorClassIdentifier: 
   ID: Knight2
-  Name: Tommaso
+  Name: Tommaso, Knight
   Icon: {fileID: 1208347981, guid: b2407ce4cf73ad348aec15ba9990f7a1, type: 3}
-  Description: "Wound: Arrow through the neck, choking on blood with every rattling
-    breath.\n\nStory: Brother Tommaso, an aged monk who carried water to the thirsty,
-    grips your wrist with surprising strength. His voice is a wet gargle, but you
-    hear him insist that all he wanted was to serve God until peace came. Blood fills
-    his throat before he can finish the prayer \u2014 his lips still moving silently
-    as his grip fades.\n\n\nRequired bandages to heal: 5"
+  Description: "He thought war was ceremony \u2014 velvet, banners, and feasts. A
+    scimitar removed that fantasy and half his arm. Blood pumped in a straight line
+    onto stone.\n\nTreatment: Tourniquet high at the shoulder. Saw fast before panic
+    destroys will. cauterize if spurting continues. Wrap linen tight."
   slotNumber: 0
+  isHealed: 0
+  toolUsed: {fileID: 21300000, guid: d8d1b6ef632eaa04697976b39339b234, type: 3}
   requiredResource: Bandage
   requiredAmount: 5

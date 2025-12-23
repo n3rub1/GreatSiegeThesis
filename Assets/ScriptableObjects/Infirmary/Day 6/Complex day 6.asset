@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8884055e91295f4898eff348e8125dc, type: 3}
+  m_Name: Complex day 6
+  m_EditorClassIdentifier: 
+  ID: Murad
+  Name: Murad, siege laborer
+  Icon: {fileID: 1208347981, guid: b2407ce4cf73ad348aec15ba9990f7a1, type: 3}
+  Description: "He carried earth and timber, never a weapon. A counter-battery shot
+    collapsed a trench wall onto his ribs; his chest caves inward when he breathes.\n\nTreatment:
+    Bind the chest tightly with cloth. Keep him upright and still. There is no cutting
+    to do \u2014 survival depends on what cannot be controlled."
+  slotNumber: 0
+  isHealed: 0
+  toolUsed: {fileID: 21300000, guid: b1119f22c8cc30e448a6076bea044a42, type: 3}
+  requiredResource: Bandage
+  requiredAmount: 5

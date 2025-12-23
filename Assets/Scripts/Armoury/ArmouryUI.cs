@@ -36,6 +36,13 @@ public class ArmouryUI : Singleton<ArmouryUI>
     [SerializeField] private List<ArmouryItem> day4armour;
     [SerializeField] private List<ArmouryItem> day5armour;
 
+    [SerializeField] private List<ArmouryItem> day6armour;
+    [SerializeField] private List<ArmouryItem> day7armour;
+    [SerializeField] private List<ArmouryItem> day8armour;
+    [SerializeField] private List<ArmouryItem> day9armour;
+    [SerializeField] private List<ArmouryItem> day10armour;
+
+
 
     //[Header("Data")]
     // [SerializeField] private List<ArmouryItem> armouryItems;  THIS COMMENTED
@@ -91,6 +98,21 @@ public class ArmouryUI : Singleton<ArmouryUI>
             case 5:
                 currentDayItems = day5armour;
                 break;
+            case 6:
+                currentDayItems = day6armour;
+                break;
+            case 7:
+                currentDayItems = day7armour;
+                break;
+            case 8:
+                currentDayItems = day8armour;
+                break;
+            case 9:
+                currentDayItems = day9armour;
+                break;
+            case 10:
+                currentDayItems = day10armour;
+                break;
             default:
                 Debug.LogWarning("No armoury items set for this day.");
                 return;
@@ -141,6 +163,11 @@ public class ArmouryUI : Singleton<ArmouryUI>
             Debug.LogWarning("No item found for slot number: " + slotNumber);
             descriptionPanel.SetActive(false);
         }
+    }
+
+    public void HideItemDetails()
+    {
+        descriptionPanel.SetActive(false);
     }
 
     public void Craft()
@@ -257,7 +284,9 @@ public class ArmouryUI : Singleton<ArmouryUI>
 
     public void CloseArmouryPanel()
     {
+        HideItemDetails();
         armouryCraftingPanel.SetActive(false);
+
         //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Anvil Closed (Armoury UI)", "Player closed the armoury panel");
         GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Anvil Closed (Armoury UI)", "Player closed the armoury panel");
     }

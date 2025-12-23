@@ -13,14 +13,15 @@ MonoBehaviour:
   m_Name: Simple day 3
   m_EditorClassIdentifier: 
   ID: MalteseSoldier2
-  Name: "Andr\xE9"
+  Name: Fra Jean, noble knight
   Icon: {fileID: 409668665, guid: 4147f2bc6fccc974f937adc9cd1a5700, type: 3}
-  Description: "Wound: Cannonball crushed his leg above the knee \u2014 dangling
-    flesh and splintered bone remain.\n\nStory: Andr\xE9, a young page barely sixteen,
-    grips your arm with surprising strength despite his pallor. His first battle
-    has left him mutilated before he even learned to shave. He sobs that his mother
-    gave him a wooden cross to keep him safe \u2014 now it lies splintered in the
-    mud beside what remains of his leg.\n\n\nRequired bandages to heal: 2"
+  Description: "He rehearsed his death as poetry, something sculpted by faith. Gangrene
+    has no interest in poetry \u2014 the black progresses up his leg despite prayer.
+    He asks for the blade, not benediction.\n\nTreatment: Saw above the blackened
+    flesh. If infection has already spread into blood, nothing changes. If he refuses
+    surgery, the dagger ends the waiting. His choice, not yours."
   slotNumber: 2
+  isHealed: 0
+  toolUsed: {fileID: 21300000, guid: 951ad395968d5684c8198058167dc450, type: 3}
   requiredResource: Bandage
   requiredAmount: 2

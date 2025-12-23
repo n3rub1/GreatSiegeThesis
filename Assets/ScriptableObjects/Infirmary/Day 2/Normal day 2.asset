@@ -13,14 +13,15 @@ MonoBehaviour:
   m_Name: Normal day 2
   m_EditorClassIdentifier: 
   ID: MenAtArms2
-  Name: Francisco
+  Name: Brother Silvio, infirmary attendant
   Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
-  Description: "Wound: Right hand mangled beyond repair by a pike thrust, bones protruding,
-    skin torn.\n\nStory: Francisco, a blacksmith from Castile, thrashes with rage
-    rather than pain. He forged the very weapons the knights now wield, and without
-    his hand he sees himself as useless iron \u2014 broken, discarded. He screams
-    that his family name will die with him if he cannot even work his forge again.\n\n\nRequired
-    bandages to heal: 3"
+  Description: "He thought piety prepared him for gore, until he dressed his first
+    blackening wound. While cleaning another man\u2019s flesh, he cut his palm with
+    a soiled blade \u2014 he knows infection doesn\u2019t care about scripture.\n\nTreatment: 
+    Heat the iron until red. Apply to the cut in a single burn. Irrigate with wine;
+    bind in linen. Pray that the stink doesn\u2019t spread up his arm."
   slotNumber: 1
+  isHealed: 0
+  toolUsed: {fileID: 21300000, guid: 29d67dc83f3933748a0c71a5997b8dc8, type: 3}
   requiredResource: Bandage
   requiredAmount: 3

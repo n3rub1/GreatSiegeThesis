@@ -1,0 +1,164 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889faa658c7b2c94ea4fff939bf8022e, type: 3}
+  m_Name: DialogNPCArmourer
+  m_EditorClassIdentifier: 
+  Name: Ahmed
+  Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
+  HasInteraction: 0
+  interactionType: 1
+  Greeting: Haytham Lab11
+  Day1Dialog: []
+  Day2FirstTimeDialog: []
+  Day2MetBeforeDialog: []
+  Day3FirstTimeDialog: []
+  Day3MetBeforeDialog: []
+  Day4FirstTimeDialog: []
+  Day4MetBeforeDialog: []
+  Day5FirstTimeDialog: []
+  Day5MetBeforeDialog: []
+  Day6Dialog:
+  - 'They placed me near the batteries, close enough that every shot runs through
+    my bones.
+
+    The guns work without pause, and the men believe the fort cannot
+    endure this for long.
+
+    My task is to keep pace with certainty: straighten,
+    bind, return.
+
+    There is confidence in this camp, heavy and unquestioned.
+
+    By
+    tomorrow, I suspect I will learn how much damage certainty can ignore.'
+  Day7FirstTimeDialog:
+  - 'Armour comes back distorted, not cut.
+
+    Helmets crushed inward by force no
+    blade could deliver, shields split without a mark of steel.
+
+    The men joke
+    as they drop the pieces at my feet, already certain they will not need them much
+    longer.
+
+    I work faster than I should.
+
+    By tomorrow, I fear speed will
+    replace judgement entirely.'
+  Day7MetBeforeDialog:
+  - 'Yesterday, I took care with every repair.
+
+    Today, the same man returned,
+    his armour bent so badly I had to tear it free.
+
+    He asked if the fort would
+    fall soon.
+
+    I told him yes, because everyone says yes.
+
+    By tomorrow,
+    I will understand how easily belief passes from mouth to mouth without touching
+    truth.'
+  Day8FirstTimeDialog:
+  - "The bombardment has changed the way damage looks.\nMen arrive shaken rather
+    than wounded, their gear fractured in places they haven\u2019t noticed yet.\nWe
+    reuse straps, rivets, scraps taken from those who no longer need them.\nNo one
+    asks how long the repairs will last.\nBy tomorrow, I fear I will stop asking
+    myself the same question."
+  Day8MetBeforeDialog:
+  - 'Today, I repaired armour knowing exactly where it would fail.
+
+    I could have
+    reinforced it, but time mattered more than strength.
+
+    The man thanked me
+    and returned to the line without hesitation.
+
+    I watched him go, aware that
+    my choice would meet him again.
+
+    By tomorrow, I will carry that awareness
+    without reacting to it.'
+  Day9FirstTimeDialog:
+  - 'The work has become rhythm.
+
+    Strike, listen, bind, pass it on.
+
+    If the
+    metal answers, it returns to the assault.
+
+    If it does not, it is stripped
+    and reused.
+
+    By tomorrow, I suspect I will measure worth only by whether
+    something still moves forward.'
+  Day9MetBeforeDialog:
+  - 'A Janissary asked me how long his armour would hold.
+
+    I told him what I
+    thought he needed to hear, not what I knew.
+
+    He adjusted the straps himself,
+    tighter than necessary, as if pressure alone could make it true.
+
+    By tomorrow,
+    I fear I will no longer recognise the moment when honesty mattered.'
+  Day10FirstTimeDialog:
+  - 'Today, the guns faltered.
+
+    Not because the fort resisted, but because word
+    passed through the camp faster than orders: Dragut is dead.
+
+    Men brought
+    armour that did not need repair and asked me to check it anyway.
+
+    I did,
+    because touching metal was easier than touching the truth.
+
+    By tomorrow,
+    I fear I will understand that victory was never as certain as we pretended.'
+  Day10MetBeforeDialog:
+  - "Dragut died today.\nThey did not announce it; they let it spread, as if speaking
+    it too loudly might break something else.\nA man stood before me holding his
+    armour, waiting for me to tell him it would be enough.\nI worked in silence,
+    knowing I could no longer promise that.\nBy tomorrow, if the assault continues,
+    I will be shaping metal for men who now know that even certainty can be killed
+    \u2014 and that knowledge will weigh more than any armour I can give them."
+  Day1Audio: {fileID: 0}
+  Day2FirstTimeAudio: {fileID: 0}
+  Day2MetBeforeAudio: {fileID: 0}
+  Day3FirstTimeAudio: {fileID: 0}
+  Day3MetBeforeAudio: {fileID: 0}
+  Day4FirstTimeAudio: {fileID: 0}
+  Day4MetBeforeAudio: {fileID: 0}
+  Day5FirstTimeAudio: {fileID: 0}
+  Day5MetBeforeAudio: {fileID: 0}
+  Day6Audio: {fileID: 8300000, guid: 181eae81e3409c748be4ebb98a9701c8, type: 3}
+  Day7FirstTimeAudio: {fileID: 8300000, guid: bb9e7d3994078a249843c2dc0b0af2af, type: 3}
+  Day7MetBeforeAudio: {fileID: 8300000, guid: 7dadd2467c7fb7f48bb047f0af91401e, type: 3}
+  Day8FirstTimeAudio: {fileID: 8300000, guid: abf4e8c5351b133449a48784c6191ac9, type: 3}
+  Day8MetBeforeAudio: {fileID: 8300000, guid: 5f00b2ea7edb4574b93d49c32e4a06c4, type: 3}
+  Day9FirstTimeAudio: {fileID: 8300000, guid: dbcb4339445b2a54c8e5d0e69856b018, type: 3}
+  Day9MetBeforeAudio: {fileID: 8300000, guid: 5c5f504fd9d5b54409ef32680ef621af, type: 3}
+  Day10FirstTimeAudio: {fileID: 8300000, guid: c79044a5aad740b46a5653f94556254a, type: 3}
+  Day10MetBeforeAudio: {fileID: 8300000, guid: ef9927800cf582943adfad0d8e9479e9, type: 3}
+  dayNumber: 1
+  metOnday1: 0
+  metOnday2: 0
+  metOnday3: 0
+  metOnday4: 0
+  metOnday5: 0
+  metOnday6: 0
+  metOnday7: 0
+  metOnday8: 0
+  metOnday9: 0
+  metOnday10: 0
