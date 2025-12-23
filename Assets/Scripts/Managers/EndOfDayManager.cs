@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class EndOfDayManager : MonoBehaviour
@@ -11,22 +12,33 @@ public class EndOfDayManager : MonoBehaviour
     [SerializeField] private List<string> endOfDayDescriptionInfirmary;
     [SerializeField] private List<string> endOfDayDescriptionStructure;
     [SerializeField] private List<string> endOfDayDescriptionCat;
+    [SerializeField] private List<string> endOfDayWhatIsHappening;
+    [SerializeField] private List<string> endOfDayTitle;
+    [SerializeField] private List<AudioClip> endOfDayWhatIsHappeningAudioClip;
+    [SerializeField] private List<Sprite> endOfDayImages;
     [SerializeField] private float timeForPanelToDisappear;
     [SerializeField] private SleepManager sleepManager;
 
+    [Header("Data")]
     [SerializeField] private TextMeshProUGUI endOfDayDescriptionTMP;
+    [SerializeField] private TextMeshProUGUI endOfDayWhatIsHappeningTMP;
     [SerializeField] private TextMeshProUGUI endOfDayNumber;
+    [SerializeField] private Image endOfDayImage;
     [SerializeField] private GameObject endOfDayPanel;
     [SerializeField] private DayNightCycleManager dayNightCycleManager;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private GoogleSheetLogger logger;
+    [SerializeField] private AudioSource endOfDayAudioSource;
+
 
 
     public void ShowPanelAndText(int dayNumber)
     {
         sleepManager.isSleeping = true;
         UpdateTextAccordingToPlayerActions(dayNumber);
-        endOfDayNumber.text = $"Day {dayNumber}";
+        UpdateWhatIsHappening(dayNumber);
+        UpdateImages(dayNumber);
+        endOfDayNumber.text = $"Day {dayNumber}: {endOfDayTitle[dayNumber-1]}";
         StartCoroutine(ShowAndHidePanel());
     }
 
@@ -79,11 +91,27 @@ public class EndOfDayManager : MonoBehaviour
         }
     }
 
+    private void UpdateWhatIsHappening(int dayNumber)
+    {
+        endOfDayWhatIsHappeningTMP.text = endOfDayWhatIsHappening[dayNumber - 1];
+        AudioClip clip = endOfDayWhatIsHappeningAudioClip[dayNumber - 1];
+        endOfDayAudioSource.clip = clip;
+        endOfDayAudioSource.Play();
+
+        timeForPanelToDisappear = clip.length + 5;
+    }
+
+    private void UpdateImages(int dayNumber)
+    {
+        endOfDayImage.sprite = endOfDayImages[dayNumber - 1];
+    }
+
 
     IEnumerator ShowAndHidePanel()
     {
         endOfDayPanel.SetActive(true);
         yield return new WaitForSeconds(timeForPanelToDisappear);
+        endOfDayAudioSource.Stop();
         endOfDayPanel.SetActive(false);
         dayNightCycleManager.ResetTime();
         sleepManager.isSleeping = false;
