@@ -28,6 +28,14 @@ public class ArmouryUI : Singleton<ArmouryUI>
 
     [Header("Data")]
     [SerializeField] private List<GameObject> armourySlotsImages;
+    [SerializeField] private int simpleXP = 0;
+    [SerializeField] private int mediumXP = 0;
+    [SerializeField] private int complexXP = 0;
+    [SerializeField] private int simpleMoralPercentage = 5;
+    [SerializeField] private int normalMoralPercentage = 10;
+    [SerializeField] private int complexMoralPercentage = 15;
+
+
 
     //ALL NEW
     [SerializeField] private List<ArmouryItem> day1armour;
@@ -238,20 +246,20 @@ public class ArmouryUI : Singleton<ArmouryUI>
             case 0:
                 //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Crafted item in Armoury (Armoury UI)", $"Crafted a simple item and got {2 + levels[armouryArrayValue]}XP");
                 GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Crafted item in Armoury (Armoury UI)", $"Crafted a simple item and got {2 + levels[armouryArrayValue]}XP");
-                playerXP.AddXPArmour(2 + levels[armouryArrayValue]);
-                armourPercentageToIncrease = armourPercentageToIncrease + 5;
+                playerXP.AddXPArmour(simpleXP + levels[armouryArrayValue]);
+                armourPercentageToIncrease = armourPercentageToIncrease + simpleMoralPercentage;
                 break;
             case 1:
                 //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Crafted item in Armoury (Armoury UI)", $"Crafted a simple item and got {5 + levels[armouryArrayValue]}XP");
                 GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Crafted item in Armoury (Armoury UI)", $"Crafted a normal item and got {5 + levels[armouryArrayValue]}XP");
-                playerXP.AddXPArmour(5 + levels[armouryArrayValue]);
-                armourPercentageToIncrease = armourPercentageToIncrease + 10;
+                playerXP.AddXPArmour(mediumXP + levels[armouryArrayValue]);
+                armourPercentageToIncrease = armourPercentageToIncrease + normalMoralPercentage;
                 break;
             case 2:
                 //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Crafted item in Armoury (Armoury UI)", $"Crafted a simple item and got {10 + levels[armouryArrayValue]}XP");
                 GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Crafted item in Armoury (Armoury UI)", $"Crafted a complex item and got {10 + levels[armouryArrayValue]}XP");
-                playerXP.AddXPArmour(10 + levels[armouryArrayValue]);
-                armourPercentageToIncrease = armourPercentageToIncrease + 15;
+                playerXP.AddXPArmour(complexXP + levels[armouryArrayValue]);
+                armourPercentageToIncrease = armourPercentageToIncrease + complexMoralPercentage;
                 break;
         }
 

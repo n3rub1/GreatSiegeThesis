@@ -9,6 +9,7 @@ public class CatUI : Singleton<CatUI>
     public CatInteraction catInteraction { get; set; }
     private int catClueNumber = 0;
     private int catPercentageToIncrease = 0;
+    [SerializeField] private int catPercentage = 5;
 
     protected override void Awake()
     {
@@ -39,7 +40,7 @@ public class CatUI : Singleton<CatUI>
     {
         if (catInteraction == null) return;
         catInteraction.OpenCatPanel();
-        catPercentageToIncrease = catPercentageToIncrease + 10;
+        catPercentageToIncrease = catPercentageToIncrease + catPercentage;
     }
 
     public void ResetCatPercentageToIncrease()

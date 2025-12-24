@@ -10,7 +10,7 @@ public class StructureUI : Singleton<StructureUI>
     [SerializeField] private int structurePercentageToIncrease = 0;
     [SerializeField] private GoogleSheetLogger logger;
     [SerializeField] private GameManager gameManager;
-
+    [SerializeField] private int structurePercentage = 10;
 
     private PlayerActions actions;
     //private int structureArrayValue = 2;
@@ -57,7 +57,7 @@ public class StructureUI : Singleton<StructureUI>
     {
         //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Repair (Debris Manager)", $"Completed repair");
         GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Repair (Debris Manager)", $"Completed repair");
-        structurePercentageToIncrease = structurePercentageToIncrease + 10;
+        structurePercentageToIncrease = structurePercentageToIncrease + structurePercentage;
     }
 
     private void OnEnable()

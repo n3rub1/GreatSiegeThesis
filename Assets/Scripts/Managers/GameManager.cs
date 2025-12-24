@@ -65,7 +65,6 @@ public class GameManager : MonoBehaviour
 
     public void sleepAndUpdateDay()
     {
-        endOfDayManager.ShowPanelAndText(dayNumber);
         dayNumber += 1;
         int armourPercentageToIncrease = armouryUI.GetArmourPercentageToIncrease();
         int moralePercentageToIncrease = infirmaryUI.GetMoralePercentageToIncrease();
@@ -81,10 +80,15 @@ public class GameManager : MonoBehaviour
             percentageManager.UpdatePercentages(moralePercentageToIncrease, armourPercentageToIncrease, structurePercentageToIncrease, catPercentageToIncrease);
         }
 
+        endOfDayManager.ShowPanelAndText(dayNumber);
         uiManager.UpdateDayText(GetDayNumber());
         armouryUI.ResetArmourPercentageToIncrease();
         infirmaryUI.ResetMoralePercentageToIncrease();
         structureUI.ResetStructurePercentageToIncrease();
+    }
+
+    public void UpdatePercentages()
+    {
 
     }
 

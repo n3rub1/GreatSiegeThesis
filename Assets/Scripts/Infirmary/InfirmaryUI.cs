@@ -28,6 +28,12 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
     [Header("Data")]
     [SerializeField] private List<GameObject> infirmarySlotsImages;
     [SerializeField] private Image itemImage;
+    [SerializeField] private int simpleXP = 0;
+    [SerializeField] private int mediumXP = 0;
+    [SerializeField] private int complexXP = 0;
+    [SerializeField] private int simpleMoralPercentage = 5;
+    [SerializeField] private int normalMoralPercentage = 10;
+    [SerializeField] private int complexMoralPercentage = 15;
 
     [SerializeField] private List<InfirmaryItem> day1Injured;
     [SerializeField] private List<InfirmaryItem> day2Injured;
@@ -225,20 +231,20 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
             case 0:
                 //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Healed person in Infirmary (Infirmary UI)", $"Healed a simple wound and got {2 + levels[infirmaryArrayValue]}XP");
                 GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Healed person in Infirmary (Infirmary UI)", $"Healed a simple wound and got {2 + levels[infirmaryArrayValue]}XP");
-                playerXP.AddXPMedicine(2 + levels[infirmaryArrayValue]);
-                moralePercentageToIncrease = moralePercentageToIncrease + 5;
+                playerXP.AddXPMedicine(simpleXP + levels[infirmaryArrayValue]);
+                moralePercentageToIncrease = moralePercentageToIncrease + simpleMoralPercentage;
                 break;
             case 1:
                 //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Healed person in Infirmary (Infirmary UI)", $"Healed a medium wound and got {5 + levels[infirmaryArrayValue]}XP");
                 GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Healed person in Infirmary (Infirmary UI)", $"Healed a medium wound and got {5 + levels[infirmaryArrayValue]}XP");
-                playerXP.AddXPMedicine(5 + levels[infirmaryArrayValue]);
-                moralePercentageToIncrease = moralePercentageToIncrease + 15;
+                playerXP.AddXPMedicine(mediumXP + levels[infirmaryArrayValue]);
+                moralePercentageToIncrease = moralePercentageToIncrease + normalMoralPercentage;
                 break;
             case 2:
                 //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Healed person in Infirmary (Infirmary UI)", $"Healed a hard wound and got {10 + levels[infirmaryArrayValue]}XP");
                 GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Healed person in Infirmary (Infirmary UI)", $"Healed a hard wound and got {10 + levels[infirmaryArrayValue]}XP");
-                playerXP.AddXPMedicine(10 + levels[infirmaryArrayValue]);
-                moralePercentageToIncrease = moralePercentageToIncrease + 25;
+                playerXP.AddXPMedicine(complexXP + levels[infirmaryArrayValue]);
+                moralePercentageToIncrease = moralePercentageToIncrease + complexMoralPercentage;
                 break;
         }
 

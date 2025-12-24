@@ -21,14 +21,12 @@ public class PercentageManager : MonoBehaviour
 
     public void UpdatePercentages(int addAmountToMoral, int addAmountToWeapons, int addAmountToStructure, int addAmountToCat)
     {
-
         moralPercentageUpdate = (addAmountToMoral == 0) ? -10 : addAmountToMoral;
         weaponsPercentageUpdate = (addAmountToWeapons == 0) ? -10 : addAmountToWeapons;
         structurePercentageUpdate = (addAmountToStructure == 0) ? -10 : addAmountToStructure;
         catPercentageUpdate = (addAmountToCat == 0) ? -5: addAmountToCat;
 
         UpdateNumbers();
-
     }
 
     private void UpdateNumbers()
@@ -49,6 +47,17 @@ public class PercentageManager : MonoBehaviour
     private void UpdateUI()
     {
         uiManager.UpdatePercentages(moralPercentage, weaponsPercentage, structurePercentage, catPercentage);
+    }
+
+    public List<int> GetPercentages()
+    {
+        List<int> allPercentages = new List<int>();
+        allPercentages.Add(moralPercentage);
+        allPercentages.Add(weaponsPercentage);
+        allPercentages.Add(structurePercentage);
+        allPercentages.Add(catPercentage);
+
+        return allPercentages;
     }
 
 }

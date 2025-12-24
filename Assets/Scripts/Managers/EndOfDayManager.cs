@@ -29,7 +29,16 @@ public class EndOfDayManager : MonoBehaviour
     [SerializeField] private GameManager gameManager;
     [SerializeField] private GoogleSheetLogger logger;
     [SerializeField] private AudioSource endOfDayAudioSource;
+    [SerializeField] private TextMeshProUGUI moralPercentageTMP;
+    [SerializeField] private TextMeshProUGUI weaponPercentageTMP;
+    [SerializeField] private TextMeshProUGUI structurePercentageTMP;
+    [SerializeField] private TextMeshProUGUI catPercentageTMP;
 
+
+
+    [Header("Percentage Images")]
+    [SerializeField] private List<SpriteRenderer> percentageImages = new List<SpriteRenderer>();
+    [SerializeField] private PercentageManager percentageManager;
 
 
     public void ShowPanelAndText(int dayNumber)
@@ -38,7 +47,16 @@ public class EndOfDayManager : MonoBehaviour
         UpdateTextAccordingToPlayerActions(dayNumber);
         UpdateWhatIsHappening(dayNumber);
         UpdateImages(dayNumber);
+        SetImageTrasparency();
+
+        List<int> allPercentages = percentageManager.GetPercentages();
+        moralPercentageTMP.text = $"{allPercentages[0].ToString()} %";
+        weaponPercentageTMP.text = $"{allPercentages[1].ToString()} %";
+        structurePercentageTMP.text = $"{allPercentages[2].ToString()} %";
+        catPercentageTMP.text = $"{allPercentages[3].ToString()} %";
+
         endOfDayNumber.text = $"Day {dayNumber}: {endOfDayTitle[dayNumber-1]}";
+
         StartCoroutine(ShowAndHidePanel());
     }
 
@@ -49,8 +67,6 @@ public class EndOfDayManager : MonoBehaviour
         GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Player Sleep (EndOfDay Manager)", $"Day {dayNumber} ended and player went to sleep");
         GoogleSheetLogger.I.FlushDay();
         GoogleSheetLogger.I.StartDay(gameManager.GetDayNumber() + 1);
-
-        Debug.Log("dayNumber:" + dayNumber);
 
         if(dayNumber < 5)
         {
@@ -98,12 +114,39 @@ public class EndOfDayManager : MonoBehaviour
         endOfDayAudioSource.clip = clip;
         endOfDayAudioSource.Play();
 
-        timeForPanelToDisappear = clip.length + 5;
+        //timeForPanelToDisappear = clip.length + 5;
+        timeForPanelToDisappear = 3;  //FOR TESTING ONLY!
     }
 
     private void UpdateImages(int dayNumber)
     {
         endOfDayImage.sprite = endOfDayImages[dayNumber - 1];
+    }
+
+    private void SetImageTrasparency()
+    {
+        List<int> allPercentages = percentageManager.GetPercentages();
+        int count = Mathf.Min(allPercentages.Count, percentageImages.Count);
+
+        for (int i = 0; i < count; i++)
+        {
+            Color c = percentageImages[i].color;
+            c.a = Mathf.Clamp01(allPercentages[i] / 100f);
+            percentageImages[i].color = c;
+        }
+
+    }
+
+    private float ImageTransparencyCalculation(int percentage)
+    {
+        float transparencyCalculation =  Mathf.Clamp01(percentage / 100f);
+        if (transparencyCalculation == 0)
+        {
+            return 0.02f;
+        }
+
+        return transparencyCalculation;
+
     }
 
 
