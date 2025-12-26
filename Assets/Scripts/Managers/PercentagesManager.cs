@@ -17,6 +17,10 @@ public class PercentageManager : MonoBehaviour
     [SerializeField] private int structurePercentage;
     [SerializeField] private int catPercentage;
 
+    private int increaseDecreaseAmountToMoral;
+    private int increaseDecreaseAmountToWeapons;
+    private int increaseDecreaseAmountToStructure;
+    private int increaseDecreaseAmountToCat;
 
 
     public void UpdatePercentages(int addAmountToMoral, int addAmountToWeapons, int addAmountToStructure, int addAmountToCat)
@@ -26,7 +30,23 @@ public class PercentageManager : MonoBehaviour
         structurePercentageUpdate = (addAmountToStructure == 0) ? -10 : addAmountToStructure;
         catPercentageUpdate = (addAmountToCat == 0) ? -5: addAmountToCat;
 
+        increaseDecreaseAmountToMoral = addAmountToMoral;
+        increaseDecreaseAmountToWeapons = addAmountToWeapons;
+        increaseDecreaseAmountToStructure = addAmountToStructure;
+        increaseDecreaseAmountToCat = addAmountToCat;
+
         UpdateNumbers();
+    }
+
+    public List<int> GetIncreaseDecreasePercenatageNumbers()
+    {
+        List<int> allIncreaseDecreasePercentageNumbers = new List<int>();
+        allIncreaseDecreasePercentageNumbers.Add(increaseDecreaseAmountToMoral);
+        allIncreaseDecreasePercentageNumbers.Add(increaseDecreaseAmountToWeapons);
+        allIncreaseDecreasePercentageNumbers.Add(increaseDecreaseAmountToStructure);
+        allIncreaseDecreasePercentageNumbers.Add(increaseDecreaseAmountToCat);
+
+        return allIncreaseDecreasePercentageNumbers;
     }
 
     private void UpdateNumbers()

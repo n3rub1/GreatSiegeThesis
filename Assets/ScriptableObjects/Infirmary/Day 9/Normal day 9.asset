@@ -21,9 +21,12 @@ MonoBehaviour:
 
     Treatment: Irrigate the mouth thoroughly.
     Use forceps carefully to remove fragments. Pack the cavity; speech may never
-    return cleanly.'
+    return cleanly.
+
+
+    Requires: 2 Bandages'
   slotNumber: 1
   isHealed: 0
   toolUsed: {fileID: 21300000, guid: f7f6cc6d9a10013498dfb630f828f13b, type: 3}
   requiredResource: Bandage
-  requiredAmount: 3
+  requiredAmount: 2

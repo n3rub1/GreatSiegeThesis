@@ -20,9 +20,13 @@ MonoBehaviour:
 
 
     Treatment: No incision, no splint will
-    restore movement. Keep him still and warm. His fate is sealed by the spine.'
+    restore movement. Keep him still and warm. His fate is sealed by the spine.
+
+
+    Requires:
+    2 Bandages'
   slotNumber: 1
   isHealed: 0
   toolUsed: {fileID: 21300000, guid: b1119f22c8cc30e448a6076bea044a42, type: 3}
   requiredResource: Bandage
-  requiredAmount: 3
+  requiredAmount: 2

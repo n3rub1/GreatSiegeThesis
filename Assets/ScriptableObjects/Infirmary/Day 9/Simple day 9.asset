@@ -20,9 +20,12 @@ MonoBehaviour:
 
 
     Treatment: Tourniquet high on the leg.
-    Clean and stitch if bleeding slows. If not, cauterize.'
+    Clean and stitch if bleeding slows. If not, cauterize.
+
+
+    Requires: 1 Bandage'
   slotNumber: 2
   isHealed: 0
   toolUsed: {fileID: 21300000, guid: fb5536f3e06c2104c8380185fff48a3a, type: 3}
   requiredResource: Bandage
-  requiredAmount: 2
+  requiredAmount: 1

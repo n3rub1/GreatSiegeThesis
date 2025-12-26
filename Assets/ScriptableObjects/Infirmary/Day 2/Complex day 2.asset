@@ -21,9 +21,9 @@ MonoBehaviour:
     won\u2019t stop.\n\nTreatment: Irrigate the mouth with wine and tilt the head
     to keep blood from choking him. Use forceps cautiously \u2014 a slip punctures
     the artery. If removed, pack the hole with cloth. He drinks broth for weeks if
-    he lives."
+    he lives.\n\nRequires: 4 Bandages"
   slotNumber: 0
   isHealed: 0
   toolUsed: {fileID: 21300000, guid: f7f6cc6d9a10013498dfb630f828f13b, type: 3}
   requiredResource: Bandage
-  requiredAmount: 5
+  requiredAmount: 4

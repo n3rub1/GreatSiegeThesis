@@ -5,19 +5,24 @@ using UnityEngine;
 public class RandomQuestSelector : MonoBehaviour
 {
 
-    [SerializeField] List<GameObject> lootBoxes;
-    [SerializeField] List<GameObject> catClues;
-    [SerializeField] List<GameObject> debris;
+    [SerializeField] List<GameObject> lootBoxes = new List<GameObject>();
+    [SerializeField] List<GameObject> catClues = new List<GameObject>();
+    [SerializeField] List<GameObject> debris = new List<GameObject>();
 
-    private int maxNumberOfLootBoxes = 16;
-    private int maxNumberOfCatClues = 6;
-    private int maxNumberOfDebris = 15;
+    [SerializeField] private int spawnLootPercentage;
+    [SerializeField] private int spawnCatPercentage;
+    [SerializeField] private int spawnDebrisPercentage;
+
+    private int maxNumberOfLootBoxes;
+    private int maxNumberOfCatClues;
+    private int maxNumberOfDebris;
 
 
 
     public void SpawnLootBoxes()
     {
-        int[] whichSpawn = RandomNumbers(maxNumberOfLootBoxes, 30);
+        maxNumberOfLootBoxes = lootBoxes.Count;
+        int[] whichSpawn = RandomNumbers(maxNumberOfLootBoxes, spawnLootPercentage);
         DespawnLootBoxes();
         foreach (int index in whichSpawn)
         {
@@ -39,7 +44,8 @@ public class RandomQuestSelector : MonoBehaviour
 
     public void SpawnCatClues()
     {
-        int[] whichSpawn = RandomNumbers(maxNumberOfCatClues, 50);
+        maxNumberOfCatClues = catClues.Count;
+        int[] whichSpawn = RandomNumbers(maxNumberOfCatClues, spawnCatPercentage);
         DespawnCatClues();
 
         foreach (int index in whichSpawn)
@@ -63,7 +69,8 @@ public class RandomQuestSelector : MonoBehaviour
 
     public void SpawnDebris()
     {
-        int[] whichSpawn = RandomNumbers(maxNumberOfDebris, 50);
+        maxNumberOfDebris = debris.Count;
+        int[] whichSpawn = RandomNumbers(maxNumberOfDebris, spawnDebrisPercentage);
         DespawnSpawnDebris();
 
         foreach (int index in whichSpawn)

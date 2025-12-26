@@ -21,9 +21,12 @@ MonoBehaviour:
 
     Treatment: Heat the cautery iron
     and seal the bleeding where ligature fails. Immobilize the shoulder. He will
-    never fight as before.'
+    never fight as before.
+
+
+    Requires: 2 Bandages'
   slotNumber: 1
   isHealed: 0
   toolUsed: {fileID: 21300000, guid: 29d67dc83f3933748a0c71a5997b8dc8, type: 3}
   requiredResource: Bandage
-  requiredAmount: 3
+  requiredAmount: 2

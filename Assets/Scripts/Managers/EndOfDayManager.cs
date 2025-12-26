@@ -18,10 +18,11 @@ public class EndOfDayManager : MonoBehaviour
     [SerializeField] private List<Sprite> endOfDayImages;
     [SerializeField] private float timeForPanelToDisappear;
     [SerializeField] private SleepManager sleepManager;
+    [SerializeField] private TeleportPlayer teleportPlayer;
 
     [Header("Data")]
     [SerializeField] private TextMeshProUGUI endOfDayDescriptionTMP;
-    [SerializeField] private TextMeshProUGUI endOfDayWhatIsHappeningTMP;
+    //[SerializeField] private TextMeshProUGUI endOfDayWhatIsHappeningTMP;
     [SerializeField] private TextMeshProUGUI endOfDayNumber;
     [SerializeField] private Image endOfDayImage;
     [SerializeField] private GameObject endOfDayPanel;
@@ -33,6 +34,10 @@ public class EndOfDayManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI weaponPercentageTMP;
     [SerializeField] private TextMeshProUGUI structurePercentageTMP;
     [SerializeField] private TextMeshProUGUI catPercentageTMP;
+    [SerializeField] private TextMeshProUGUI moralIncreaseDecreasePercentageTMP;
+    [SerializeField] private TextMeshProUGUI weaponIncreaseDecreasePercentageTMP;
+    [SerializeField] private TextMeshProUGUI structureIncreaseDecreasePercentageTMP;
+    [SerializeField] private TextMeshProUGUI catIncreaseDecreasePercentageTMP;
 
 
 
@@ -43,19 +48,28 @@ public class EndOfDayManager : MonoBehaviour
 
     public void ShowPanelAndText(int dayNumber)
     {
+        dayNumber = dayNumber - 2;
+
         sleepManager.isSleeping = true;
         UpdateTextAccordingToPlayerActions(dayNumber);
-        UpdateWhatIsHappening(dayNumber);
+        //UpdateWhatIsHappening(dayNumber);
         UpdateImages(dayNumber);
         SetImageTrasparency();
 
         List<int> allPercentages = percentageManager.GetPercentages();
+        List<int> allIncreaseDecreasePercenatges = percentageManager.GetIncreaseDecreasePercenatageNumbers();
+
         moralPercentageTMP.text = $"{allPercentages[0].ToString()} %";
         weaponPercentageTMP.text = $"{allPercentages[1].ToString()} %";
         structurePercentageTMP.text = $"{allPercentages[2].ToString()} %";
         catPercentageTMP.text = $"{allPercentages[3].ToString()} %";
 
-        endOfDayNumber.text = $"Day {dayNumber}: {endOfDayTitle[dayNumber-1]}";
+        moralIncreaseDecreasePercentageTMP.text = $"{(allIncreaseDecreasePercenatges[0] >= 0 ? "+" : "")}{allIncreaseDecreasePercenatges[0]} %"; ;
+        weaponIncreaseDecreasePercentageTMP.text = $"{(allIncreaseDecreasePercenatges[1] >= 0 ? "+" : "")}{allIncreaseDecreasePercenatges[1]} %"; ;
+        structureIncreaseDecreasePercentageTMP.text = $"{(allIncreaseDecreasePercenatges[2] >= 0 ? "+" : "")}{allIncreaseDecreasePercenatges[2]} %"; ;
+        catIncreaseDecreasePercentageTMP.text = $"{(allIncreaseDecreasePercenatges[3] >= 0 ? "+" : "")}{allIncreaseDecreasePercenatges[3]} %";
+
+        endOfDayNumber.text = $"End of Day {dayNumber + 1}: {endOfDayTitle[dayNumber]}";
 
         StartCoroutine(ShowAndHidePanel());
     }
@@ -72,55 +86,60 @@ public class EndOfDayManager : MonoBehaviour
         {
             if (lastQuest == "Armoury")
             {
-                endOfDayDescriptionTMP.text = endOfDayDescriptionArmoury[dayNumber - 1];
+                endOfDayDescriptionTMP.text = UpdateWhatIsHappening(dayNumber) + "\n\n" + endOfDayDescriptionArmoury[dayNumber];
             }
             else if (lastQuest == "Infirmary")
             {
-                endOfDayDescriptionTMP.text = endOfDayDescriptionInfirmary[dayNumber - 1];
+                endOfDayDescriptionTMP.text = UpdateWhatIsHappening(dayNumber) + "\n\n" + endOfDayDescriptionInfirmary[dayNumber];
             }
             else if (lastQuest == "Structure")
             {
-                endOfDayDescriptionTMP.text = endOfDayDescriptionStructure[dayNumber - 1];
+                endOfDayDescriptionTMP.text = UpdateWhatIsHappening(dayNumber) + "\n\n" + endOfDayDescriptionStructure[dayNumber];
             }
             else if (lastQuest == "Cat")
             {
-                endOfDayDescriptionTMP.text = endOfDayDescriptionCat[dayNumber - 1];
+                endOfDayDescriptionTMP.text = UpdateWhatIsHappening(dayNumber) + "\n\n" + endOfDayDescriptionCat[dayNumber];
             }
             else if (gameManager.GetQuestAccepted() == "Reset" || gameManager.GetQuestAccepted() == "Nothing")
             {
-                endOfDayDescriptionTMP.text = "You stood still today. While you waited, men bled without hands to hold them, weapons stayed dull on the racks, and rubble buried someone no one reached in time. The fort paid for your silence. The cat survived by moving, hiding, choosing. You didn’t. Tomorrow, the cost of doing nothing will be harder to ignore.";
+                endOfDayDescriptionTMP.text = UpdateWhatIsHappening(dayNumber) + "\n\n" + "You stood still today. While you waited, men bled without hands to hold them, weapons stayed dull on the racks, and rubble buried someone no one reached in time. The fort paid for your silence. The cat survived by moving, hiding, choosing. You didn’t. Tomorrow, the cost of doing nothing will be harder to ignore.";
             }
             else if (gameManager.GetQuestAccepted() == "SleepTime")
             {
-                endOfDayDescriptionTMP.text = "You stood still today. While you waited, men bled without hands to hold them, weapons stayed dull on the racks, and rubble buried someone no one reached in time. The fort paid for your silence. The cat survived by moving, hiding, choosing. You didn’t. Tomorrow, the cost of doing nothing will be harder to ignore.";
+                endOfDayDescriptionTMP.text = UpdateWhatIsHappening(dayNumber) + "\n\n" + "You stood still today. While you waited, men bled without hands to hold them, weapons stayed dull on the racks, and rubble buried someone no one reached in time. The fort paid for your silence. The cat survived by moving, hiding, choosing. You didn’t. Tomorrow, the cost of doing nothing will be harder to ignore.";
             }
             else if (gameManager.GetQuestAccepted() == "Dead")
             {
-                endOfDayDescriptionTMP.text = "You took a blow you couldn’t walk off, and they dragged you to a bunk until you stopped spinning. While you lay there, others swung hammers, moved bodies, and tried to keep the walls standing. You didn’t help anyone today, and the cat searched for safety without you. Tomorrow you’ll wake up owing more than effort.";
+                endOfDayDescriptionTMP.text = UpdateWhatIsHappening(dayNumber) + "\n\n" + "You took a blow you couldn’t walk off, and they dragged you to a bunk until you stopped spinning. While you lay there, others swung hammers, moved bodies, and tried to keep the walls standing. You didn’t help anyone today, and the cat searched for safety without you. Tomorrow you’ll wake up owing more than effort.";
             }
         }else if(dayNumber == 5)
         {
-            endOfDayDescriptionTMP.text = "You lay down because you couldn’t stand anymore. At some point in the night, the fighting broke through and men came into the room. They didn’t bother killing you—they just dragged you out like you were cargo. Maybe they need workers, maybe they didn’t see you as worth the blade. You didn’t help anyone today, and you never got close to the cat. Now you’re somewhere else, alive, confused, and not in control of anything that happens next.";
+            endOfDayDescriptionTMP.text = UpdateWhatIsHappening(dayNumber) + "\n\n" + "You lay down because you couldn’t stand anymore. At some point in the night, the fighting broke through and men came into the room. They didn’t bother killing you—they just dragged you out like you were cargo. Maybe they need workers, maybe they didn’t see you as worth the blade. You didn’t help anyone today, and you never got close to the cat. Now you’re somewhere else, alive, confused, and not in control of anything that happens next.";
         }else if (dayNumber > 5)
         {
 
         }
+
+        PlayClip(dayNumber);
     }
 
-    private void UpdateWhatIsHappening(int dayNumber)
+    private string UpdateWhatIsHappening(int dayNumber)
     {
-        endOfDayWhatIsHappeningTMP.text = endOfDayWhatIsHappening[dayNumber - 1];
-        AudioClip clip = endOfDayWhatIsHappeningAudioClip[dayNumber - 1];
+         return endOfDayWhatIsHappening[dayNumber];
+    }
+
+    private void PlayClip(int dayNumber)
+    {
+        AudioClip clip = endOfDayWhatIsHappeningAudioClip[dayNumber];
         endOfDayAudioSource.clip = clip;
         endOfDayAudioSource.Play();
-
         //timeForPanelToDisappear = clip.length + 5;
         timeForPanelToDisappear = 3;  //FOR TESTING ONLY!
     }
 
     private void UpdateImages(int dayNumber)
     {
-        endOfDayImage.sprite = endOfDayImages[dayNumber - 1];
+        endOfDayImage.sprite = endOfDayImages[dayNumber];
     }
 
     private void SetImageTrasparency()
@@ -149,11 +168,19 @@ public class EndOfDayManager : MonoBehaviour
 
     }
 
+    private void TeleportForSoundIssue(Vector3 originalPosition, bool firstTime)
+    {
+        teleportPlayer.TeleportAndRevert(originalPosition, new Vector3(-900, -900, 0), firstTime);
+    }
+
 
     IEnumerator ShowAndHidePanel()
     {
         endOfDayPanel.SetActive(true);
+        Vector3 originalPosition= teleportPlayer.GetCurrentLocation();
+        TeleportForSoundIssue(originalPosition, true);
         yield return new WaitForSeconds(timeForPanelToDisappear);
+        TeleportForSoundIssue(originalPosition, false);
         endOfDayAudioSource.Stop();
         endOfDayPanel.SetActive(false);
         dayNightCycleManager.ResetTime();

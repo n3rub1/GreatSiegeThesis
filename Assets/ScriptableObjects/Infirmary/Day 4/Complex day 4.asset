@@ -19,9 +19,9 @@ MonoBehaviour:
     his face; eyelids blistered shut. He doesn\u2019t want pity \u2014 just darkness
     that doesn\u2019t burn.\n\nTreatment: Cool cloth with water and wine. Lay dressings
     over closed eyes; never peel, only replace. Apply poultice to cheeks. Blindness
-    is likely."
+    is likely.\n\nRequires: 4 Bandages"
   slotNumber: 0
   isHealed: 0
   toolUsed: {fileID: 21300000, guid: b1119f22c8cc30e448a6076bea044a42, type: 3}
   requiredResource: Bandage
-  requiredAmount: 5
+  requiredAmount: 4

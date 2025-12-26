@@ -351,6 +351,7 @@ GameObject:
   - component: {fileID: 4292137682750881671}
   - component: {fileID: 2754320339255113483}
   - component: {fileID: 8631753132935498938}
+  - component: {fileID: 4970835994742142971}
   m_Layer: 0
   m_Name: LootBox
   m_TagString: Untagged
@@ -414,7 +415,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1235079633
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -1421120604, guid: f92605f60800cab4db0f0d3c1685d62b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -505,6 +506,40 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4970835994742142971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7898991570398574729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000b7fc567abdadcc63d1d19d49ed134280b520836c
+  m_ShapePath:
+  - {x: -0.39304924, y: -0.23090363, z: 0}
+  - {x: -0.4519863, y: 0.16130447, z: 0}
+  - {x: -0.11359978, y: 0.47240067, z: 0}
+  - {x: 0.3794632, y: 0.35795212, z: 0}
+  - {x: 0.4103012, y: 0.45170212, z: 0}
+  - {x: 0.49331284, y: 0.4097023, z: 0}
+  - {x: 0.5, y: -0.10669708, z: 0}
+  - {x: 0.20696259, y: -0.47349548, z: 0}
+  m_ShapePathHash: 130996453
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -61950
+  m_LocalBounds:
+    m_Center: {x: 0.024006844, y: -0.00054740906, z: 0}
+    m_Extent: {x: 0.47599316, y: 0.47294807, z: 0}
 --- !u!1 &7956538313311006672
 GameObject:
   m_ObjectHideFlags: 0

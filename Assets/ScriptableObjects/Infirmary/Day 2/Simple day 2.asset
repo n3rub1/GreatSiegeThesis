@@ -20,9 +20,9 @@ MonoBehaviour:
     green timber; now he can\u2019t clench a fist.\n\nTreatment: Leather strap becomes
     a crude tourniquet to control swelling. You probe but find no single extraction
     point \u2014 just a smashed limb. Splint it to stop wandering bone. Hope circulation
-    survives."
+    survives.\n\nRequires: 1 Bandage"
   slotNumber: 2
   isHealed: 0
   toolUsed: {fileID: 21300000, guid: af1070247e9f65d40a4fc57f21b20139, type: 3}
   requiredResource: Bandage
-  requiredAmount: 2
+  requiredAmount: 1

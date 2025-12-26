@@ -22,9 +22,12 @@ MonoBehaviour:
 
     Treatment: No tourniquet helps. No
     splint reaches the fracture. You give him water and cloth for comfort. If someone
-    chooses the dagger, that is not your hand.'
+    chooses the dagger, that is not your hand.
+
+
+    Requires: 1 Bandage'
   slotNumber: 2
   isHealed: 0
   toolUsed: {fileID: 21300000, guid: 951ad395968d5684c8198058167dc450, type: 3}
   requiredResource: Bandage
-  requiredAmount: 2
+  requiredAmount: 1

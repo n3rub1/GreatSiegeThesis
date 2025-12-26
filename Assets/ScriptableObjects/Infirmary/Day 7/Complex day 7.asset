@@ -21,9 +21,12 @@ MonoBehaviour:
 
     Treatment: Clean with
     wine, pack with poultice. No stitching holds the gut. Death is slow; mercy may
-    be discussed but not commanded.'
+    be discussed but not commanded.
+
+
+    Requires: 4 Bandages'
   slotNumber: 0
   isHealed: 0
   toolUsed: {fileID: 21300000, guid: 951ad395968d5684c8198058167dc450, type: 3}
   requiredResource: Bandage
-  requiredAmount: 5
+  requiredAmount: 4

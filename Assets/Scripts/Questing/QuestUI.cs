@@ -10,6 +10,9 @@ public class QuestUI : Singleton<QuestUI>
     [Header("Config")]
     [SerializeField] private GameObject questPanel;
     [SerializeField] private TextMeshProUGUI questMarkerTMP;
+    [SerializeField] private GameObject additionalInformationQuestPanel;
+    [SerializeField] private TextMeshProUGUI additionalInformationQuestPanelTMP;
+    [SerializeField] [TextArea(5, 15)] private List<string> questDetails = new List<string>();
 
     [Header("QuestMarker")]
     [SerializeField] float bounceHeight;
@@ -88,7 +91,49 @@ public class QuestUI : Singleton<QuestUI>
     private void OpenQuestPanel()
     {
         if (questInteraction == null || dayNightCycleManager.GetCurrentTime() >= 22 || anyQuestAccepted) return;  //|| gameManager.GetQuestAccepted() != "Reset"
+
+        additionalInformationQuestPanel.SetActive(false);
+        SelectProperQuestText("reset");
         questPanel.SetActive(true);
+    }
+
+    public void CloseAdditionalDetails()
+    {
+        additionalInformationQuestPanel.SetActive(false);
+    }
+
+    public void OpenAdditionalDetails(string quest)
+    {
+        additionalInformationQuestPanel.SetActive(true);
+        SelectProperQuestText(quest);
+    }
+
+    private void SelectProperQuestText(string quest)
+    {
+
+        if(quest == "armoury")
+        {
+        additionalInformationQuestPanelTMP.text = questDetails[0];
+
+        }else if(quest == "infirmary")
+        {
+            additionalInformationQuestPanelTMP.text = questDetails[1];
+
+        }
+        else if(quest == "cat")
+        {
+            additionalInformationQuestPanelTMP.text = questDetails[2];
+
+        }
+        else if(quest == "help")
+        {
+            additionalInformationQuestPanelTMP.text = questDetails[3];
+        }else if(quest == "reset")
+        {
+            additionalInformationQuestPanelTMP.text = "";
+
+        }
+
     }
 
     public void ArmouryQuestAccepted()

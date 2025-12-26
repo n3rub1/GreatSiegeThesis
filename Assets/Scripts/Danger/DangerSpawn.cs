@@ -1,115 +1,172 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class DangerSpawn : MonoBehaviour
 {
-    [SerializeField] private GameObject circlePrefab;
-    [SerializeField] private GameObject particlePrefab;
-    [SerializeField] private GameObject deadScreenPanel;
-    [SerializeField] private GameObject player;
-    [SerializeField] private GoogleSheetLogger logger;
-    [SerializeField] private GameManager gameManager;
-    [SerializeField] private int additionalDifficulty;
-    [SerializeField] private float deadScreenTimer = 5f;
-    [SerializeField] private DayNightCycleManager dayNightCycleManager;
-
-    private bool canDie = false;
-
-
-    void Start()
+    [System.Serializable]
+    public struct RectArea
     {
-        StartCoroutine(SpawnLoop());
+        public Vector2 min;
+        public Vector2 max;
+
+        public Vector2 Min
+        {
+            get { return new Vector2(Mathf.Min(min.x, max.x), Mathf.Min(min.y, max.y)); }
+        }
+
+        public Vector2 Max
+        {
+            get { return new Vector2(Mathf.Max(min.x, max.x), Mathf.Max(min.y, max.y)); }
+        }
+
+        public Vector2 RandomPoint()
+        {
+            Vector2 a = Min;
+            Vector2 b = Max;
+            return new Vector2(Random.Range(a.x, b.x), Random.Range(a.y, b.y));
+        }
+
+        public bool Contains(Vector2 p)
+        {
+            Vector2 a = Min;
+            Vector2 b = Max;
+            return p.x >= a.x && p.x <= b.x && p.y >= a.y && p.y <= b.y;
+        }
     }
 
-    IEnumerator SpawnLoop()
+    [System.Serializable]
+    public class Region
+    {
+        public string name;
+        public RectArea spawnArea; // big allowed rectangle
+        public List<RectArea> safeAreas = new List<RectArea>(); // holes: do NOT spawn here
+
+        public int additionalDifficulty = 0;
+
+        public float waveMin = 5f;
+        public float waveMax = 10f;
+
+        public float armDelay = 5f;
+        public float destroyAfterArm = 1f;
+
+        public int maxAttemptsPerCircle = 30;
+
+        public bool IsInSafe(Vector2 p)
+        {
+            for (int i = 0; i < safeAreas.Count; i++)
+            {
+                if (safeAreas[i].Contains(p)) return true;
+            }
+            return false;
+        }
+
+        public bool TryPickPoint(out Vector2 p)
+        {
+            for (int attempt = 0; attempt < maxAttemptsPerCircle; attempt++)
+            {
+                Vector2 candidate = spawnArea.RandomPoint();
+                if (!IsInSafe(candidate))
+                {
+                    p = candidate;
+                    return true;
+                }
+            }
+
+            p = Vector2.zero;
+            return false;
+        }
+    }
+
+    [Header("Prefab / shared VFX")]
+    [SerializeField] private GameObject circlePrefab;   // DangerCircle prefab
+    [SerializeField] private GameObject particlePrefab;
+
+    [Header("Systems")]
+    [SerializeField] private GameManager gameManager;
+    [SerializeField] private DangerZone dangerZone;
+
+    [Header("Death UI")]
+    [SerializeField] private GameObject deadScreenPanel;
+    [SerializeField] private float deadScreenTimer = 5f;
+
+    [Header("Player")]
+    [SerializeField] private Transform player;
+    [SerializeField] private Vector3 respawnPosition = new Vector3(-236, -29, 0);
+
+    [Header("Two regions")]
+    [SerializeField] private Region regionA = new Region();
+    [SerializeField] private Region regionB = new Region();
+
+    private void Start()
+    {
+        StartCoroutine(RegionLoop(regionA));
+        StartCoroutine(RegionLoop(regionB));
+    }
+
+    private IEnumerator RegionLoop(Region region)
     {
         while (true)
         {
-            SpawnCircleOfDeath();
-            float waitTime = Random.Range(5f, 10f);
-            yield return new WaitForSeconds(waitTime);
+            yield return StartCoroutine(SpawnWave(region));
+
+            float wait = Random.Range(region.waveMin, region.waveMax);
+            yield return new WaitForSeconds(wait);
         }
     }
 
-    void SpawnCircleOfDeath()
+    private IEnumerator SpawnWave(Region region)
     {
-        StartCoroutine(SpawnCirclesOnDeathWithDelay());
+        int day = gameManager != null ? gameManager.GetDayNumber() : 0;
+        int count = day + region.additionalDifficulty;
+
+        for (int i = 0; i < count; i++)
+        {
+            Vector2 pos;
+            if (!region.TryPickPoint(out pos))
+                yield break;
+
+            GameObject circleGO = Instantiate(circlePrefab, pos, Quaternion.identity);
+
+            CircleOfDeath circle = circleGO.GetComponent<CircleOfDeath>();
+            if (circle == null)
+            {
+                Debug.LogError("DangerSpawn: circlePrefab missing CircleOfDeath.");
+                yield break;
+            }
+
+            circle.Init(
+                dangerZone: dangerZone,
+                dangerSpawn: this,
+                particlePrefab: particlePrefab,
+                armDelay: region.armDelay,
+                destroyAfterArm: region.destroyAfterArm
+            );
+
+            yield return new WaitForSeconds(Random.Range(0.5f, 1f));
+        }
     }
 
-    public bool GetCanDie()
+    public void KillPlayer(string context)
     {
-        return canDie;
+        if (dangerZone != null && !dangerZone.TryLockDeath()) return;
+
+        // Optional logging (remove if you don’t need it)
+        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Player Died (Danger Circles)", context);
+
+        StartCoroutine(DeathSequence());
     }
 
-    public void StartDeadPanelSequence()
-    {
-        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Player Died (DangerArea Manager)", "Player Entered a danger zone and did not move in time - they died");
-        StartCoroutine(IsDead());
-    }
-
-    IEnumerator SpawnParticleAndDestroy(GameObject circleInstance, Vector2 position)
-    {
-        canDie = false;
-        // Wait 3 seconds before spawning particle
-        yield return new WaitForSeconds(3f);
-
-        // Spawn particle effect at the same position
-        canDie = true;
-        GameObject particleInstance = Instantiate(particlePrefab, position, Quaternion.identity);
-
-        // Destroy the red circle
-        if (circleInstance != null)
-            Destroy(circleInstance, 1f);
-    }
-
-    IEnumerator IsDead()
+    private IEnumerator DeathSequence()
     {
         deadScreenPanel.SetActive(true);
-        dayNightCycleManager.SetTimerManually(22);
-        player.transform.position = new Vector3(-236, -29, 0);
+        player.position = respawnPosition;
+
         yield return new WaitForSeconds(deadScreenTimer);
+
         deadScreenPanel.SetActive(false);
-    }
 
-    private Vector2 GetPossibleSpawnLocations()
-    {
-        int maxAttempts = 50;
-        float randomX = 0f;
-        float randomY = 0f;
-
-        for (int attempt = 0; attempt < maxAttempts; attempt++)
-        {
-            randomX = Random.Range(-35f, 15f);
-            if (randomX > -9 && randomX < -3)
-            {
-
-            }
-        }
-
-        return new Vector2 (0, 0);
-    }
-
-    IEnumerator SpawnCirclesOnDeathWithDelay()
-    {
-        {
-            int numberOfCircles = gameManager.GetDayNumber() + additionalDifficulty;
-
-            for (int i = 0; i <= numberOfCircles; i++)
-            {
-                float randomX = Random.Range(-35f, 15f);
-                float randomY = Random.Range(-17f, 32f);
-                Vector2 randomPosition = new Vector2(randomX, randomY);
-
-                // Spawn the red circle
-                GameObject circleInstance = Instantiate(circlePrefab, randomPosition, Quaternion.identity);
-
-                // Start coroutine to spawn particle after 3 seconds
-                StartCoroutine(SpawnParticleAndDestroy(circleInstance, randomPosition));
-
-                // Wait a short random delay before spawning the next circle
-                float delayBetweenCircles = Random.Range(0.5f, 1f);
-                yield return new WaitForSeconds(delayBetweenCircles);
-            }
-        }
+        if (dangerZone != null)
+            dangerZone.UnlockDeath();
     }
 }

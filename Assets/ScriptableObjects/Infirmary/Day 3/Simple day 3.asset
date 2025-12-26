@@ -19,9 +19,9 @@ MonoBehaviour:
     has no interest in poetry \u2014 the black progresses up his leg despite prayer.
     He asks for the blade, not benediction.\n\nTreatment: Saw above the blackened
     flesh. If infection has already spread into blood, nothing changes. If he refuses
-    surgery, the dagger ends the waiting. His choice, not yours."
+    surgery, the dagger ends the waiting. His choice, not yours.\n\nRequires: 1 Bandage"
   slotNumber: 2
   isHealed: 0
   toolUsed: {fileID: 21300000, guid: 951ad395968d5684c8198058167dc450, type: 3}
   requiredResource: Bandage
-  requiredAmount: 2
+  requiredAmount: 1

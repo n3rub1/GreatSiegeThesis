@@ -22,9 +22,13 @@ MonoBehaviour:
 
     Treatment: There is no cutting
     here. You bind his torso tight with cloth and brace him upright. Every breath
-    is shallow; too deep and he drowns in blood. You can only watch.'
+    is shallow; too deep and he drowns in blood. You can only watch.
+
+
+    Requires:
+    2 Bandages'
   slotNumber: 1
   isHealed: 0
   toolUsed: {fileID: 21300000, guid: b1119f22c8cc30e448a6076bea044a42, type: 3}
   requiredResource: Bandage
-  requiredAmount: 3
+  requiredAmount: 2

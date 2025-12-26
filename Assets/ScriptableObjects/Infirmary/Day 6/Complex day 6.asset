@@ -18,9 +18,9 @@ MonoBehaviour:
   Description: "He carried earth and timber, never a weapon. A counter-battery shot
     collapsed a trench wall onto his ribs; his chest caves inward when he breathes.\n\nTreatment:
     Bind the chest tightly with cloth. Keep him upright and still. There is no cutting
-    to do \u2014 survival depends on what cannot be controlled."
+    to do \u2014 survival depends on what cannot be controlled.\n\nRequires: 4 Bandages"
   slotNumber: 0
   isHealed: 0
   toolUsed: {fileID: 21300000, guid: b1119f22c8cc30e448a6076bea044a42, type: 3}
   requiredResource: Bandage
-  requiredAmount: 5
+  requiredAmount: 4

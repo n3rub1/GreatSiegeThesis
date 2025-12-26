@@ -21,9 +21,13 @@ MonoBehaviour:
 
 
     Treatment: Tourniquet high on the calf. Amputation below
-    the knee if swelling has not already crept upward. Delay means rot.'
+    the knee if swelling has not already crept upward. Delay means rot.
+
+
+    Requires:
+    2 Bandages'
   slotNumber: 1
   isHealed: 0
   toolUsed: {fileID: 21300000, guid: d8d1b6ef632eaa04697976b39339b234, type: 3}
   requiredResource: Bandage
-  requiredAmount: 3
+  requiredAmount: 2

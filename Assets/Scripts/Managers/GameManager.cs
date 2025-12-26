@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [Header("Quest Game Manager")]
     private string questAccepted = "";
     public enum QuestType { Armoury, Infirmary, Cat, Structure, Reset, SleepTime, Dead, Nothing }
-    [SerializeField] GameObject armouryTeleport;
-    [SerializeField] GameObject infirmaryTeleport;
-    [SerializeField] GameObject caveTeleport;
-    [SerializeField] GameObject bedTeleport;
-    [SerializeField] GameObject bedTeleportInside;
+    [SerializeField] GameObject fortArmouryTeleport;
+    [SerializeField] GameObject fortInfirmaryTeleport;
+    [SerializeField] GameObject fortCaveTeleport;
+    [SerializeField] GameObject fortBedTeleport;
+    [SerializeField] GameObject fortBedTeleportInside;
+    [SerializeField] GameObject ottomanArmouryTeleport;
+    [SerializeField] GameObject ottomanInfirmaryTeleport;
+    [SerializeField] GameObject ottomanEngineerTeleport;
+    [SerializeField] GameObject ottomanBedTeleport;
+
     [SerializeField] RandomQuestSelector randomQuestSelector;
     [SerializeField] EndOfDayManager endOfDayManager;
     [SerializeField] GoogleSheetLogger logger;
@@ -25,17 +31,30 @@ public class GameManager : MonoBehaviour
     [SerializeField] StructureUI structureUI;
     [SerializeField] CatUI catUI;
     [SerializeField] TeleportPlayer teleportPlayer;
+    [SerializeField] GameObject questGiver;
+    [SerializeField] Sprite questGiverOttomanSprite;
 
-    [Header("Destruction Per Day")]
+    [Header("Destruction Per Day Fort")]
     [SerializeField] GameObject afterDayOne;
     [SerializeField] GameObject afterDayTwo;
     [SerializeField] GameObject afterDayThree;
     [SerializeField] GameObject afterDayFour;
 
+    [Header("Destruction Per Day Ottomans")]
+    [SerializeField] GameObject afterDayFive;
+    [SerializeField] GameObject afterDaySix;
+    [SerializeField] GameObject afterDaySeven;
+    [SerializeField] GameObject afterDayEight;
+    [SerializeField] GameObject afterDayNine;
+
+    [Header("Game Over")]
+    [SerializeField] private int gameOverSceneScreen = 5;
+
 
     [Header("Day Game Manager")]
     public int dayNumber = 1;
 
+    private SpriteRenderer questGiverSprite;
     private string lastQuest;
     private string playerId;
 
@@ -47,23 +66,30 @@ public class GameManager : MonoBehaviour
         {
             dialog.ResetData();
         }
+
+        questGiverSprite = questGiver.GetComponent<SpriteRenderer>();
     }
 
     private void Start()
     {
         playerId = SystemInfo.deviceUniqueIdentifier;
         dayNumber = 1;
-        armouryTeleport.SetActive(false);
-        infirmaryTeleport.SetActive(false);
-        caveTeleport.SetActive(false);
-        bedTeleport.SetActive(false);
+        fortArmouryTeleport.SetActive(false);
+        fortInfirmaryTeleport.SetActive(false);
+        fortCaveTeleport.SetActive(false);
+        fortBedTeleport.SetActive(false);
+        ottomanArmouryTeleport.SetActive(false);
+        ottomanInfirmaryTeleport.SetActive(false);
+        ottomanEngineerTeleport.SetActive(false);
+        ottomanBedTeleport.SetActive(false);
+
         //GoogleSheetLogger.Instance.LogData(GetPlayerIDForLogging(), GetCurrentTime(), GetDayNumber(), "Game Started (Game Manager)", "Game Started, Game Manager Loaded");
         GoogleSheetLogger.I.StartNewPlaythrough();
 
         SetQuestAccepted("Nothing");
     }
 
-    public void sleepAndUpdateDay()
+    public void SleepAndUpdateDay()
     {
         dayNumber += 1;
         int armourPercentageToIncrease = armouryUI.GetArmourPercentageToIncrease();
@@ -71,13 +97,38 @@ public class GameManager : MonoBehaviour
         int structurePercentageToIncrease = structureUI.GetStructurePercentageToIncrease();
         int catPercentageToIncrease = catUI.GetCatPercentageToIncrease();
 
-        if(GetLastQuestOfTheDay() == "SleepTime" || GetLastQuestOfTheDay() == "Dead" || GetLastQuestOfTheDay() == "Nothing")
+        List<int> currentPercenatages = new List<int>();
+
+        if (GetLastQuestOfTheDay() == "SleepTime" || GetLastQuestOfTheDay() == "Dead" || GetLastQuestOfTheDay() == "Nothing")
         {
+
+            Debug.Log($"Decrease armour by: 20");
+            Debug.Log($"Decrease moral by: 20");
+            Debug.Log($"Decrease structure by: 20");
+            Debug.Log($"Decrease cat by: 20");
+
             percentageManager.UpdatePercentages(-20,-20,-20,-20);
         }
         else
         {
+            Debug.Log($"Increase armour by: {armourPercentageToIncrease}");
+            Debug.Log($"Increase moral by: {moralePercentageToIncrease}");
+            Debug.Log($"Increase structure by: {structurePercentageToIncrease}");
+            Debug.Log($"Increase cat by: {catPercentageToIncrease}");
+
             percentageManager.UpdatePercentages(moralePercentageToIncrease, armourPercentageToIncrease, structurePercentageToIncrease, catPercentageToIncrease);
+        }
+
+        currentPercenatages = percentageManager.GetPercentages();
+
+        int index = 0;
+        foreach(int currentPercentage in currentPercenatages)
+        {
+            index++;
+            if(currentPercentage <= 0 && index < 3)
+            {
+                GameOver();
+            }
         }
 
         endOfDayManager.ShowPanelAndText(dayNumber);
@@ -85,11 +136,6 @@ public class GameManager : MonoBehaviour
         armouryUI.ResetArmourPercentageToIncrease();
         infirmaryUI.ResetMoralePercentageToIncrease();
         structureUI.ResetStructurePercentageToIncrease();
-    }
-
-    public void UpdatePercentages()
-    {
-
     }
 
     public string GetPlayerIDForLogging()
@@ -114,64 +160,92 @@ public class GameManager : MonoBehaviour
         switch (currentQuest)
         {
             case "Armoury":
-                armouryTeleport.SetActive(true);
-                infirmaryTeleport.SetActive(false);
-                caveTeleport.SetActive(false);
-                bedTeleport.SetActive(false);
+                fortArmouryTeleport.SetActive(true);
+                fortInfirmaryTeleport.SetActive(false);
+                fortCaveTeleport.SetActive(false);
+                fortBedTeleport.SetActive(false);
+                ottomanArmouryTeleport.SetActive(true);
+                ottomanInfirmaryTeleport.SetActive(false);
+                ottomanEngineerTeleport.SetActive(false);
+                ottomanBedTeleport.SetActive(false);
                 randomQuestSelector.SpawnLootBoxes();
-                bedTeleportInside.SetActive(true);
+                fortBedTeleportInside.SetActive(true);
                 break;
             case "Infirmary":
-                infirmaryTeleport.SetActive(true);
-                armouryTeleport.SetActive(false);
-                caveTeleport.SetActive(false);
-                bedTeleport.SetActive(false);
+                fortInfirmaryTeleport.SetActive(true);
+                fortArmouryTeleport.SetActive(false);
+                fortCaveTeleport.SetActive(false);
+                fortBedTeleport.SetActive(false);
+                ottomanArmouryTeleport.SetActive(false);
+                ottomanInfirmaryTeleport.SetActive(true);
+                ottomanEngineerTeleport.SetActive(false);
+                ottomanBedTeleport.SetActive(false);
                 randomQuestSelector.SpawnLootBoxes();
-                bedTeleportInside.SetActive(true);
+                fortBedTeleportInside.SetActive(true);
                 break;
             case "Cat":
                 questAccepted = QuestType.Cat.ToString();
                 randomQuestSelector.SpawnLootBoxes();
                 randomQuestSelector.SpawnCatClues();
-                infirmaryTeleport.SetActive(false);
-                armouryTeleport.SetActive(false);
-                caveTeleport.SetActive(false);
-                bedTeleport.SetActive(false);
-                bedTeleportInside.SetActive(true);
+                fortInfirmaryTeleport.SetActive(false);
+                fortArmouryTeleport.SetActive(false);
+                fortCaveTeleport.SetActive(false);
+                fortBedTeleport.SetActive(false);
+                ottomanArmouryTeleport.SetActive(false);
+                ottomanInfirmaryTeleport.SetActive(false);
+                ottomanEngineerTeleport.SetActive(false);
+                ottomanBedTeleport.SetActive(false);
+                fortBedTeleportInside.SetActive(true);
                 break;
             case "Structure":
                 questAccepted = QuestType.Structure.ToString();
                 randomQuestSelector.SpawnLootBoxes();
                 randomQuestSelector.SpawnDebris();
-                infirmaryTeleport.SetActive(false);
-                armouryTeleport.SetActive(false);
-                caveTeleport.SetActive(true);
-                bedTeleport.SetActive(false);
-                bedTeleportInside.SetActive(true);
+                fortInfirmaryTeleport.SetActive(false);
+                fortArmouryTeleport.SetActive(false);
+                fortCaveTeleport.SetActive(true);
+                fortBedTeleport.SetActive(false);
+                ottomanArmouryTeleport.SetActive(false);
+                ottomanInfirmaryTeleport.SetActive(false);
+                ottomanEngineerTeleport.SetActive(true);
+                ottomanBedTeleport.SetActive(false);
+                fortBedTeleportInside.SetActive(true);
                 break;
             case "SleepTime":
                 questAccepted = QuestType.SleepTime.ToString();
-                infirmaryTeleport.SetActive(false);
-                armouryTeleport.SetActive(false);
-                caveTeleport.SetActive(false);
-                bedTeleport.SetActive(true);
-                bedTeleportInside.SetActive(true);
+                fortInfirmaryTeleport.SetActive(false);
+                fortArmouryTeleport.SetActive(false);
+                fortCaveTeleport.SetActive(false);
+                fortBedTeleport.SetActive(true);
+                fortBedTeleportInside.SetActive(true);
+                ottomanArmouryTeleport.SetActive(false);
+                ottomanInfirmaryTeleport.SetActive(false);
+                ottomanEngineerTeleport.SetActive(false);
+                ottomanBedTeleport.SetActive(true);
                 break;
             case "Dead":
                 questAccepted = QuestType.Dead.ToString();
-                infirmaryTeleport.SetActive(false);
-                armouryTeleport.SetActive(false);
-                caveTeleport.SetActive(false);
-                bedTeleport.SetActive(true);
-                bedTeleportInside.SetActive(true);
+                fortInfirmaryTeleport.SetActive(false);
+                fortArmouryTeleport.SetActive(false);
+                fortCaveTeleport.SetActive(false);
+                fortBedTeleport.SetActive(true);
+                fortBedTeleportInside.SetActive(true);
+                ottomanArmouryTeleport.SetActive(false);
+                ottomanInfirmaryTeleport.SetActive(false);
+                ottomanEngineerTeleport.SetActive(false);
+                ottomanBedTeleport.SetActive(true);
                 break;
             case "Reset":
                 questAccepted = QuestType.Reset.ToString();
-                infirmaryTeleport.SetActive(false);
-                armouryTeleport.SetActive(false);
-                caveTeleport.SetActive(false);
-                bedTeleport.SetActive(false);
-                bedTeleportInside.SetActive(true);
+                fortInfirmaryTeleport.SetActive(false);
+                fortArmouryTeleport.SetActive(false);
+                fortCaveTeleport.SetActive(false);
+                fortBedTeleport.SetActive(false);
+                fortBedTeleportInside.SetActive(true);
+                ottomanArmouryTeleport.SetActive(false);
+                ottomanInfirmaryTeleport.SetActive(false);
+                ottomanEngineerTeleport.SetActive(false);
+                ottomanBedTeleport.SetActive(true);
                 break;
         }
 
@@ -220,6 +294,7 @@ public class GameManager : MonoBehaviour
 
     public void DestructionPerDay()
     {
+        Debug.Log("DEST:" + dayNumber);
         if (dayNumber == 2)
         {
             afterDayOne.SetActive(true);
@@ -235,6 +310,26 @@ public class GameManager : MonoBehaviour
         {
             afterDayFour.SetActive(true);
         }
+        else if (dayNumber == 7)
+        {
+            afterDayFive.SetActive(false);
+        }
+        else if (dayNumber == 8)
+        {
+            afterDaySix.SetActive(false);
+        }
+        else if (dayNumber == 9)
+        {
+            afterDaySeven.SetActive(false);
+        }
+        else if (dayNumber == 10)
+        {
+            afterDayEight.SetActive(false);
+        }
+        else if (dayNumber == 11)
+        {
+            afterDayNine.SetActive(true);
+        }
     }
 
     public void ResetAllSpawns()
@@ -247,9 +342,26 @@ public class GameManager : MonoBehaviour
     public void GetCaptured()
     {
         teleportPlayer.TeleportPlayerManually(new Vector3 (-73, -109, 0));
+        TeleportQuestGiver();
     }
 
     public void GameOver()
+    {
+        SceneManager.LoadScene(gameOverSceneScreen);
+    }
+
+    public void MoveToVillage()
+    {
+        teleportPlayer.TeleportPlayerManually(new Vector3(-381, -84, 0));
+    }
+
+    public void TeleportQuestGiver()
+    {
+        teleportPlayer.TeleportQuestGiver(new Vector3(-2.808f, -19.418f, 0));
+        questGiverSprite.sprite = questGiverOttomanSprite;
+    }
+
+    public void EndGame()
     {
 
     }

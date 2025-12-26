@@ -19,9 +19,10 @@ MonoBehaviour:
     A musket ball entered above his navel and tore intestine \u2014 now he leaks
     his own waste into his abdomen. He asks for water; it only worsens his swelling.\n\nTreatment:
     No stitching can save intestine in 1565. You pour wine into the wound to slow
-    rot. Pack with poultice. Keep him warm; death is a matter of hours or days."
+    rot. Pack with poultice. Keep him warm; death is a matter of hours or days.\n\nRequires:
+    2 Bandages"
   slotNumber: 1
   isHealed: 0
   toolUsed: {fileID: 21300000, guid: 951ad395968d5684c8198058167dc450, type: 3}
   requiredResource: Bandage
-  requiredAmount: 3
+  requiredAmount: 2

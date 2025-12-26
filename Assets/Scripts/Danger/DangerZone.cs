@@ -1,51 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DangerZone : MonoBehaviour
 {
+    private bool deathLocked;
 
-    [Header("Config")]
-    [SerializeField] GameManager gameManager;
-    [SerializeField] DangerSpawn dangerSpawn;
-
-    private bool canDie;
-    private bool inDangerZone = false;
-
-    private void Start()
+    public bool TryLockDeath()
     {
-        gameManager = FindObjectOfType<GameManager>();
-        dangerSpawn = FindObjectOfType<DangerSpawn>();
+        if (deathLocked) return false;
+        deathLocked = true;
+        return true;
     }
 
-    private void Update()
+    public void UnlockDeath()
     {
-        CheckToDie();
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            inDangerZone = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            inDangerZone = false;
-        }
-    }
-
-    private void CheckToDie()
-    {
-        canDie = dangerSpawn.GetCanDie();
-        if (inDangerZone && canDie)
-        {
-            gameManager.SetQuestAccepted("Dead");
-            dangerSpawn.StartDeadPanelSequence();
-        }
+        deathLocked = false;
     }
 }
+
