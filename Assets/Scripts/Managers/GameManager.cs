@@ -99,22 +99,24 @@ public class GameManager : MonoBehaviour
 
         List<int> currentPercenatages = new List<int>();
 
-        if (GetLastQuestOfTheDay() == "SleepTime" || GetLastQuestOfTheDay() == "Dead" || GetLastQuestOfTheDay() == "Nothing")
+        Debug.Log(GetLastQuestOfTheDay());
+
+        if (GetLastQuestOfTheDay() == "SleepTime" || GetLastQuestOfTheDay() == "Dead" || GetLastQuestOfTheDay() == "Nothing" || GetLastQuestOfTheDay() == "Reset")
         {
 
-            Debug.Log($"Decrease armour by: 20");
-            Debug.Log($"Decrease moral by: 20");
-            Debug.Log($"Decrease structure by: 20");
-            Debug.Log($"Decrease cat by: 20");
+            //Debug.Log($"Decrease armour by: 20");
+            //Debug.Log($"Decrease moral by: 20");
+            //Debug.Log($"Decrease structure by: 20");
+            //Debug.Log($"Decrease cat by: 20");
 
             percentageManager.UpdatePercentages(-20,-20,-20,-20);
         }
         else
         {
-            Debug.Log($"Increase armour by: {armourPercentageToIncrease}");
-            Debug.Log($"Increase moral by: {moralePercentageToIncrease}");
-            Debug.Log($"Increase structure by: {structurePercentageToIncrease}");
-            Debug.Log($"Increase cat by: {catPercentageToIncrease}");
+            //Debug.Log($"Increase armour by: {armourPercentageToIncrease}");
+            //Debug.Log($"Increase moral by: {moralePercentageToIncrease}");
+            //Debug.Log($"Increase structure by: {structurePercentageToIncrease}");
+            //Debug.Log($"Increase cat by: {catPercentageToIncrease}");
 
             percentageManager.UpdatePercentages(moralePercentageToIncrease, armourPercentageToIncrease, structurePercentageToIncrease, catPercentageToIncrease);
         }
@@ -294,7 +296,6 @@ public class GameManager : MonoBehaviour
 
     public void DestructionPerDay()
     {
-        Debug.Log("DEST:" + dayNumber);
         if (dayNumber == 2)
         {
             afterDayOne.SetActive(true);
@@ -341,13 +342,14 @@ public class GameManager : MonoBehaviour
 
     public void GetCaptured()
     {
-        teleportPlayer.TeleportPlayerManually(new Vector3 (-73, -109, 0));
+        teleportPlayer.TeleportPlayerManually(new Vector3 (-133.85f, -201.09f, 0));
         TeleportQuestGiver();
     }
 
     public void GameOver()
     {
-        SceneManager.LoadScene(gameOverSceneScreen);
+        Debug.Log("GAME OVER");
+        //SceneManager.LoadScene(gameOverSceneScreen);
     }
 
     public void MoveToVillage()

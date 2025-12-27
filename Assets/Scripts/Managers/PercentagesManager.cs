@@ -30,10 +30,10 @@ public class PercentageManager : MonoBehaviour
         structurePercentageUpdate = (addAmountToStructure == 0) ? -10 : addAmountToStructure;
         catPercentageUpdate = (addAmountToCat == 0) ? -5: addAmountToCat;
 
-        increaseDecreaseAmountToMoral = addAmountToMoral;
-        increaseDecreaseAmountToWeapons = addAmountToWeapons;
-        increaseDecreaseAmountToStructure = addAmountToStructure;
-        increaseDecreaseAmountToCat = addAmountToCat;
+        increaseDecreaseAmountToMoral = moralPercentageUpdate;
+        increaseDecreaseAmountToWeapons = weaponsPercentageUpdate;
+        increaseDecreaseAmountToStructure = structurePercentageUpdate;
+        increaseDecreaseAmountToCat = catPercentageUpdate;
 
         UpdateNumbers();
     }

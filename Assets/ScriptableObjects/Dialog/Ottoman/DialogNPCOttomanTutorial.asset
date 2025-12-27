@@ -1,0 +1,222 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889faa658c7b2c94ea4fff939bf8022e, type: 3}
+  m_Name: DialogNPCOttomanTutorial
+  m_EditorClassIdentifier: 
+  Name: Muhmud
+  Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
+  HasInteraction: 0
+  interactionType: 1
+  Greeting: Yahya Lab11
+  Day1Dialog: []
+  Day2FirstTimeDialog: []
+  Day2MetBeforeDialog: []
+  Day3FirstTimeDialog: []
+  Day3MetBeforeDialog: []
+  Day4FirstTimeDialog: []
+  Day4MetBeforeDialog: []
+  Day5FirstTimeDialog: []
+  Day5MetBeforeDialog: []
+  Day6Dialog:
+  - "People think armies arrive because of hatred, or belief, or great promises made
+    to men who want to hear them. Most of the time they arrive because decisions
+    were written down long before the first ship moved, and because refusing those
+    decisions would have ended lives just as surely as any battle.\n\nI did not know
+    this island before I was ordered to cross the sea. I knew my home, the sound
+    of work in the morning, the way my child slept without knowing what waited beyond
+    the door. Then suddenly I knew distances, numbers, supplies, and how easily one
+    life can be exchanged for another without ever being named.\n\nPress F for more
+    \u2192"
+  - 'When you were brought into the camp, you were not the only small thing trying
+    to survive here. A cat has been moving between the tents since the first days,
+    staying close to where food is dropped, slipping away when boots grow heavy around
+    it. No one ordered it to be fed, and no one bothered to stop it.
+
+
+    The men
+    inside the fort are defending what is theirs. That matters, and it should. Anyone
+    would do the same if their home stood behind those walls. But the men outside
+    did not choose whose land this would be, only that they would stand where they
+    were told.
+
+
+    War does not ask what kind of people it takes with it. It only
+    asks whether they will move.'
+  Day7FirstTimeDialog:
+  - "You see this place and think it exists for fighting, but most of its work is
+    quieter than that. It exists to endure waiting, hunger, heat, and the slow knowledge
+    that tomorrow will look much like today, except with fewer people in it.\n\nEach
+    morning, spaces appear where men slept the night before. No announcement follows.
+    We step around those absences carefully, as if naming them might invite more.
+    Food is divided again, tools are counted again, and work continues because stopping
+    would mean thinking too clearly.\n\nPress F for more \u2192"
+  - 'The cat still comes. Some days it eats well. Some days it does not appear at
+    all. When it vanishes, no one asks where it has gone. There are enough disappearances
+    already.
+
+
+    Here, loss does not arrive loudly. It settles in, quietly enough
+    that you only notice it once it has stayed.'
+  Day7MetBeforeDialog:
+  - "You see this place and think it exists for fighting, but most of its work is
+    quieter than that. It exists to endure waiting, hunger, heat, and the slow knowledge
+    that tomorrow will look much like today, except with fewer people in it.\n\nEach
+    morning, spaces appear where men slept the night before. No announcement follows.
+    We step around those absences carefully, as if naming them might invite more.
+    Food is divided again, tools are counted again, and work continues because stopping
+    would mean thinking too clearly.\n\nPress F for more \u2192"
+  - 'The cat still comes. Some days it eats well. Some days it does not appear at
+    all. When it vanishes, no one asks where it has gone. There are enough disappearances
+    already.
+
+
+    Here, loss does not arrive loudly. It settles in, quietly enough
+    that you only notice it once it has stayed.'
+  Day8FirstTimeDialog:
+  - "Do not believe that death belongs only to the men behind the walls. That is
+    something people say when they want the war to feel simpler than it is.\n\nWhen
+    the guns answer each other, the ground does not care who is defending or who
+    is attacking. Stone and iron tear through bodies without learning names first.
+    The difference is only where the dead fall, and whether anyone will return to
+    mark the place.\n\nPress F for more \u2192"
+  - 'You see the fort every day. You do not see the pits behind the camp, where men
+    who were alive in the morning are lowered into the earth by evening, wrapped
+    quickly, because the work does not pause for mourning. By the next day, the ground
+    looks the same again.
+
+
+    Some of us have survived battles before this one.
+    That does not make us stronger. It only means we know how little remains once
+    a body stops moving, and how easily it could have been ours.'
+  Day8MetBeforeDialog:
+  - "Do not believe that death belongs only to the men behind the walls. That is
+    something people say when they want the war to feel simpler than it is.\n\nWhen
+    the guns answer each other, the ground does not care who is defending or who
+    is attacking. Stone and iron tear through bodies without learning names first.
+    The difference is only where the dead fall, and whether anyone will return to
+    mark the place.\n\nPress F for more \u2192"
+  - 'You see the fort every day. You do not see the pits behind the camp, where men
+    who were alive in the morning are lowered into the earth by evening, wrapped
+    quickly, because the work does not pause for mourning. By the next day, the ground
+    looks the same again.
+
+
+    Some of us have survived battles before this one.
+    That does not make us stronger. It only means we know how little remains once
+    a body stops moving, and how easily it could have been ours.'
+  Day9FirstTimeDialog:
+  - "You remind me of my son, though not because you are fearless or hopeful. You
+    are neither. You watch carefully, as if understanding might protect you from
+    what is happening around you.\n\nMy son will grow whether I return or not. If
+    I die here, he will learn my face from stories told by people who loved me, and
+    from silences where answers should have been. That is how war reaches into homes
+    it never sees.\n\nPress F for more \u2192"
+  - 'Every man here carries something like that with him, whether he speaks of it
+    or not. We march with those faces in our thoughts, and we bury others while pretending
+    we are not imagining our own names in their place.
+
+
+    That is why I keep you
+    close, and why I bring you food even when I should not. Not because it changes
+    anything, and not because it makes me better than the men beside me, but because
+    turning away would cost me something I am not willing to lose yet.'
+  Day9MetBeforeDialog:
+  - "You remind me of my son, though not because you are fearless or hopeful. You
+    are neither. You watch carefully, as if understanding might protect you from
+    what is happening around you.\n\nMy son will grow whether I return or not. If
+    I die here, he will learn my face from stories told by people who loved me, and
+    from silences where answers should have been. That is how war reaches into homes
+    it never sees.\n\nPress F for more \u2192"
+  - 'Every man here carries something like that with him, whether he speaks of it
+    or not. We march with those faces in our thoughts, and we bury others while pretending
+    we are not imagining our own names in their place.
+
+
+    That is why I keep you
+    close, and why I bring you food even when I should not. Not because it changes
+    anything, and not because it makes me better than the men beside me, but because
+    turning away would cost me something I am not willing to lose yet.'
+  Day10FirstTimeDialog:
+  - "You think survival means escaping this place, but survival is rarely that clean.
+    Many men survive battles and never return to the people they were before. They
+    carry the war with them, long after the noise has ended.\n\nThe cat survives
+    because it does not belong anywhere. It eats when it can, sleeps where the ground
+    is quieter, and leaves before danger finishes arriving. No one calls it brave,
+    and no one blames it for staying alive.\n\nPress F for more \u2192"
+  - 'Men are not allowed that freedom. The best we manage is smaller than that. A
+    delayed order. A shared meal. A child kept out of sight long enough to matter.
+
+
+    I
+    cannot end this war. I cannot undo what has already happened. All I can do is
+    decide, each day, whether I will add one more cruelty to the weight already pressing
+    down on this place.
+
+
+    If you live through this, remember what you saw here.
+    Not who was right, and not who won, but how many small choices were made in the
+    shadow of things too large to stop.
+
+
+    That is as close to mercy as war allows.'
+  Day10MetBeforeDialog:
+  - "You think survival means escaping this place, but survival is rarely that clean.
+    Many men survive battles and never return to the people they were before. They
+    carry the war with them, long after the noise has ended.\n\nThe cat survives
+    because it does not belong anywhere. It eats when it can, sleeps where the ground
+    is quieter, and leaves before danger finishes arriving. No one calls it brave,
+    and no one blames it for staying alive.\n\nPress F for more \u2192"
+  - 'Men are not allowed that freedom. The best we manage is smaller than that. A
+    delayed order. A shared meal. A child kept out of sight long enough to matter.
+
+
+    I
+    cannot end this war. I cannot undo what has already happened. All I can do is
+    decide, each day, whether I will add one more cruelty to the weight already pressing
+    down on this place.
+
+
+    If you live through this, remember what you saw here.
+    Not who was right, and not who won, but how many small choices were made in the
+    shadow of things too large to stop.
+
+
+    That is as close to mercy as war allows.'
+  Day1Audio: {fileID: 0}
+  Day2FirstTimeAudio: {fileID: 0}
+  Day2MetBeforeAudio: {fileID: 0}
+  Day3FirstTimeAudio: {fileID: 0}
+  Day3MetBeforeAudio: {fileID: 0}
+  Day4FirstTimeAudio: {fileID: 0}
+  Day4MetBeforeAudio: {fileID: 0}
+  Day5FirstTimeAudio: {fileID: 0}
+  Day5MetBeforeAudio: {fileID: 0}
+  Day6Audio: {fileID: 8300000, guid: b66e9bd9e1f3fe440b43334b845899f4, type: 3}
+  Day7FirstTimeAudio: {fileID: 8300000, guid: 166c35bccd6cbfd4faf12106a4d2b24c, type: 3}
+  Day7MetBeforeAudio: {fileID: 8300000, guid: 166c35bccd6cbfd4faf12106a4d2b24c, type: 3}
+  Day8FirstTimeAudio: {fileID: 8300000, guid: d1070142dc3e9ff4e8395bb17c7c3413, type: 3}
+  Day8MetBeforeAudio: {fileID: 8300000, guid: d1070142dc3e9ff4e8395bb17c7c3413, type: 3}
+  Day9FirstTimeAudio: {fileID: 8300000, guid: 1215904c66ae26246bf0c648c9e43285, type: 3}
+  Day9MetBeforeAudio: {fileID: 8300000, guid: 1215904c66ae26246bf0c648c9e43285, type: 3}
+  Day10FirstTimeAudio: {fileID: 8300000, guid: 9f6b6809111fc5f46a8f982c00e0369b, type: 3}
+  Day10MetBeforeAudio: {fileID: 8300000, guid: 9f6b6809111fc5f46a8f982c00e0369b, type: 3}
+  dayNumber: 6
+  metOnday1: 0
+  metOnday2: 0
+  metOnday3: 0
+  metOnday4: 0
+  metOnday5: 0
+  metOnday6: 1
+  metOnday7: 0
+  metOnday8: 0
+  metOnday9: 0
+  metOnday10: 0

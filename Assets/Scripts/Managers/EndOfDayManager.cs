@@ -51,7 +51,7 @@ public class EndOfDayManager : MonoBehaviour
         dayNumber = dayNumber - 2;
 
         sleepManager.isSleeping = true;
-        UpdateTextAccordingToPlayerActions(dayNumber);
+        //UpdateTextAccordingToPlayerActions(dayNumber);
         //UpdateWhatIsHappening(dayNumber);
         UpdateImages(dayNumber);
         SetImageTrasparency();
@@ -71,6 +71,7 @@ public class EndOfDayManager : MonoBehaviour
 
         endOfDayNumber.text = $"End of Day {dayNumber + 1}: {endOfDayTitle[dayNumber]}";
 
+        UpdateTextAccordingToPlayerActions(dayNumber);
         StartCoroutine(ShowAndHidePanel());
     }
 
@@ -82,7 +83,7 @@ public class EndOfDayManager : MonoBehaviour
         GoogleSheetLogger.I.FlushDay();
         GoogleSheetLogger.I.StartDay(gameManager.GetDayNumber() + 1);
 
-        if(dayNumber < 5)
+        if(dayNumber < 4 || dayNumber > 4)
         {
             if (lastQuest == "Armoury")
             {
@@ -112,12 +113,9 @@ public class EndOfDayManager : MonoBehaviour
             {
                 endOfDayDescriptionTMP.text = UpdateWhatIsHappening(dayNumber) + "\n\n" + "You took a blow you couldn’t walk off, and they dragged you to a bunk until you stopped spinning. While you lay there, others swung hammers, moved bodies, and tried to keep the walls standing. You didn’t help anyone today, and the cat searched for safety without you. Tomorrow you’ll wake up owing more than effort.";
             }
-        }else if(dayNumber == 5)
+        }else if(dayNumber == 4)
         {
-            endOfDayDescriptionTMP.text = UpdateWhatIsHappening(dayNumber) + "\n\n" + "You lay down because you couldn’t stand anymore. At some point in the night, the fighting broke through and men came into the room. They didn’t bother killing you—they just dragged you out like you were cargo. Maybe they need workers, maybe they didn’t see you as worth the blade. You didn’t help anyone today, and you never got close to the cat. Now you’re somewhere else, alive, confused, and not in control of anything that happens next.";
-        }else if (dayNumber > 5)
-        {
-
+            endOfDayDescriptionTMP.text = UpdateWhatIsHappening(dayNumber) + "\n\n" + "You were searching the dark for your cat when the night attack broke through the fort; boots and voices closed in before you could run, and though you were dragged away without blows or explanation, you heard others taken differently, and by morning you were alive, somewhere unfamiliar, with no way of knowing what became of the people you left behind.";
         }
 
         PlayClip(dayNumber);

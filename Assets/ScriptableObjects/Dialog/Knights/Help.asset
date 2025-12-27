@@ -1,0 +1,192 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889faa658c7b2c94ea4fff939bf8022e, type: 3}
+  m_Name: Help
+  m_EditorClassIdentifier: 
+  Name: Help Board
+  Icon: {fileID: 21300000, guid: 4521359cb9c97184d8b5666e2e59ad0d, type: 3}
+  HasInteraction: 0
+  interactionType: 3
+  Greeting: Marshal (11 Labs)
+  Day1Dialog:
+  - "HOW TO PLAY\n\u25AC Move with WASD\n\u25AC Talk to characters with F (interaction
+    bubble required)\n\u25AC \"!\" marks a character with today\u2019s task\n\u25AC
+    You can complete ONE task per day\n\nPress F for more \u2192"
+  - "TASKS & EFFECTS\n\u25AC Infirmary \u2192 Morale \u2191 (uses Bandages)\n\u25AC
+    Armoury \u2192 Weapons \u2191 (uses Iron)\n\u25AC Repairs \u2192 Structure \u2191\n\u25AC
+    Cat Search \u2192 Cat chance \u2191\n\u25AC Stat gain depends on materials spent\n\nPress
+    F for more \u2192"
+  - "RESOURCES\n\u25AC Search crates to find materials\n\u25AC Iron \u2192 Armoury\n\u25AC
+    Bandages \u2192 Infirmary\n\nPress F for more \u2192"
+  - "TIME & DANGER\n\u25AC Time pauses during dialogue\n\u25AC Red circles = incoming
+    cannon fire\n\u25AC Getting hit:\n\t\u25AC ends the day\n\t\u25AC loses all progress\n\t\u25AC
+    applies \u201320% to all stats\n\nPress F for more \u2192"
+  - "FAILURE\n\u25AC If Morale, Weapons, or Structure reach 0% \u2192 Game Over\n\u25AC
+    Cat stat does not cause failure#\n\nPress F for more \u2192"
+  Day2FirstTimeDialog:
+  - "HOW TO PLAY\n\u25AC Move with WASD\n\u25AC Talk to characters with F (interaction
+    bubble required)\n\u25AC \"!\" marks a character with today\u2019s task\n\u25AC
+    You can complete ONE task per day\n\nPress F for more \u2192"
+  - "TASKS & EFFECTS\n\u25AC Infirmary \u2192 Morale \u2191 (uses Bandages)\n\u25AC
+    Armoury \u2192 Weapons \u2191 (uses Iron)\n\u25AC Repairs \u2192 Structure \u2191\n\u25AC
+    Cat Search \u2192 Cat chance \u2191\n\u25AC Stat gain depends on materials spent\n\nPress
+    F for more \u2192"
+  - "RESOURCES\n\u25AC Search crates to find materials\n\u25AC Iron \u2192 Armoury\n\u25AC
+    Bandages \u2192 Infirmary\n\nPress F for more \u2192"
+  - "TIME & DANGER\n\u25AC Time pauses during dialogue\n\u25AC Red circles = incoming
+    cannon fire\n\u25AC Getting hit:\n\t\u25AC ends the day\n\t\u25AC loses all progress\n\t\u25AC
+    applies \u201320% to all stats\n\nPress F for more \u2192"
+  - "FAILURE\n\u25AC If Morale, Weapons, or Structure reach 0% \u2192 Game Over\n\u25AC
+    Cat stat does not cause failure#\n\nPress F for more \u2192"
+  Day2MetBeforeDialog:
+  - "HOW TO PLAY\n\u25AC Move with WASD\n\u25AC Talk to characters with F (interaction
+    bubble required)\n\u25AC \"!\" marks a character with today\u2019s task\n\u25AC
+    You can complete ONE task per day\n\nPress F for more \u2192"
+  - "TASKS & EFFECTS\n\u25AC Infirmary \u2192 Morale \u2191 (uses Bandages)\n\u25AC
+    Armoury \u2192 Weapons \u2191 (uses Iron)\n\u25AC Repairs \u2192 Structure \u2191\n\u25AC
+    Cat Search \u2192 Cat chance \u2191\n\u25AC Stat gain depends on materials spent\n\nPress
+    F for more \u2192"
+  - "RESOURCES\n\u25AC Search crates to find materials\n\u25AC Iron \u2192 Armoury\n\u25AC
+    Bandages \u2192 Infirmary\n\nPress F for more \u2192"
+  - "TIME & DANGER\n\u25AC Time pauses during dialogue\n\u25AC Red circles = incoming
+    cannon fire\n\u25AC Getting hit:\n\t\u25AC ends the day\n\t\u25AC loses all progress\n\t\u25AC
+    applies \u201320% to all stats\n\nPress F for more \u2192"
+  - "FAILURE\n\u25AC If Morale, Weapons, or Structure reach 0% \u2192 Game Over\n\u25AC
+    Cat stat does not cause failure#\n\nPress F for more \u2192"
+  Day3FirstTimeDialog:
+  - "HOW TO PLAY\n\u25AC Move with WASD\n\u25AC Talk to characters with F (interaction
+    bubble required)\n\u25AC \"!\" marks a character with today\u2019s task\n\u25AC
+    You can complete ONE task per day\n\nPress F for more \u2192"
+  - "TASKS & EFFECTS\n\u25AC Infirmary \u2192 Morale \u2191 (uses Bandages)\n\u25AC
+    Armoury \u2192 Weapons \u2191 (uses Iron)\n\u25AC Repairs \u2192 Structure \u2191\n\u25AC
+    Cat Search \u2192 Cat chance \u2191\n\u25AC Stat gain depends on materials spent\n\nPress
+    F for more \u2192"
+  - "RESOURCES\n\u25AC Search crates to find materials\n\u25AC Iron \u2192 Armoury\n\u25AC
+    Bandages \u2192 Infirmary\n\nPress F for more \u2192"
+  - "TIME & DANGER\n\u25AC Time pauses during dialogue\n\u25AC Red circles = incoming
+    cannon fire\n\u25AC Getting hit:\n\t\u25AC ends the day\n\t\u25AC loses all progress\n\t\u25AC
+    applies \u201320% to all stats\n\nPress F for more \u2192"
+  - "FAILURE\n\u25AC If Morale, Weapons, or Structure reach 0% \u2192 Game Over\n\u25AC
+    Cat stat does not cause failure#\n\nPress F for more \u2192"
+  Day3MetBeforeDialog:
+  - "HOW TO PLAY\n\u25AC Move with WASD\n\u25AC Talk to characters with F (interaction
+    bubble required)\n\u25AC \"!\" marks a character with today\u2019s task\n\u25AC
+    You can complete ONE task per day\n\nPress F for more \u2192"
+  - "TASKS & EFFECTS\n\u25AC Infirmary \u2192 Morale \u2191 (uses Bandages)\n\u25AC
+    Armoury \u2192 Weapons \u2191 (uses Iron)\n\u25AC Repairs \u2192 Structure \u2191\n\u25AC
+    Cat Search \u2192 Cat chance \u2191\n\u25AC Stat gain depends on materials spent\n\nPress
+    F for more \u2192"
+  - "RESOURCES\n\u25AC Search crates to find materials\n\u25AC Iron \u2192 Armoury\n\u25AC
+    Bandages \u2192 Infirmary\n\nPress F for more \u2192"
+  - "TIME & DANGER\n\u25AC Time pauses during dialogue\n\u25AC Red circles = incoming
+    cannon fire\n\u25AC Getting hit:\n\t\u25AC ends the day\n\t\u25AC loses all progress\n\t\u25AC
+    applies \u201320% to all stats\n\nPress F for more \u2192"
+  - "FAILURE\n\u25AC If Morale, Weapons, or Structure reach 0% \u2192 Game Over\n\u25AC
+    Cat stat does not cause failure#\n\nPress F for more \u2192"
+  Day4FirstTimeDialog:
+  - "HOW TO PLAY\n\u25AC Move with WASD\n\u25AC Talk to characters with F (interaction
+    bubble required)\n\u25AC \"!\" marks a character with today\u2019s task\n\u25AC
+    You can complete ONE task per day\n\nPress F for more \u2192"
+  - "TASKS & EFFECTS\n\u25AC Infirmary \u2192 Morale \u2191 (uses Bandages)\n\u25AC
+    Armoury \u2192 Weapons \u2191 (uses Iron)\n\u25AC Repairs \u2192 Structure \u2191\n\u25AC
+    Cat Search \u2192 Cat chance \u2191\n\u25AC Stat gain depends on materials spent\n\nPress
+    F for more \u2192"
+  - "RESOURCES\n\u25AC Search crates to find materials\n\u25AC Iron \u2192 Armoury\n\u25AC
+    Bandages \u2192 Infirmary\n\nPress F for more \u2192"
+  - "TIME & DANGER\n\u25AC Time pauses during dialogue\n\u25AC Red circles = incoming
+    cannon fire\n\u25AC Getting hit:\n\t\u25AC ends the day\n\t\u25AC loses all progress\n\t\u25AC
+    applies \u201320% to all stats\n\nPress F for more \u2192"
+  - "FAILURE\n\u25AC If Morale, Weapons, or Structure reach 0% \u2192 Game Over\n\u25AC
+    Cat stat does not cause failure#\n\nPress F for more \u2192"
+  Day4MetBeforeDialog:
+  - "HOW TO PLAY\n\u25AC Move with WASD\n\u25AC Talk to characters with F (interaction
+    bubble required)\n\u25AC \"!\" marks a character with today\u2019s task\n\u25AC
+    You can complete ONE task per day\n\nPress F for more \u2192"
+  - "TASKS & EFFECTS\n\u25AC Infirmary \u2192 Morale \u2191 (uses Bandages)\n\u25AC
+    Armoury \u2192 Weapons \u2191 (uses Iron)\n\u25AC Repairs \u2192 Structure \u2191\n\u25AC
+    Cat Search \u2192 Cat chance \u2191\n\u25AC Stat gain depends on materials spent\n\nPress
+    F for more \u2192"
+  - "RESOURCES\n\u25AC Search crates to find materials\n\u25AC Iron \u2192 Armoury\n\u25AC
+    Bandages \u2192 Infirmary\n\nPress F for more \u2192"
+  - "TIME & DANGER\n\u25AC Time pauses during dialogue\n\u25AC Red circles = incoming
+    cannon fire\n\u25AC Getting hit:\n\t\u25AC ends the day\n\t\u25AC loses all progress\n\t\u25AC
+    applies \u201320% to all stats\n\nPress F for more \u2192"
+  - "FAILURE\n\u25AC If Morale, Weapons, or Structure reach 0% \u2192 Game Over\n\u25AC
+    Cat stat does not cause failure#\n\nPress F for more \u2192"
+  Day5FirstTimeDialog:
+  - "HOW TO PLAY\n\u25AC Move with WASD\n\u25AC Talk to characters with F (interaction
+    bubble required)\n\u25AC \"!\" marks a character with today\u2019s task\n\u25AC
+    You can complete ONE task per day\n\nPress F for more \u2192"
+  - "TASKS & EFFECTS\n\u25AC Infirmary \u2192 Morale \u2191 (uses Bandages)\n\u25AC
+    Armoury \u2192 Weapons \u2191 (uses Iron)\n\u25AC Repairs \u2192 Structure \u2191\n\u25AC
+    Cat Search \u2192 Cat chance \u2191\n\u25AC Stat gain depends on materials spent\n\nPress
+    F for more \u2192"
+  - "RESOURCES\n\u25AC Search crates to find materials\n\u25AC Iron \u2192 Armoury\n\u25AC
+    Bandages \u2192 Infirmary\n\nPress F for more \u2192"
+  - "TIME & DANGER\n\u25AC Time pauses during dialogue\n\u25AC Red circles = incoming
+    cannon fire\n\u25AC Getting hit:\n\t\u25AC ends the day\n\t\u25AC loses all progress\n\t\u25AC
+    applies \u201320% to all stats\n\nPress F for more \u2192"
+  - "FAILURE\n\u25AC If Morale, Weapons, or Structure reach 0% \u2192 Game Over\n\u25AC
+    Cat stat does not cause failure#\n\nPress F for more \u2192"
+  Day5MetBeforeDialog:
+  - "HOW TO PLAY\n\u25AC Move with WASD\n\u25AC Talk to characters with F (interaction
+    bubble required)\n\u25AC \"!\" marks a character with today\u2019s task\n\u25AC
+    You can complete ONE task per day\n\nPress F for more \u2192"
+  - "TASKS & EFFECTS\n\u25AC Infirmary \u2192 Morale \u2191 (uses Bandages)\n\u25AC
+    Armoury \u2192 Weapons \u2191 (uses Iron)\n\u25AC Repairs \u2192 Structure \u2191\n\u25AC
+    Cat Search \u2192 Cat chance \u2191\n\u25AC Stat gain depends on materials spent\n\nPress
+    F for more \u2192"
+  - "RESOURCES\n\u25AC Search crates to find materials\n\u25AC Iron \u2192 Armoury\n\u25AC
+    Bandages \u2192 Infirmary\n\nPress F for more \u2192"
+  - "TIME & DANGER\n\u25AC Time pauses during dialogue\n\u25AC Red circles = incoming
+    cannon fire\n\u25AC Getting hit:\n\t\u25AC ends the day\n\t\u25AC loses all progress\n\t\u25AC
+    applies \u201320% to all stats\n\nPress F for more \u2192"
+  - "FAILURE\n\u25AC If Morale, Weapons, or Structure reach 0% \u2192 Game Over\n\u25AC
+    Cat stat does not cause failure#\n\nPress F for more \u2192"
+  Day6Dialog: []
+  Day7FirstTimeDialog: []
+  Day7MetBeforeDialog: []
+  Day8FirstTimeDialog: []
+  Day8MetBeforeDialog: []
+  Day9FirstTimeDialog: []
+  Day9MetBeforeDialog: []
+  Day10FirstTimeDialog: []
+  Day10MetBeforeDialog: []
+  Day1Audio: {fileID: 0}
+  Day2FirstTimeAudio: {fileID: 0}
+  Day2MetBeforeAudio: {fileID: 0}
+  Day3FirstTimeAudio: {fileID: 0}
+  Day3MetBeforeAudio: {fileID: 0}
+  Day4FirstTimeAudio: {fileID: 0}
+  Day4MetBeforeAudio: {fileID: 0}
+  Day5FirstTimeAudio: {fileID: 0}
+  Day5MetBeforeAudio: {fileID: 0}
+  Day6Audio: {fileID: 0}
+  Day7FirstTimeAudio: {fileID: 0}
+  Day7MetBeforeAudio: {fileID: 0}
+  Day8FirstTimeAudio: {fileID: 0}
+  Day8MetBeforeAudio: {fileID: 0}
+  Day9FirstTimeAudio: {fileID: 0}
+  Day9MetBeforeAudio: {fileID: 0}
+  Day10FirstTimeAudio: {fileID: 0}
+  Day10MetBeforeAudio: {fileID: 0}
+  dayNumber: 1
+  metOnday1: 1
+  metOnday2: 0
+  metOnday3: 0
+  metOnday4: 0
+  metOnday5: 0
+  metOnday6: 0
+  metOnday7: 0
+  metOnday8: 0
+  metOnday9: 0
+  metOnday10: 0

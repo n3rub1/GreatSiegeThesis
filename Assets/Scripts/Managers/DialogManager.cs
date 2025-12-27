@@ -43,8 +43,6 @@ public class DialogManager : Singleton<DialogManager>
         dialogQueue.Clear();
 
         dayNightCycleManager.StartStopTimer(false);
-
-        Debug.Log("START TIMER");
     }
 
     private void LoadDialogFromNPC()
@@ -249,7 +247,6 @@ public class DialogManager : Singleton<DialogManager>
         dialogStarted = true;
 
         dayNightCycleManager.StartStopTimer(true);
-        Debug.Log("STOP TIMER");
     }
 
     private void ContinueDialog()
