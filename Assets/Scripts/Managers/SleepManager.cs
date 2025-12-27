@@ -45,8 +45,17 @@ public class SleepManager : Singleton<SleepManager>
             gameManager.DestructionPerDay();
             gameManager.ResetAllSpawns();
         }
-        else if(isPlayerInRangeOfBed && !isSleeping && gameManager.GetDayNumber() > 5)
+        else if(isPlayerInRangeOfBed && !isSleeping && gameManager.GetDayNumber() > 5 && gameManager.GetDayNumber() != 10)
         {
+            gameManager.SleepAndUpdateDay();
+            string lastQuest = gameManager.GetLastQuestOfTheDay();
+            QuestUI.Instance.ResetQuests();
+            gameManager.DestructionPerDay();
+            gameManager.ResetAllSpawns();
+        }
+        else if (isPlayerInRangeOfBed && !isSleeping && gameManager.GetDayNumber() == 10)
+        {
+            gameManager.MoveToVillage();
             gameManager.SleepAndUpdateDay();
             string lastQuest = gameManager.GetLastQuestOfTheDay();
             QuestUI.Instance.ResetQuests();

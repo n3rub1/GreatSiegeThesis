@@ -39,12 +39,11 @@ public class EndOfDayManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI structureIncreaseDecreasePercentageTMP;
     [SerializeField] private TextMeshProUGUI catIncreaseDecreasePercentageTMP;
 
-
-
     [Header("Percentage Images")]
     [SerializeField] private List<SpriteRenderer> percentageImages = new List<SpriteRenderer>();
     [SerializeField] private PercentageManager percentageManager;
 
+    private Vector3 originalPosition = new Vector3();
 
     public void ShowPanelAndText(int dayNumber)
     {
@@ -131,8 +130,7 @@ public class EndOfDayManager : MonoBehaviour
         AudioClip clip = endOfDayWhatIsHappeningAudioClip[dayNumber];
         endOfDayAudioSource.clip = clip;
         endOfDayAudioSource.Play();
-        //timeForPanelToDisappear = clip.length + 5;
-        timeForPanelToDisappear = 3;  //FOR TESTING ONLY!
+        timeForPanelToDisappear = clip.length + 5;
     }
 
     private void UpdateImages(int dayNumber)
@@ -171,11 +169,22 @@ public class EndOfDayManager : MonoBehaviour
         teleportPlayer.TeleportAndRevert(originalPosition, new Vector3(-900, -900, 0), firstTime);
     }
 
+    public void SkipEndOfDay()
+    {
+        
+        StopAllCoroutines();
+        TeleportForSoundIssue(originalPosition, false);
+        endOfDayAudioSource.Stop();
+        endOfDayPanel.SetActive(false);
+        dayNightCycleManager.ResetTime();
+        sleepManager.isSleeping = false;
+    }
+
 
     IEnumerator ShowAndHidePanel()
     {
         endOfDayPanel.SetActive(true);
-        Vector3 originalPosition= teleportPlayer.GetCurrentLocation();
+        originalPosition= teleportPlayer.GetCurrentLocation();
         TeleportForSoundIssue(originalPosition, true);
         yield return new WaitForSeconds(timeForPanelToDisappear);
         TeleportForSoundIssue(originalPosition, false);

@@ -82,6 +82,11 @@ public class DayNightCycleManager : MonoBehaviour
         TriggerDayNightGlobalLight();
     }
 
+    public void IncreaseTimerManually(int byHowMuch)
+    {
+        timeOfDay = timeOfDay + byHowMuch;
+    }
+
     public void StartStopTimer(bool startTimerState)
     {
         stopTimer = startTimerState;

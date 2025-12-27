@@ -211,7 +211,8 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
         }
 
         SetResourcesInformation();
-        healingDescription.text = $"Healed {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.Name} using {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.requiredAmount} {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.requiredResource}";
+        //healingDescription.text = $"Healed {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.Name} using {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.requiredAmount} {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.requiredResource}";
+        healingDescription.text = $"Used {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.requiredAmount} {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.requiredResource}";
         //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Healed Person (Infirmary UI)", $"Player healed: {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.ID}");
         GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Healed Person (Infirmary UI)", $"Player healed: {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.ID}");
         GiveInfirmaryXP(InfirmarySlot.CurrentlySelectedSlot.AssignedItem.slotNumber, levels);

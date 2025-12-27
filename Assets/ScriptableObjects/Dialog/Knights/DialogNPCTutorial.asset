@@ -117,22 +117,31 @@ MonoBehaviour:
     but after enough nights under bombardment, a man learns to trust the feeling
     in his gut.\n\nDon\u2019t think about legacies or names. The nobles have their
     scribes. Men like us are lucky if someone remembers we stood on these stones.
-    I\u2019ve made peace with that.\n\nWhat I can\u2019t shake is the sense that
-    you should stay closer to the walls today\u2014closer to people. The dark corners
-    of this fort feel hungrier than usual.\n\nMaybe it\u2019s nothing. Maybe it\u2019s
-    just age talking. But keep near others, boy. No one should be caught alone right
-    now."
+    I\u2019ve made peace with that.\n\nPress F for more"
+  - "What I can\u2019t shake is the sense that you should stay closer to the walls
+    today\u2014closer to people. The dark corners of this fort feel hungrier than
+    usual.\n\nMaybe it\u2019s nothing. Maybe it\u2019s just age talking. But keep
+    near others, boy. No one should be caught alone right now."
   Day5MetBeforeDialog:
   - "Did you sleep at all? I keep waking with the feeling that someone\u2019s going
     to be in the wrong place at the wrong moment today. It\u2019s just a thought,
     but after enough nights under bombardment, a man learns to trust the feeling
     in his gut.\n\nDon\u2019t think about legacies or names. The nobles have their
     scribes. Men like us are lucky if someone remembers we stood on these stones.
-    I\u2019ve made peace with that.\n\nWhat I can\u2019t shake is the sense that
-    you should stay closer to the walls today\u2014closer to people. The dark corners
-    of this fort feel hungrier than usual.\n\nMaybe it\u2019s nothing. Maybe it\u2019s
-    just age talking. But keep near others, boy. No one should be caught alone right
-    now."
+    I\u2019ve made peace with that.\n\nPress F for more"
+  - "What I can\u2019t shake is the sense that you should stay closer to the walls
+    today\u2014closer to people. The dark corners of this fort feel hungrier than
+    usual.\n\nMaybe it\u2019s nothing. Maybe it\u2019s just age talking. But keep
+    near others, boy. No one should be caught alone right now."
+  Day6Dialog: []
+  Day7FirstTimeDialog: []
+  Day7MetBeforeDialog: []
+  Day8FirstTimeDialog: []
+  Day8MetBeforeDialog: []
+  Day9FirstTimeDialog: []
+  Day9MetBeforeDialog: []
+  Day10FirstTimeDialog: []
+  Day10MetBeforeDialog: []
   Day1Audio: {fileID: 8300000, guid: ce86dd52fc722d543bf694ce8cf68b8d, type: 3}
   Day2FirstTimeAudio: {fileID: 8300000, guid: 12eef61e1348f4a4693738cf8ff81b74, type: 3}
   Day2MetBeforeAudio: {fileID: 8300000, guid: 12eef61e1348f4a4693738cf8ff81b74, type: 3}
@@ -142,9 +151,23 @@ MonoBehaviour:
   Day4MetBeforeAudio: {fileID: 8300000, guid: f05f6905bebce1c4f929d3afbd1b49ce, type: 3}
   Day5FirstTimeAudio: {fileID: 8300000, guid: 2b29d0e0bafbedb4cb28fee42b3fba66, type: 3}
   Day5MetBeforeAudio: {fileID: 8300000, guid: 2b29d0e0bafbedb4cb28fee42b3fba66, type: 3}
-  dayNumber: 1
+  Day6Audio: {fileID: 0}
+  Day7FirstTimeAudio: {fileID: 0}
+  Day7MetBeforeAudio: {fileID: 0}
+  Day8FirstTimeAudio: {fileID: 0}
+  Day8MetBeforeAudio: {fileID: 0}
+  Day9FirstTimeAudio: {fileID: 0}
+  Day9MetBeforeAudio: {fileID: 0}
+  Day10FirstTimeAudio: {fileID: 0}
+  Day10MetBeforeAudio: {fileID: 0}
+  dayNumber: 5
   metOnday1: 1
-  metOnday2: 0
-  metOnday3: 0
-  metOnday4: 0
-  metOnday5: 0
+  metOnday2: 1
+  metOnday3: 1
+  metOnday4: 1
+  metOnday5: 1
+  metOnday6: 0
+  metOnday7: 0
+  metOnday8: 0
+  metOnday9: 0
+  metOnday10: 0

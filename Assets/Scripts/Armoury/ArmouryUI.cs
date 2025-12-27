@@ -224,7 +224,8 @@ public class ArmouryUI : Singleton<ArmouryUI>
         }
 
         SetResourcesInformation();
-        craftingDescription.text = $"Crafted a {ArmourySlot.CurrentlySelectedSlot.AssignedItem.ID} using {ArmourySlot.CurrentlySelectedSlot.AssignedItem.requiredAmount} {ArmourySlot.CurrentlySelectedSlot.AssignedItem.requiredResource}";
+        //craftingDescription.text = $"Crafted a {ArmourySlot.CurrentlySelectedSlot.AssignedItem.Name} using {ArmourySlot.CurrentlySelectedSlot.AssignedItem.requiredAmount} {ArmourySlot.CurrentlySelectedSlot.AssignedItem.requiredResource}";
+        craftingDescription.text = $"Used {ArmourySlot.CurrentlySelectedSlot.AssignedItem.requiredAmount} {ArmourySlot.CurrentlySelectedSlot.AssignedItem.requiredResource}";
         //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Crafted Weapon (Armoury UI)", $"Player crafted an item: {ArmourySlot.CurrentlySelectedSlot.AssignedItem.ID}");
         GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Crafted Weapon (Armoury UI)", $"Player crafted an item: {ArmourySlot.CurrentlySelectedSlot.AssignedItem.ID}");
         GiveArmouryXP(ArmourySlot.CurrentlySelectedSlot.AssignedItem.slotNumber, levels);

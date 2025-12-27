@@ -50,6 +50,13 @@ public class GameManager : MonoBehaviour
     [Header("Game Over")]
     [SerializeField] private int gameOverSceneScreen = 5;
 
+    [Header("Start Resources")]
+    [SerializeField] private Inventory inventory;
+    [SerializeField] private InventoryItem[] inventoryItems;
+
+    [Header("Additional Features")]
+    [SerializeField] private TestingGameManager testingGameManager;
+
 
     [Header("Day Game Manager")]
     public int dayNumber = 1;
@@ -82,6 +89,7 @@ public class GameManager : MonoBehaviour
         ottomanInfirmaryTeleport.SetActive(false);
         ottomanEngineerTeleport.SetActive(false);
         ottomanBedTeleport.SetActive(false);
+        StartWithRandomAmountOfResources();
 
         //GoogleSheetLogger.Instance.LogData(GetPlayerIDForLogging(), GetCurrentTime(), GetDayNumber(), "Game Started (Game Manager)", "Game Started, Game Manager Loaded");
         GoogleSheetLogger.I.StartNewPlaythrough();
@@ -138,6 +146,19 @@ public class GameManager : MonoBehaviour
         armouryUI.ResetArmourPercentageToIncrease();
         infirmaryUI.ResetMoralePercentageToIncrease();
         structureUI.ResetStructurePercentageToIncrease();
+        catUI.ResetCatPercentageToIncrease();
+    }
+
+    public void StartWithRandomAmountOfResources()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+        int RNGInventoryLoot = Random.Range(0, inventoryItems.Length);
+        int RNGInventoryLootAmount = Random.Range(1, 3);
+
+        inventory.AddItem(inventoryItems[RNGInventoryLoot], RNGInventoryLootAmount);
+        }
+
     }
 
     public string GetPlayerIDForLogging()
@@ -348,8 +369,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        Debug.Log("GAME OVER");
-        //SceneManager.LoadScene(gameOverSceneScreen);
+        if(!testingGameManager.GetIsGameOverTesting()) SceneManager.LoadScene(gameOverSceneScreen);
     }
 
     public void MoveToVillage()

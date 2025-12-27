@@ -20,22 +20,26 @@ MonoBehaviour:
   Day1Dialog:
   - "HOW TO PLAY\n\u25AC Move with WASD\n\u25AC Talk to characters with F (interaction
     bubble required)\n\u25AC \"!\" marks a character with today\u2019s task\n\u25AC
-    You can complete ONE task per day\n\nPress F for more \u2192"
+    You can complete ONE task per day\n\u25AC 1 in game hour is equal to 5 real world
+    seconds\n\u25AC After 10pm the day ends and you have to go to sleep\n\nPress
+    F for more"
   - "TASKS & EFFECTS\n\u25AC Infirmary \u2192 Morale \u2191 (uses Bandages)\n\u25AC
     Armoury \u2192 Weapons \u2191 (uses Iron)\n\u25AC Repairs \u2192 Structure \u2191\n\u25AC
     Cat Search \u2192 Cat chance \u2191\n\u25AC Stat gain depends on materials spent\n\nPress
-    F for more \u2192"
+    F for more"
   - "RESOURCES\n\u25AC Search crates to find materials\n\u25AC Iron \u2192 Armoury\n\u25AC
-    Bandages \u2192 Infirmary\n\nPress F for more \u2192"
+    Bandages \u2192 Infirmary\n\nPress F for more"
   - "TIME & DANGER\n\u25AC Time pauses during dialogue\n\u25AC Red circles = incoming
     cannon fire\n\u25AC Getting hit:\n\t\u25AC ends the day\n\t\u25AC loses all progress\n\t\u25AC
-    applies \u201320% to all stats\n\nPress F for more \u2192"
+    applies \u201320% to all stats\n\nPress F for more"
   - "FAILURE\n\u25AC If Morale, Weapons, or Structure reach 0% \u2192 Game Over\n\u25AC
-    Cat stat does not cause failure#\n\nPress F for more \u2192"
+    Cat stat does not cause failure#"
   Day2FirstTimeDialog:
   - "HOW TO PLAY\n\u25AC Move with WASD\n\u25AC Talk to characters with F (interaction
     bubble required)\n\u25AC \"!\" marks a character with today\u2019s task\n\u25AC
-    You can complete ONE task per day\n\nPress F for more \u2192"
+    You can complete ONE task per day\n\u25AC 1 in game hour is equal to 5 real world
+    seconds\n\u25AC After 10pm the day ends and you have to go to sleep\n\nPress
+    F for more"
   - "TASKS & EFFECTS\n\u25AC Infirmary \u2192 Morale \u2191 (uses Bandages)\n\u25AC
     Armoury \u2192 Weapons \u2191 (uses Iron)\n\u25AC Repairs \u2192 Structure \u2191\n\u25AC
     Cat Search \u2192 Cat chance \u2191\n\u25AC Stat gain depends on materials spent\n\nPress
@@ -46,11 +50,13 @@ MonoBehaviour:
     cannon fire\n\u25AC Getting hit:\n\t\u25AC ends the day\n\t\u25AC loses all progress\n\t\u25AC
     applies \u201320% to all stats\n\nPress F for more \u2192"
   - "FAILURE\n\u25AC If Morale, Weapons, or Structure reach 0% \u2192 Game Over\n\u25AC
-    Cat stat does not cause failure#\n\nPress F for more \u2192"
+    Cat stat does not cause failure"
   Day2MetBeforeDialog:
   - "HOW TO PLAY\n\u25AC Move with WASD\n\u25AC Talk to characters with F (interaction
     bubble required)\n\u25AC \"!\" marks a character with today\u2019s task\n\u25AC
-    You can complete ONE task per day\n\nPress F for more \u2192"
+    You can complete ONE task per day\n\u25AC 1 in game hour is equal to 5 real world
+    seconds\n\u25AC After 10pm the day ends and you have to go to sleep\n\nPress
+    F for more"
   - "TASKS & EFFECTS\n\u25AC Infirmary \u2192 Morale \u2191 (uses Bandages)\n\u25AC
     Armoury \u2192 Weapons \u2191 (uses Iron)\n\u25AC Repairs \u2192 Structure \u2191\n\u25AC
     Cat Search \u2192 Cat chance \u2191\n\u25AC Stat gain depends on materials spent\n\nPress
@@ -61,11 +67,13 @@ MonoBehaviour:
     cannon fire\n\u25AC Getting hit:\n\t\u25AC ends the day\n\t\u25AC loses all progress\n\t\u25AC
     applies \u201320% to all stats\n\nPress F for more \u2192"
   - "FAILURE\n\u25AC If Morale, Weapons, or Structure reach 0% \u2192 Game Over\n\u25AC
-    Cat stat does not cause failure#\n\nPress F for more \u2192"
+    Cat stat does not cause failure"
   Day3FirstTimeDialog:
   - "HOW TO PLAY\n\u25AC Move with WASD\n\u25AC Talk to characters with F (interaction
     bubble required)\n\u25AC \"!\" marks a character with today\u2019s task\n\u25AC
-    You can complete ONE task per day\n\nPress F for more \u2192"
+    You can complete ONE task per day\n\u25AC 1 in game hour is equal to 5 real world
+    seconds\n\u25AC After 10pm the day ends and you have to go to sleep\n\nPress
+    F for more"
   - "TASKS & EFFECTS\n\u25AC Infirmary \u2192 Morale \u2191 (uses Bandages)\n\u25AC
     Armoury \u2192 Weapons \u2191 (uses Iron)\n\u25AC Repairs \u2192 Structure \u2191\n\u25AC
     Cat Search \u2192 Cat chance \u2191\n\u25AC Stat gain depends on materials spent\n\nPress
@@ -76,11 +84,13 @@ MonoBehaviour:
     cannon fire\n\u25AC Getting hit:\n\t\u25AC ends the day\n\t\u25AC loses all progress\n\t\u25AC
     applies \u201320% to all stats\n\nPress F for more \u2192"
   - "FAILURE\n\u25AC If Morale, Weapons, or Structure reach 0% \u2192 Game Over\n\u25AC
-    Cat stat does not cause failure#\n\nPress F for more \u2192"
+    Cat stat does not cause failure"
   Day3MetBeforeDialog:
   - "HOW TO PLAY\n\u25AC Move with WASD\n\u25AC Talk to characters with F (interaction
     bubble required)\n\u25AC \"!\" marks a character with today\u2019s task\n\u25AC
-    You can complete ONE task per day\n\nPress F for more \u2192"
+    You can complete ONE task per day\n\u25AC 1 in game hour is equal to 5 real world
+    seconds\n\u25AC After 10pm the day ends and you have to go to sleep\n\nPress
+    F for more"
   - "TASKS & EFFECTS\n\u25AC Infirmary \u2192 Morale \u2191 (uses Bandages)\n\u25AC
     Armoury \u2192 Weapons \u2191 (uses Iron)\n\u25AC Repairs \u2192 Structure \u2191\n\u25AC
     Cat Search \u2192 Cat chance \u2191\n\u25AC Stat gain depends on materials spent\n\nPress
@@ -91,11 +101,13 @@ MonoBehaviour:
     cannon fire\n\u25AC Getting hit:\n\t\u25AC ends the day\n\t\u25AC loses all progress\n\t\u25AC
     applies \u201320% to all stats\n\nPress F for more \u2192"
   - "FAILURE\n\u25AC If Morale, Weapons, or Structure reach 0% \u2192 Game Over\n\u25AC
-    Cat stat does not cause failure#\n\nPress F for more \u2192"
+    Cat stat does not cause failure"
   Day4FirstTimeDialog:
   - "HOW TO PLAY\n\u25AC Move with WASD\n\u25AC Talk to characters with F (interaction
     bubble required)\n\u25AC \"!\" marks a character with today\u2019s task\n\u25AC
-    You can complete ONE task per day\n\nPress F for more \u2192"
+    You can complete ONE task per day\n\u25AC 1 in game hour is equal to 5 real world
+    seconds\n\u25AC After 10pm the day ends and you have to go to sleep\n\nPress
+    F for more"
   - "TASKS & EFFECTS\n\u25AC Infirmary \u2192 Morale \u2191 (uses Bandages)\n\u25AC
     Armoury \u2192 Weapons \u2191 (uses Iron)\n\u25AC Repairs \u2192 Structure \u2191\n\u25AC
     Cat Search \u2192 Cat chance \u2191\n\u25AC Stat gain depends on materials spent\n\nPress
@@ -106,11 +118,13 @@ MonoBehaviour:
     cannon fire\n\u25AC Getting hit:\n\t\u25AC ends the day\n\t\u25AC loses all progress\n\t\u25AC
     applies \u201320% to all stats\n\nPress F for more \u2192"
   - "FAILURE\n\u25AC If Morale, Weapons, or Structure reach 0% \u2192 Game Over\n\u25AC
-    Cat stat does not cause failure#\n\nPress F for more \u2192"
+    Cat stat does not cause failure"
   Day4MetBeforeDialog:
   - "HOW TO PLAY\n\u25AC Move with WASD\n\u25AC Talk to characters with F (interaction
     bubble required)\n\u25AC \"!\" marks a character with today\u2019s task\n\u25AC
-    You can complete ONE task per day\n\nPress F for more \u2192"
+    You can complete ONE task per day\n\u25AC 1 in game hour is equal to 5 real world
+    seconds\n\u25AC After 10pm the day ends and you have to go to sleep\n\nPress
+    F for more"
   - "TASKS & EFFECTS\n\u25AC Infirmary \u2192 Morale \u2191 (uses Bandages)\n\u25AC
     Armoury \u2192 Weapons \u2191 (uses Iron)\n\u25AC Repairs \u2192 Structure \u2191\n\u25AC
     Cat Search \u2192 Cat chance \u2191\n\u25AC Stat gain depends on materials spent\n\nPress
@@ -121,11 +135,13 @@ MonoBehaviour:
     cannon fire\n\u25AC Getting hit:\n\t\u25AC ends the day\n\t\u25AC loses all progress\n\t\u25AC
     applies \u201320% to all stats\n\nPress F for more \u2192"
   - "FAILURE\n\u25AC If Morale, Weapons, or Structure reach 0% \u2192 Game Over\n\u25AC
-    Cat stat does not cause failure#\n\nPress F for more \u2192"
+    Cat stat does not cause failure"
   Day5FirstTimeDialog:
   - "HOW TO PLAY\n\u25AC Move with WASD\n\u25AC Talk to characters with F (interaction
     bubble required)\n\u25AC \"!\" marks a character with today\u2019s task\n\u25AC
-    You can complete ONE task per day\n\nPress F for more \u2192"
+    You can complete ONE task per day\n\u25AC 1 in game hour is equal to 5 real world
+    seconds\n\u25AC After 10pm the day ends and you have to go to sleep\n\nPress
+    F for more"
   - "TASKS & EFFECTS\n\u25AC Infirmary \u2192 Morale \u2191 (uses Bandages)\n\u25AC
     Armoury \u2192 Weapons \u2191 (uses Iron)\n\u25AC Repairs \u2192 Structure \u2191\n\u25AC
     Cat Search \u2192 Cat chance \u2191\n\u25AC Stat gain depends on materials spent\n\nPress
@@ -136,11 +152,13 @@ MonoBehaviour:
     cannon fire\n\u25AC Getting hit:\n\t\u25AC ends the day\n\t\u25AC loses all progress\n\t\u25AC
     applies \u201320% to all stats\n\nPress F for more \u2192"
   - "FAILURE\n\u25AC If Morale, Weapons, or Structure reach 0% \u2192 Game Over\n\u25AC
-    Cat stat does not cause failure#\n\nPress F for more \u2192"
+    Cat stat does not cause failure"
   Day5MetBeforeDialog:
   - "HOW TO PLAY\n\u25AC Move with WASD\n\u25AC Talk to characters with F (interaction
     bubble required)\n\u25AC \"!\" marks a character with today\u2019s task\n\u25AC
-    You can complete ONE task per day\n\nPress F for more \u2192"
+    You can complete ONE task per day\n\u25AC 1 in game hour is equal to 5 real world
+    seconds\n\u25AC After 10pm the day ends and you have to go to sleep\n\nPress
+    F for more"
   - "TASKS & EFFECTS\n\u25AC Infirmary \u2192 Morale \u2191 (uses Bandages)\n\u25AC
     Armoury \u2192 Weapons \u2191 (uses Iron)\n\u25AC Repairs \u2192 Structure \u2191\n\u25AC
     Cat Search \u2192 Cat chance \u2191\n\u25AC Stat gain depends on materials spent\n\nPress
@@ -151,7 +169,7 @@ MonoBehaviour:
     cannon fire\n\u25AC Getting hit:\n\t\u25AC ends the day\n\t\u25AC loses all progress\n\t\u25AC
     applies \u201320% to all stats\n\nPress F for more \u2192"
   - "FAILURE\n\u25AC If Morale, Weapons, or Structure reach 0% \u2192 Game Over\n\u25AC
-    Cat stat does not cause failure#\n\nPress F for more \u2192"
+    Cat stat does not cause failure"
   Day6Dialog: []
   Day7FirstTimeDialog: []
   Day7MetBeforeDialog: []
