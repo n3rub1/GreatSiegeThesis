@@ -85,6 +85,7 @@ public class DangerSpawn : MonoBehaviour
     [Header("Systems")]
     [SerializeField] private GameManager gameManager;
     [SerializeField] private DangerZone dangerZone;
+    [SerializeField] private DayNightCycleManager dayNightCycleManager;
 
     [Header("Death UI")]
     [SerializeField] private GameObject deadScreenPanel;
@@ -92,7 +93,9 @@ public class DangerSpawn : MonoBehaviour
 
     [Header("Player")]
     [SerializeField] private Transform player;
-    [SerializeField] private Vector3 respawnPosition = new Vector3(-236, -29, 0);
+    [SerializeField] private Vector3 fortRespawnPosition = new Vector3(-236, -29, 0);
+    [SerializeField] private Vector3 ottomanRespawnPosition = new Vector3(-134, -198, 0);
+
 
     [Header("Two regions")]
     [SerializeField] private Region regionA = new Region();
@@ -160,7 +163,16 @@ public class DangerSpawn : MonoBehaviour
     private IEnumerator DeathSequence()
     {
         deadScreenPanel.SetActive(true);
-        player.position = respawnPosition;
+
+        if(gameManager.GetCurrentLocation() == "Fort St. Elmo")
+        {
+            player.position = fortRespawnPosition;
+        }
+        else
+        {
+            player.position = ottomanRespawnPosition;
+        }
+        dayNightCycleManager.SetTimerManually(22);
 
         yield return new WaitForSeconds(deadScreenTimer);
 

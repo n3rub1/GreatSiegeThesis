@@ -71,7 +71,9 @@ public class EndOfDayManager : MonoBehaviour
         endOfDayNumber.text = $"End of Day {dayNumber + 1}: {endOfDayTitle[dayNumber]}";
 
         UpdateTextAccordingToPlayerActions(dayNumber);
-        StartCoroutine(ShowAndHidePanel());
+        //StartCoroutine(ShowAndHidePanel());
+
+        ShowHidePannelNoTimeout();
     }
 
     private void UpdateTextAccordingToPlayerActions(int dayNumber)
@@ -180,6 +182,12 @@ public class EndOfDayManager : MonoBehaviour
         sleepManager.isSleeping = false;
     }
 
+    private void ShowHidePannelNoTimeout()
+    {
+        endOfDayPanel.SetActive(true);
+        originalPosition = teleportPlayer.GetCurrentLocation();
+        TeleportForSoundIssue(originalPosition, true);
+    }
 
     IEnumerator ShowAndHidePanel()
     {

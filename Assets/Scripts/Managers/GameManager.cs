@@ -57,6 +57,8 @@ public class GameManager : MonoBehaviour
     [Header("Additional Features")]
     [SerializeField] private TestingGameManager testingGameManager;
 
+    [Header("End Game")]
+    [SerializeField] private EndGameManager endGameManager;
 
     [Header("Day Game Manager")]
     public int dayNumber = 1;
@@ -117,7 +119,7 @@ public class GameManager : MonoBehaviour
             //Debug.Log($"Decrease structure by: 20");
             //Debug.Log($"Decrease cat by: 20");
 
-            percentageManager.UpdatePercentages(-20,-20,-20,-20);
+            percentageManager.UpdatePercentages(-15,-15,-15,0);
         }
         else
         {
@@ -143,6 +145,7 @@ public class GameManager : MonoBehaviour
 
         endOfDayManager.ShowPanelAndText(dayNumber);
         uiManager.UpdateDayText(GetDayNumber());
+        uiManager.ShowLocationInUI();
         armouryUI.ResetArmourPercentageToIncrease();
         infirmaryUI.ResetMoralePercentageToIncrease();
         structureUI.ResetStructurePercentageToIncrease();
@@ -164,6 +167,24 @@ public class GameManager : MonoBehaviour
     public string GetPlayerIDForLogging()
     {
         return playerId;
+    }
+
+    public string GetCurrentLocation()
+    {
+        if (dayNumber <= 5)
+        {
+            return "Fort St. Elmo";
+        }
+
+        else if (dayNumber > 5 && dayNumber <=10)
+        {
+            return "Ottoman Camp";
+        }
+        else
+        {
+            return "Zejtun Home Town";
+        }
+
     }
 
     public string GetCurrentTime()
@@ -268,7 +289,7 @@ public class GameManager : MonoBehaviour
                 ottomanArmouryTeleport.SetActive(false);
                 ottomanInfirmaryTeleport.SetActive(false);
                 ottomanEngineerTeleport.SetActive(false);
-                ottomanBedTeleport.SetActive(true);
+                ottomanBedTeleport.SetActive(false);
                 break;
         }
 
@@ -385,7 +406,39 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
+        List<int> currentPercenatages = new List<int>();
+        currentPercenatages = percentageManager.GetPercentages();
 
+        int morale = Mathf.Clamp(currentPercenatages[0], 0, 100);
+        int weapons = Mathf.Clamp(currentPercenatages[1], 0, 100);
+        int structure = Mathf.Clamp(currentPercenatages[2], 0, 100);
+        int cat = Mathf.Clamp(currentPercenatages[3], 0, 100);
+
+        int[] others = { morale, weapons, structure };
+
+        bool allUnder30 = true;
+        bool allAbove70 = true;
+
+        for (int i = 0; i < others.Length; i++)
+        {
+            int v = others[i];
+
+            if (v >= 30) allUnder30 = false;
+            if (v <= 70) allAbove70 = false;
+        }
+
+        int endingId;
+
+        if (cat < 50)
+        {
+            endingId = allUnder30 ? 1 : 2;
+        }
+        else
+        {
+            endingId = allAbove70 ? 4 : 3;
+        }
+
+        endGameManager.ShowEndGame(endingId);
     }
 
     public string GetLastQuestOfTheDay()
@@ -397,5 +450,4 @@ public class GameManager : MonoBehaviour
     {
         return questAccepted;
     }
-
 }

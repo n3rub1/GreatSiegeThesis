@@ -48,7 +48,7 @@ public class Submit : MonoBehaviour
 
     private PersistantSurveyQuestions persistantSurveyQuestions;
 
-    [SerializeField] private int mainGame = 4; // should be 2
+    [SerializeField] private int mainGame = 2; // should be 2
 
     public void Start()
     {

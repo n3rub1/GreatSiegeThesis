@@ -26,6 +26,8 @@ public class QuestUI : Singleton<QuestUI>
     private Vector3 originalPosition;
     private PlayerActions actions;
     private bool anyQuestAccepted;
+    private bool isAdditionalDetailsOpen = false;
+    private string currentDetailsOpened;
 
     public QuestInteraction questInteraction { get; set; }
 
@@ -100,12 +102,29 @@ public class QuestUI : Singleton<QuestUI>
     public void CloseAdditionalDetails()
     {
         additionalInformationQuestPanel.SetActive(false);
+        isAdditionalDetailsOpen = false;
+        SelectProperQuestText("reset");
     }
 
     public void OpenAdditionalDetails(string quest)
     {
-        additionalInformationQuestPanel.SetActive(true);
-        SelectProperQuestText(quest);
+ 
+        if (isAdditionalDetailsOpen && currentDetailsOpened == quest)
+        {
+            additionalInformationQuestPanel.SetActive(false);
+            SelectProperQuestText(quest);
+            isAdditionalDetailsOpen = false;
+            SelectProperQuestText("reset");
+            currentDetailsOpened = "reset";
+        }
+        else
+        {
+            additionalInformationQuestPanel.SetActive(true);
+            SelectProperQuestText(quest);
+            isAdditionalDetailsOpen = true;
+            currentDetailsOpened = quest;
+        }
+
     }
 
     private void SelectProperQuestText(string quest)

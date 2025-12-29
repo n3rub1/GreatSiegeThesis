@@ -28,10 +28,10 @@ public class PercentageManager : MonoBehaviour
 
         Debug.Log("CAT : " + addAmountToCat);
 
-        moralPercentageUpdate = (addAmountToMoral == 0) ? -10 : addAmountToMoral;
-        weaponsPercentageUpdate = (addAmountToWeapons == 0) ? -10 : addAmountToWeapons;
-        structurePercentageUpdate = (addAmountToStructure == 0) ? -10 : addAmountToStructure;
-        catPercentageUpdate = (addAmountToCat == 0) ? -5: addAmountToCat;
+        moralPercentageUpdate = (addAmountToMoral == 0) ? -5 : addAmountToMoral;
+        weaponsPercentageUpdate = (addAmountToWeapons == 0) ? -5 : addAmountToWeapons;
+        structurePercentageUpdate = (addAmountToStructure == 0) ? -5 : addAmountToStructure;
+        catPercentageUpdate = (addAmountToCat == 0) ? -0: addAmountToCat;
 
         increaseDecreaseAmountToMoral = moralPercentageUpdate;
         increaseDecreaseAmountToWeapons = weaponsPercentageUpdate;

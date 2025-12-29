@@ -32,6 +32,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timeOfDayTMP;
     [SerializeField] private TextMeshProUGUI dayNumberTMP;
     [SerializeField] private TextMeshProUGUI AIVoiceActingTMP;
+    [SerializeField] private TextMeshProUGUI currentLocation;
 
     [Header("Level Up")]
     [SerializeField] private TextMeshProUGUI LevelUpTMP;
@@ -139,9 +140,9 @@ public class UIManager : MonoBehaviour
         //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Percentages (UI Manager)", $"Weapons: {weaponsText + weaponsPercentage.ToString() + "%"}");
         //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Percentages (UI Manager)", $"Structure: {structureText + structurePercentage.ToString() + "%"}");
         //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Percentages (UI Manager)", $"Cat: {catText + catPercentage.ToString() + "%"}");
-        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "XP Supplies (UI Manager)", $"{stats.CurrentXPSupplies} / {stats.NextLevelXPSupplies} -- Level {stats.SuppliesLevel}");
-        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "XP Armoury (UI Manager)", $"{stats.CurrentXPArmour} / {stats.NextLevelXPArmour} -- Level {stats.ArmourLevel}");
-        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "XP Infirmary (UI Manager)", $"{stats.CurrentXPMedicine} / {stats.NextLevelXPMedicine}");
+        //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "XP Supplies (UI Manager)", $"{stats.CurrentXPSupplies} / {stats.NextLevelXPSupplies} -- Level {stats.SuppliesLevel}");
+        //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "XP Armoury (UI Manager)", $"{stats.CurrentXPArmour} / {stats.NextLevelXPArmour} -- Level {stats.ArmourLevel}");
+        //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "XP Infirmary (UI Manager)", $"{stats.CurrentXPMedicine} / {stats.NextLevelXPMedicine}");
         GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Percentages (UI Manager)", $"Morale: {moraleText + moralPercentage.ToString() + "%"}");
         GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Percentages (UI Manager)", $"Weapons: {weaponsText + weaponsPercentage.ToString() + "%"}");
         GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Percentages (UI Manager)", $"Structure: {structureText + structurePercentage.ToString() + "%"}");
@@ -180,6 +181,11 @@ public class UIManager : MonoBehaviour
     public void HideLevelUp()
     {
         LevelUp.SetActive(false);
+    }
+
+    public void ShowLocationInUI()
+    {
+        currentLocation.text = $"Location: {gameManager.GetCurrentLocation()}";
     }
 
     public void ChangeAIVoiceOverText(bool state)

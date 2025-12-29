@@ -316,6 +316,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Tutorials",
+            "id": "7394448b-5a1b-4b69-9344-6428a08340d9",
+            "actions": [
+                {
+                    "name": "OpenTutorial",
+                    "type": "Button",
+                    "id": "d8019214-dce7-47a5-bc25-84065caaab14",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "488aa525-857b-4e1f-9d2c-302741e95cd6",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OpenTutorial",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

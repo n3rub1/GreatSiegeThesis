@@ -23,6 +23,8 @@ public class InventoryUI : Singleton<InventoryUI>
     public InventorySlot CurrentSlot { get; set; }
 
     private List<InventorySlot> slotList = new List<InventorySlot>();
+    private bool isAdditionalDetailsOpen = false;
+    private int currentDetailsOpened;
 
     private void Start()
     {
@@ -44,11 +46,24 @@ public class InventoryUI : Singleton<InventoryUI>
     public void ShowItemDescription(int index)
     {
         if (Inventory.Instance.InventoryItems[index] == null) return;
-        descriptionPanel.SetActive(true);
 
-        itemIcon.sprite = Inventory.Instance.InventoryItems[index].Icon;
-        itemName.text = Inventory.Instance.InventoryItems[index].Name;
-        itemDescription.text = Inventory.Instance.InventoryItems[index].Description;
+        if(isAdditionalDetailsOpen && currentDetailsOpened == index)
+        {
+            descriptionPanel.SetActive(false);
+            isAdditionalDetailsOpen = false;
+            currentDetailsOpened = 10;
+        }
+        else
+        {
+            descriptionPanel.SetActive(true);
+
+            itemIcon.sprite = Inventory.Instance.InventoryItems[index].Icon;
+            itemName.text = Inventory.Instance.InventoryItems[index].Name;
+            itemDescription.text = Inventory.Instance.InventoryItems[index].Description;
+
+            isAdditionalDetailsOpen = true;
+            currentDetailsOpened = index;
+        }
 
     }
 
@@ -66,6 +81,9 @@ public class InventoryUI : Singleton<InventoryUI>
 
     public void CloseInventoryPanel()
     {
+        descriptionPanel.SetActive(false);
+        isAdditionalDetailsOpen = false;
+        currentDetailsOpened = 10;
         inventoryPanel.SetActive(false);
     }
 
