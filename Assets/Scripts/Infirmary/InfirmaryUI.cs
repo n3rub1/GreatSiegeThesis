@@ -27,6 +27,7 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
 
     [Header("Data")]
     [SerializeField] private List<GameObject> infirmarySlotsImages;
+    [SerializeField] private List<InfirmaryItem> allInfirmaryItems;
     [SerializeField] private Image itemImage;
     [SerializeField] private int simpleXP = 0;
     [SerializeField] private int mediumXP = 0;
@@ -65,6 +66,12 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
 
     private void Start()
     {
+
+        foreach(InfirmaryItem infirmaryItem in allInfirmaryItems)
+        {
+            infirmaryItem.isHealed = false;
+        }
+
         actions.Infirmary.FirePotInteraction.performed += ctx => OpenInfirmaryPanel();
     }
 
@@ -181,7 +188,9 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
         if (!Inventory.Instance.HasItem(requiredItemID, requiredAmount))
         {
             //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Tried Infirmary (Infirmary UI)", $"Player did not have enough bandages to heal: {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.ID}");
-            GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Tried Infirmary (Infirmary UI)", $"Player did not have enough bandages to heal: {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.ID}");
+            //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Tried Infirmary (Infirmary UI)", $"Player did not have enough bandages to heal: {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.ID}");
+            GoogleSheetLogger.I.Log("Tried Infirmary (Infirmary UI)", $"Player did not have enough bandages to heal");
+
             healingDescription.text = $"Not enough {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.requiredResource}";
             return;
         }
@@ -214,7 +223,9 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
         //healingDescription.text = $"Healed {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.Name} using {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.requiredAmount} {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.requiredResource}";
         healingDescription.text = $"Used {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.requiredAmount} {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.requiredResource}";
         //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Healed Person (Infirmary UI)", $"Player healed: {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.ID}");
-        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Healed Person (Infirmary UI)", $"Player healed: {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.ID}");
+        //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Healed Person (Infirmary UI)", $"Player healed: {InfirmarySlot.CurrentlySelectedSlot.AssignedItem.ID}");
+        GoogleSheetLogger.I.Log("Healed Person (Infirmary UI)", $"Player healed item");
+
         GiveInfirmaryXP(InfirmarySlot.CurrentlySelectedSlot.AssignedItem.slotNumber, levels);
     }
 
@@ -231,33 +242,56 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
         {
             case 0:
                 //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Healed person in Infirmary (Infirmary UI)", $"Healed a simple wound and got {2 + levels[infirmaryArrayValue]}XP");
-                GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Healed person in Infirmary (Infirmary UI)", $"Healed a simple wound and got {2 + levels[infirmaryArrayValue]}XP");
+                //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Healed person in Infirmary (Infirmary UI)", $"Healed a simple wound and got {2 + levels[infirmaryArrayValue]}XP");
+                GoogleSheetLogger.I.Log("Healed person in Infirmary (Infirmary UI)", $"Healed a simple wound");
+
                 playerXP.AddXPMedicine(simpleXP + levels[infirmaryArrayValue]);
                 moralePercentageToIncrease = moralePercentageToIncrease + simpleMoralPercentage;
                 break;
             case 1:
                 //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Healed person in Infirmary (Infirmary UI)", $"Healed a medium wound and got {5 + levels[infirmaryArrayValue]}XP");
-                GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Healed person in Infirmary (Infirmary UI)", $"Healed a medium wound and got {5 + levels[infirmaryArrayValue]}XP");
+                //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Healed person in Infirmary (Infirmary UI)", $"Healed a medium wound and got {5 + levels[infirmaryArrayValue]}XP");
+                GoogleSheetLogger.I.Log("Healed person in Infirmary (Infirmary UI)", $"Healed a medium wound");
+
                 playerXP.AddXPMedicine(mediumXP + levels[infirmaryArrayValue]);
                 moralePercentageToIncrease = moralePercentageToIncrease + normalMoralPercentage;
                 break;
             case 2:
                 //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Healed person in Infirmary (Infirmary UI)", $"Healed a hard wound and got {10 + levels[infirmaryArrayValue]}XP");
-                GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Healed person in Infirmary (Infirmary UI)", $"Healed a hard wound and got {10 + levels[infirmaryArrayValue]}XP");
+                //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Healed person in Infirmary (Infirmary UI)", $"Healed a hard wound and got {10 + levels[infirmaryArrayValue]}XP");
+                GoogleSheetLogger.I.Log("Healed person in Infirmary (Infirmary UI)", $"Healed a complex wound");
+
                 playerXP.AddXPMedicine(complexXP + levels[infirmaryArrayValue]);
                 moralePercentageToIncrease = moralePercentageToIncrease + complexMoralPercentage;
                 break;
         }
 
-        InfirmaryItem healedItem = InfirmarySlot.CurrentlySelectedSlot.AssignedItem;
-        if (healedItem != null)
-        {
-            healedItem.isHealed = true;
-            infirmaryInjured.Remove(healedItem);
+        //InfirmaryItem healedItem = InfirmarySlot.CurrentlySelectedSlot.AssignedItem;
+        //if (healedItem != null)
+        //{
+        //    healedItem.isHealed = true;
+        //    infirmaryInjured.Remove(healedItem);
 
-            infirmarySlotsImages[healedItem.slotNumber].GetComponent<Button>().interactable = false;
-            descriptionPanel.SetActive(false);
+        //    infirmarySlotsImages[healedItem.slotNumber].GetComponent<Button>().interactable = false;
+        //    descriptionPanel.SetActive(false);
+        //}
+
+        var selected = InfirmarySlot.CurrentlySelectedSlot?.AssignedItem;
+        if (selected == null) return;
+
+        int slotNum = selected.slotNumber;
+
+        // Update the canonical item (the one SetupInfirmarySlotsForDay uses)
+        var canonical = infirmaryInjured.Find(i => i.slotNumber == slotNum);
+        if (canonical != null)
+        {
+            canonical.isHealed = true;
+            infirmaryInjured.Remove(canonical);
         }
+
+        // Disable the UI slot
+        infirmarySlotsImages[slotNum].GetComponent<Button>().interactable = false;
+        descriptionPanel.SetActive(false);
 
     }
 
@@ -289,7 +323,9 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
     public void CloseInfirmaryPanel()
     {
        // logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Infirmary Closed (Infirmary UI)", "Player closed the infirmary panel");
-        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Infirmary Closed (Infirmary UI)", "Player closed the infirmary panel");
+        //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Infirmary Closed (Infirmary UI)", "Player closed the infirmary panel");
+        GoogleSheetLogger.I.Log("Infirmary Closed (Infirmary UI)", "Player closed the infirmary panel");
+
         descriptionPanel.SetActive(false);
         infirmaryInjuredPanel.SetActive(false);
     }
@@ -298,7 +334,8 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
     {
         if (infirmaryInteraction == null) return;
         //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Infirmary Opened (Infirmary UI)", "Player opened the infirmary panel");
-        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Infirmary Opened (Infirmary UI)", "Player opened the infirmary panel");
+        //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Infirmary Opened (Infirmary UI)", "Player opened the infirmary panel");
+        GoogleSheetLogger.I.Log("Infirmary Opened (Infirmary UI)", "Player opened the infirmary panel");
 
         healingDescription.text = "Select Soldier to Heal";
         SetResourcesInformation();

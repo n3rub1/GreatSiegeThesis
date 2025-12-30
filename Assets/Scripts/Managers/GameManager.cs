@@ -94,7 +94,8 @@ public class GameManager : MonoBehaviour
         StartWithRandomAmountOfResources();
 
         //GoogleSheetLogger.Instance.LogData(GetPlayerIDForLogging(), GetCurrentTime(), GetDayNumber(), "Game Started (Game Manager)", "Game Started, Game Manager Loaded");
-        GoogleSheetLogger.I.StartNewPlaythrough();
+        //GoogleSheetLogger.I.StartNewPlaythrough();
+        GoogleSheetLogger.I.BeginDay(GetDayNumber());
 
         SetQuestAccepted("Nothing");
     }
@@ -106,6 +107,8 @@ public class GameManager : MonoBehaviour
         int moralePercentageToIncrease = infirmaryUI.GetMoralePercentageToIncrease();
         int structurePercentageToIncrease = structureUI.GetStructurePercentageToIncrease();
         int catPercentageToIncrease = catUI.GetCatPercentageToIncrease();
+
+        GoogleSheetLogger.I.BeginDay(GetDayNumber());
 
         List<int> currentPercenatages = new List<int>();
 
@@ -160,6 +163,17 @@ public class GameManager : MonoBehaviour
         int RNGInventoryLootAmount = Random.Range(1, 3);
 
         inventory.AddItem(inventoryItems[RNGInventoryLoot], RNGInventoryLootAmount);
+        }
+
+        if (testingGameManager.GetIsResourceTesting())
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                int RNGInventoryLoot = Random.Range(0, inventoryItems.Length);
+                int RNGInventoryLootAmount = Random.Range(10, 10);
+
+                inventory.AddItem(inventoryItems[RNGInventoryLoot], RNGInventoryLootAmount);
+            }
         }
 
     }
@@ -332,8 +346,10 @@ public class GameManager : MonoBehaviour
                 lastQuest = QuestType.Nothing.ToString();
                 break;
         }
-            GoogleSheetLogger.I.Log(dayNumber, "Quest Accepted (Game Manager)", questAccepted.ToString() == null ? "Null" : questAccepted.ToString());
-            BlockOffAreasNotPartOfQuest();
+            //GoogleSheetLogger.I.Log(dayNumber, "Quest Accepted (Game Manager)", questAccepted.ToString() == null ? "Null" : questAccepted.ToString());
+            GoogleSheetLogger.I.Log("Quest Accepted (Game Manager)", questAccepted.ToString() == null ? "Null" : questAccepted.ToString());
+
+        BlockOffAreasNotPartOfQuest();
     }
 
     public void DestructionPerDay()

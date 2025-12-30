@@ -43,6 +43,7 @@ public class DialogManager : Singleton<DialogManager>
         dialogQueue.Clear();
 
         dayNightCycleManager.StartStopTimer(false);
+        StopPlayClip();
     }
 
     private void LoadDialogFromNPC()
@@ -236,8 +237,11 @@ public class DialogManager : Singleton<DialogManager>
 
         //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Dialog Start (Dialog Manager)", $"Started dialog with {npcSelected.DialogToShow.Name}");
         //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Flags (Dialog Manager)", $"day1: {npcSelected.DialogToShow.metOnday1}, day2: {npcSelected.DialogToShow.metOnday2}, day3: {npcSelected.DialogToShow.metOnday3}, day4: {npcSelected.DialogToShow.metOnday4}, day5: {npcSelected.DialogToShow.metOnday5}");
-        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Dialog Start (Dialog Manager)", $"Started dialog with {npcSelected.DialogToShow.Name}");
-        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Flags (Dialog Manager)", $"day1: {npcSelected.DialogToShow.metOnday1}, day2: {npcSelected.DialogToShow.metOnday2}, day3: {npcSelected.DialogToShow.metOnday3}, day4: {npcSelected.DialogToShow.metOnday4}, day5: {npcSelected.DialogToShow.metOnday5}");
+        //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Dialog Start (Dialog Manager)", $"Started dialog with {npcSelected.DialogToShow.Name}");
+        //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Flags (Dialog Manager)", $"day1: {npcSelected.DialogToShow.metOnday1}, day2: {npcSelected.DialogToShow.metOnday2}, day3: {npcSelected.DialogToShow.metOnday3}, day4: {npcSelected.DialogToShow.metOnday4}, day5: {npcSelected.DialogToShow.metOnday5}");
+
+        GoogleSheetLogger.I.Log("Dialog Start (Dialog Manager)", $"Started dialog with {npcSelected.DialogToShow.Name}");
+
 
         dialogPanel.SetActive(true);
         LoadDialogFromNPC();
@@ -261,6 +265,8 @@ public class DialogManager : Singleton<DialogManager>
         {
             dialogPanel.SetActive(false);
             dialogStarted = false;
+            StopPlayClip();
+            dayNightCycleManager.StartStopTimer(false);
             return;
         }
 

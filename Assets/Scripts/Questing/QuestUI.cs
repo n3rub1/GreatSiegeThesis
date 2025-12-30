@@ -157,7 +157,6 @@ public class QuestUI : Singleton<QuestUI>
 
     public void ArmouryQuestAccepted()
     {
-        Debug.Log("Armoury Quest Accepted");
         gameManager.SetQuestAccepted("Armoury");
         CloseQuestPanel();
         RemoveQuestMarker();
@@ -166,7 +165,6 @@ public class QuestUI : Singleton<QuestUI>
 
     public void InfirmaryQuestAccepted()
     {
-        Debug.Log("Infirmary Quest Accepted");
         gameManager.SetQuestAccepted("Infirmary");
         CloseQuestPanel();
         RemoveQuestMarker();
@@ -175,7 +173,6 @@ public class QuestUI : Singleton<QuestUI>
 
     public void CatQuestAccepted()
     {
-        Debug.Log("Cat Quest Accepted");
         gameManager.SetQuestAccepted("Cat");
         CloseQuestPanel();
         RemoveQuestMarker();
@@ -184,7 +181,6 @@ public class QuestUI : Singleton<QuestUI>
 
     public void StructureQuestAccepted()
     {
-        Debug.Log("Structure Quest Accepted");
         gameManager.SetQuestAccepted("Structure");
         CloseQuestPanel();
         RemoveQuestMarker();

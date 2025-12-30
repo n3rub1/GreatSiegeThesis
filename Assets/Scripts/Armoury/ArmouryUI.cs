@@ -195,7 +195,9 @@ public class ArmouryUI : Singleton<ArmouryUI>
         {
             craftingDescription.text = $"Not enough {ArmourySlot.CurrentlySelectedSlot.AssignedItem.requiredResource}";
             //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Tried Armoury (Armoury UI)", $"Player did not have enough iron to craft item: {ArmourySlot.CurrentlySelectedSlot.AssignedItem.ID}");
-            GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Tried Armoury (Armoury UI)", $"Player did not have enough iron to craft item: {ArmourySlot.CurrentlySelectedSlot.AssignedItem.ID}");
+            //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Tried Armoury (Armoury UI)", $"Player did not have enough iron to craft item: {ArmourySlot.CurrentlySelectedSlot.AssignedItem.ID}");
+            GoogleSheetLogger.I.Log("Armoury (Armoury UI)", $"Player did not have enough iron to craft item");
+
             return;
         }
 
@@ -227,14 +229,18 @@ public class ArmouryUI : Singleton<ArmouryUI>
         //craftingDescription.text = $"Crafted a {ArmourySlot.CurrentlySelectedSlot.AssignedItem.Name} using {ArmourySlot.CurrentlySelectedSlot.AssignedItem.requiredAmount} {ArmourySlot.CurrentlySelectedSlot.AssignedItem.requiredResource}";
         craftingDescription.text = $"Used {ArmourySlot.CurrentlySelectedSlot.AssignedItem.requiredAmount} {ArmourySlot.CurrentlySelectedSlot.AssignedItem.requiredResource}";
         //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Crafted Weapon (Armoury UI)", $"Player crafted an item: {ArmourySlot.CurrentlySelectedSlot.AssignedItem.ID}");
-        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Crafted Weapon (Armoury UI)", $"Player crafted an item: {ArmourySlot.CurrentlySelectedSlot.AssignedItem.ID}");
+        //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Crafted Weapon (Armoury UI)", $"Player crafted an item: {ArmourySlot.CurrentlySelectedSlot.AssignedItem.ID}");
+        GoogleSheetLogger.I.Log("Crafted Weapon (Armoury UI)", $"Player crafted an item");
+
         GiveArmouryXP(ArmourySlot.CurrentlySelectedSlot.AssignedItem.slotNumber, levels);
     }
 
     private void SetResourcesInformation()
     {
         //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Iron Inventory (Armoury UI)", $"Total Number of iron in Inventory: {Inventory.Instance.GetItemQuantity("Iron")}");
-        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Iron Inventory (Armoury UI)", $"Total Number of iron in Inventory: {Inventory.Instance.GetItemQuantity("Iron")}");
+        //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Iron Inventory (Armoury UI)", $"Total Number of iron in Inventory: {Inventory.Instance.GetItemQuantity("Iron")}");
+        GoogleSheetLogger.I.Log("Iron Inventory (Armoury UI)", $"Total Number of iron in Inventory: {Inventory.Instance.GetItemQuantity("Iron")}");
+
         int ironLeftInInventory = Inventory.Instance.GetItemQuantity("Iron");
         resourcesInformation.text = $"Total Iron Scrapes in Inventory: {ironLeftInInventory}";
     }
@@ -246,19 +252,25 @@ public class ArmouryUI : Singleton<ArmouryUI>
         {
             case 0:
                 //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Crafted item in Armoury (Armoury UI)", $"Crafted a simple item and got {2 + levels[armouryArrayValue]}XP");
-                GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Crafted item in Armoury (Armoury UI)", $"Crafted a simple item and got {2 + levels[armouryArrayValue]}XP");
+                //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Crafted item in Armoury (Armoury UI)", $"Crafted a simple item and got {2 + levels[armouryArrayValue]}XP");
+                GoogleSheetLogger.I.Log("Crafted item in Armoury (Armoury UI)", "Crafted a simple item");
+
                 playerXP.AddXPArmour(simpleXP + levels[armouryArrayValue]);
                 armourPercentageToIncrease = armourPercentageToIncrease + simpleMoralPercentage;
                 break;
             case 1:
                 //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Crafted item in Armoury (Armoury UI)", $"Crafted a simple item and got {5 + levels[armouryArrayValue]}XP");
-                GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Crafted item in Armoury (Armoury UI)", $"Crafted a normal item and got {5 + levels[armouryArrayValue]}XP");
+                //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Crafted item in Armoury (Armoury UI)", $"Crafted a normal item and got {5 + levels[armouryArrayValue]}XP");
+                GoogleSheetLogger.I.Log("Crafted item in Armoury (Armoury UI)", $"Crafted a normal item");
+
                 playerXP.AddXPArmour(mediumXP + levels[armouryArrayValue]);
                 armourPercentageToIncrease = armourPercentageToIncrease + normalMoralPercentage;
                 break;
             case 2:
                 //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Crafted item in Armoury (Armoury UI)", $"Crafted a simple item and got {10 + levels[armouryArrayValue]}XP");
-                GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Crafted item in Armoury (Armoury UI)", $"Crafted a complex item and got {10 + levels[armouryArrayValue]}XP");
+                //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Crafted item in Armoury (Armoury UI)", $"Crafted a complex item and got {10 + levels[armouryArrayValue]}XP");
+                GoogleSheetLogger.I.Log("Crafted item in Armoury (Armoury UI)", $"Crafted a complex item");
+
                 playerXP.AddXPArmour(complexXP + levels[armouryArrayValue]);
                 armourPercentageToIncrease = armourPercentageToIncrease + complexMoralPercentage;
                 break;
@@ -297,14 +309,18 @@ public class ArmouryUI : Singleton<ArmouryUI>
         armouryCraftingPanel.SetActive(false);
 
         //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Anvil Closed (Armoury UI)", "Player closed the armoury panel");
-        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Anvil Closed (Armoury UI)", "Player closed the armoury panel");
+        //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Anvil Closed (Armoury UI)", "Player closed the armoury panel");
+        GoogleSheetLogger.I.Log("Anvil Closed (Armoury UI)", "Player closed the armoury panel");
+
     }
 
     public void OpenArmouryPanel()
     {
         if (armouryInteraction == null) return;
         //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Anvil Opened (Armoury UI)", "Player opened the armoury panel");
-        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Anvil Opened (Armoury UI)", "Player opened the armoury panel");
+        //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Anvil Opened (Armoury UI)", "Player opened the armoury panel");
+        GoogleSheetLogger.I.Log("Anvil Opened (Armoury UI)", "Player opened the armoury panel");
+
         craftingDescription.text = "Select Item to Craft";
         SetResourcesInformation();
 

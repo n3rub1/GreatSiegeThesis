@@ -53,6 +53,7 @@ public class DayNightCycleManager : MonoBehaviour
     private Vector3 fakeSunCurrentPosition;
     private Vector3 fakeSunTargetPosition;
     private bool stopTimer = false;
+    private bool isTimesUp = false;
 
     private void Start()
     {
@@ -108,20 +109,22 @@ public class DayNightCycleManager : MonoBehaviour
 
     private void TriggerTimer()
     {
-        if(timeOfDay >= 22)
+        if(timeOfDay >= 22 && !isTimesUp)
         {
             timeOfDay = 22;
+            isTimesUp = true;
             uiManager.UpdateTime(timeOfDay);
             //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Time to sleep (Day/Night Manager)", $"Time to sleep");
-            GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Time to sleep (Day/Night Manager)", $"Time to sleep");
+            //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Time to sleep (Day/Night Manager)", $"Time to sleep");
             gameManager.SetQuestAccepted("SleepTime");
         }
         else if(timeOfDay < 22 && !stopTimer)
         {
+            isTimesUp = false;
             uiManager.UpdateTime(timeOfDay);
             timeOfDay++;
             //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Hour Increase (Day/Night Manager)", $"Current Hour: {timeOfDay}");
-            GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Hour Increase (Day/Night Manager)", $"Current Hour: {timeOfDay}");
+            //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Hour Increase (Day/Night Manager)", $"Current Hour: {timeOfDay}");
             TriggerDayNightGlobalLight();
         }
     }

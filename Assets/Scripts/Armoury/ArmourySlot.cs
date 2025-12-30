@@ -19,7 +19,6 @@ public class ArmourySlot : MonoBehaviour
     {
         AssignedItem = armouryItem;
         OnSlotSelectedEvent?.Invoke(armouryItem.slotNumber);
-        Debug.Log("Selected: " + armouryItem.slotNumber);
         ArmouryUI.Instance.ShowItemDetails(armouryItem.slotNumber);
         index = armouryItem.slotNumber;
 

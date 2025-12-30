@@ -19,6 +19,8 @@ public class EndOfDayManager : MonoBehaviour
     [SerializeField] private float timeForPanelToDisappear;
     [SerializeField] private SleepManager sleepManager;
     [SerializeField] private TeleportPlayer teleportPlayer;
+    [SerializeField] private GameObject caughtPanel;
+    [SerializeField] private GameObject movePanel;
 
     [Header("Data")]
     [SerializeField] private TextMeshProUGUI endOfDayDescriptionTMP;
@@ -80,13 +82,14 @@ public class EndOfDayManager : MonoBehaviour
     {
         string lastQuest = gameManager.GetLastQuestOfTheDay();
         //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Player Sleep (EndOfDay Manager)", $"Day {dayNumber} ended and player went to sleep");
-        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Player Sleep (EndOfDay Manager)", $"Day {dayNumber} ended and player went to sleep");
-        GoogleSheetLogger.I.FlushDay();
-        GoogleSheetLogger.I.StartDay(gameManager.GetDayNumber() + 1);
+        //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Player Sleep (EndOfDay Manager)", $"Day {dayNumber} ended and player went to sleep");
+        //GoogleSheetLogger.I.FlushDay();
+        //GoogleSheetLogger.I.StartDay(gameManager.GetDayNumber() + 1);
 
-        if(dayNumber < 4 || dayNumber > 4)
-        {
-            if (lastQuest == "Armoury")
+
+        //if(dayNumber < 4 || dayNumber > 4)
+        //{
+        if (lastQuest == "Armoury")
             {
                 endOfDayDescriptionTMP.text = UpdateWhatIsHappening(dayNumber) + "\n\n" + endOfDayDescriptionArmoury[dayNumber];
             }
@@ -114,10 +117,12 @@ public class EndOfDayManager : MonoBehaviour
             {
                 endOfDayDescriptionTMP.text = UpdateWhatIsHappening(dayNumber) + "\n\n" + "You took a blow you couldn’t walk off, and they dragged you to a bunk until you stopped spinning. While you lay there, others swung hammers, moved bodies, and tried to keep the walls standing. You didn’t help anyone today, and the cat searched for safety without you. Tomorrow you’ll wake up owing more than effort.";
             }
-        }else if(dayNumber == 4)
-        {
-            endOfDayDescriptionTMP.text = UpdateWhatIsHappening(dayNumber) + "\n\n" + "You were searching the dark for your cat when the night attack broke through the fort; boots and voices closed in before you could run, and though you were dragged away without blows or explanation, you heard others taken differently, and by morning you were alive, somewhere unfamiliar, with no way of knowing what became of the people you left behind.";
-        }
+        //}
+
+        //else if(dayNumber == 4)
+        //{
+        //    endOfDayDescriptionTMP.text = UpdateWhatIsHappening(dayNumber) + "\n\n" + "You were searching the dark for your cat when the night attack broke through the fort; boots and voices closed in before you could run, and though you were dragged away without blows or explanation, you heard others taken differently, and by morning you were alive, somewhere unfamiliar, with no way of knowing what became of the people you left behind.";
+        //}
 
         PlayClip(dayNumber);
     }
@@ -173,11 +178,33 @@ public class EndOfDayManager : MonoBehaviour
 
     public void SkipEndOfDay()
     {
-        
+        int day = gameManager.GetDayNumber();
+
         StopAllCoroutines();
         TeleportForSoundIssue(originalPosition, false);
         endOfDayAudioSource.Stop();
         endOfDayPanel.SetActive(false);
+        dayNightCycleManager.ResetTime();
+
+
+        if (day == 6)
+        {
+            caughtPanel.SetActive(true);
+        }
+
+        if (day == 11)
+        {
+            movePanel.SetActive(true);
+        }
+
+        sleepManager.isSleeping = (day == 6 || day == 11);
+    }
+
+    public void ContinueAfterCaughtAndMove()
+    {
+        caughtPanel.SetActive(false);
+        movePanel.SetActive(false);
+
         dayNightCycleManager.ResetTime();
         sleepManager.isSleeping = false;
     }

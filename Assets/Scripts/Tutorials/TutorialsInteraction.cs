@@ -25,6 +25,7 @@ public class TutorialsInteraction : MonoBehaviour
 
     void Start()
     {
+        interactable = false;
         maxIndex = multipleTutorialPanels.Count;
         actions.Tutorials.OpenTutorial.performed += ctx => OpenTutorialPanel();
     }
@@ -70,14 +71,14 @@ public class TutorialsInteraction : MonoBehaviour
 
     public void OpenTutorialPanel()
     {
-         dayNightCycleManager.StartStopTimer(true);
-
         if (!hasMultipleScreens && interactable)
         {
+            dayNightCycleManager.StartStopTimer(true);
             multipleTutorialPanels[0].SetActive(true);
         }
         else if(hasMultipleScreens && interactable)
         {
+            dayNightCycleManager.StartStopTimer(true);
             mainPanelForMultipleTutorials.SetActive(true);
             multipleTutorialPanels[0].SetActive(true);
             nextButton.SetActive(true);

@@ -28,40 +28,58 @@ public class SleepManager : Singleton<SleepManager>
 
     private void SleepToEndDay()
     {
+
+
         if (isPlayerInRangeOfBed && !isSleeping && gameManager.GetDayNumber() < 5)
         {
+            GoogleSheetLogger.I.BeginEndOfDayTransition();
+            GoogleSheetLogger.I.FlushDay();
             gameManager.SleepAndUpdateDay();
             string lastQuest = gameManager.GetLastQuestOfTheDay();
             QuestUI.Instance.ResetQuests();
             gameManager.DestructionPerDay();
             gameManager.ResetAllSpawns();
+            GoogleSheetLogger.I.BeginDay(gameManager.GetDayNumber());
 
-        }else if(isPlayerInRangeOfBed && !isSleeping && gameManager.GetDayNumber() == 5)
+        }
+        else if(isPlayerInRangeOfBed && !isSleeping && gameManager.GetDayNumber() == 5)
         {
+            GoogleSheetLogger.I.BeginEndOfDayTransition();
+            GoogleSheetLogger.I.FlushDay();
             gameManager.GetCaptured();
             gameManager.SleepAndUpdateDay();
             string lastQuest = gameManager.GetLastQuestOfTheDay();
             QuestUI.Instance.ResetQuests();
             gameManager.DestructionPerDay();
             gameManager.ResetAllSpawns();
+            GoogleSheetLogger.I.BeginDay(gameManager.GetDayNumber());
         }
         else if(isPlayerInRangeOfBed && !isSleeping && gameManager.GetDayNumber() > 5 && gameManager.GetDayNumber() != 10)
         {
+            GoogleSheetLogger.I.BeginEndOfDayTransition();
+            GoogleSheetLogger.I.FlushDay();
             gameManager.SleepAndUpdateDay();
             string lastQuest = gameManager.GetLastQuestOfTheDay();
             QuestUI.Instance.ResetQuests();
             gameManager.DestructionPerDay();
             gameManager.ResetAllSpawns();
+            GoogleSheetLogger.I.BeginDay(gameManager.GetDayNumber());
+
         }
         else if (isPlayerInRangeOfBed && !isSleeping && gameManager.GetDayNumber() == 10)
         {
+            GoogleSheetLogger.I.BeginEndOfDayTransition();
+            GoogleSheetLogger.I.FlushDay();
             gameManager.MoveToVillage();
             gameManager.SleepAndUpdateDay();
             string lastQuest = gameManager.GetLastQuestOfTheDay();
             QuestUI.Instance.ResetQuests();
             gameManager.DestructionPerDay();
             gameManager.ResetAllSpawns();
+            GoogleSheetLogger.I.BeginDay(gameManager.GetDayNumber());
+
         }
+
     }
 
     private void OnEnable()

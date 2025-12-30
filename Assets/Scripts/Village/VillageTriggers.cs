@@ -6,6 +6,7 @@ public class VillageTriggers : MonoBehaviour
 {
     [SerializeField] private VillageManager villageManager;
     [SerializeField] private bool initialized;
+    [SerializeField] private int triggerNumber;
 
     private void Start()
     {
@@ -14,12 +15,22 @@ public class VillageTriggers : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!initialized) return;
-        villageManager.UnlockDestructionBasedOnTrigger();
+        if(collision.tag == "Player")
+        {
+            if (!initialized) return;
+            villageManager.UnlockDestructionBasedOnTrigger();
+            villageManager.BlockEntryAreaBasedOnTriggerNumber(triggerNumber);
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        villageManager.LockDestructionBasedOnTrigger();
+        if(collision.tag == "Player")
+        {
+            villageManager.LockDestructionBasedOnTrigger();
+            villageManager.BlockExitAreaBasedOnTriggerNumber(triggerNumber);
+        }
+
     }
 }

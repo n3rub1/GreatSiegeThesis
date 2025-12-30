@@ -155,7 +155,8 @@ public class DangerSpawn : MonoBehaviour
         if (dangerZone != null && !dangerZone.TryLockDeath()) return;
 
         // Optional logging (remove if you don’t need it)
-        GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Player Died (Danger Circles)", context);
+        //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Player Died (Danger Circles)", context);
+        GoogleSheetLogger.I.Log("Player Died (Danger Circles)", context);
 
         StartCoroutine(DeathSequence());
     }
