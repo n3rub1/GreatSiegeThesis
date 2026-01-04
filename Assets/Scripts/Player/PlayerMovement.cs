@@ -13,14 +13,17 @@ public class PlayerMovement : MonoBehaviour
     private PlayerActions actions;
     private Rigidbody2D rigidBody2D;
     private Vector2 moveDirection;
-    
+
+    private bool canMove = true;
+
     void Awake()
     {
         actions = new PlayerActions();
         rigidBody2D = GetComponent<Rigidbody2D>();
         playerAnimations = GetComponent<PlayerAnimations>();
         player = GetComponent<Player>();
-    }
+        canMove = true;
+}
 
     void Update()
     {
@@ -35,12 +38,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-//        if (player.Stats.Health <= 0) return;
+        //        if (player.Stats.Health <= 0) return;
+        if (!canMove) return;
         rigidBody2D.MovePosition(rigidBody2D.position + moveDirection * (speed * Time.fixedDeltaTime));
     }
 
     private void ReadMovement()
     {
+
+        if (!canMove)
+        {
+            moveDirection = Vector2.zero;
+            playerAnimations.SetMoveBoolTransition(false);
+            return;
+        }
+
+
         moveDirection = actions.Movement.Move.ReadValue<Vector2>().normalized;
 
         //do not update the animation when there is no movement on the player, keeping the last animation
@@ -56,6 +69,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleFootsteps()
     {
+
+        if (!canMove)
+        {
+            if (footstepsAudio.isPlaying) footstepsAudio.Stop();
+
+            return;
+            
+        }
+
         bool isMoving = moveDirection != Vector2.zero;
 
         if (isMoving && !footstepsAudio.isPlaying)
@@ -66,6 +88,18 @@ public class PlayerMovement : MonoBehaviour
         {
             footstepsAudio.Stop();
         }
+    }
+
+    public void DisableMovement()
+    {
+        canMove = false;
+        moveDirection = Vector2.zero;
+        rigidBody2D.velocity = Vector2.zero;
+    }
+
+    public void EnableMovement()
+    {
+        canMove = true;
     }
 
     private void OnEnable()

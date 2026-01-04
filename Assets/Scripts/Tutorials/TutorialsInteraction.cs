@@ -11,6 +11,7 @@ public class TutorialsInteraction : MonoBehaviour
     [SerializeField] private GameObject mainPanelForMultipleTutorials;
     [SerializeField] private DayNightCycleManager dayNightCycleManager;
     [SerializeField] private GameObject nextButton;
+    [SerializeField] private DangerSpawn dangerSpawn;
     [SerializeField] private bool hasMultipleScreens;
 
     private bool interactable = false;
@@ -83,6 +84,9 @@ public class TutorialsInteraction : MonoBehaviour
             multipleTutorialPanels[0].SetActive(true);
             nextButton.SetActive(true);
         }
+
+        if(interactable) dangerSpawn.StopAllSpawns();
+
     }
 
     public void NextTutorialPanel()
@@ -121,6 +125,8 @@ public class TutorialsInteraction : MonoBehaviour
                 multiplePanel.SetActive(false);
             }
         }
+
+        dangerSpawn.RestartAllSpawns();
     }
 
     private void OnEnable()

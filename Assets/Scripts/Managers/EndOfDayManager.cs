@@ -21,6 +21,7 @@ public class EndOfDayManager : MonoBehaviour
     [SerializeField] private TeleportPlayer teleportPlayer;
     [SerializeField] private GameObject caughtPanel;
     [SerializeField] private GameObject movePanel;
+    [SerializeField] private PlayerMovement playerMovement;
 
     [Header("Data")]
     [SerializeField] private TextMeshProUGUI endOfDayDescriptionTMP;
@@ -40,6 +41,9 @@ public class EndOfDayManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI weaponIncreaseDecreasePercentageTMP;
     [SerializeField] private TextMeshProUGUI structureIncreaseDecreasePercentageTMP;
     [SerializeField] private TextMeshProUGUI catIncreaseDecreasePercentageTMP;
+    [SerializeField] private GameObject normalBackgroundAudio;
+    [SerializeField] private GameObject villageBackgroundAudio;
+
 
     [Header("Percentage Images")]
     [SerializeField] private List<SpriteRenderer> percentageImages = new List<SpriteRenderer>();
@@ -49,6 +53,7 @@ public class EndOfDayManager : MonoBehaviour
 
     public void ShowPanelAndText(int dayNumber)
     {
+        playerMovement.DisableMovement();
         dayNumber = dayNumber - 2;
 
         sleepManager.isSleeping = true;
@@ -178,6 +183,9 @@ public class EndOfDayManager : MonoBehaviour
 
     public void SkipEndOfDay()
     {
+
+        playerMovement.EnableMovement();
+
         int day = gameManager.GetDayNumber();
 
         StopAllCoroutines();
@@ -194,6 +202,8 @@ public class EndOfDayManager : MonoBehaviour
 
         if (day == 11)
         {
+            normalBackgroundAudio.SetActive(false);
+            villageBackgroundAudio.SetActive(true);
             movePanel.SetActive(true);
         }
 

@@ -18,7 +18,7 @@ public class OpeningManager : MonoBehaviour
     [Header("Audio (TTS per screen)")]
     [SerializeField] private AudioSource ttsSource;
     [SerializeField] private AudioClip[] ttsClips; // Must match storyScreens length
-    [SerializeField] private bool playAudioOnScreenStart = true;
+    //[SerializeField] private bool playAudioOnScreenStart = true;
 
     private int currentScreen = 0;
     private bool isTyping = false;

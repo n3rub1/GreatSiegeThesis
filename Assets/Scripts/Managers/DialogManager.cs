@@ -15,6 +15,7 @@ public class DialogManager : Singleton<DialogManager>
     [SerializeField] private GoogleSheetLogger logger;
     [SerializeField] private AudioSource voiceSource;
     [SerializeField] private DayNightCycleManager dayNightCycleManager;
+    [SerializeField] private DangerSpawn dangerSpawn;
     [SerializeField] private AIOverrideManager aiOverrideManager;
 
     public NPCInteraction npcSelected { get; set; }
@@ -43,6 +44,7 @@ public class DialogManager : Singleton<DialogManager>
         dialogQueue.Clear();
 
         dayNightCycleManager.StartStopTimer(false);
+        dangerSpawn.RestartAllSpawns();
         StopPlayClip();
     }
 
@@ -251,6 +253,7 @@ public class DialogManager : Singleton<DialogManager>
         dialogStarted = true;
 
         dayNightCycleManager.StartStopTimer(true);
+        dangerSpawn.StopAllSpawns();
     }
 
     private void ContinueDialog()
@@ -267,6 +270,7 @@ public class DialogManager : Singleton<DialogManager>
             dialogStarted = false;
             StopPlayClip();
             dayNightCycleManager.StartStopTimer(false);
+            dangerSpawn.RestartAllSpawns();
             return;
         }
 

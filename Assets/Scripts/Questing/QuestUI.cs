@@ -20,7 +20,7 @@ public class QuestUI : Singleton<QuestUI>
     [SerializeField] GameObject questMarker;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private DayNightCycleManager dayNightCycleManager;
-
+    [SerializeField] private DangerSpawn dangerSpawn;
 
     private Vector3 startPosition;
     private Vector3 originalPosition;
@@ -78,6 +78,8 @@ public class QuestUI : Singleton<QuestUI>
     {
         questPanel.SetActive(false);
         questMarkerTMP.text = "!";
+        dayNightCycleManager.StartStopTimer(false);
+        dangerSpawn.RestartAllSpawns();
     }
 
     private void RemoveQuestMarker()
@@ -97,6 +99,8 @@ public class QuestUI : Singleton<QuestUI>
         additionalInformationQuestPanel.SetActive(false);
         SelectProperQuestText("reset");
         questPanel.SetActive(true);
+        dayNightCycleManager.StartStopTimer(true);
+        dangerSpawn.StopAllSpawns();
     }
 
     public void CloseAdditionalDetails()
@@ -132,7 +136,7 @@ public class QuestUI : Singleton<QuestUI>
 
         if(quest == "armoury")
         {
-        additionalInformationQuestPanelTMP.text = questDetails[0];
+            additionalInformationQuestPanelTMP.text = questDetails[0];
 
         }else if(quest == "infirmary")
         {

@@ -93,6 +93,7 @@ public class DangerSpawn : MonoBehaviour
 
     [Header("Player")]
     [SerializeField] private Transform player;
+    [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private Vector3 fortRespawnPosition = new Vector3(-236, -29, 0);
     [SerializeField] private Vector3 ottomanRespawnPosition = new Vector3(-134, -198, 0);
 
@@ -101,10 +102,13 @@ public class DangerSpawn : MonoBehaviour
     [SerializeField] private Region regionA = new Region();
     [SerializeField] private Region regionB = new Region();
 
+    private bool isSpawning = false;
+
     private void Start()
     {
         StartCoroutine(RegionLoop(regionA));
         StartCoroutine(RegionLoop(regionB));
+        isSpawning = true;
     }
 
     private IEnumerator RegionLoop(Region region)
@@ -163,6 +167,7 @@ public class DangerSpawn : MonoBehaviour
 
     private IEnumerator DeathSequence()
     {
+        playerMovement.DisableMovement();
         deadScreenPanel.SetActive(true);
 
         if(gameManager.GetCurrentLocation() == "Fort St. Elmo")
@@ -178,8 +183,30 @@ public class DangerSpawn : MonoBehaviour
         yield return new WaitForSeconds(deadScreenTimer);
 
         deadScreenPanel.SetActive(false);
+        playerMovement.EnableMovement();
 
         if (dangerZone != null)
             dangerZone.UnlockDeath();
+    }
+
+    public void StopAllSpawns()
+    {
+        if (isSpawning)
+        {
+            Debug.Log("STOP SPAWNS");
+            StopAllCoroutines();
+            isSpawning = false;
+        }
+    }
+
+    public void RestartAllSpawns()
+    {
+        if (!isSpawning)
+        {
+            Debug.Log("RESTART SPAWNS");
+            StartCoroutine(RegionLoop(regionA));
+            StartCoroutine(RegionLoop(regionB));
+            isSpawning = true;
+        }
     }
 }

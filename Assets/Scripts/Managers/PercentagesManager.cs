@@ -25,9 +25,6 @@ public class PercentageManager : MonoBehaviour
 
     public void UpdatePercentages(int addAmountToMoral, int addAmountToWeapons, int addAmountToStructure, int addAmountToCat)
     {
-
-        Debug.Log("CAT : " + addAmountToCat);
-
         moralPercentageUpdate = (addAmountToMoral == 0) ? -5 : addAmountToMoral;
         weaponsPercentageUpdate = (addAmountToWeapons == 0) ? -5 : addAmountToWeapons;
         structurePercentageUpdate = (addAmountToStructure == 0) ? -5 : addAmountToStructure;
