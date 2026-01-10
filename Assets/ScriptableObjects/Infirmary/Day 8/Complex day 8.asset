@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: Osman
   Name: Osman, Janissary officer
-  Icon: {fileID: 1208347981, guid: b2407ce4cf73ad348aec15ba9990f7a1, type: 3}
+  Icon: {fileID: -487541979, guid: cb9f5804ad6456a4f9a2ba7a478c3f60, type: 3}
   Description: 'He leads from the front and expects others to follow. A pike thrust
     entered the armpit, bleeding heavily and difficult to reach.
 

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: MalteseSoldier2
   Name: Fra Jean, noble knight
-  Icon: {fileID: 409668665, guid: 4147f2bc6fccc974f937adc9cd1a5700, type: 3}
+  Icon: {fileID: -1950099934, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
   Description: "He rehearsed his death as poetry, something sculpted by faith. Gangrene
     has no interest in poetry \u2014 the black progresses up his leg despite prayer.
     He asks for the blade, not benediction.\n\nTreatment: Saw above the blackened

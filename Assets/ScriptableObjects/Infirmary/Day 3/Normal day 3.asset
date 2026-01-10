@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: MenAtArms2
   Name: Alfonse, Sicilian pikeman
-  Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
+  Icon: {fileID: 460225133, guid: 969acaabd3c81e14c9c953a67b21cef1, type: 3}
   Description: 'He enlisted because pike drills promised structure; civilian life
     never did. A cannon blast threw him off the rampart, and his ribs folded inward
     like kicked lattice. He breathes in gurgles.

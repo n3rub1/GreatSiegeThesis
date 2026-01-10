@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889faa658c7b2c94ea4fff939bf8022e, type: 3}
   m_Name: DialogNPCSapper
   m_EditorClassIdentifier: 
-  Name: Muhmud
-  Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
+  Name: Sinan bin Murad
+  Icon: {fileID: 1911240704, guid: 5fde7217974c70442be62433a1902ed2, type: 3}
   HasInteraction: 0
   interactionType: 1
   Greeting: Yahya Lab11
@@ -45,13 +45,13 @@ MonoBehaviour:
     before we reached them.\nSo we stay above, where silence can still be shaped.\nSome
     places cannot be cheated. They must be endured."
   Day8FirstTimeDialog:
-  - "You see the trench creeping forward and think it slow.\nIt is slow on purpose.\nSpeed
+  - "You see the trench creeping forward and think it is slow.\nIt is slow on purpose.\nSpeed
     invites fire. Distance invites patience.\nEach length we gain lets the guns move
     closer without bleeding men dry.\nThe fort answers less now, not because it is
     weak, but because it is tired.\nThat is how walls begin to fail \u2014 not all
     at once, but everywhere."
   Day8MetBeforeDialog:
-  - "You see the trench creeping forward and think it slow.\nIt is slow on purpose.\nSpeed
+  - "You see the trench creeping forward and think it is slow.\nIt is slow on purpose.\nSpeed
     invites fire. Distance invites patience.\nEach length we gain lets the guns move
     closer without bleeding men dry.\nThe fort answers less now, not because it is
     weak, but because it is tired.\nThat is how walls begin to fail \u2014 not all
@@ -118,13 +118,13 @@ MonoBehaviour:
   Day9MetBeforeAudio: {fileID: 8300000, guid: 3911585180608934189ac52102b928c6, type: 3}
   Day10FirstTimeAudio: {fileID: 8300000, guid: 8cff63cb3c9e38f42b740856fb04c9ea, type: 3}
   Day10MetBeforeAudio: {fileID: 8300000, guid: 8cff63cb3c9e38f42b740856fb04c9ea, type: 3}
-  dayNumber: 1
+  dayNumber: 6
   metOnday1: 0
   metOnday2: 0
   metOnday3: 0
   metOnday4: 0
   metOnday5: 0
-  metOnday6: 1
+  metOnday6: 0
   metOnday7: 0
   metOnday8: 0
   metOnday9: 0

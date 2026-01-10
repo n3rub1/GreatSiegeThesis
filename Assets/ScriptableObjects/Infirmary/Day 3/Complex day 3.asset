@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: Knight2
   Name: Fra Raymond, knight of Justice
-  Icon: {fileID: 1208347981, guid: b2407ce4cf73ad348aec15ba9990f7a1, type: 3}
+  Icon: {fileID: -1457767182, guid: 4147f2bc6fccc974f937adc9cd1a5700, type: 3}
   Description: 'He is the kind of noble who believes pain is beneath him. When a
     halberd hook tore under his arm and opened the axillary artery, arrogance evaporated.
     He is suddenly a man begging for heat and iron.

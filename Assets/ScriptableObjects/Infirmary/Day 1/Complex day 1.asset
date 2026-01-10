@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: Knight
   Name: Pedro, Spanish arquebusier
-  Icon: {fileID: 1208347981, guid: b2407ce4cf73ad348aec15ba9990f7a1, type: 3}
+  Icon: {fileID: 463123431, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
   Description: 'He left Toledo as a gambler, convinced war would convert luck into
     profit. He never wrote to his mother because failure embarrassed him. When his
     matchlock burst in his grip, three fingers became red pulp stuck to the barrel.

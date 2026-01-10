@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: Mehmet
   Name: Mehmet, young recruit
-  Icon: {fileID: 409668665, guid: 4147f2bc6fccc974f937adc9cd1a5700, type: 3}
+  Icon: {fileID: 1911240704, guid: 5fde7217974c70442be62433a1902ed2, type: 3}
   Description: 'This is his first campaign; he has not yet learned fear properly.
     A musket ball shattered his ankle as he ran forward with a shield.
 

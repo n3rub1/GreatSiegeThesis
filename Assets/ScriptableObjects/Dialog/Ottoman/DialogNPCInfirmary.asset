@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889faa658c7b2c94ea4fff939bf8022e, type: 3}
   m_Name: DialogNPCInfirmary
   m_EditorClassIdentifier: 
-  Name: Muhmud
-  Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
+  Name: Kemal Reisoglu
+  Icon: {fileID: -803909292, guid: cb9f5804ad6456a4f9a2ba7a478c3f60, type: 3}
   HasInteraction: 0
   interactionType: 1
   Greeting: Adam Lab11
@@ -96,14 +96,14 @@ MonoBehaviour:
   Day9MetBeforeAudio: {fileID: 8300000, guid: 232593365d3c9cf4a86565c81679e42e, type: 3}
   Day10FirstTimeAudio: {fileID: 8300000, guid: ddb351589ba745545b133d9389f7ad08, type: 3}
   Day10MetBeforeAudio: {fileID: 8300000, guid: 78bdd4931c28d2b478359d4770735969, type: 3}
-  dayNumber: 1
+  dayNumber: 7
   metOnday1: 0
   metOnday2: 0
   metOnday3: 0
   metOnday4: 0
   metOnday5: 0
-  metOnday6: 1
-  metOnday7: 0
+  metOnday6: 0
+  metOnday7: 1
   metOnday8: 0
   metOnday9: 0
   metOnday10: 0

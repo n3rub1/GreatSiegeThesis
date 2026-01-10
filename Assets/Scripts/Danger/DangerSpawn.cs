@@ -193,7 +193,6 @@ public class DangerSpawn : MonoBehaviour
     {
         if (isSpawning)
         {
-            Debug.Log("STOP SPAWNS");
             StopAllCoroutines();
             isSpawning = false;
         }
@@ -203,7 +202,6 @@ public class DangerSpawn : MonoBehaviour
     {
         if (!isSpawning)
         {
-            Debug.Log("RESTART SPAWNS");
             StartCoroutine(RegionLoop(regionA));
             StartCoroutine(RegionLoop(regionB));
             isSpawning = true;

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: MenAtArms
   Name: "La Valette\u2019s guard"
-  Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
+  Icon: {fileID: 460225133, guid: 969acaabd3c81e14c9c953a67b21cef1, type: 3}
   Description: "He survived two campaigns and thought faith insulated guts from fate.
     A musket ball entered above his navel and tore intestine \u2014 now he leaks
     his own waste into his abdomen. He asks for water; it only worsens his swelling.\n\nTreatment:

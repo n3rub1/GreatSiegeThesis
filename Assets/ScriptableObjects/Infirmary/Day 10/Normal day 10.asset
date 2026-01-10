@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: "R\xFCstem"
   Name: "R\xFCstem, dismounted sipahi"
-  Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
+  Icon: {fileID: -803909292, guid: cb9f5804ad6456a4f9a2ba7a478c3f60, type: 3}
   Description: 'He is unused to fighting without a horse. A fall from a ladder left
     his legs numb and unresponsive.
 

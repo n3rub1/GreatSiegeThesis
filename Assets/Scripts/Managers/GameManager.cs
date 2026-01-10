@@ -433,14 +433,14 @@ public class GameManager : MonoBehaviour
         int[] others = { morale, weapons, structure };
 
         bool allUnder30 = true;
-        bool allAbove70 = true;
+        bool allAbove60 = true;
 
         for (int i = 0; i < others.Length; i++)
         {
             int v = others[i];
 
             if (v >= 30) allUnder30 = false;
-            if (v <= 70) allAbove70 = false;
+            if (v <= 60) allAbove60 = false;
         }
 
         int endingId;
@@ -451,7 +451,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            endingId = allAbove70 ? 4 : 3;
+            endingId = allAbove60 ? 4 : 3;
         }
 
         endGameManager.ShowEndGame(endingId);

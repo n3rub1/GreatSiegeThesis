@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: MenAtArms
   Name: Portuguese swordsman
-  Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
+  Icon: {fileID: -487541979, guid: cb9f5804ad6456a4f9a2ba7a478c3f60, type: 3}
   Description: 'He chased duels like other men chase gold. On the wall, a snapped
     blade slid between his ribs and stayed lodged like a metal rib. Every breath
     trembles.

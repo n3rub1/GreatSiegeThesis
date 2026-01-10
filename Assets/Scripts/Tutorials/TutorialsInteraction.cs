@@ -13,6 +13,7 @@ public class TutorialsInteraction : MonoBehaviour
     [SerializeField] private GameObject nextButton;
     [SerializeField] private DangerSpawn dangerSpawn;
     [SerializeField] private bool hasMultipleScreens;
+    [SerializeField] private PlayerMovement player;
 
     private bool interactable = false;
     private PlayerActions actions;
@@ -85,7 +86,13 @@ public class TutorialsInteraction : MonoBehaviour
             nextButton.SetActive(true);
         }
 
-        if(interactable) dangerSpawn.StopAllSpawns();
+        if (interactable)
+        {
+            dangerSpawn.StopAllSpawns();
+            player.DisableMovement();
+        }
+
+
 
     }
 
@@ -127,6 +134,7 @@ public class TutorialsInteraction : MonoBehaviour
         }
 
         dangerSpawn.RestartAllSpawns();
+        player.EnableMovement();
     }
 
     private void OnEnable()

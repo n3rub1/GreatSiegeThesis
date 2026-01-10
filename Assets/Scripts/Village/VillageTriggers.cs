@@ -18,8 +18,8 @@ public class VillageTriggers : MonoBehaviour
         if(collision.tag == "Player")
         {
             if (!initialized) return;
-            villageManager.UnlockDestructionBasedOnTrigger();
-            villageManager.BlockEntryAreaBasedOnTriggerNumber(triggerNumber);
+            villageManager.UnlockDestructionBasedOnTrigger(triggerNumber);
+            villageManager.BlockAreaBasedOnTriggerNumber(triggerNumber);
         }
 
     }
@@ -28,8 +28,8 @@ public class VillageTriggers : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            villageManager.LockDestructionBasedOnTrigger();
-            villageManager.BlockExitAreaBasedOnTriggerNumber(triggerNumber);
+            villageManager.LockDestructionBasedOnTrigger(triggerNumber);
+            //villageManager.BlockExitAreaBasedOnTriggerNumber(triggerNumber);
         }
 
     }

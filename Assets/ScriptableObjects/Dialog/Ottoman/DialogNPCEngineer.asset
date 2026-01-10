@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889faa658c7b2c94ea4fff939bf8022e, type: 3}
   m_Name: DialogNPCEngineer
   m_EditorClassIdentifier: 
-  Name: Muhmud
-  Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
+  Name: Hasan al-Rumeli
+  Icon: {fileID: 1911240704, guid: 5fde7217974c70442be62433a1902ed2, type: 3}
   HasInteraction: 0
   interactionType: 1
   Greeting: Yahya Lab11
@@ -127,7 +127,7 @@ MonoBehaviour:
   metOnday3: 0
   metOnday4: 0
   metOnday5: 0
-  metOnday6: 1
+  metOnday6: 0
   metOnday7: 0
   metOnday8: 0
   metOnday9: 0

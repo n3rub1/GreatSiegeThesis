@@ -133,29 +133,62 @@ public class QuestUI : Singleton<QuestUI>
 
     private void SelectProperQuestText(string quest)
     {
-
-        if(quest == "armoury")
+        if(gameManager.GetDayNumber() < 6)
         {
-            additionalInformationQuestPanelTMP.text = questDetails[0];
+            if (quest == "armoury")
+            {
+                additionalInformationQuestPanelTMP.text = questDetails[0];
 
-        }else if(quest == "infirmary")
-        {
-            additionalInformationQuestPanelTMP.text = questDetails[1];
+            }
+            else if (quest == "infirmary")
+            {
+                additionalInformationQuestPanelTMP.text = questDetails[1];
 
+            }
+            else if (quest == "cat")
+            {
+                additionalInformationQuestPanelTMP.text = questDetails[2];
+
+            }
+            else if (quest == "help")
+            {
+                additionalInformationQuestPanelTMP.text = questDetails[3];
+            }
+            else if (quest == "reset")
+            {
+                additionalInformationQuestPanelTMP.text = "";
+
+            }
         }
-        else if(quest == "cat")
+        else
         {
-            additionalInformationQuestPanelTMP.text = questDetails[2];
+            if (quest == "armoury")
+            {
+                additionalInformationQuestPanelTMP.text = questDetails[4];
 
-        }
-        else if(quest == "help")
-        {
-            additionalInformationQuestPanelTMP.text = questDetails[3];
-        }else if(quest == "reset")
-        {
-            additionalInformationQuestPanelTMP.text = "";
+            }
+            else if (quest == "infirmary")
+            {
+                additionalInformationQuestPanelTMP.text = questDetails[5];
 
+            }
+            else if (quest == "cat")
+            {
+                additionalInformationQuestPanelTMP.text = questDetails[6];
+
+            }
+            else if (quest == "help")
+            {
+                additionalInformationQuestPanelTMP.text = questDetails[7];
+            }
+            else if (quest == "reset")
+            {
+                additionalInformationQuestPanelTMP.text = "";
+
+            }
         }
+
+
 
     }
 

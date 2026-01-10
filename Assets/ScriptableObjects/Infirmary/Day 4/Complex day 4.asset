@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: Knight2
   Name: French mercenary gunner
-  Icon: {fileID: 1208347981, guid: b2407ce4cf73ad348aec15ba9990f7a1, type: 3}
+  Icon: {fileID: -1457767182, guid: 4147f2bc6fccc974f937adc9cd1a5700, type: 3}
   Description: "He joined for powder pay, not for banners. An ignition flare scorched
     his face; eyelids blistered shut. He doesn\u2019t want pity \u2014 just darkness
     that doesn\u2019t burn.\n\nTreatment: Cool cloth with water and wine. Lay dressings

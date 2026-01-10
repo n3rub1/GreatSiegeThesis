@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: MalteseSoldier
   Name: Tommaso, Maltese courier
-  Icon: {fileID: 409668665, guid: 4147f2bc6fccc974f937adc9cd1a5700, type: 3}
+  Icon: {fileID: -1950099934, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
   Description: "He wanted a boat, not a weapon. His father told him carrying messages
     would keep him safe. A stone shard carved open his calf \u2014 the flesh is swelling
     black-green and smells like sweetness and rot.\n\nTreatment: Apply a high tourniquet

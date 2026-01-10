@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: Ali
   Name: Ali, corsair boarding veteran
-  Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
+  Icon: {fileID: 436348655, guid: 3f2b05316ad4e6549abfd22bd5c49d18, type: 3}
   Description: 'He laughs too loudly and never removes his knife. A halberd crushed
     his collarbone, tearing vessels beneath.
 

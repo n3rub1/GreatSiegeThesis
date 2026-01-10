@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: Yusuf
   Name: Yusuf, Janissary archer
-  Icon: {fileID: 409668665, guid: 4147f2bc6fccc974f937adc9cd1a5700, type: 3}
+  Icon: {fileID: -1931441013, guid: 21d19f24ef3a13945a9fb5af436d92c2, type: 3}
   Description: 'He prides himself on precision and silence. A crossbow bolt struck
     beneath his shoulder blade and lodged deep near the spine.
 

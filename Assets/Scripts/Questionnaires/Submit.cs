@@ -15,6 +15,7 @@ public class Submit : MonoBehaviour
     public TMP_Dropdown preQuestion6;
     public TMP_Dropdown preQuestion7;
     public TMP_Dropdown preQuestion8;
+    public GameObject preErrorTMP;
 
     //[Header("Pre- Text questions")]
     //public TMP_InputField q3;
@@ -49,6 +50,7 @@ public class Submit : MonoBehaviour
     private PersistantSurveyQuestions persistantSurveyQuestions;
 
     [SerializeField] private int mainGame = 2; // should be 2
+    [SerializeField] private int thankyouScene = 6;
 
     public void Start()
     {
@@ -62,40 +64,53 @@ public class Submit : MonoBehaviour
 
         if (persistantSurveyQuestions.GetIsFinal() == false)
         {
-            // Pre- Dropdown fields (int)
-            PersistantSurveyQuestions.Instance.preQuestion1 = (preQuestion1.value + 1).ToString();
-            PersistantSurveyQuestions.Instance.preQuestion2 = (preQuestion2.value + 1).ToString();
-            PersistantSurveyQuestions.Instance.preQuestion3 = (preQuestion3.value + 1).ToString();
-            PersistantSurveyQuestions.Instance.preQuestion4 = (preQuestion4.value + 1).ToString();
-            PersistantSurveyQuestions.Instance.preQuestion5 = (preQuestion5.value + 1).ToString();
-            PersistantSurveyQuestions.Instance.preQuestion6 = (preQuestion6.value + 1).ToString();
-            PersistantSurveyQuestions.Instance.preQuestion7 = (preQuestion7.value + 1).ToString();
-            PersistantSurveyQuestions.Instance.preQuestion8 = (preQuestion8.value + 1).ToString();
 
-            Debug.Log("Pre- values submitted.");
-            persistantSurveyQuestions.SetIsFinal(true);
-            SceneManager.LoadScene(mainGame);
+            Debug.Log(preQuestion1.value.ToString());
+
+            if(preQuestion1.value == 0 || preQuestion2.value == 0 || preQuestion3.value == 0 || preQuestion4.value == 0 || preQuestion5.value == 0 || preQuestion6.value == 0 ||
+                preQuestion7.value == 0 || preQuestion8.value == 0)
+            {
+                preErrorTMP.SetActive(true);
+                Debug.Log("There is an answer which is incorrect");
+            }
+            else
+            {
+                // Pre- Dropdown fields (int)
+                PersistantSurveyQuestions.Instance.preQuestion1 = (preQuestion1.value).ToString();
+                PersistantSurveyQuestions.Instance.preQuestion2 = (preQuestion2.value).ToString();
+                PersistantSurveyQuestions.Instance.preQuestion3 = (preQuestion3.value).ToString();
+                PersistantSurveyQuestions.Instance.preQuestion4 = (preQuestion4.value).ToString();
+                PersistantSurveyQuestions.Instance.preQuestion5 = (preQuestion5.value).ToString();
+                PersistantSurveyQuestions.Instance.preQuestion6 = (preQuestion6.value).ToString();
+                PersistantSurveyQuestions.Instance.preQuestion7 = (preQuestion7.value).ToString();
+                PersistantSurveyQuestions.Instance.preQuestion8 = (preQuestion8.value).ToString();
+
+                Debug.Log("Pre- values submitted.");
+                persistantSurveyQuestions.SetIsFinal(true);
+                SceneManager.LoadScene(mainGame);
+            }
+
         }
         else
         {
             // Post- Dropdown fields (int)
-            PersistantSurveyQuestions.Instance.postQuestion1 = (postQuestion1.value + 1).ToString();
-            PersistantSurveyQuestions.Instance.postQuestion2 = (postQuestion2.value + 1).ToString();
-            PersistantSurveyQuestions.Instance.postQuestion3 = (postQuestion3.value + 1).ToString();
-            PersistantSurveyQuestions.Instance.postQuestion4 = (postQuestion4.value + 1).ToString();
-            PersistantSurveyQuestions.Instance.postQuestion5 = (postQuestion5.value + 1).ToString();
-            PersistantSurveyQuestions.Instance.postQuestion6 = (postQuestion6.value + 1).ToString();
-            PersistantSurveyQuestions.Instance.postQuestion7 = (postQuestion7.value + 1).ToString();
-            PersistantSurveyQuestions.Instance.postQuestion8 = (postQuestion8.value + 1).ToString();
-            PersistantSurveyQuestions.Instance.postQuestion9 = (postQuestion9.value + 1).ToString();
-            PersistantSurveyQuestions.Instance.postQuestion10 = (postQuestion10.value + 1).ToString();
-            PersistantSurveyQuestions.Instance.postQuestion11 = (postQuestion11.value + 1).ToString();
-            PersistantSurveyQuestions.Instance.postQuestion12 = (postQuestion12.value + 1).ToString();
-            PersistantSurveyQuestions.Instance.postQuestion13 = (postQuestion13.value + 1).ToString();
-            PersistantSurveyQuestions.Instance.postQuestion14 = (postQuestion14.value + 1).ToString();
-            PersistantSurveyQuestions.Instance.postQuestion15 = (postQuestion15.value + 1).ToString();
-            PersistantSurveyQuestions.Instance.postQuestion16 = (postQuestion16.value + 1).ToString();
-            PersistantSurveyQuestions.Instance.postQuestion17 = (postQuestion17.value + 1).ToString();
+            PersistantSurveyQuestions.Instance.postQuestion1 = (postQuestion1.value).ToString();
+            PersistantSurveyQuestions.Instance.postQuestion2 = (postQuestion2.value).ToString();
+            PersistantSurveyQuestions.Instance.postQuestion3 = (postQuestion3.value).ToString();
+            PersistantSurveyQuestions.Instance.postQuestion4 = (postQuestion4.value).ToString();
+            PersistantSurveyQuestions.Instance.postQuestion5 = (postQuestion5.value).ToString();
+            PersistantSurveyQuestions.Instance.postQuestion6 = (postQuestion6.value).ToString();
+            PersistantSurveyQuestions.Instance.postQuestion7 = (postQuestion7.value).ToString();
+            PersistantSurveyQuestions.Instance.postQuestion8 = (postQuestion8.value).ToString();
+            PersistantSurveyQuestions.Instance.postQuestion9 = (postQuestion9.value).ToString();
+            PersistantSurveyQuestions.Instance.postQuestion10 = (postQuestion10.value).ToString();
+            PersistantSurveyQuestions.Instance.postQuestion11 = (postQuestion11.value).ToString();
+            PersistantSurveyQuestions.Instance.postQuestion12 = (postQuestion12.value).ToString();
+            PersistantSurveyQuestions.Instance.postQuestion13 = (postQuestion13.value).ToString();
+            PersistantSurveyQuestions.Instance.postQuestion14 = (postQuestion14.value).ToString();
+            PersistantSurveyQuestions.Instance.postQuestion15 = (postQuestion15.value).ToString();
+            PersistantSurveyQuestions.Instance.postQuestion16 = (postQuestion16.value).ToString();
+            PersistantSurveyQuestions.Instance.postQuestion17 = (postQuestion17.value).ToString();
 
             //Post- Text fields (string)
             PersistantSurveyQuestions.Instance.postQuestion18 = postQuestion18.text;
@@ -107,7 +122,7 @@ public class Submit : MonoBehaviour
 
             Debug.Log("Post- values submitted.");
 
-            SceneManager.LoadScene(mainGame);  // to be removed or go to a credits scene.  its here for testing.
+            SceneManager.LoadScene(thankyouScene);
         }
     }
 }

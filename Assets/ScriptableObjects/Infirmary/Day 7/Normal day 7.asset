@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: Kemal
   Name: Kemal, artillery assistant
-  Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
+  Icon: {fileID: -2027304046, guid: 5fde7217974c70442be62433a1902ed2, type: 3}
   Description: 'Powder smoke has stained his beard black for weeks. A backflash burned
     his face and throat; blisters close his mouth and eyes.
 

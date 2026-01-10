@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DialogNPCArmourer
   m_EditorClassIdentifier: 
   Name: Ahmed
-  Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
+  Icon: {fileID: 436348655, guid: 3f2b05316ad4e6549abfd22bd5c49d18, type: 3}
   HasInteraction: 0
   interactionType: 1
   Greeting: Haytham Lab11
@@ -151,13 +151,13 @@ MonoBehaviour:
   Day9MetBeforeAudio: {fileID: 8300000, guid: 5c5f504fd9d5b54409ef32680ef621af, type: 3}
   Day10FirstTimeAudio: {fileID: 8300000, guid: c79044a5aad740b46a5653f94556254a, type: 3}
   Day10MetBeforeAudio: {fileID: 8300000, guid: ef9927800cf582943adfad0d8e9479e9, type: 3}
-  dayNumber: 1
+  dayNumber: 6
   metOnday1: 0
   metOnday2: 0
   metOnday3: 0
   metOnday4: 0
   metOnday5: 0
-  metOnday6: 0
+  metOnday6: 1
   metOnday7: 0
   metOnday8: 0
   metOnday9: 0

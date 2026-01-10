@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: Selim
   Name: Selim, Azab spearman
-  Icon: {fileID: -2105629146, guid: d556a7f542c7d03429c5a535ce31a084, type: 3}
+  Icon: {fileID: 1646101407, guid: 6bd9a6671445456409840e1319d9b083, type: 3}
   Description: 'A farmer pressed into service, promised pay that may never come.
     A falling stone crushed his foot during an assault on the ditch, grinding bones
     into fragments.

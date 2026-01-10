@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: Faruk
   Name: Faruk, shield bearer
-  Icon: {fileID: 1208347981, guid: b2407ce4cf73ad348aec15ba9990f7a1, type: 3}
+  Icon: {fileID: -1084893166, guid: 6bd9a6671445456409840e1319d9b083, type: 3}
   Description: 'He trusts wood and hide more than steel. A grenade burst near his
     feet, peppering his calf with fragments.
 

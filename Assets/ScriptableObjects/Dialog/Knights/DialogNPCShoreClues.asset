@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889faa658c7b2c94ea4fff939bf8022e, type: 3}
+  m_Name: DialogNPCShoreClues
+  m_EditorClassIdentifier: 
+  Name: Recent Supply Transfers between St.Elmo and St.Angelo
+  Icon: {fileID: 21300196, guid: 7810966f0f690954c87305933cabf2b0, type: 3}
+  HasInteraction: 0
+  interactionType: 3
+  Greeting: MARTO 11 LABS
+  Day1Dialog:
+  - "Near the harbour path, you find a broken crate marked for artillery use. Several
+    iron shot are missing, taken recently. The wood is still splintered, as if it
+    was dropped in haste. Someone was moving ammunition through here not long ago\u2014and
+    did not have time to clean up."
+  Day2FirstTimeDialog:
+  - Behind a low wall, scraps of food remain wrapped in cloth. The bread is stale
+    but not spoiled. The bundle looks prepared for transport rather than storage.
+    Supplies were packed and moved recently, likely under cover of darkness.
+  Day2MetBeforeDialog:
+  - Behind a low wall, scraps of food remain wrapped in cloth. The bread is stale
+    but not spoiled. The bundle looks prepared for transport rather than storage.
+    Supplies were packed and moved recently, likely under cover of darkness.
+  Day3FirstTimeDialog:
+  - You notice blood on the stones near the waterline, thin and smeared rather than
+    pooled. A strip of bandage lies discarded nearby. Someone wounded was brought
+    through here, carried rather than walking. The trail ends abruptly at the harbour.
+  Day3MetBeforeDialog:
+  - You notice blood on the stones near the waterline, thin and smeared rather than
+    pooled. A strip of bandage lies discarded nearby. Someone wounded was brought
+    through here, carried rather than walking. The trail ends abruptly at the harbour.
+  Day4FirstTimeDialog:
+  - "A helmet and shield lean against a crate, neither properly stored nor discarded.
+    They are clean\u2014unused\u2014but the straps are freshly adjusted. Equipment
+    like this would only be left behind if its owner moved on quickly. More men were
+    sent forward."
+  Day4MetBeforeDialog:
+  - "A helmet and shield lean against a crate, neither properly stored nor discarded.
+    They are clean\u2014unused\u2014but the straps are freshly adjusted. Equipment
+    like this would only be left behind if its owner moved on quickly. More men were
+    sent forward."
+  Day5FirstTimeDialog:
+  - "Today, there is less to find. Crates are stacked but lighter than they should
+    be. The markings remain, but the contents are gone. Whatever passed through here
+    recently took almost everything with it. The supply line is still active\u2014but
+    strained."
+  Day5MetBeforeDialog:
+  - "Today, there is less to find. Crates are stacked but lighter than they should
+    be. The markings remain, but the contents are gone. Whatever passed through here
+    recently took almost everything with it. The supply line is still active\u2014but
+    strained."
+  Day6Dialog: []
+  Day7FirstTimeDialog: []
+  Day7MetBeforeDialog: []
+  Day8FirstTimeDialog: []
+  Day8MetBeforeDialog: []
+  Day9FirstTimeDialog: []
+  Day9MetBeforeDialog: []
+  Day10FirstTimeDialog: []
+  Day10MetBeforeDialog: []
+  Day1Audio: {fileID: 0}
+  Day2FirstTimeAudio: {fileID: 0}
+  Day2MetBeforeAudio: {fileID: 0}
+  Day3FirstTimeAudio: {fileID: 0}
+  Day3MetBeforeAudio: {fileID: 0}
+  Day4FirstTimeAudio: {fileID: 0}
+  Day4MetBeforeAudio: {fileID: 0}
+  Day5FirstTimeAudio: {fileID: 0}
+  Day5MetBeforeAudio: {fileID: 0}
+  Day6Audio: {fileID: 0}
+  Day7FirstTimeAudio: {fileID: 0}
+  Day7MetBeforeAudio: {fileID: 0}
+  Day8FirstTimeAudio: {fileID: 0}
+  Day8MetBeforeAudio: {fileID: 0}
+  Day9FirstTimeAudio: {fileID: 0}
+  Day9MetBeforeAudio: {fileID: 0}
+  Day10FirstTimeAudio: {fileID: 0}
+  Day10MetBeforeAudio: {fileID: 0}
+  dayNumber: 1
+  metOnday1: 1
+  metOnday2: 1
+  metOnday3: 1
+  metOnday4: 1
+  metOnday5: 1
+  metOnday6: 0
+  metOnday7: 0
+  metOnday8: 0
+  metOnday9: 0
+  metOnday10: 0
