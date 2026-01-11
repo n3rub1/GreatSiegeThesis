@@ -17,6 +17,11 @@ public class DayNightCycleManager : MonoBehaviour
     [SerializeField] private GameManager gameManager;
     [SerializeField] private Light2D fakeSun;
     [SerializeField] private GoogleSheetLogger logger;
+    [SerializeField] private TeleportPlayer teleportPlayer;
+    [SerializeField] private GameObject timeToSleepScreen;
+    [SerializeField] private int timeToSleepScreenTime;
+    [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private RandomQuestSelector randomQuestSelector;
 
     private Color[] hourlyColors = new Color[]
     {
@@ -54,6 +59,7 @@ public class DayNightCycleManager : MonoBehaviour
     private Vector3 fakeSunTargetPosition;
     private bool stopTimer = false;
     private bool isTimesUp = false;
+    private bool isHit = false;
 
     private void Start()
     {
@@ -117,6 +123,13 @@ public class DayNightCycleManager : MonoBehaviour
             //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Time to sleep (Day/Night Manager)", $"Time to sleep");
             //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Time to sleep (Day/Night Manager)", $"Time to sleep");
             gameManager.SetQuestAccepted("SleepTime");
+            gameManager.ResetAllSpawns();
+        
+
+            if (!isHit && gameManager.GetDayNumber() < 11)
+            {
+                TeleportToBed();
+            }
         }
         else if(timeOfDay < 22 && !stopTimer)
         {
@@ -157,5 +170,35 @@ public class DayNightCycleManager : MonoBehaviour
         targetColor = hourlyColors[9];
         gameManager.SetQuestAccepted("Reset");
         fakeSun.transform.position = new Vector3(-50, 0, 0);
+    }
+
+    private void TeleportToBed()
+    {
+        StartCoroutine(ShowTimesUpScreen());
+
+        if(gameManager.GetDayNumber() < 6)
+        {
+            teleportPlayer.TeleportPlayerManually(new Vector3(-244.2f, -26.5f, 0f));
+        }
+        else
+        {
+            teleportPlayer.TeleportPlayerManually(new Vector3(-133.8f, -197.3f, 0f));
+        }
+
+    }
+
+    public void SetIsHit(bool hit)
+    {
+        isHit = hit;
+    }
+
+    IEnumerator ShowTimesUpScreen()
+    {
+        timeToSleepScreen.SetActive(true);
+        playerMovement.DisableMovement();
+        yield return new WaitForSeconds(timeToSleepScreenTime);
+        playerMovement.EnableMovement();
+        timeToSleepScreen.SetActive(false);
+
     }
 }

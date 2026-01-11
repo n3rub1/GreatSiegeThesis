@@ -46,6 +46,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject afterDaySeven;
     [SerializeField] GameObject afterDayEight;
     [SerializeField] GameObject afterDayNine;
+    [SerializeField] GameObject cluesAfterDayFive;
+    [SerializeField] GameObject cluesAfterDaySix;
+    [SerializeField] GameObject cluesAfterDaySeven;
+    [SerializeField] GameObject cluesAfterDayEight;
+    [SerializeField] GameObject cluesAfterDayNine;
 
     [Header("Game Over")]
     [SerializeField] private int gameOverSceneScreen = 5;
@@ -372,22 +377,27 @@ public class GameManager : MonoBehaviour
         else if (dayNumber == 7)
         {
             afterDayFive.SetActive(false);
+            cluesAfterDayFive.SetActive(true);
         }
         else if (dayNumber == 8)
         {
             afterDaySix.SetActive(false);
+            cluesAfterDaySix.SetActive(true);
         }
         else if (dayNumber == 9)
         {
             afterDaySeven.SetActive(false);
+            cluesAfterDaySeven.SetActive(true);
         }
         else if (dayNumber == 10)
         {
             afterDayEight.SetActive(false);
+            cluesAfterDayEight.SetActive(true);
         }
         else if (dayNumber == 11)
         {
             afterDayNine.SetActive(true);
+            cluesAfterDayNine.SetActive(true);
         }
     }
 

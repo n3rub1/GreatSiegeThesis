@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889faa658c7b2c94ea4fff939bf8022e, type: 3}
+  m_Name: DialogNPCWellOttoman
+  m_EditorClassIdentifier: 
+  Name: Recent Foraging near Ottoman Camp
+  Icon: {fileID: 21300196, guid: 7810966f0f690954c87305933cabf2b0, type: 3}
+  HasInteraction: 0
+  interactionType: 3
+  Greeting: MARTO 11 LABS
+  Day1Dialog:
+  - 
+  Day2FirstTimeDialog:
+  - 
+  Day2MetBeforeDialog:
+  - 
+  Day3FirstTimeDialog:
+  - 
+  Day3MetBeforeDialog:
+  - 
+  Day4FirstTimeDialog:
+  - 
+  Day4MetBeforeDialog:
+  - 
+  Day5FirstTimeDialog:
+  - 
+  Day5MetBeforeDialog:
+  - 
+  Day6Dialog:
+  - "Beyond the outer tents, the ground is torn up. Wild plants have been pulled
+    out by the roots, and broken baskets lie nearby. Whatever could be eaten here
+    has already been taken. Foraging parties have been working this area hard\u2014and
+    recently."
+  Day7FirstTimeDialog:
+  - "At a well near the camp\u2019s edge, you notice extra guards posted. Buckets
+    sit unused beside the rim. Someone has tied cloth over the opening to keep debris
+    out. The water is still there, but no one is eager to draw from it."
+  Day7MetBeforeDialog:
+  - "At a well near the camp\u2019s edge, you notice extra guards posted. Buckets
+    sit unused beside the rim. Someone has tied cloth over the opening to keep debris
+    out. The water is still there, but no one is eager to draw from it."
+  Day8FirstTimeDialog:
+  - "A cooking fire has burned low without being properly put out. A pot lies on
+    its side, its contents spilled into the dirt. The food smells wrong\u2014sour,
+    untouched. Someone chose not to eat, or was ordered not to."
+  Day8MetBeforeDialog:
+  - "A cooking fire has burned low without being properly put out. A pot lies on
+    its side, its contents spilled into the dirt. The food smells wrong\u2014sour,
+    untouched. Someone chose not to eat, or was ordered not to."
+  Day9FirstTimeDialog:
+  - Tracks lead away from a familiar path toward a longer route inland. Carts have
+    passed through recently, their wheels cutting deep into the soil. The shorter
+    route has been avoided. Something ahead was considered unsafe.
+  Day9MetBeforeDialog:
+  - Tracks lead away from a familiar path toward a longer route inland. Carts have
+    passed through recently, their wheels cutting deep into the soil. The shorter
+    route has been avoided. Something ahead was considered unsafe.
+  Day10FirstTimeDialog:
+  - "Today you find a cracked water skin emptied onto the ground. The leather is
+    intact\u2014it wasn\u2019t damaged. Someone chose to waste what little water
+    they had rather than drink it. The camp still functions, but trust in its supplies
+    is thinning."
+  Day10MetBeforeDialog:
+  - "Today you find a cracked water skin emptied onto the ground. The leather is
+    intact\u2014it wasn\u2019t damaged. Someone chose to waste what little water
+    they had rather than drink it. The camp still functions, but trust in its supplies
+    is thinning."
+  Day1Audio: {fileID: 0}
+  Day2FirstTimeAudio: {fileID: 0}
+  Day2MetBeforeAudio: {fileID: 0}
+  Day3FirstTimeAudio: {fileID: 0}
+  Day3MetBeforeAudio: {fileID: 0}
+  Day4FirstTimeAudio: {fileID: 0}
+  Day4MetBeforeAudio: {fileID: 0}
+  Day5FirstTimeAudio: {fileID: 0}
+  Day5MetBeforeAudio: {fileID: 0}
+  Day6Audio: {fileID: 0}
+  Day7FirstTimeAudio: {fileID: 0}
+  Day7MetBeforeAudio: {fileID: 0}
+  Day8FirstTimeAudio: {fileID: 0}
+  Day8MetBeforeAudio: {fileID: 0}
+  Day9FirstTimeAudio: {fileID: 0}
+  Day9MetBeforeAudio: {fileID: 0}
+  Day10FirstTimeAudio: {fileID: 0}
+  Day10MetBeforeAudio: {fileID: 0}
+  dayNumber: 10
+  metOnday1: 1
+  metOnday2: 1
+  metOnday3: 1
+  metOnday4: 1
+  metOnday5: 1
+  metOnday6: 1
+  metOnday7: 1
+  metOnday8: 1
+  metOnday9: 1
+  metOnday10: 1

@@ -23,7 +23,7 @@ MonoBehaviour:
     artery. You align the leg and splint it tight. He won\u2019t walk without a cane,
     if he walks again at all.\n\nRequires: 2 Bandages"
   slotNumber: 1
-  isHealed: 0
+  isHealed: 1
   toolUsed: {fileID: 21300000, guid: f7f6cc6d9a10013498dfb630f828f13b, type: 3}
   requiredResource: Bandage
   requiredAmount: 2

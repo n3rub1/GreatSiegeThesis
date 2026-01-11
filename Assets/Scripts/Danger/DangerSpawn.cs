@@ -169,6 +169,7 @@ public class DangerSpawn : MonoBehaviour
     {
         playerMovement.DisableMovement();
         deadScreenPanel.SetActive(true);
+        gameManager.SetQuestAccepted("Dead");
 
         if(gameManager.GetCurrentLocation() == "Fort St. Elmo")
         {
@@ -178,11 +179,13 @@ public class DangerSpawn : MonoBehaviour
         {
             player.position = ottomanRespawnPosition;
         }
-        dayNightCycleManager.SetTimerManually(22);
 
+        dayNightCycleManager.SetTimerManually(22);
+        dayNightCycleManager.SetIsHit(true);
         yield return new WaitForSeconds(deadScreenTimer);
 
         deadScreenPanel.SetActive(false);
+        dayNightCycleManager.SetIsHit(false);
         playerMovement.EnableMovement();
 
         if (dangerZone != null)

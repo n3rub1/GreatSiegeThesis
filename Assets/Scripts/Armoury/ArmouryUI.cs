@@ -61,7 +61,7 @@ public class ArmouryUI : Singleton<ArmouryUI>
 
     private PlayerActions actions;
     private bool isPlayerInRangeOfLoot = false;
-    private int armouryArrayValue = 2;
+    //private int armouryArrayValue = 2;
 
     protected override void Awake()
     {
@@ -255,7 +255,7 @@ public class ArmouryUI : Singleton<ArmouryUI>
                 //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Crafted item in Armoury (Armoury UI)", $"Crafted a simple item and got {2 + levels[armouryArrayValue]}XP");
                 GoogleSheetLogger.I.Log("Crafted item in Armoury (Armoury UI)", "Crafted a simple item");
 
-                playerXP.AddXPArmour(simpleXP + levels[armouryArrayValue]);
+                playerXP.AddXPArmour(simpleXP);
                 armourPercentageToIncrease = armourPercentageToIncrease + simpleMoralPercentage;
                 break;
             case 1:
@@ -263,7 +263,7 @@ public class ArmouryUI : Singleton<ArmouryUI>
                 //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Crafted item in Armoury (Armoury UI)", $"Crafted a normal item and got {5 + levels[armouryArrayValue]}XP");
                 GoogleSheetLogger.I.Log("Crafted item in Armoury (Armoury UI)", $"Crafted a normal item");
 
-                playerXP.AddXPArmour(mediumXP + levels[armouryArrayValue]);
+                playerXP.AddXPArmour(mediumXP);
                 armourPercentageToIncrease = armourPercentageToIncrease + normalMoralPercentage;
                 break;
             case 2:
@@ -271,7 +271,7 @@ public class ArmouryUI : Singleton<ArmouryUI>
                 //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Crafted item in Armoury (Armoury UI)", $"Crafted a complex item and got {10 + levels[armouryArrayValue]}XP");
                 GoogleSheetLogger.I.Log("Crafted item in Armoury (Armoury UI)", $"Crafted a complex item");
 
-                playerXP.AddXPArmour(complexXP + levels[armouryArrayValue]);
+                playerXP.AddXPArmour(complexXP);
                 armourPercentageToIncrease = armourPercentageToIncrease + complexMoralPercentage;
                 break;
         }

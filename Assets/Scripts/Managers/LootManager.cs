@@ -8,7 +8,7 @@ public class LootManager : Singleton<LootManager>
     [SerializeField] private Inventory inventory;
     [SerializeField] private InventoryItem[] inventoryItems;
     [SerializeField] private PlayerXP playerXP;
-    [SerializeField] private int lootXPNumber = 3;
+    [SerializeField] private int lootXPNumber = 0;
     [SerializeField] private GoogleSheetLogger logger;
     [SerializeField] private GameManager gameManager;
 

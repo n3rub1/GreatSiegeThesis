@@ -110,15 +110,15 @@ public class EndOfDayManager : MonoBehaviour
             {
                 endOfDayDescriptionTMP.text = UpdateWhatIsHappening(dayNumber) + "\n\n" + endOfDayDescriptionCat[dayNumber];
             }
-            else if (gameManager.GetQuestAccepted() == "Reset" || gameManager.GetQuestAccepted() == "Nothing")
+            else if (lastQuest == "Reset" || lastQuest == "Nothing")
             {
                 endOfDayDescriptionTMP.text = UpdateWhatIsHappening(dayNumber) + "\n\n" + "You stood still today. While you waited, men bled without hands to hold them, weapons stayed dull on the racks, and rubble buried someone no one reached in time. The fort paid for your silence. The cat survived by moving, hiding, choosing. You didn’t. Tomorrow, the cost of doing nothing will be harder to ignore.";
             }
-            else if (gameManager.GetQuestAccepted() == "SleepTime")
+            else if (lastQuest == "SleepTime")
             {
                 endOfDayDescriptionTMP.text = UpdateWhatIsHappening(dayNumber) + "\n\n" + "You stood still today. While you waited, men bled without hands to hold them, weapons stayed dull on the racks, and rubble buried someone no one reached in time. The fort paid for your silence. The cat survived by moving, hiding, choosing. You didn’t. Tomorrow, the cost of doing nothing will be harder to ignore.";
             }
-            else if (gameManager.GetQuestAccepted() == "Dead")
+            else if (lastQuest == "Dead")
             {
                 endOfDayDescriptionTMP.text = UpdateWhatIsHappening(dayNumber) + "\n\n" + "You took a blow you couldn’t walk off, and they dragged you to a bunk until you stopped spinning. While you lay there, others swung hammers, moved bodies, and tried to keep the walls standing. You didn’t help anyone today, and the cat searched for safety without you. Tomorrow you’ll wake up owing more than effort.";
             }

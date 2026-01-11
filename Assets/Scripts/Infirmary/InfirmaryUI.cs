@@ -51,11 +51,13 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
 
     public InfirmaryInteraction infirmaryInteraction { get; set; }
 
+    private List<InfirmaryItem> currentDayItems;
     private List<InfirmaryItem> infirmaryInjured;
     private PlayerActions actions;
     private string itemUsedToHeal = "Bandage";
     private bool isPlayerInRangeOfLoot = false;
-    private int infirmaryArrayValue = 1;
+    //private int infirmaryArrayValue = 1;
+    private int slotNumberSelected;
 
     protected override void Awake()
     {
@@ -66,12 +68,7 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
 
     private void Start()
     {
-
-        foreach(InfirmaryItem infirmaryItem in allInfirmaryItems)
-        {
-            infirmaryItem.isHealed = false;
-        }
-
+        ResetAllHealed();
         actions.Infirmary.FirePotInteraction.performed += ctx => OpenInfirmaryPanel();
     }
 
@@ -84,8 +81,8 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
             infirmarySlotsImages[i].GetComponent<Button>().interactable = false;
         }
 
-
-        List<InfirmaryItem> currentDayItems = null;
+        //List<InfirmaryItem> currentDayItems = null;
+        currentDayItems = null;
 
         switch (day)
         {
@@ -155,6 +152,8 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
     {
         //InfirmaryItem item = infirmaryInjured[slotNumber];
 
+        slotNumberSelected = slotNumber;
+
         InfirmaryItem item = infirmaryInjured.Find(i => i.slotNumber == slotNumber);
 
         if (item != null)
@@ -175,6 +174,19 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
     public void Heal()
     {
         int[] levels = playerXP.GetLevels();
+        int dayNumber = gameManager.GetDayNumber();
+
+        if(currentDayItems[slotNumberSelected].isHealed)
+        {
+                healingDescription.text = "Already treated";
+                return;
+        }
+
+        //if (InfirmarySlot.CurrentlySelectedSlot.AssignedItem.isHealed)
+        //{
+        //    healingDescription.text = "Already treated";
+        //    return;
+        //}
 
         if (InfirmarySlot.CurrentlySelectedSlot == null)
         {
@@ -245,7 +257,7 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
                 //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Healed person in Infirmary (Infirmary UI)", $"Healed a simple wound and got {2 + levels[infirmaryArrayValue]}XP");
                 GoogleSheetLogger.I.Log("Healed person in Infirmary (Infirmary UI)", $"Healed a simple wound");
 
-                playerXP.AddXPMedicine(simpleXP + levels[infirmaryArrayValue]);
+                playerXP.AddXPMedicine(simpleXP);
                 moralePercentageToIncrease = moralePercentageToIncrease + simpleMoralPercentage;
                 break;
             case 1:
@@ -253,7 +265,7 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
                 //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Healed person in Infirmary (Infirmary UI)", $"Healed a medium wound and got {5 + levels[infirmaryArrayValue]}XP");
                 GoogleSheetLogger.I.Log("Healed person in Infirmary (Infirmary UI)", $"Healed a medium wound");
 
-                playerXP.AddXPMedicine(mediumXP + levels[infirmaryArrayValue]);
+                playerXP.AddXPMedicine(mediumXP);
                 moralePercentageToIncrease = moralePercentageToIncrease + normalMoralPercentage;
                 break;
             case 2:
@@ -261,7 +273,7 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
                 //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Healed person in Infirmary (Infirmary UI)", $"Healed a hard wound and got {10 + levels[infirmaryArrayValue]}XP");
                 GoogleSheetLogger.I.Log("Healed person in Infirmary (Infirmary UI)", $"Healed a complex wound");
 
-                playerXP.AddXPMedicine(complexXP + levels[infirmaryArrayValue]);
+                playerXP.AddXPMedicine(complexXP);
                 moralePercentageToIncrease = moralePercentageToIncrease + complexMoralPercentage;
                 break;
         }
@@ -344,6 +356,14 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
         SetupInfirmarySlotsForDay(currentDay);
 
         infirmaryInjuredPanel.SetActive(true);
+    }
+
+    public void ResetAllHealed()
+    {
+        foreach (InfirmaryItem infirmaryItem in allInfirmaryItems)
+        {
+            infirmaryItem.isHealed = false;
+        }
     }
 
 }
