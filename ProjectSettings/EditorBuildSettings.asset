@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ThankYou.unity
     guid: a71044b3298ed0b4989b82787e0e3b16
+  - enabled: 1
+    path: Assets/Scenes/Reading.unity
+    guid: 97bb3bf031ab29c42a01253be1244fe7
   m_configObjects: {}

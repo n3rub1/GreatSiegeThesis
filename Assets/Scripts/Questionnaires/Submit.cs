@@ -50,6 +50,7 @@ public class Submit : MonoBehaviour
     private PersistantSurveyQuestions persistantSurveyQuestions;
 
     [SerializeField] private int mainGame = 2; // should be 2
+    [SerializeField] private int textScene = 7;
     [SerializeField] private int thankyouScene = 6;
 
     public void Start()
@@ -87,7 +88,17 @@ public class Submit : MonoBehaviour
 
                 Debug.Log("Pre- values submitted.");
                 persistantSurveyQuestions.SetIsFinal(true);
-                SceneManager.LoadScene(mainGame);
+
+                bool isStartIDN = StartOptionManager.Instance.getIsStartIDN();
+
+                if (isStartIDN)
+                {
+                    SceneManager.LoadScene(mainGame);
+                }
+                else
+                {
+                    SceneManager.LoadScene(textScene);
+                }
             }
 
         }
@@ -122,6 +133,7 @@ public class Submit : MonoBehaviour
 
             Debug.Log("Post- values submitted.");
 
+            PersistantSurveyQuestions.Instance.SetIsFinal(false);
             SceneManager.LoadScene(thankyouScene);
         }
     }
