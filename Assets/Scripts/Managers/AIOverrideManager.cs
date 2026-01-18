@@ -28,7 +28,14 @@ public class AIOverrideManager : Singleton<AIOverrideManager>
         AIVoiceActing = !AIVoiceActing;
         uiManager.ChangeAIVoiceOverText(AIVoiceActing);
 
-        if (!AIVoiceActing) dialogManager.StopPlayClip();
+        if (!AIVoiceActing)
+        {
+            dialogManager.StopPlayClip();
+        }
+        else
+        {
+            dialogManager.RestartPlayClip();
+        }
     }
 
 

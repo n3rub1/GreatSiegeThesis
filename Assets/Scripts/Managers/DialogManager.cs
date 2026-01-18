@@ -23,6 +23,7 @@ public class DialogManager : Singleton<DialogManager>
     private bool dialogStarted;
     private PlayerActions actions;
     private Queue<string> dialogQueue = new Queue<string>();
+    private AudioClip currentAudioClip;
 
     protected override void Awake()
     {
@@ -84,7 +85,8 @@ public class DialogManager : Singleton<DialogManager>
                 foreach (string sentence in npcSelected.DialogToShow.Day1Dialog)
                     dialogQueue.Enqueue(sentence);
                 npcSelected.DialogToShow.metOnday1 = true;
-                if(aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day1Audio);
+                currentAudioClip = npcSelected.DialogToShow.Day1Audio;
+                if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day1Audio);
                 break;
 
             case 2:
@@ -93,6 +95,7 @@ public class DialogManager : Singleton<DialogManager>
                     foreach (string sentence in npcSelected.DialogToShow.Day2MetBeforeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday2 = true;
+                    currentAudioClip = npcSelected.DialogToShow.Day2MetBeforeAudio;
                     if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day2MetBeforeAudio);
                 }
                 else
@@ -100,6 +103,7 @@ public class DialogManager : Singleton<DialogManager>
                     foreach (string sentence in npcSelected.DialogToShow.Day2FirstTimeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday2 = true;
+                    currentAudioClip = npcSelected.DialogToShow.Day2FirstTimeAudio;
                     if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day2FirstTimeAudio);
                 }
                 break;
@@ -110,6 +114,7 @@ public class DialogManager : Singleton<DialogManager>
                     foreach (string sentence in npcSelected.DialogToShow.Day3MetBeforeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday3 = true;
+                    currentAudioClip = npcSelected.DialogToShow.Day3MetBeforeAudio;
                     if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day3MetBeforeAudio);
                 }
                 else
@@ -117,6 +122,7 @@ public class DialogManager : Singleton<DialogManager>
                     foreach (string sentence in npcSelected.DialogToShow.Day3FirstTimeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday3 = true;
+                    currentAudioClip = npcSelected.DialogToShow.Day3FirstTimeAudio;
                     if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day3FirstTimeAudio);
                 }
                 break;
@@ -127,6 +133,7 @@ public class DialogManager : Singleton<DialogManager>
                     foreach (string sentence in npcSelected.DialogToShow.Day4MetBeforeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday4 = true;
+                    currentAudioClip = npcSelected.DialogToShow.Day4MetBeforeAudio;
                     if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day4MetBeforeAudio);
                 }
                 else
@@ -134,6 +141,7 @@ public class DialogManager : Singleton<DialogManager>
                     foreach (string sentence in npcSelected.DialogToShow.Day4FirstTimeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday4 = true;
+                    currentAudioClip = npcSelected.DialogToShow.Day4FirstTimeAudio;
                     if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day4FirstTimeAudio);
                 }
                 break;
@@ -144,6 +152,7 @@ public class DialogManager : Singleton<DialogManager>
                     foreach (string sentence in npcSelected.DialogToShow.Day5MetBeforeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday5 = true;
+                    currentAudioClip = npcSelected.DialogToShow.Day5MetBeforeAudio;
                     if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day5MetBeforeAudio);
                 }
                 else
@@ -151,6 +160,7 @@ public class DialogManager : Singleton<DialogManager>
                     foreach (string sentence in npcSelected.DialogToShow.Day5FirstTimeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday5 = true;
+                    currentAudioClip = npcSelected.DialogToShow.Day5FirstTimeAudio;
                     if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day5FirstTimeAudio);
                 }
                 break;
@@ -159,6 +169,7 @@ public class DialogManager : Singleton<DialogManager>
                 foreach (string sentence in npcSelected.DialogToShow.Day6Dialog)
                     dialogQueue.Enqueue(sentence);
                 npcSelected.DialogToShow.metOnday6 = true;
+                currentAudioClip = npcSelected.DialogToShow.Day6Audio;
                 if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day6Audio);
                 break;
 
@@ -168,6 +179,7 @@ public class DialogManager : Singleton<DialogManager>
                     foreach (string sentence in npcSelected.DialogToShow.Day7MetBeforeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday7 = true;
+                    currentAudioClip = npcSelected.DialogToShow.Day7MetBeforeAudio;
                     if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day7MetBeforeAudio);
                 }
                 else
@@ -175,6 +187,7 @@ public class DialogManager : Singleton<DialogManager>
                     foreach (string sentence in npcSelected.DialogToShow.Day7FirstTimeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday7 = true;
+                    currentAudioClip = npcSelected.DialogToShow.Day7FirstTimeAudio;
                     if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day7FirstTimeAudio);
                 }
                 break;
@@ -185,6 +198,7 @@ public class DialogManager : Singleton<DialogManager>
                     foreach (string sentence in npcSelected.DialogToShow.Day8MetBeforeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday8 = true;
+                    currentAudioClip = npcSelected.DialogToShow.Day8MetBeforeAudio;
                     if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day8MetBeforeAudio);
                 }
                 else
@@ -192,6 +206,7 @@ public class DialogManager : Singleton<DialogManager>
                     foreach (string sentence in npcSelected.DialogToShow.Day8FirstTimeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday8 = true;
+                    currentAudioClip = npcSelected.DialogToShow.Day8FirstTimeAudio;
                     if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day8FirstTimeAudio);
                 }
                 break;
@@ -202,6 +217,7 @@ public class DialogManager : Singleton<DialogManager>
                     foreach (string sentence in npcSelected.DialogToShow.Day9MetBeforeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday9 = true;
+                    currentAudioClip = npcSelected.DialogToShow.Day9MetBeforeAudio;
                     if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day9MetBeforeAudio);
                 }
                 else
@@ -209,6 +225,7 @@ public class DialogManager : Singleton<DialogManager>
                     foreach (string sentence in npcSelected.DialogToShow.Day9FirstTimeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday9 = true;
+                    currentAudioClip = npcSelected.DialogToShow.Day9FirstTimeAudio;
                     if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day9FirstTimeAudio);
                 }
                 break;
@@ -219,6 +236,7 @@ public class DialogManager : Singleton<DialogManager>
                     foreach (string sentence in npcSelected.DialogToShow.Day10MetBeforeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday10 = true;
+                    currentAudioClip = npcSelected.DialogToShow.Day10MetBeforeAudio;
                     if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day10MetBeforeAudio);
                 }
                 else
@@ -226,6 +244,7 @@ public class DialogManager : Singleton<DialogManager>
                     foreach (string sentence in npcSelected.DialogToShow.Day10FirstTimeDialog)
                         dialogQueue.Enqueue(sentence);
                     npcSelected.DialogToShow.metOnday10 = true;
+                    currentAudioClip = npcSelected.DialogToShow.Day10FirstTimeAudio;
                     if (aiOverrideManager.GetAIVoiceActing()) PlayClip(npcSelected.DialogToShow.Day10FirstTimeAudio);
                 }
                 break;
@@ -289,6 +308,15 @@ public class DialogManager : Singleton<DialogManager>
     public void StopPlayClip()
     {   
         voiceSource.Stop();
+    }
+
+    public void RestartPlayClip()
+    {
+        if (currentAudioClip == null || voiceSource == null) return;
+
+        voiceSource.Stop();
+        voiceSource.clip = currentAudioClip;
+        voiceSource.Play();
     }
 
     private void OnEnable()
