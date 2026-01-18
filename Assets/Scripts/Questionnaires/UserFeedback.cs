@@ -48,6 +48,8 @@ public class UserFeedback : MonoBehaviour
     [SerializeField] private Submit submit;
 
     private string formURL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLScceC0tlcOh-2VuN8f0qOkyZAJ2er0x3AQzjQEO7czEBlHu1g/formResponse";
+
+
     private string[] allAnswers = new string[] { };
     private PersistantSurveyQuestions persistantSurveyQuestions;
 
@@ -107,6 +109,18 @@ public class UserFeedback : MonoBehaviour
         string postQuestion9, string postQuestion10, string postQuestion11, string postQuestion12, string postQuestion13, string postQuestion14, string postQuestion15, string postQuestion16, string postQuestion17,
         string postQuestion18, string postQuestion19, string postQuestion20, string postQuestion21, string postQuestion22, string postQuestion23)
     {
+
+        bool isStartIDN = StartOptionManager.Instance.getIsStartIDN();
+
+        if (isStartIDN)
+        {
+            formURL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLScceC0tlcOh-2VuN8f0qOkyZAJ2er0x3AQzjQEO7czEBlHu1g/formResponse";
+        }
+        else
+        {
+            formURL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLScbABQ2O8W0xtBcuiixYINCn22DFIpqpZ7oy1H33aP3VgeD_Q/formResponse";
+        }
+
         WWWForm form = new WWWForm();
         form.AddField("entry.1054966409", uniquePlayerID);
 

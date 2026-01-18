@@ -9,6 +9,7 @@ public class BounceQuestAndWaypoint : MonoBehaviour
     private Vector3 originalPosition;
     [SerializeField] float bounceHeight;
     [SerializeField] float bounceSpeed;
+    [SerializeField] bool isLeft = false;
 
     void Start()
     {
@@ -18,7 +19,17 @@ public class BounceQuestAndWaypoint : MonoBehaviour
 
     void Update()
     {
-        float newY = startPosition.y + Mathf.Sin(Time.time * bounceSpeed) * bounceHeight;
-        transform.localPosition = new Vector3(startPosition.x, newY, startPosition.z);
+        if (!isLeft)
+        {
+            float newY = startPosition.y + Mathf.Sin(Time.time * bounceSpeed) * bounceHeight;
+            transform.localPosition = new Vector3(startPosition.x, newY, startPosition.z);
+        }
+        else
+        {
+            float newX = startPosition.x + Mathf.Sin(Time.time * bounceSpeed) * bounceHeight;
+            transform.localPosition = new Vector3(newX, startPosition.y, startPosition.z);
+        }
+
+
     }
 }

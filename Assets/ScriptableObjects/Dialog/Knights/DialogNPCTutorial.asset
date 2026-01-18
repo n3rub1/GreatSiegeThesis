@@ -21,7 +21,7 @@ MonoBehaviour:
   - "I don\u2019t know what brought you to this bombarded fort, son, but you\u2019re
     here now, and we\u2019re glad to have another pair of hands. No one comes to
     St Elmo by accident, not at this time.\n\nListen to me for a moment. We\u2019re
-    under siege from both the sea and from Mount Schiberras. The guns out there are
+    under siege from both the sea and from Mount Sciberras. The guns out there are
     still finding their aim, so today you\u2019ll have a bit more freedom to move
     around. The walls aren\u2019t breached yet; you can still cross the yard without
     climbing over half the fort. That won\u2019t last. As the days pass, their bombardment
@@ -160,12 +160,12 @@ MonoBehaviour:
   Day9MetBeforeAudio: {fileID: 0}
   Day10FirstTimeAudio: {fileID: 0}
   Day10MetBeforeAudio: {fileID: 0}
-  dayNumber: 5
-  metOnday1: 1
-  metOnday2: 1
-  metOnday3: 1
-  metOnday4: 1
-  metOnday5: 1
+  dayNumber: 1
+  metOnday1: 0
+  metOnday2: 0
+  metOnday3: 0
+  metOnday4: 0
+  metOnday5: 0
   metOnday6: 0
   metOnday7: 0
   metOnday8: 0

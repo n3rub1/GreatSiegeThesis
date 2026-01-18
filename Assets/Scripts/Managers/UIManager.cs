@@ -110,14 +110,20 @@ public class UIManager : MonoBehaviour
 
     public void UpdateTime(int timeOfDay)
     {
+
         if (timeOfDay >= 22)
         {
-            timeOfDayTMP.color = new Color(255, 0, 0);
-            timeOfDayTMP.text = "It's late.  Get some sleep";
+            timeOfDayTMP.color = Color.red;
+            timeOfDayTMP.text = "It's late. Get some sleep";
+        }
+        else if (timeOfDay >= 18)
+        {
+            timeOfDayTMP.color = Color.red;
+            timeOfDayTMP.text = $"Time: {timeOfDay}:00";
         }
         else
         {
-            timeOfDayTMP.color = new Color(0, 0, 0);
+            timeOfDayTMP.color = Color.black;
             timeOfDayTMP.text = $"Time: {timeOfDay}:00";
         }
     }

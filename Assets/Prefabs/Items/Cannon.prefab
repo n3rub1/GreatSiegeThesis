@@ -105,7 +105,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b2c6bc90fa976e248adc9bf7deb8aa31, type: 3}
   - {fileID: 8300000, guid: 2fd2aadf98f0e0546aa668d8de239a47, type: 3}
   - {fileID: 8300000, guid: 90d85c9d0867e9742b948a43a2f7c7e5, type: 3}
-  - {fileID: 8300000, guid: ec3a92ea81df5114c9779ff5aad8f4f3, type: 3}
   fire: {fileID: 3497211123786668270}
   smoke: {fileID: 1341398485202833935}
   fireInterval: 7

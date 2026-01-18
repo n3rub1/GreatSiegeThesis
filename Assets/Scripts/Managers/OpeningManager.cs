@@ -70,6 +70,13 @@ public class OpeningManager : MonoBehaviour
         }
     }
 
+    public void SkipCurrent()
+    {
+        StopAllCoroutines();
+        isTyping = false;
+        NextScreen();
+    }
+
     public void LoadNextScene()
     {
         SceneManager.LoadScene(preSurveyQuestions);

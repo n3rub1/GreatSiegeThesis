@@ -14,6 +14,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private int storyScreen = 1; //was 1
     [SerializeField] private TMP_InputField passwordInputField;
     [SerializeField] private GameObject padLock;
+    [SerializeField] private GameObject CoveringImage;
 
     [Header("Movement")]
     [SerializeField] private GameObject props;
@@ -69,6 +70,7 @@ public class MainMenuManager : MonoBehaviour
             helpText.gameObject.SetActive(false);
             isCreditsOnScreen = true;
             isHelpOnScreen = false;
+            CoveringImage.SetActive(true);
         }
         else
         {
@@ -76,6 +78,7 @@ public class MainMenuManager : MonoBehaviour
             helpText.gameObject.SetActive(false);
             isCreditsOnScreen = false;
             isHelpOnScreen = false;
+            CoveringImage.SetActive(false);
         }
     }
 
@@ -87,6 +90,8 @@ public class MainMenuManager : MonoBehaviour
             helpText.gameObject.SetActive(true);
             isCreditsOnScreen = false;
             isHelpOnScreen = true;
+            CoveringImage.SetActive(true);
+
         }
         else
         {
@@ -94,6 +99,8 @@ public class MainMenuManager : MonoBehaviour
             helpText.gameObject.SetActive(false);
             isCreditsOnScreen = false;
             isHelpOnScreen = false;
+            CoveringImage.SetActive(false);
+
         }
     }
 
