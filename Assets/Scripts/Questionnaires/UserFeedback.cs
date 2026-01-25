@@ -47,6 +47,11 @@ public class UserFeedback : MonoBehaviour
 
     [SerializeField] private Submit submit;
 
+    //https://docs.google.com/forms/u/0/d/e/1FAIpQLScG9zmhozg5RoJJ318fCacdMPa9o-cnCA1CqIi6VJekTQxBag/formResponse POST IDN
+    //https://docs.google.com/forms/u/0/d/e/1FAIpQLSeY6Y_EEAnTT_wPEjHEoOSa-lQoVPS9GQfxG5WAXyOQ5Z1x8Q/formResponse POST TEXT
+    //https://docs.google.com/forms/u/0/d/e/1FAIpQLSeIDQxahlReuWeHRKLdTWfm45erEHIg-HDQTvCJelzzI9485A/formResponse PRE TEXT
+    //https://docs.google.com/forms/u/0/d/e/1FAIpQLSeTBy5uPUnghRz4eeVMwe7qAoZW05Y5FgpZGbZwI7ZI6TPM9A/formResponse PRE IDN
+
     private string formURL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLScceC0tlcOh-2VuN8f0qOkyZAJ2er0x3AQzjQEO7czEBlHu1g/formResponse";
 
 

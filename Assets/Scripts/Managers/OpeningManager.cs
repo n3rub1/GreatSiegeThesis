@@ -13,7 +13,11 @@ public class OpeningManager : MonoBehaviour
     [SerializeField] private float delay = 0.05f;
     [SerializeField] private Button continueButton;
     [SerializeField] private TextMeshProUGUI continueButtonTMP;
+
+    [Header("scenes")]
     [SerializeField] private int preSurveyQuestions = 3;
+    [SerializeField] private int textScene;
+    [SerializeField] private int IDNScene;
 
     [Header("Audio (TTS per screen)")]
     [SerializeField] private AudioSource ttsSource;
@@ -79,6 +83,14 @@ public class OpeningManager : MonoBehaviour
 
     public void LoadNextScene()
     {
-        SceneManager.LoadScene(preSurveyQuestions);
+        bool isPreTextPostIDNPost = StartOptionManager.Instance.GetIsPreTextPostIDNPost();
+        bool isPreIDNPostTextPost = StartOptionManager.Instance.GetIsPreIDNPostTextPost();
+        bool isTextPostIDNPost = StartOptionManager.Instance.GetIsTextPostIDNPost();
+        bool isIDNPostTextPost = StartOptionManager.Instance.GetIsIDNPostTextPost();
+
+        if(isPreTextPostIDNPost || isPreIDNPostTextPost) SceneManager.LoadScene(preSurveyQuestions);
+        if (isTextPostIDNPost) SceneManager.LoadScene(textScene);
+        if (isIDNPostTextPost) SceneManager.LoadScene(IDNScene);
+
     }
 }

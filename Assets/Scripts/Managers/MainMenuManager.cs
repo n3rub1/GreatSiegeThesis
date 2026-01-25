@@ -11,10 +11,14 @@ public class MainMenuManager : MonoBehaviour
     [Header("Config")]
     [SerializeField] private GameObject[] fires;
     [SerializeField] private float loopInterval = 2.0f;
-    [SerializeField] private int storyScreen = 1; //was 1
     [SerializeField] private TMP_InputField passwordInputField;
     [SerializeField] private GameObject padLock;
     [SerializeField] private GameObject CoveringImage;
+
+    [Header("Scenes")]
+    [SerializeField] private int storyScreen = 1;
+    [SerializeField] private int preQuestions;
+    [SerializeField] private int textScene;
 
     [Header("Movement")]
     [SerializeField] private GameObject props;
@@ -53,7 +57,16 @@ public class MainMenuManager : MonoBehaviour
 
     public void LoadNextScene()
     {
-        if(!isLocked) SceneManager.LoadScene(storyScreen);
+        bool isPreTextPostIDNPost = StartOptionManager.Instance.GetIsPreTextPostIDNPost();
+        bool isPreIDNPostTextPost = StartOptionManager.Instance.GetIsPreIDNPostTextPost();
+        bool isTextPostIDNPost = StartOptionManager.Instance.GetIsTextPostIDNPost();
+        bool isIDNPostTextPost = StartOptionManager.Instance.GetIsIDNPostTextPost();
+
+        if (isPreTextPostIDNPost && !isLocked) SceneManager.LoadScene(preQuestions);
+        if (isPreIDNPostTextPost && !isLocked) SceneManager.LoadScene(storyScreen);
+
+        if (isTextPostIDNPost && !isLocked) SceneManager.LoadScene(textScene);
+        if (isIDNPostTextPost && !isLocked) SceneManager.LoadScene(storyScreen);
     }
 
     public void QuitGame()
@@ -111,18 +124,32 @@ public class MainMenuManager : MonoBehaviour
 
         if(password == "1234")
         {
-            padLock.SetActive(false);
-            isLocked = false;
-            startText.color = Color.black;
-            StartOptionManager.Instance.setIsStartIDN(true);
+            PadLockVisibilityAndStartUnlock();
+            StartOptionManager.Instance.SetIsPreTextPostIDNPost(true);
         }
-        else if(password== "4321")
+        else if(password == "4321")
         {
-            padLock.SetActive(false);
-            isLocked = false;
-            startText.color = Color.black;
-            StartOptionManager.Instance.setIsStartIDN(false);
+            PadLockVisibilityAndStartUnlock();
+            StartOptionManager.Instance.SetIsPreIDNPostTextPost(true);
         }
+        else if(password == "5678")
+        {
+            PadLockVisibilityAndStartUnlock();
+            StartOptionManager.Instance.SetIsTextPostIDNPost(true);
+        }
+        else if(password == "8765")
+        {
+            PadLockVisibilityAndStartUnlock();
+            StartOptionManager.Instance.SetIsIDNPostTextPost(true);
+        }
+
+    }
+
+    public void PadLockVisibilityAndStartUnlock()
+    {
+        padLock.SetActive(false);
+        isLocked = false;
+        startText.color = Color.black;
     }
 
     private void ReadInputField()
