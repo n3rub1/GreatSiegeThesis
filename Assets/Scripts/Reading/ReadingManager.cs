@@ -18,7 +18,8 @@ public class ReadingManager : MonoBehaviour
 
     private int index;
     private int mainMenuScene = 0;
-    private int postSurveyScene = 4;
+    private int postMidSurvey = 8;
+    private int postFinalSurvey = 9;
 
     private void Start()
     {
@@ -54,7 +55,20 @@ public class ReadingManager : MonoBehaviour
 
     public void EndStory()
     {
-        SceneManager.LoadScene(postSurveyScene);
+        bool isTextPostIDNPost = StartOptionManager.Instance.GetIsTextPostIDNPost();
+        bool isIDNPostTextPost = StartOptionManager.Instance.GetIsIDNPostTextPost();
+        bool isPreTextPostIDNPost = StartOptionManager.Instance.GetIsPreTextPostIDNPost();
+        bool isPreIDNPostTextPost = StartOptionManager.Instance.GetIsPreIDNPostTextPost();
+
+        if (isTextPostIDNPost || isPreTextPostIDNPost)
+        {
+            SceneManager.LoadScene(postMidSurvey);
+        }
+        else if (isIDNPostTextPost || isPreIDNPostTextPost)
+        {
+            SceneManager.LoadScene(postFinalSurvey);
+        }
+        
     }
 
     public void CheckButtons()

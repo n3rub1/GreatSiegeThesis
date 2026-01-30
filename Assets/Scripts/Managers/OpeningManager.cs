@@ -88,9 +88,10 @@ public class OpeningManager : MonoBehaviour
         bool isTextPostIDNPost = StartOptionManager.Instance.GetIsTextPostIDNPost();
         bool isIDNPostTextPost = StartOptionManager.Instance.GetIsIDNPostTextPost();
 
-        if(isPreTextPostIDNPost || isPreIDNPostTextPost) SceneManager.LoadScene(preSurveyQuestions);
-        if (isTextPostIDNPost) SceneManager.LoadScene(textScene);
+        if (isPreIDNPostTextPost) SceneManager.LoadScene(preSurveyQuestions);
+        if (isPreTextPostIDNPost) SceneManager.LoadScene(IDNScene);
         if (isIDNPostTextPost) SceneManager.LoadScene(IDNScene);
+        if (isTextPostIDNPost) SceneManager.LoadScene(IDNScene);
 
     }
 }

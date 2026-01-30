@@ -14,7 +14,8 @@ public class EndGameManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI titleTMP;
     [SerializeField] private TextMeshProUGUI descriptionTMP;
-    [SerializeField] private int postQuestionsScene = 4;
+    [SerializeField] private int finalPost;
+    [SerializeField] private int midPost;
 
 
     public void ShowEndGame(int endingNumber)
@@ -43,6 +44,19 @@ public class EndGameManager : MonoBehaviour
 
     public void MoveToFinalQuestions()
     {
-        SceneManager.LoadScene(postQuestionsScene);
+        bool isPreTextPostIDNPost = StartOptionManager.Instance.GetIsPreTextPostIDNPost();
+        bool isPreIDNPostTextPost = StartOptionManager.Instance.GetIsPreIDNPostTextPost();
+        bool isTextPostIDNPost = StartOptionManager.Instance.GetIsTextPostIDNPost();
+        bool isIDNPostTextPost = StartOptionManager.Instance.GetIsIDNPostTextPost();
+
+        bool isPreTextPostIDNPost_MidPostReady = StartOptionManager.Instance.GetisPreTextPostIDNPost_MidPostReady();
+        bool isPreIDNPostTextPost_MidPostReady = StartOptionManager.Instance.GetisPreIDNPostTextPost_MidPostReady();
+        bool isTextPostIDNPost_MidPostReady = StartOptionManager.Instance.GetisTextPostIDNPost_MidPostReady();
+        bool isIDNPostTextPost_MidPostReady = StartOptionManager.Instance.GetisIDNPostTextPost_MidPostReady();
+
+        if (isPreTextPostIDNPost) SceneManager.LoadScene(finalPost);
+        if (isPreIDNPostTextPost) SceneManager.LoadScene(midPost);
+        if (isTextPostIDNPost) SceneManager.LoadScene(finalPost);
+        if (isIDNPostTextPost) SceneManager.LoadScene(midPost);
     }
 }

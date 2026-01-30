@@ -7,12 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class SubmitUserFeedbackPreQuestions : MonoBehaviour
 {
-    //https://docs.google.com/forms/u/0/d/e/1FAIpQLSeIDQxahlReuWeHRKLdTWfm45erEHIg-HDQTvCJelzzI9485A/formResponse PRE TEXT
-    //https://docs.google.com/forms/u/0/d/e/1FAIpQLSeTBy5uPUnghRz4eeVMwe7qAoZW05Y5FgpZGbZwI7ZI6TPM9A/formResponse PRE IDN
-    //https://docs.google.com/forms/u/0/d/e/1FAIpQLScG9zmhozg5RoJJ318fCacdMPa9o-cnCA1CqIi6VJekTQxBag/formResponse POST IDN
-    //https://docs.google.com/forms/u/0/d/e/1FAIpQLSeY6Y_EEAnTT_wPEjHEoOSa-lQoVPS9GQfxG5WAXyOQ5Z1x8Q/formResponse POST TEXT
-
-
+    //https://docs.google.com/forms/u/0/d/e/1FAIpQLSfoYaSP6GEepKspbZwR4Y2ZmYC9lkQOdxOQDD1BWcZT84u3Kg/formResponse PRE TEXT
+    //https://docs.google.com/forms/u/0/d/e/1FAIpQLScPaVkllX0G8URkKw4p3lNFybWaHSEvMOUdIshQizf-EPkVgg/formResponse PRE IDN
 
     [Header("Pre-Questions")]
     [SerializeField] private List<TMP_Dropdown> preQuestionsAnswers;
@@ -50,10 +46,31 @@ public class SubmitUserFeedbackPreQuestions : MonoBehaviour
         return answers;
     }
 
+    private bool CheckValues()
+    {
+        foreach(string answer in answers)
+        {
+            if (answer == "0") return false;
+        }
+        return true;
+    }
+
+
     public void SubmitForm()
     {
         GetValues();
-        StartCoroutine(Post(answers));
+        bool isOk = CheckValues();
+
+        if (isOk)
+        {
+            StartCoroutine(Post(answers));
+            ErrorMessageTMP.SetActive(false);
+        }
+        else
+        {
+            ErrorMessageTMP.SetActive(true);
+        }
+
     }
 
 
@@ -68,12 +85,12 @@ public class SubmitUserFeedbackPreQuestions : MonoBehaviour
         if (isPreTextPostIDNPost)
         {
             uniquePlayerIDEntry = "entry.1054966409";
-            form.AddField("entry.1814235898", "Doing the Pre_Text_Post_IDN_Post");
+            form.AddField("entry.1799841438", "Doing the Pre_Text_Post_IDN_Post");
         }
         if (isPreIDNPostTextPost)
         {
             uniquePlayerIDEntry = "entry.1054966409";
-            form.AddField("entry.968983527", "Doing the Pre_IDN_Post_Text_Post");
+            form.AddField("entry.1215758962", "Doing the Pre_IDN_Post_Text_Post");
         }
 
         form.AddField(uniquePlayerIDEntry, uniquePlayerID);
