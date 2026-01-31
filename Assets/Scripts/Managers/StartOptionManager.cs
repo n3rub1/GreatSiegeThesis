@@ -121,10 +121,17 @@ public class StartOptionManager : MonoBehaviour
         return isIDNPostTextPost_MidPostReady;
     }
 
+    public void ResetAll()
+    {
+        isPreTextPostIDNPost = false;
+        isPreIDNPostTextPost = false;
+        isTextPostIDNPost = false;
+        isIDNPostTextPost = false;
 
-
-
-
-
+        isPreTextPostIDNPost_MidPostReady = false;
+        isPreIDNPostTextPost_MidPostReady = false;
+        isTextPostIDNPost_MidPostReady = false;
+        isIDNPostTextPost_MidPostReady = false;
+    }
 
 }
