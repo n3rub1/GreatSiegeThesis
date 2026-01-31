@@ -26,7 +26,7 @@ MonoBehaviour:
     start finding our walls. Then we see what holds."
   Day2FirstTimeDialog:
   - "Pick up a dented breastplate, you can tell how someone met the ground. This
-    was has a hole right through the heart and out the back \u2014 musket ball. You
+    one has a hole right through the heart and out the back \u2014 musket ball. You
     start reading deaths without names.\nBy tomorrow I\u2019ll be able to recognise
     which pieces I made. I don\u2019t think anyone wants that kind of memory."
   Day2MetBeforeDialog:
@@ -66,6 +66,15 @@ MonoBehaviour:
     the men are gone. The rest look like they\u2019re waiting their turn. I used
     to think my work kept them alive \u2014 gave them a chance.\nNow it just keeps
     them awake long enough to feel the end coming."
+  Day6Dialog: []
+  Day7FirstTimeDialog: []
+  Day7MetBeforeDialog: []
+  Day8FirstTimeDialog: []
+  Day8MetBeforeDialog: []
+  Day9FirstTimeDialog: []
+  Day9MetBeforeDialog: []
+  Day10FirstTimeDialog: []
+  Day10MetBeforeDialog: []
   Day1Audio: {fileID: 8300000, guid: 385a710762871c2408649f7bd2f02ca3, type: 3}
   Day2FirstTimeAudio: {fileID: 8300000, guid: f64655f348efbff488bf963e559dc4b4, type: 3}
   Day2MetBeforeAudio: {fileID: 8300000, guid: f553c3a1136315745b18983c4c93618d, type: 3}
@@ -75,9 +84,23 @@ MonoBehaviour:
   Day4MetBeforeAudio: {fileID: 8300000, guid: 8291bb3b420211246ac7ab060821e7d1, type: 3}
   Day5FirstTimeAudio: {fileID: 8300000, guid: 01c00c53615c04146b610aa82ff24354, type: 3}
   Day5MetBeforeAudio: {fileID: 8300000, guid: 18182e6d01b100242939445577fccaf5, type: 3}
+  Day6Audio: {fileID: 0}
+  Day7FirstTimeAudio: {fileID: 0}
+  Day7MetBeforeAudio: {fileID: 0}
+  Day8FirstTimeAudio: {fileID: 0}
+  Day8MetBeforeAudio: {fileID: 0}
+  Day9FirstTimeAudio: {fileID: 0}
+  Day9MetBeforeAudio: {fileID: 0}
+  Day10FirstTimeAudio: {fileID: 0}
+  Day10MetBeforeAudio: {fileID: 0}
   dayNumber: 1
   metOnday1: 0
   metOnday2: 0
   metOnday3: 0
   metOnday4: 0
   metOnday5: 0
+  metOnday6: 0
+  metOnday7: 0
+  metOnday8: 0
+  metOnday9: 0
+  metOnday10: 0
