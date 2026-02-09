@@ -13,6 +13,7 @@ public class OpeningManager : MonoBehaviour
     [SerializeField] private float delay = 0.05f;
     [SerializeField] private Button continueButton;
     [SerializeField] private TextMeshProUGUI continueButtonTMP;
+    [SerializeField] private AudioSource buttonClickAudioSource;
 
     [Header("scenes")]
     [SerializeField] private int preSurveyQuestions = 3;
@@ -57,6 +58,8 @@ public class OpeningManager : MonoBehaviour
 
     public void NextScreen()
     {
+        buttonClickAudioSource.Play();
+
         if (isTyping) return;
 
         continueButton.gameObject.SetActive(false);
@@ -76,6 +79,7 @@ public class OpeningManager : MonoBehaviour
 
     public void SkipCurrent()
     {
+        buttonClickAudioSource.Play();
         StopAllCoroutines();
         isTyping = false;
         NextScreen();

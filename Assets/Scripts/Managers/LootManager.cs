@@ -11,6 +11,7 @@ public class LootManager : Singleton<LootManager>
     [SerializeField] private int lootXPNumber = 0;
     [SerializeField] private GoogleSheetLogger logger;
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private AudioSource lootAudioSource;
 
     public LootInteraction lootSelected { get; set; }
 
@@ -36,6 +37,8 @@ public class LootManager : Singleton<LootManager>
     public void LootRNG()
     {
         if (!isPlayerInRangeOfLoot || lootSelected == null) return;
+
+        lootAudioSource.Play();
 
         playerXP.AddXPSupplies(lootXPNumber);
         int[] levels = playerXP.GetLevels();

@@ -14,6 +14,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private TMP_InputField passwordInputField;
     [SerializeField] private GameObject padLock;
     [SerializeField] private GameObject CoveringImage;
+    [SerializeField] private AudioSource buttonClickAudioSource;
 
     [Header("Scenes")]
     [SerializeField] private int storyScreen = 1;
@@ -77,6 +78,9 @@ public class MainMenuManager : MonoBehaviour
 
     public void ShowCredits()
     {
+
+        buttonClickAudioSource.Play();
+
         if (!isCreditsOnScreen)
         {
             creditText.gameObject.SetActive(true);
@@ -97,6 +101,8 @@ public class MainMenuManager : MonoBehaviour
 
     public void ShowHelp()
     {
+        buttonClickAudioSource.Play();
+
         if (!isHelpOnScreen)
         {
             creditText.gameObject.SetActive(false);
@@ -119,6 +125,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void InputFieldPassword()
     {
+        buttonClickAudioSource.Play();
 
         ReadInputField();
 

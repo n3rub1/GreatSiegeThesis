@@ -46,15 +46,10 @@ MonoBehaviour:
     By tomorrow,
     I fear reality will demand payment in ways the plans do not record.'
   Day7MetBeforeDialog:
-  - 'Yesterday, I explained why patience mattered. Today, the men wanted speed. 
-    They asked why the walls still stand when the guns have spoken all day.
-
-    I
-    pointed to angles, to depth, to stone that must first be emptied of strength.
-
-
-    By
-    tomorrow, I will realise that explanation does not lessen the waiting.'
+  - Yesterday, I explained why patience mattered.  Today the men wanted speed, they
+    asked why the walls still stand when the guns have spoken all day. I pointed
+    to angles, to depth, to stone that first must be emptied of strength. By tomorrow,
+    I will realize that explanation does not lessen the waiting.
   Day8FirstTimeDialog:
   - 'We advance the batteries closer. Saps deepen. Earth collapses. Men dig again.
     Every measurement is precise; every outcome is slower than expected.

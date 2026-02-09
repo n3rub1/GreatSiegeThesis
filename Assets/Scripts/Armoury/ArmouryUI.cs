@@ -13,6 +13,7 @@ public class ArmouryUI : Singleton<ArmouryUI>
     [SerializeField] private int armourPercentageToIncrease = 0;
     [SerializeField] private GoogleSheetLogger logger;
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private AudioSource buttonAudioSource;
 
     [Header("Description Panel")]
     [SerializeField] private GameObject descriptionPanel;
@@ -154,11 +155,14 @@ public class ArmouryUI : Singleton<ArmouryUI>
 
     public void ShowItemDetails(int slotNumber)
     {
+
         //ArmouryItem item = armouryItems[slotNumber];
         ArmouryItem item = armouryWeaponsAndArmour.Find(i => i.slotNumber == slotNumber);
 
         if (item != null)
         {
+            buttonAudioSource.Play();
+
             itemIcon.sprite = item.Icon;
             itemName.text = item.Name;
             itemDescription.text = item.Description;
@@ -175,11 +179,15 @@ public class ArmouryUI : Singleton<ArmouryUI>
 
     public void HideItemDetails()
     {
+        buttonAudioSource.Play();
+
         descriptionPanel.SetActive(false);
     }
 
     public void Craft()
     {
+        buttonAudioSource.Play();
+
         int[] levels = playerXP.GetLevels();
 
         if (ArmourySlot.CurrentlySelectedSlot == null)
@@ -305,6 +313,8 @@ public class ArmouryUI : Singleton<ArmouryUI>
 
     public void CloseArmouryPanel()
     {
+        buttonAudioSource.Play();
+
         HideItemDetails();
         armouryCraftingPanel.SetActive(false);
 
@@ -316,7 +326,10 @@ public class ArmouryUI : Singleton<ArmouryUI>
 
     public void OpenArmouryPanel()
     {
+
         if (armouryInteraction == null) return;
+
+        buttonAudioSource.Play();
         //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Anvil Opened (Armoury UI)", "Player opened the armoury panel");
         //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Anvil Opened (Armoury UI)", "Player opened the armoury panel");
         GoogleSheetLogger.I.Log("Anvil Opened (Armoury UI)", "Player opened the armoury panel");

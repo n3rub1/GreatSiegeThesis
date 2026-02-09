@@ -10,6 +10,7 @@ public class InventoryUI : Singleton<InventoryUI>
     [Header("Config")]
     [SerializeField] private InventorySlot slotPrefab;
     [SerializeField] private Transform container;
+    [SerializeField] private AudioSource menuClickAudioSource;
 
     [Header("Description Panel")]
     [SerializeField] private GameObject descriptionPanel;
@@ -47,6 +48,8 @@ public class InventoryUI : Singleton<InventoryUI>
     {
         if (Inventory.Instance.InventoryItems[index] == null) return;
 
+        menuClickAudioSource.Play();
+
         if(isAdditionalDetailsOpen && currentDetailsOpened == index)
         {
             descriptionPanel.SetActive(false);
@@ -81,6 +84,8 @@ public class InventoryUI : Singleton<InventoryUI>
 
     public void CloseInventoryPanel()
     {
+        menuClickAudioSource.Play();
+
         descriptionPanel.SetActive(false);
         isAdditionalDetailsOpen = false;
         currentDetailsOpened = 10;
@@ -89,6 +94,8 @@ public class InventoryUI : Singleton<InventoryUI>
 
     public void OpenInventoryPanel()
     {
+        menuClickAudioSource.Play();
+
         inventoryPanel.SetActive(true);
     }
 

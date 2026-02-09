@@ -11,6 +11,7 @@ public class StructureUI : Singleton<StructureUI>
     [SerializeField] private GoogleSheetLogger logger;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private int structurePercentage = 10;
+    [SerializeField] private AudioSource clearingDebrisAudioSource;
 
     private PlayerActions actions;
     //private int structureArrayValue = 2;
@@ -42,12 +43,14 @@ public class StructureUI : Singleton<StructureUI>
     public void RepairStructure()
     {
         if (structureInteraction == null) return;
+        clearingDebrisAudioSource.Play();
         structureInteraction.StartRepair();
     }
 
     public void StopRepairStructure()
     {
         if (structureInteraction == null) return;
+        clearingDebrisAudioSource.Stop();
         //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Repair (Debris Manager)", $"Cancelled repair");
         //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Repair (Debris Manager)", $"Cancelled repair");
         GoogleSheetLogger.I.Log("Repair (Debris Manager)", $"Cancelled repair");
@@ -57,6 +60,8 @@ public class StructureUI : Singleton<StructureUI>
 
     public void StructureRepairedAndIncreasePercentage()
     {
+        clearingDebrisAudioSource.Stop();
+
         //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Repair (Debris Manager)", $"Completed repair");
         //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Repair (Debris Manager)", $"Completed repair");
         GoogleSheetLogger.I.Log("Repair (Debris Manager)", $"Completed repair");

@@ -444,6 +444,7 @@ MonoBehaviour:
   lootInformation: {fileID: 7561896523036230874}
   lootInformationText: {fileID: 2842693038666797828}
   lootManager: {fileID: 0}
+  lootAudioSource: {fileID: 0}
 --- !u!58 &2754320339255113483
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -536,7 +537,7 @@ MonoBehaviour:
   - {x: 0.20696259, y: -0.47349548, z: 0}
   m_ShapePathHash: 130996453
   m_Mesh: {fileID: 0}
-  m_InstanceId: -57870
+  m_InstanceId: -334520
   m_LocalBounds:
     m_Center: {x: 0.024006844, y: -0.00054740906, z: 0}
     m_Extent: {x: 0.47599316, y: 0.47294807, z: 0}

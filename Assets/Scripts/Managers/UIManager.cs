@@ -52,6 +52,17 @@ public class UIManager : MonoBehaviour
     [SerializeField] private string structureText = "Structure: ";
     [SerializeField] private string catText = "Cat: ";
 
+    [Header("Timer")]
+    [SerializeField] private TimerBounce timeBounce;
+    [SerializeField] private int timerAngleSlow;
+    [SerializeField] private int timerDurationSlow;
+    [SerializeField] private int timerSpeedSlow;
+    [SerializeField] private int timerAngleFast;
+    [SerializeField] private int timerDurationFast;
+    [SerializeField] private int timerSpeedFast;
+
+
+
     private string[] suppliesTexts = new string[]
 {
         "Your instincts sharpen — you now scavenge with precision, uncovering more vital supplies.",
@@ -120,11 +131,13 @@ public class UIManager : MonoBehaviour
         {
             timeOfDayTMP.color = Color.red;
             timeOfDayTMP.text = $"Time: {timeOfDay}:00";
+            timeBounce.TimerRotateWithSpeed(timerAngleFast, timerDurationFast, timerSpeedFast);
         }
         else
         {
             timeOfDayTMP.color = Color.black;
             timeOfDayTMP.text = $"Time: {timeOfDay}:00";
+            timeBounce.TimerRotateWithSpeed(timerAngleSlow, timerDurationSlow, timerSpeedSlow);
         }
     }
 

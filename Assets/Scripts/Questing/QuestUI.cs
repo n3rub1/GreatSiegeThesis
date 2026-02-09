@@ -13,6 +13,7 @@ public class QuestUI : Singleton<QuestUI>
     [SerializeField] private GameObject additionalInformationQuestPanel;
     [SerializeField] private TextMeshProUGUI additionalInformationQuestPanelTMP;
     [SerializeField] [TextArea(5, 15)] private List<string> questDetails = new List<string>();
+    [SerializeField] private AudioSource buttonAudioSource;
 
     [Header("QuestMarker")]
     [SerializeField] float bounceHeight;
@@ -76,6 +77,8 @@ public class QuestUI : Singleton<QuestUI>
 
     public void CloseQuestPanel()
     {
+        buttonAudioSource.Play();
+
         questPanel.SetActive(false);
         questMarkerTMP.text = "!";
         dayNightCycleManager.StartStopTimer(false);
@@ -96,6 +99,8 @@ public class QuestUI : Singleton<QuestUI>
     {
         if (questInteraction == null || dayNightCycleManager.GetCurrentTime() >= 22 || anyQuestAccepted) return;  //|| gameManager.GetQuestAccepted() != "Reset"
 
+        buttonAudioSource.Play();
+
         additionalInformationQuestPanel.SetActive(false);
         SelectProperQuestText("reset");
         questPanel.SetActive(true);
@@ -105,6 +110,8 @@ public class QuestUI : Singleton<QuestUI>
 
     public void CloseAdditionalDetails()
     {
+        buttonAudioSource.Play();
+
         additionalInformationQuestPanel.SetActive(false);
         isAdditionalDetailsOpen = false;
         SelectProperQuestText("reset");
@@ -112,7 +119,8 @@ public class QuestUI : Singleton<QuestUI>
 
     public void OpenAdditionalDetails(string quest)
     {
- 
+        buttonAudioSource.Play();
+
         if (isAdditionalDetailsOpen && currentDetailsOpened == quest)
         {
             additionalInformationQuestPanel.SetActive(false);
@@ -194,6 +202,8 @@ public class QuestUI : Singleton<QuestUI>
 
     public void ArmouryQuestAccepted()
     {
+        buttonAudioSource.Play();
+
         gameManager.SetQuestAccepted("Armoury");
         CloseQuestPanel();
         RemoveQuestMarker();
@@ -202,6 +212,8 @@ public class QuestUI : Singleton<QuestUI>
 
     public void InfirmaryQuestAccepted()
     {
+        buttonAudioSource.Play();
+
         gameManager.SetQuestAccepted("Infirmary");
         CloseQuestPanel();
         RemoveQuestMarker();
@@ -210,6 +222,8 @@ public class QuestUI : Singleton<QuestUI>
 
     public void CatQuestAccepted()
     {
+        buttonAudioSource.Play();
+
         gameManager.SetQuestAccepted("Cat");
         CloseQuestPanel();
         RemoveQuestMarker();
@@ -218,6 +232,8 @@ public class QuestUI : Singleton<QuestUI>
 
     public void StructureQuestAccepted()
     {
+        buttonAudioSource.Play();
+
         gameManager.SetQuestAccepted("Structure");
         CloseQuestPanel();
         RemoveQuestMarker();

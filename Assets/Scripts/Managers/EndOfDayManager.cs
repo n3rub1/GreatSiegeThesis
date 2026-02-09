@@ -22,6 +22,7 @@ public class EndOfDayManager : MonoBehaviour
     [SerializeField] private GameObject caughtPanel;
     [SerializeField] private GameObject movePanel;
     [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private AudioSource buttonAudioSource;
 
     [Header("Data")]
     [SerializeField] private TextMeshProUGUI endOfDayDescriptionTMP;
@@ -183,6 +184,7 @@ public class EndOfDayManager : MonoBehaviour
 
     public void SkipEndOfDay()
     {
+        buttonAudioSource.Play();
 
         playerMovement.EnableMovement();
 
@@ -212,6 +214,8 @@ public class EndOfDayManager : MonoBehaviour
 
     public void ContinueAfterCaughtAndMove()
     {
+        buttonAudioSource.Play();
+
         caughtPanel.SetActive(false);
         movePanel.SetActive(false);
 

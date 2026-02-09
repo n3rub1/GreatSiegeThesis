@@ -13,6 +13,7 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
     [SerializeField] private GameManager gameManager;
     [SerializeField] private int moralePercentageToIncrease = 0;
     [SerializeField] private GoogleSheetLogger logger;
+    [SerializeField] private AudioSource buttonAudioSource;
 
     [Header("Description Panel")]
     [SerializeField] private GameObject descriptionPanel;
@@ -150,6 +151,8 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
 
     public void ShowItemDetails(int slotNumber)
     {
+        buttonAudioSource.Play();
+
         //InfirmaryItem item = infirmaryInjured[slotNumber];
 
         slotNumberSelected = slotNumber;
@@ -173,6 +176,8 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
 
     public void Heal()
     {
+       buttonAudioSource.Play();
+
         int[] levels = playerXP.GetLevels();
         int dayNumber = gameManager.GetDayNumber();
 
@@ -334,7 +339,9 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
 
     public void CloseInfirmaryPanel()
     {
-       // logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Infirmary Closed (Infirmary UI)", "Player closed the infirmary panel");
+        buttonAudioSource.Play();
+
+        // logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Infirmary Closed (Infirmary UI)", "Player closed the infirmary panel");
         //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Infirmary Closed (Infirmary UI)", "Player closed the infirmary panel");
         GoogleSheetLogger.I.Log("Infirmary Closed (Infirmary UI)", "Player closed the infirmary panel");
 
@@ -345,6 +352,9 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
     public void OpenInfirmaryPanel()
     {
         if (infirmaryInteraction == null) return;
+
+        buttonAudioSource.Play();
+
         //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Infirmary Opened (Infirmary UI)", "Player opened the infirmary panel");
         //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Infirmary Opened (Infirmary UI)", "Player opened the infirmary panel");
         GoogleSheetLogger.I.Log("Infirmary Opened (Infirmary UI)", "Player opened the infirmary panel");

@@ -14,11 +14,13 @@ public class TutorialsInteraction : MonoBehaviour
     [SerializeField] private DangerSpawn dangerSpawn;
     [SerializeField] private bool hasMultipleScreens;
     [SerializeField] private PlayerMovement player;
+    [SerializeField] private AudioSource buttonAudioSource;
 
     private bool interactable = false;
     private PlayerActions actions;
     private int index = 0;
     private int maxIndex;
+    private bool isCurrentlyInteracting = false;
 
     private void Awake()
     {
@@ -68,22 +70,28 @@ public class TutorialsInteraction : MonoBehaviour
         {
             interactable = false;
             boxOnTopOfTutorialBoards.SetActive(false);
+            isCurrentlyInteracting = false;
         }
     }
 
     public void OpenTutorialPanel()
     {
-        if (!hasMultipleScreens && interactable)
+
+        if (!hasMultipleScreens && interactable && !isCurrentlyInteracting)
         {
+            buttonAudioSource.Play();
             dayNightCycleManager.StartStopTimer(true);
             multipleTutorialPanels[0].SetActive(true);
+            isCurrentlyInteracting = true;
         }
-        else if(hasMultipleScreens && interactable)
+        else if(hasMultipleScreens && interactable && !isCurrentlyInteracting)
         {
+            buttonAudioSource.Play();
             dayNightCycleManager.StartStopTimer(true);
             mainPanelForMultipleTutorials.SetActive(true);
             multipleTutorialPanels[0].SetActive(true);
             nextButton.SetActive(true);
+            isCurrentlyInteracting = true;
         }
 
         if (interactable)
@@ -98,6 +106,8 @@ public class TutorialsInteraction : MonoBehaviour
 
     public void NextTutorialPanel()
     {
+        buttonAudioSource.Play();
+
         mainPanelForMultipleTutorials.SetActive(true);
 
         if (hasMultipleScreens && interactable)
@@ -117,8 +127,12 @@ public class TutorialsInteraction : MonoBehaviour
 
     public void CloseTutorialPanel()
     {
-         dayNightCycleManager.StartStopTimer(false);
+        buttonAudioSource.Play();
+
+        dayNightCycleManager.StartStopTimer(false);
         index = 0;
+
+        isCurrentlyInteracting = false;
 
         if (!hasMultipleScreens)
         {
