@@ -62,6 +62,7 @@ public class ArmouryUI : Singleton<ArmouryUI>
 
     private PlayerActions actions;
     private bool isPlayerInRangeOfLoot = false;
+    private bool isOpen = false;
     //private int armouryArrayValue = 2;
 
     protected override void Awake()
@@ -73,6 +74,7 @@ public class ArmouryUI : Singleton<ArmouryUI>
 
     private void Start()
     {
+        isOpen = false;
         actions.Armoury.AnvilInteraction.performed += ctx => OpenArmouryPanel();
     }
 
@@ -179,7 +181,10 @@ public class ArmouryUI : Singleton<ArmouryUI>
 
     public void HideItemDetails()
     {
-        buttonAudioSource.Play();
+        if (isOpen)
+        {
+            buttonAudioSource.Play();
+        }
 
         descriptionPanel.SetActive(false);
     }
@@ -313,7 +318,12 @@ public class ArmouryUI : Singleton<ArmouryUI>
 
     public void CloseArmouryPanel()
     {
-        buttonAudioSource.Play();
+        if (isOpen)
+        {
+            buttonAudioSource.Play();
+            isOpen = false;
+        }
+
 
         HideItemDetails();
         armouryCraftingPanel.SetActive(false);
@@ -330,6 +340,8 @@ public class ArmouryUI : Singleton<ArmouryUI>
         if (armouryInteraction == null) return;
 
         buttonAudioSource.Play();
+        isOpen = true;
+
         //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Anvil Opened (Armoury UI)", "Player opened the armoury panel");
         //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Anvil Opened (Armoury UI)", "Player opened the armoury panel");
         GoogleSheetLogger.I.Log("Anvil Opened (Armoury UI)", "Player opened the armoury panel");

@@ -77,7 +77,7 @@ public class QuestUI : Singleton<QuestUI>
 
     public void CloseQuestPanel()
     {
-        buttonAudioSource.Play();
+        //buttonAudioSource.Play();
 
         questPanel.SetActive(false);
         questMarkerTMP.text = "!";

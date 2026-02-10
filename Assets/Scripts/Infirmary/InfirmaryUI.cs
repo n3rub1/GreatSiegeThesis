@@ -59,6 +59,7 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
     private bool isPlayerInRangeOfLoot = false;
     //private int infirmaryArrayValue = 1;
     private int slotNumberSelected;
+    private bool isOpen = false;
 
     protected override void Awake()
     {
@@ -69,6 +70,7 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
 
     private void Start()
     {
+        isOpen = false;
         ResetAllHealed();
         actions.Infirmary.FirePotInteraction.performed += ctx => OpenInfirmaryPanel();
     }
@@ -339,7 +341,11 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
 
     public void CloseInfirmaryPanel()
     {
-        buttonAudioSource.Play();
+        if (isOpen)
+        {
+            buttonAudioSource.Play();
+            isOpen = false;
+        }
 
         // logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Infirmary Closed (Infirmary UI)", "Player closed the infirmary panel");
         //GoogleSheetLogger.I.Log(gameManager.GetDayNumber(), "Infirmary Closed (Infirmary UI)", "Player closed the infirmary panel");
@@ -353,6 +359,7 @@ public class InfirmaryUI : Singleton<InfirmaryUI>
     {
         if (infirmaryInteraction == null) return;
 
+        isOpen = true;
         buttonAudioSource.Play();
 
         //logger.LogData(gameManager.GetPlayerIDForLogging(), gameManager.GetCurrentTime(), gameManager.GetDayNumber(), "Infirmary Opened (Infirmary UI)", "Player opened the infirmary panel");
