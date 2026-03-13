@@ -22,6 +22,7 @@ public class DayNightCycleManager : MonoBehaviour
     [SerializeField] private int timeToSleepScreenTime;
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private RandomQuestSelector randomQuestSelector;
+    [SerializeField] private SleepManager sleepManager;
 
     private Color[] hourlyColors = new Color[]
     {
@@ -86,6 +87,7 @@ public class DayNightCycleManager : MonoBehaviour
     {
         timeOfDay = time;
         hourStartIndexLight = time;
+        TriggerTimer();
         TriggerDayNightGlobalLight();
     }
 
@@ -174,17 +176,19 @@ public class DayNightCycleManager : MonoBehaviour
 
     private void TeleportToBed()
     {
-        StartCoroutine(ShowTimesUpScreen());
-
-        if(gameManager.GetDayNumber() < 6)
+        if (!sleepManager.isSleeping)
         {
-            teleportPlayer.TeleportPlayerManually(new Vector3(-244.2f, -26.5f, 0f));
-        }
-        else
-        {
-            teleportPlayer.TeleportPlayerManually(new Vector3(-133.8f, -197.3f, 0f));
-        }
+            StartCoroutine(ShowTimesUpScreen());
 
+            if (gameManager.GetDayNumber() < 6)
+            {
+                teleportPlayer.TeleportPlayerManually(new Vector3(-244.2f, -26.5f, 0f));
+            }
+            else
+            {
+                teleportPlayer.TeleportPlayerManually(new Vector3(-133.8f, -197.3f, 0f));
+            }
+        }
     }
 
     public void SetIsHit(bool hit)
@@ -194,11 +198,22 @@ public class DayNightCycleManager : MonoBehaviour
 
     IEnumerator ShowTimesUpScreen()
     {
-        timeToSleepScreen.SetActive(true);
-        playerMovement.DisableMovement();
-        yield return new WaitForSeconds(timeToSleepScreenTime);
+
+        if (!isHit)
+        {
+            timeToSleepScreen.SetActive(true);
+            playerMovement.DisableMovement();
+            yield return new WaitForSeconds(timeToSleepScreenTime);
+            playerMovement.EnableMovement();
+            timeToSleepScreen.SetActive(false);
+        }
+
+    }
+
+    public void ContinueButton()
+    {
+        StopCoroutine(ShowTimesUpScreen());
         playerMovement.EnableMovement();
         timeToSleepScreen.SetActive(false);
-
     }
 }

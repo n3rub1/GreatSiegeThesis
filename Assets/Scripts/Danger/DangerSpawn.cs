@@ -180,8 +180,8 @@ public class DangerSpawn : MonoBehaviour
             player.position = ottomanRespawnPosition;
         }
 
-        dayNightCycleManager.SetTimerManually(22);
         dayNightCycleManager.SetIsHit(true);
+        dayNightCycleManager.SetTimerManually(22);
         yield return new WaitForSeconds(deadScreenTimer);
 
         deadScreenPanel.SetActive(false);
@@ -209,5 +209,18 @@ public class DangerSpawn : MonoBehaviour
             StartCoroutine(RegionLoop(regionB));
             isSpawning = true;
         }
+    }
+
+    public void ContinueButton()
+    {
+        StopAllCoroutines();
+        dayNightCycleManager.SetIsHit(true);
+        dayNightCycleManager.SetTimerManually(22);
+        deadScreenPanel.SetActive(false);
+        dayNightCycleManager.SetIsHit(false);
+        playerMovement.EnableMovement();
+
+        if (dangerZone != null)
+            dangerZone.UnlockDeath();
     }
 }
